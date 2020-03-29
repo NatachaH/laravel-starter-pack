@@ -2,18 +2,11 @@
 
 namespace Nh\StarterPack;
 
-use Illuminate\Foundation\Console\Presets\Preset As LaravelPreset;
-use Illuminate\Support\Facades\File;
+use Laravel\Ui\Presets\Preset;
 use Illuminate\Filesystem\Filesystem;
 
-class BackendPreset extends LaravelPreset
+class BackendPreset extends Preset
 {
-    /**
-     * Path of the resources folder
-     * @var string
-     */
-    public $resources = __DIR__.'/stubs/backend/resources/';
-
     /**
      * Install the preset
      * @return void
@@ -33,8 +26,9 @@ class BackendPreset extends LaravelPreset
      */
     public static function updateScripts()
     {
+        $stub = __DIR__.'/stubs/backend/resources/js';
         $path = resource_path('js');
-        (new Filesystem)->copyDirectory($this->resources.'js', $path);
+        (new Filesystem)->copyDirectory($stub, $path);
     }
 
     /**
@@ -43,8 +37,9 @@ class BackendPreset extends LaravelPreset
      */
     public static function updateTranslations()
     {
+        $stub = __DIR__.'/stubs/backend/resources/lang';
         $path = resource_path('lang');
-        (new Filesystem)->copyDirectory($this->resources.'lang', $path);
+        (new Filesystem)->copyDirectory($stub, $path);
     }
 
     /**
@@ -53,8 +48,9 @@ class BackendPreset extends LaravelPreset
      */
     public static function updateStyles()
     {
+        $stub = __DIR__.'/stubs/backend/resources/sass';
         $path = resource_path('sass');
-        (new Filesystem)->copyDirectory($this->resources.'sass', $path);
+        (new Filesystem)->copyDirectory($stub, $path);
     }
 
     /**
@@ -63,8 +59,9 @@ class BackendPreset extends LaravelPreset
      */
     public static function updateViews()
     {
+        $stub = __DIR__.'/stubs/backend/resources/views';
         $path = resource_path('views');
-        (new Filesystem)->copyDirectory($this->resources.'views', $path);
+        (new Filesystem)->copyDirectory($stub, $path);
     }
 
     /**
@@ -73,8 +70,9 @@ class BackendPreset extends LaravelPreset
      */
     public static function updateRoutes()
     {
+        $stub = __DIR__.'/stubs/backend/routes';
         $path = base_path('routes');
-        (new Filesystem)->copyDirectory(__DIR__.'/stubs/backend/routes', $path);
+        (new Filesystem)->copyDirectory($stub, $path);
     }
 
 }
