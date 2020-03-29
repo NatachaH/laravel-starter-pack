@@ -15,12 +15,24 @@ class BackendPreset extends Preset
      */
     public static function install()
     {
+        static::updatePublic();
         static::updateScripts();
         static::updateTranslations();
         static::updateStyles();
         static::updateViews();
         static::updateRoutes();
         static::installAuth();
+    }
+
+    /**
+     * Updates the public files (Icon font)
+     * @return void
+     */
+    public static function updatePublic()
+    {
+        $stub = __DIR__.'/stubs/backend/public';
+        $path = public_path();
+        (new Filesystem)->copyDirectory($stub, $path);
     }
 
     /**
