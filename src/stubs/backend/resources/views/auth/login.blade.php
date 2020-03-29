@@ -7,10 +7,22 @@
   <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate>
       @csrf
 
+      {{--
       <div class="input-group mb-3">
           <span class="input-group-text" id="name"><i class="icon icon-user"></i></span>
           <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="{{ __('Name') }}" aria-label="{{ __('Name') }}" aria-describedby="name" required autofocus>
           @error('name')
+              <span class="invalid-feedback" role="alert">
+                  {{ $message }}
+              </span>
+          @enderror
+      </div>
+      --}}
+
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="email"><i class="icon icon-user"></i></span>
+          <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="{{ __('E-Mail Address') }}" aria-label="{{ __('E-Mail Address') }}" aria-describedby="email" required autofocus>
+          @error('email')
               <span class="invalid-feedback" role="alert">
                   {{ $message }}
               </span>
