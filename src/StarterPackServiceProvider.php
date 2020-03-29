@@ -34,11 +34,8 @@ class StarterPackServiceProvider extends ServiceProvider
 
           // Install the Presets
           GlobalPreset::install();
-          /*
-
           FrontendPreset::install();
           BackendPreset::install();
-          */
 
           $command->info('Starter Pack Preset installed !');
 
