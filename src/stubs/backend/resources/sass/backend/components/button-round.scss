@@ -1,0 +1,76 @@
+/*
+|--------------------------------------------------------------------------
+| Backend Button Round Design
+|--------------------------------------------------------------------------
+|
+| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
+*/
+
+@mixin button-round-size($size,$font-size) {
+    width: $size;
+    height: $size;
+    border-radius: $size;
+    line-height: $size;
+    font-size: $font-size
+}
+
+@mixin button-round-variant($color,$bg) {
+    color: $color !important;
+    background: $bg;
+    border-color: $bg;
+    @include button-round-size($btn-round-size,$btn-round-font-size);
+    &:hover {
+        background: darken($bg, 7.5%);
+    }
+}
+
+@mixin button-round-outline-variant($color) {
+  color: $color !important;
+  background: transparent;
+  border-color: $color;
+  @include button-round-size($btn-round-size,$btn-round-font-size);
+  &:hover {
+    color: color-yiq($color) !important;
+    background: $color;
+  }
+}
+
+// Default properties for all btn-round
+[class^="btn-round"], [class*=" btn-round"] {
+
+    padding: 0 !important;
+
+    &.btn-sm {
+        @include button-round-size($btn-round-size * 1.25, $btn-round-font-size * 1.25);
+    }
+
+    &.btn-lg {
+        @include button-round-size($btn-round-size * 0.75, $btn-round-font-size * 0.75);
+    }
+
+}
+
+// Default round button
+.btn-round {
+    @include button-round-variant($btn-round-default-color,$btn-round-default-bg);
+}
+
+// Default round outline button
+.btn-round-outline {
+    @include button-round-outline-variant($btn-round-default-color);
+}
+
+// For each color theme make the button
+@each $color, $value in $theme-colors {
+  .btn-round-#{$color} {
+      @include button-round-variant(color-yiq($value),$value);
+  }
+}
+
+// For each color theme make the button
+@each $color, $value in $theme-colors {
+  .btn-round-outline-#{$color} {
+      @include button-round-outline-variant($value);
+  }
+}
