@@ -6,7 +6,7 @@
 
 // Options
 $enable-caret:                                true !default;
-$enable-rounded:                              false !default;
+$enable-rounded:                              true !default;
 $enable-shadows:                              false !default;
 $enable-gradients:                            false !default;
 $enable-transitions:                          true !default;
@@ -36,13 +36,15 @@ $link-hover-decoration:                   none !default;
 $font-family-base:            'Raleway', sans-serif;
 $headings-font-family:        'Quicksand', sans-serif;
 
-// Button
-$btn-focus-box-shadow: none;
-
 // Inputs & buttons
 $input-btn-focus-box-shadow: none;
-$btn-focus-box-shadow: none;
 $input-focus-border-color: $brand;
+
+// Button
+$btn-focus-box-shadow: none;
+$btn-border-radius:           2rem !default;
+$btn-border-radius-lg:        3rem !default;
+$btn-border-radius-sm:        1rem !default;
 
 // Form
 $custom-file-text: (
