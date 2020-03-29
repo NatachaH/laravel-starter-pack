@@ -18,6 +18,7 @@ class BackendPreset extends Preset
         static::updateStyles();
         static::updateViews();
         static::updateRoutes();
+        static::installAuth();
     }
 
     /**
@@ -73,6 +74,37 @@ class BackendPreset extends Preset
         $stub = __DIR__.'/stubs/backend/routes';
         $path = base_path('routes');
         (new Filesystem)->copyDirectory($stub, $path);
+    }
+
+    /**
+     * Create the Auth controllers files
+     * @return void
+     */
+    public static function installAuth()
+    {
+        // Create the Auth folder
+        if (! is_dir($directory = app_path('Http/Controllers/Auth'))) {
+           mkdir($directory, 0755, true);
+        }
+
+        // Get all Auth controlers files from Laravel & add them in Controller folder
+        $filesystem = new Filesystem;
+        collect($filesystem->allFiles(base_path('vendor/laravel/ui/stubs/Auth')))
+        ->each(function (SplFileInfo $file) use ($filesystem) {
+            $filesystem->copy(
+                $file->getPathname(),
+                app_path('Http/Controllers/Auth/'.Str::replaceLast('.stub', '.php', $file->getFilename()))
+            );
+        });
+
+        // Get all Auth migrations files from Laravel & add them in Migration folder
+        collect($filesystem->allFiles(base_path('vendor/laravel/ui/stubs/migrations')))
+        ->each(function (SplFileInfo $file) use ($filesystem) {
+            $filesystem->copy(
+                $file->getPathname(),
+                database_path('migrations/'.$file->getFilename())
+            );
+        });
     }
 
 }
