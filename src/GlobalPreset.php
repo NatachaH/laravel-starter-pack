@@ -31,13 +31,13 @@ class GlobalPreset extends Preset
     public static function updatePackageArray($packages)
     {
         $laravel = Arr::except($packages, [
-          'lodash',
+          'lodash'
         ]);
 
         $preset = [
-          "bootstrap": "^4.4.1",
-          "jquery": "^3.2",
-          "popper.js": "^1.12"
+          "bootstrap" => "^4.4.1",
+          "jquery"    => "^3.2",
+          "popper.js" => "^1.12"
         ];
 
         return array_merge($laravel,$preset);
