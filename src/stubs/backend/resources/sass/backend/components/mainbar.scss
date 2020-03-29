@@ -28,6 +28,7 @@
         background: none;
         color: $mainbar-color;
         padding: 0 $btn-spacer-x;
+        @include border-radius(0);
         &:hover {
           background: rgba(0,0,0,0.3);
         }
