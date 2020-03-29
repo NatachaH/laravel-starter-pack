@@ -1,0 +1,127 @@
+/*
+|--------------------------------------------------------------------------
+| Backend Mainbar Design
+|--------------------------------------------------------------------------
+|
+| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
+*/
+
+#mainbar {
+    background: $mainbar-bg;
+    color: $mainbar-color;
+    height: $mainbar-height;
+    display: flex;
+    align-items: center;
+
+    // Title of the page
+    > h1 {
+        margin: 0 auto 0 0;
+        padding: 0 $main-spacer-x;
+        white-space: nowrap;
+    }
+
+    // All the button are full height
+    .btn {
+        height: 100%;
+        border: none;
+        background: none;
+        color: $mainbar-color;
+        padding: 0 $btn-spacer-x;
+        &:hover {
+          background: rgba(0,0,0,0.3);
+        }
+    }
+
+    // Dropdown for the mainbar
+    > .dropdown {
+
+        height: 100%;
+
+        // Dropdown button
+        > .dropdown-toggle {
+
+            > i {
+                margin-right: $icon-spacer-x;
+            }
+
+            // Custom carret icon
+            &:after {
+                display: inline-block;
+                border: none;
+                font-family: 'icon-font';
+                content: "\54";
+                line-height: 1;
+                font-size: $font-size-sm;
+                vertical-align: baseline;
+                margin-left: $icon-spacer-x;
+            }
+
+        }
+
+        // When dropdown is open change the carret
+        &.show > .dropdown-toggle:after {
+            content: "\57";
+        }
+
+        // Dropdown menu is under the mainbar and is the min length of the button
+        > .dropdown-menu {
+
+            min-width: 100%;
+            transform: none !important;
+            top: $mainbar-height !important;
+            right: 0!important;
+            left:auto!important;
+            margin: 0;
+            border-top: none;
+
+            .dropdown-header {
+                font-size: $h6-font-size !important;
+            }
+
+          }
+
+    }
+
+    // Account button
+    #accountDropdown {
+        background: rgba(0,0,0,0.2);
+    }
+
+    // The menu button for Phone & Tablet
+    #openSidebarBtn {
+        display:none;
+        font-size: 1.75rem;
+    }
+
+    // Responsive view for Phone & Tablet
+    @include media-breakpoint-down(md) {
+
+        > h1 {
+            padding: 0;
+        }
+
+        .btn {
+            padding: 0 $btn-spacer-x * 0.75;
+        }
+
+        > .dropdown > .dropdown-toggle {
+
+            > i {
+              margin: 0;
+              font-size: 1.5rem;
+            }
+
+            > span, &:after {
+              display: none;
+            }
+
+        }
+
+        #openSidebarBtn {
+            display:inline-block;
+        }
+
+    }
+
+}

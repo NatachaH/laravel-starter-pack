@@ -1,0 +1,102 @@
+/*
+|--------------------------------------------------------------------------
+| Backend - Bootstrap Variables
+|--------------------------------------------------------------------------
+*/
+
+// Options
+$enable-caret:                                true !default;
+$enable-rounded:                              false !default;
+$enable-shadows:                              false !default;
+$enable-gradients:                            false !default;
+$enable-transitions:                          true !default;
+$enable-responsive-font-sizes:                true !default;
+
+// Colors
+$secondary: #B1B1B1;
+$theme-colors: (
+  'brand' : $brand
+);
+
+$yiq-contrasted-threshold:  170 !default;
+
+$border-color:          #F1F1F1;
+$component-active-bg:   $brand !default;
+
+// Body
+$body-bg: #FAFAFA !default;
+
+// Links
+$link-color:                              $brand !default;
+$link-decoration:                         none !default;
+$link-hover-color:                        darken($link-color, 15%) !default;
+$link-hover-decoration:                   none !default;
+
+// Typography
+$font-family-base:            'Raleway', sans-serif;
+$headings-font-family:        'Quicksand', sans-serif;
+
+// Button
+$btn-focus-box-shadow: none;
+
+// Inputs & buttons
+$input-btn-focus-box-shadow: none;
+$btn-focus-box-shadow: none;
+$input-focus-border-color: $brand;
+
+// Form
+$custom-file-text: (
+  en: "Browse",
+  fr: "Parcourir"
+) !default;
+
+// Dropdown
+$dropdown-link-active-color:        $brand;
+$dropdown-link-active-bg:           transparent;
+$dropdown-border-color:             $border-color;
+$dropdown-header-color:             $secondary !default;
+
+// Card
+$card-border-color: $border-color;
+
+/*
+|--------------------------------------------------------------------------
+| Backend - Layout Variables
+|--------------------------------------------------------------------------
+|
+| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
+*/
+
+// Global
+$icon-spacer-x:   0.25rem;
+$btn-spacer-x:    2rem;
+$main-spacer-x:   2rem;
+$main-spacer-y:   2rem;
+
+// Mainbar
+$mainbar-height:  4rem;
+$mainbar-bg:      $brand;
+$mainbar-color:   $white;
+
+// Sidebar Header
+$sidebar-header-height:   $mainbar-height;
+
+// Sidebar Body
+$sidebar-body-padding:    2rem;
+$sidebar-nav-spacer-y:    2rem;
+$sidebar-bg:              $white;
+
+// Sidebar Nav Header
+$sidebar-nav-header-color:        $brand;
+$sidebar-nav-header-hover-color:  darken($sidebar-nav-header-color, 15%);
+$sidebar-nav-header-active-color: darken($sidebar-nav-header-color, 15%);
+
+// Sidebar Nav Links
+$sidebar-nav-link-padding:        0.25rem 0 0 1.9rem;
+$sidebar-nav-link-color:          $secondary;
+$sidebar-nav-link-hover-color:    darken($sidebar-nav-link-color, 15%);
+$sidebar-nav-link-active-color:   $brand;
+
+// Sidebar Footer
+$sidebar-footer-padding: 0.5rem 0 ;

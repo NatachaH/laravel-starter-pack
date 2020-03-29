@@ -1,0 +1,137 @@
+/*
+|--------------------------------------------------------------------------
+| Backend Sidebar Design
+|--------------------------------------------------------------------------
+|
+| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
+*/
+
+#sidebar {
+
+    margin:0;
+    padding:0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    display: flex;
+    flex-direction: column;
+    background-color: $sidebar-bg;
+    border-right: 1px solid $border-color;
+    outline: 0;
+    @include transition(transform 1s ease-in-out);
+
+    // Header of the sidebar
+    > .sidebar-header {
+
+        height: $sidebar-header-height;
+        border-bottom: 1px solid $border-color;
+        display: flex;
+        align-items: center;
+
+        // Backend title
+        > h1 {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        // Close button for Phone & Tablet
+        #closeSidebarBtn {
+            display:none;
+            font-size: 1.75rem;
+            height: 100%;
+            padding: 0 $btn-spacer-x * 0.75;
+        }
+
+    }
+
+    // Body of the sidebar
+    > .sidebar-body {
+
+        overflow-y: scroll;
+        padding: $sidebar-body-padding;
+
+      // Block of links
+      > nav {
+
+          margin-bottom: $sidebar-nav-spacer-y;
+
+          // Header/Title of the block
+          > .nav-header {
+
+              color: $sidebar-nav-header-color;
+
+              > i, > .nav-header-link > i{
+                  margin-right: $icon-spacer-x;
+              }
+
+              > .nav-header-link {
+                  &:hover {
+                      color: $sidebar-nav-header-hover-color;
+                  }
+                  &.active {
+                      color: $sidebar-nav-header-active-color;
+                  }
+              }
+
+          }
+
+          // Links
+          > .nav-link {
+              color: $sidebar-nav-link-color;
+              padding: $sidebar-nav-link-padding;
+              &:hover {
+                  color: $sidebar-nav-link-hover-color;
+              }
+              &.active {
+                  color: $sidebar-nav-link-active-color;
+              }
+          }
+
+      }
+
+    }
+
+    // Footer of the sidebar
+    > .sidebar-footer {
+
+        font-size: $font-size-sm;
+        font-style: italic;
+        text-align: center;
+        color: $secondary;
+        padding: $sidebar-footer-padding;
+        border-top: 1px solid $border-color;
+
+    }
+
+
+    // Responsive view for Phone & Tablet
+    @include media-breakpoint-down(md) {
+
+      left: -100%;
+
+      &.sidebar-open {
+          transform: translateX(100%);
+      }
+
+      > .sidebar-header {
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          > h1 {
+              padding-left: $main-spacer-x;
+              text-align: left;
+          }
+
+          #closeSidebarBtn {
+              display:block;
+          }
+
+      }
+
+    }
+}

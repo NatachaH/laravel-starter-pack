@@ -1,0 +1,26 @@
+{
+    "name": "nh/starter-pack",
+    "description": "Starter pack presets (Frontend/Backend)",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+      "laravel/ui": "^2.0"
+    },
+    "author": {
+        "name": "Natacha Herth",
+        "email": "info@natachaherth.ch"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nh\\StarterPack\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nh\\StarterPack\\StarterPackServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}

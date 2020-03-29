@@ -1,0 +1,26 @@
+/*
+|--------------------------------------------------------------------------
+| Backend - Design
+|--------------------------------------------------------------------------
+|
+| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
+*/
+
+// Variables
+@import '../global';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700|Raleway:300,400,700&display=swap');
+
+// Bootstrap
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+
+// Icons
+@import 'icon-font';
+
+// Components
+@import 'components/layout';
+@import 'components/mainbar';
+@import 'components/sidebar';
