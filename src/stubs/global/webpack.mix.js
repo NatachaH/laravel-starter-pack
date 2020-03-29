@@ -12,10 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-   .js('resources/js/backend.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
-   .sass('resources/sass/backend.scss', 'public/css')
-   .sass('resources/sass/auth.scss', 'public/css');
+  .js('resources/js/backend/backend.js', 'public/js')
+  .sass('resources/sass/app.scss', 'public/css')
+  .sass('resources/sass/backend/backend.scss', 'public/css')
+  .sass('resources/sass/auth.scss', 'public/css');
 
 if (mix.inProduction()) {
    mix.version();
