@@ -24,7 +24,8 @@ $border-color:          #F1F1F1;
 $component-active-bg:   $brand;
 
 // Body
-$body-bg: #FAFAFA ;
+$body-bg: #FAFAFA;
+$body-color: #6D6D6D;
 
 // Links
 $link-color:                              $brand;
@@ -35,6 +36,7 @@ $link-hover-decoration:                   none;
 // Typography
 $font-family-base:            'Raleway', sans-serif;
 $headings-font-family:        'Quicksand', sans-serif;
+$headings-color:              $brand;
 
 // Inputs & buttons
 $input-btn-focus-box-shadow:  none;
