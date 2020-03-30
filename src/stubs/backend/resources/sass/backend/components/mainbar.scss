@@ -99,7 +99,7 @@
     @include media-breakpoint-down(md) {
 
         > h1 {
-            padding: 0;
+            padding: 0 $main-spacer-x * 0.75;
         }
 
         .btn {
@@ -122,6 +122,15 @@
         #openSidebarBtn {
             display:inline-block;
         }
+
+    }
+
+    // Responsive view for Phone
+    @include media-breakpoint-down(sm) {
+
+      > h1 {
+          padding: 0;
+      }
 
     }
 
