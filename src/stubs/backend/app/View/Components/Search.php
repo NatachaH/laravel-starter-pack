@@ -21,6 +21,15 @@ class Search extends Component
     public $isAdvanced;
 
     /**
+     * Check if the search have some datas.
+     *
+     * @var boolean
+     */
+    public function hasSearchData(){
+      return false;
+    }
+
+    /**
      * The id of the collapse bloc (by default: collapseSearch).
      *
      * @var string

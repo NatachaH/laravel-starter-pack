@@ -8,7 +8,9 @@
         <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#{{ $collapseId }}" aria-expanded="false" aria-controls="{{ $collapseId }}"><i class="icon icon-toggles"></i></button>
       @endif
       <button class="btn btn-outline-brand" type="button"><i class="icon icon-search"></i> @lang('backend.search')</button>
-      <button class="btn btn-outline-secondary" type="button"><i class="icon icon-cross"></i> @lang('backend.reset')</button>
+      @if($hasSearchData)
+        <button class="btn btn-outline-secondary" type="button"><i class="icon icon-cross"></i> @lang('backend.reset')</button>
+      @endif
     </div>
 
     @if($isAdvanced)
