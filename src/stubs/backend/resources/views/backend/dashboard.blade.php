@@ -15,12 +15,12 @@
 
   <hr/>
 
-  <a class="btn btn-roun btn-sm"><i class="icon icon-trash"></i></a>
-  <a class="btn btn-roun "><i class="icon icon-trash"></i></a>
-  <a class="btn btn-roun btn-lg"><i class="icon icon-trash"></i></a>
-  <a class="btn btn-roun disabled"><i class="icon icon-trash"></i></a>
-  <a class="btn btn-roun-primary"><i class="icon icon-trash"></i></a>
-  <a class="btn btn-roun-outline-primary"><i class="icon icon-trash"></i></a>
+  <a class="btn btn-round btn-sm"><i class="icon icon-trash"></i></a>
+  <a class="btn btn-round "><i class="icon icon-trash"></i></a>
+  <a class="btn btn-round btn-lg"><i class="icon icon-trash"></i></a>
+  <a class="btn btn-round disabled"><i class="icon icon-trash"></i></a>
+  <a class="btn btn-round-primary"><i class="icon icon-trash"></i></a>
+  <a class="btn btn-round-outline-primary"><i class="icon icon-trash"></i></a>
 
   <hr/>
 
