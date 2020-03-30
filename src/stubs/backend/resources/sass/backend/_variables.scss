@@ -5,12 +5,12 @@
 */
 
 // Options
-$enable-caret:                                true !default;
-$enable-rounded:                              true !default;
-$enable-shadows:                              false !default;
-$enable-gradients:                            false !default;
-$enable-transitions:                          true !default;
-$enable-responsive-font-sizes:                true !default;
+$enable-caret:                                true;
+$enable-rounded:                              true;
+$enable-shadows:                              false;
+$enable-gradients:                            false;
+$enable-transitions:                          true;
+$enable-responsive-font-sizes:                true;
 
 // Colors
 $secondary: #B1B1B1;
@@ -18,45 +18,46 @@ $theme-colors: (
   'brand' : $brand
 );
 
-$yiq-contrasted-threshold:  170 !default;
+$yiq-contrasted-threshold:  170;
 
 $border-color:          #F1F1F1;
-$component-active-bg:   $brand !default;
+$component-active-bg:   $brand;
 
 // Body
-$body-bg: #FAFAFA !default;
+$body-bg: #FAFAFA ;
 
 // Links
-$link-color:                              $brand !default;
-$link-decoration:                         none !default;
-$link-hover-color:                        darken($link-color, 15%) !default;
-$link-hover-decoration:                   none !default;
+$link-color:                              $brand;
+$link-decoration:                         none;
+$link-hover-color:                        darken($link-color, 15%) ;
+$link-hover-decoration:                   none;
 
 // Typography
 $font-family-base:            'Raleway', sans-serif;
 $headings-font-family:        'Quicksand', sans-serif;
 
 // Inputs & buttons
-$input-btn-focus-box-shadow: none;
-$input-focus-border-color: $brand;
+$input-btn-focus-box-shadow:  none;
+$input-focus-border-color:    $brand;
 
 // Button
-$btn-focus-box-shadow: none;
-$btn-border-radius:           2rem !default;
-$btn-border-radius-lg:        3rem !default;
-$btn-border-radius-sm:        1rem !default;
+$btn-focus-width:             0;
+$btn-focus-box-shadow:        none;
+$btn-border-radius:           2rem ;
+$btn-border-radius-lg:        3rem ;
+$btn-border-radius-sm:        1rem ;
 
 // Form
 $custom-file-text: (
   en: "Browse",
   fr: "Parcourir"
-) !default;
+);
 
 // Dropdown
 $dropdown-link-active-color:        $brand;
 $dropdown-link-active-bg:           transparent;
 $dropdown-border-color:             $border-color;
-$dropdown-header-color:             $secondary !default;
+$dropdown-header-color:             $secondary;
 
 // Card
 $card-border-color: $border-color;
@@ -101,7 +102,7 @@ $sidebar-nav-link-hover-color:    darken($sidebar-nav-link-color, 15%);
 $sidebar-nav-link-active-color:   $brand;
 
 // Sidebar Footer
-$sidebar-footer-padding: 0.5rem 0 ;
+$sidebar-footer-padding: 0.5rem 0;
 
 // Button round
 $btn-round-size: 30px;
