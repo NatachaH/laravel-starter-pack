@@ -61,6 +61,7 @@ body {
           background: $white;
           border-right: none;
           color: $secondary;
+          @include border-right-radius(0);
       }
 
       .invalid-feedback {
