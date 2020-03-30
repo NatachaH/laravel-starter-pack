@@ -52,7 +52,7 @@
                                 <td class="td-fit">{{ $item->id }}</td>
                             @endif
 
-                            @includeFirst([$view.'.listing.detail', 'backend.components.listing-detail'])
+                            @includeFirst([$viewFolder.'.listing.detail', 'backend.components.listing-detail'])
 
                             @if($showDates)
                                 <td class="td-fit">{{ $item->created_at }}</td>

@@ -65,7 +65,7 @@ class Listing extends Component
      *
      * @var string
      */
-    public $view;
+    public $viewFolder;
 
     /**
      * Check if the items have pagination.
@@ -90,7 +90,7 @@ class Listing extends Component
         $this->items      = $items;
         $this->showId     = $showId;
         $this->showDates  = $showDates;
-        $this->view       = strtolower($model);
+        $this->viewFolder       = strtolower($model);
     }
 
     /**
