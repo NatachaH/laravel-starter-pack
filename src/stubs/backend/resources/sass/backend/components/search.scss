@@ -1,0 +1,35 @@
+/*
+|--------------------------------------------------------------------------
+| Backend Search Design
+|--------------------------------------------------------------------------
+|
+| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
+*/
+
+.search-form {
+
+    background: $white;
+
+    > .input-group {
+
+        border:1px solid $border-color;
+        border-bottom:2px solid $brand;
+
+        > input, > .btn {
+            @include border-radius(0);
+            border-color: transparent;
+        }
+
+        > .btn > i {
+            line-height: 1;
+        }
+
+    }
+
+    > .collapse-search > .collapse-search-body {
+        border: 1px solid $border-color;
+        padding: 1rem;
+    }
+
+}

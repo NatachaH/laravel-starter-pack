@@ -20,6 +20,10 @@ return [
       'dashboard' => 'Dashboard',
       'settings' => 'Paramètres',
       'contents' => 'Contenus'
-    ]
+    ],
+
+    // Actions
+    'search' => 'Search',
+    'reset' => 'Reset'
 
 ];

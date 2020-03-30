@@ -3,6 +3,7 @@ namespace Nh\StarterPack;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiCommand;
+use Illuminate\Support\Facades\Blade;
 
 use Nh\StarterPack\BackendPreset;
 use Nh\StarterPack\FrontendPreset;
@@ -37,6 +38,10 @@ class StarterPackServiceProvider extends ServiceProvider
           FrontendPreset::install();
           BackendPreset::install();
 
+          // Load the blades
+          Blade::component('search', \App\View\Components\Search::class);
+
+          // Return success
           $command->info('Starter Pack Preset installed !');
 
       });
