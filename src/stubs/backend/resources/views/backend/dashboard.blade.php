@@ -24,4 +24,7 @@
 
   <hr/>
 
+  <x-listing title="User list" model="App\User" route="backend.users" header="Name|Description" :items="$users" show-id />
+
+
 @endsection

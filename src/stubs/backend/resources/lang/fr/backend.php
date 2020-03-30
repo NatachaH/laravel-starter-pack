@@ -19,11 +19,28 @@ return [
     'nav' => [
       'dashboard' => 'Dashboard',
       'settings' => 'Paramètres',
-      'contents' => 'Contenus'
+      'contents' => 'Contenus',
     ],
 
+    // Dates
+    'created-at' => 'Créé le',
+    'updated-at' => 'Modifié le',
+    'deleted-at' => 'Supprimé le',
+
+    // List
+    'no-result' => 'Il n\'y a aucun résultat',
+    'total' => 'Total',
+
     // Actions
-    'search' => 'Search',
-    'reset' => 'Reset'
+    'action'        => 'Action|Actions',
+    'search'        => 'Rechercher',
+    'reset'         => 'Réinitialiser',
+    'export'        => 'Exporter',
+    'add'           => 'Ajouter',
+    'preview'       => 'Voir',
+    'edit'          => 'Modifier',
+    'delete'        => 'Supprimer',
+    'restore'       => 'Restorer',
+    'force-delete'  => 'Forcer la suppression',
 
 ];

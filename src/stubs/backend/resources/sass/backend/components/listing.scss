@@ -1,0 +1,51 @@
+/*
+|--------------------------------------------------------------------------
+| Backend List Bloc Design
+|--------------------------------------------------------------------------
+|
+| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
+*/
+
+.listing {
+
+    .listing-body {
+
+        border:1px solid $border-color;
+        background: $card-bg;
+        margin: 0.5rem 0;
+
+        > .table {
+
+            margin: 0;
+
+            th {
+                border-top: none;
+                text-transform: uppercase;
+                color: $secondary;
+            }
+
+            td {
+                vertical-align: middle;
+                &.td-fit {
+                    width: 1%;
+                    white-space: nowrap;
+                }
+            }
+
+        }
+
+    }
+
+    .listing-footer {
+
+        .listing-total {
+            color: $secondary;
+            font-size: $font-size-sm;
+            font-family: $headings-font-family;
+            font-style: italic;
+        }
+
+    }
+
+}

@@ -19,12 +19,28 @@ return [
     'nav' => [
       'dashboard' => 'Dashboard',
       'settings' => 'Settings',
-      'contents' => 'Contents'
+      'contents' => 'Contents',
     ],
 
-    // Actions
-    'search' => 'Search',
-    'reset' => 'Reset'
+    // Dates
+    'created-at' => 'Created at',
+    'updated-at' => 'Updated at',
+    'deleted-at' => 'Deleted at',
 
+    // List
+    'no-result' => 'There is no result',
+    'total' => 'Total',
+
+    // Actions
+    'action'        => 'Action|Actions',
+    'search'        => 'Search',
+    'reset'         => 'Reset',
+    'export'        => 'Export',
+    'add'           => 'Add',
+    'preview'       => 'Preview',
+    'edit'          => 'Edit',
+    'delete'        => 'Delete',
+    'restore'       => 'Restore',
+    'force-delete'  => 'Force delete',
 
 ];
