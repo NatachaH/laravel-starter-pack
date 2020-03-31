@@ -62,23 +62,23 @@
                             <td class="td-fit">
 
                                 @if(Route::has($route.'.show') && Auth::user()->can('view', $item))
-                                    <a href="{{ route($route.'.show', $item->id) }}" class="btn btn-default btn-sm rounded-circle"><i class="icon icon-preview" alt="@lang('backend.preview')"></i></a>
+                                    <a href="{{ route($route.'.show', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.preview')"><i class="icon icon-preview"></i></a>
                                 @endif
 
                                 @if(Route::has($route.'.edit') && Auth::user()->can('update', $item))
-                                    <a href="{{ route($route.'.edit', $item->id) }}" class="btn btn-default btn-sm rounded-circle"><i class="icon icon-pencil" alt="@lang('backend.edit')"></i></a>
+                                    <a href="{{ route($route.'.edit', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.edit')"><i class="icon icon-pencil"></i></a>
                                 @endif
 
                                 @if(Route::has($route.'.destroy') && Auth::user()->can('delete', $item))
-                                    <a href="{{ route($route.'.destroy', $item->id) }}" class="btn btn-default btn-sm rounded-circle"><i class="icon icon-trash" alt="@lang('backend.delete')"></i></a>
+                                    <a href="{{ route($route.'.destroy', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.delete')"><i class="icon icon-trash"></i></a>
                                 @endif
 
                                 @if(Route::has($route.'.restore') && Auth::user()->can('restore', $item))
-                                    <a href="{{ route($route.'.restore', $item->id) }}" class="btn btn-default btn-sm rounded-circle"><i class="icon icon-time-reverse" alt="@lang('backend.restore')"></i></a>
+                                    <a href="{{ route($route.'.restore', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.restore')"><i class="icon icon-time-reverse"></i></a>
                                 @endif
 
                                 @if(Route::has($route.'.forceDelete') && Auth::user()->can('forceDelete', $item))
-                                    <a href="{{ route($route.'.forceDelete', $item->id) }}" class="btn btn-default btn-sm rounded-circle"><i class="icon icon-trash" alt="@lang('backend.force-delete')"></i></a>
+                                    <a href="{{ route($route.'.forceDelete', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.force-delete')"><i class="icon icon-trash" alt="@lang('backend.force-delete')"></i></a>
                                 @endif
 
                             </td>
