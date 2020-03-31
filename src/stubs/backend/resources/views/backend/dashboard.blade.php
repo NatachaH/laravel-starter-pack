@@ -15,12 +15,13 @@
 
   <hr/>
 
-  <a class="btn btn-round btn-sm"><i class="icon icon-trash"></i></a>
-  <a class="btn btn-round "><i class="icon icon-trash"></i></a>
-  <a class="btn btn-round btn-lg"><i class="icon icon-trash"></i></a>
-  <a class="btn btn-round disabled"><i class="icon icon-trash"></i></a>
-  <a class="btn btn-round-primary"><i class="icon icon-trash"></i></a>
-  <a class="btn btn-round-outline-primary"><i class="icon icon-trash"></i></a>
+  <a href="#" class="btn btn-default btn-sm rounded-circle"/><i class="icon icon-trash"></i></a>
+  <a href="#" class="btn btn-default  rounded-circle"/><i class="icon icon-trash"></i></a>
+  <a href="#" class="btn btn-default  btn-lg rounded-circle"/><i class="icon icon-trash"></i></a>
+
+  <a href="#" class="btn btn-default rounded-circle disabled"/><i class="icon icon-trash"></i></a>
+  <a href="#" class="btn btn-primary rounded-circle"/><i class="icon icon-trash"></i></a>
+  <a href="#" class="btn btn-outline-primary rounded-circle"/><i class="icon icon-trash"></i></a>
 
   <hr/>
 
