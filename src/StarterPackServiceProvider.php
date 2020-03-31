@@ -41,6 +41,7 @@ class StarterPackServiceProvider extends ServiceProvider
           // Load the blades
           Blade::component('search', \App\View\Components\Search::class);
           Blade::component('listing', \App\View\Components\Listing::class);
+          Blade::component('statistic', \App\View\Components\Statistic::class);
 
           // Return success
           $command->info('Starter Pack Preset installed !');

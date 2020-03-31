@@ -27,5 +27,6 @@
 
   <x-listing title="User list" model="User" route="backend.users" header="Name|Description" :items="$users" show-id />
 
+  <x-statistic title="My statistic" value="57" color="primary" icon="icon-graph-line" />
 
 @endsection

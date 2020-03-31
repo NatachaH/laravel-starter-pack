@@ -1,0 +1,33 @@
+/*
+|--------------------------------------------------------------------------
+| Backend Statistic Design
+|--------------------------------------------------------------------------
+|
+| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
+*/
+
+.statistic {
+
+  > .statistic-body {
+
+      border-bottom: 2px solid;
+
+      .icon {
+          font-size: 3rem;
+          line-height: 1;
+      }
+
+      p {
+          margin:0;
+          font-family: $headings-font-family;
+          &.statistic-value {
+              font-size: 1.75rem;
+              line-height: 1.2;
+              font-weight: $font-weight-bold;
+          }
+      }
+    
+  }
+
+}
