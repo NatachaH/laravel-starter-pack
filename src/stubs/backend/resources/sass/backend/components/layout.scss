@@ -23,5 +23,19 @@ body {
 }
 
 .btn-default {
-  color: $body-color !important;
+  color: $btn-default-color !important;
+}
+
+.pagination > .page-item {
+  > .page-link {
+    @include border-radius(50%);
+    margin: 0 2px;
+  }
+
+  &:first-child > .page-link {
+    margin-left:0;
+  }
+  &:last-child > .page-link {
+    margin-right:0;
+  }
 }

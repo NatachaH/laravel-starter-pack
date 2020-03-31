@@ -14,14 +14,16 @@ $enable-responsive-font-sizes:                true;
 
 // Colors
 $secondary: #B1B1B1;
+$default: $default;
+
 $theme-colors: (
   'brand' : $brand,
-  'default' : #F1F1F1
+  'default' : $default
 );
 
 $yiq-contrasted-threshold:  170;
 
-$border-color:          #F1F1F1;
+$border-color:          $default;
 $component-active-bg:   $brand;
 
 // Body
@@ -44,6 +46,8 @@ $input-btn-focus-box-shadow:  none;
 $input-focus-border-color:    $brand;
 
 // Button
+$btn-default-color:           $body-color; // Not for Bootstrap
+$btn-default-bg:              $border-color; // Not for Bootstrap
 $btn-focus-width:             0;
 $btn-focus-box-shadow:        none;
 
@@ -61,6 +65,16 @@ $dropdown-header-color:             $secondary;
 
 // Card
 $card-border-color: $border-color;
+
+// Pagination
+$pagination-line-height:            1.2;
+$pagination-color:                  $btn-default-color;
+$pagination-bg:                     $btn-default-bg;
+$pagination-border-width:           0;
+$pagination-hover-color:            $btn-default-color;
+$pagination-hover-bg:               darken($btn-default-bg, 15%);
+$pagination-active-color:           $component-active-color;
+$pagination-active-bg:              $component-active-bg;
 
 /*
 |--------------------------------------------------------------------------
