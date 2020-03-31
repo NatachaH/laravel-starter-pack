@@ -1,0 +1,31 @@
+/*
+|--------------------------------------------------------------------------
+| Backend Form Design
+|--------------------------------------------------------------------------
+|
+| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
+*/
+
+form {
+
+  // Fix for Bootstrap V5
+  .input-group > .input-group-text {
+
+      &:first-child {
+          border-right: none;
+          @include border-right-radius(0);
+      }
+
+      &:last-child {
+          border-left: none;
+          @include border-left-radius(0);
+      }
+
+  }
+
+  .invalid-feedback {
+    text-align: left;
+  }
+
+}

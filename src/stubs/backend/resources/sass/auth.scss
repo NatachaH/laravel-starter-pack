@@ -17,6 +17,9 @@
 // Icons
 @import 'backend/icon-font';
 
+// Components
+@import 'backend/components/form';
+
 // Design
 html, body {
   height: 100%;
@@ -49,25 +52,6 @@ body {
       color: $secondary;
       font-size: 1.5rem;
       padding: 0.5rem 0;
-    }
-
-  }
-
-  > .card-body {
-
-    form {
-
-      .input-group > .input-group-text {
-          background: $white;
-          border-right: none;
-          color: $secondary;
-          @include border-right-radius(0);
-      }
-
-      .invalid-feedback {
-        text-align: left;
-      }
-
     }
 
   }
