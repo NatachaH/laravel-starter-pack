@@ -31,7 +31,7 @@
 
       <div class="input-group mb-3">
           <span class="input-group-text" id="password"><i class="icon icon-key"></i></span>
-          <input type="text" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="{{ __('Password') }}" aria-label="{{ __('Password') }}" aria-describedby="password" required>
+          <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="{{ __('Password') }}" aria-label="{{ __('Password') }}" aria-describedby="password" required>
           @error('password')
               <span class="invalid-feedback" role="alert">
                   {{ $message }}
