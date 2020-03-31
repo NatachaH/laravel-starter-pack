@@ -70,14 +70,14 @@ $card-border-radius:  0;
 $card-border-color:   $border-color;
 
 // Pagination
-$pagination-line-height:            1.2;
 $pagination-color:                  $btn-default-color;
 $pagination-bg:                     $btn-default-bg;
-$pagination-border-width:           0;
 $pagination-hover-color:            $btn-default-color;
 $pagination-hover-bg:               darken($btn-default-bg, 15%);
 $pagination-active-color:           $component-active-color;
 $pagination-active-bg:              $component-active-bg;
+$pagination-disabled-color:         rgba($btn-default-color,0.25);
+$pagination-disabled-bg:            $btn-default-bg;
 
 /*
 |--------------------------------------------------------------------------
