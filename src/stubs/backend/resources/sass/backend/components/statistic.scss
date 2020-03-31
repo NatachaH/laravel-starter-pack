@@ -27,11 +27,12 @@
           }
 
           &.statistic-value {
+              margin: 0;
               font-size: 1.75rem;
               line-height: 1.2;
               font-weight: $font-weight-bold;
           }
-          
+
       }
 
   }
