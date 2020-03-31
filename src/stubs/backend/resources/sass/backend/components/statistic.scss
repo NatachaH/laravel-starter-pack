@@ -31,6 +31,9 @@
               font-size: 1.75rem;
               line-height: 1.2;
               font-weight: $font-weight-bold;
+              > .statistic-unit {
+                font-size: 50%;
+              }
           }
 
       }

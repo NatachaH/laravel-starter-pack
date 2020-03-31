@@ -21,6 +21,13 @@ class Statistic extends Component
     public $value;
 
     /**
+     * The unit of the value of the statistic.
+     *
+     * @var string
+     */
+    public $unit;
+
+    /**
      * The icon of the statistic.
      *
      * @var string
@@ -39,12 +46,13 @@ class Statistic extends Component
      *
      * @return void
      */
-    public function __construct($title, $value, $icon, $color)
+    public function __construct($title, $value, $unit = '', $icon, $color = 'primary')
     {
-        $this->title = $title;
-        $this->value = $value;
-        $this->icon = $icon;
-        $this->color = $color;
+        $this->title  = $title;
+        $this->value  = $value;
+        $this->unit   = $unit;
+        $this->icon   = $icon;
+        $this->color  = $color;
     }
 
     /**
