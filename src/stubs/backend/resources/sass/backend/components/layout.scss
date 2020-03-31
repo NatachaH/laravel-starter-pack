@@ -7,21 +7,26 @@
 |
 */
 
-html {
+html, body {
     height: 100%;
 }
 
-body {
-    height: 100%;
-    main {
-      padding: 0 !important;
-      margin-left: auto;
-      > .main-body {
+main {
+    padding: 0 !important;
+    margin-left: auto;
+    > .main-body {
         padding: $main-spacer-y $main-spacer-x;
-      }
     }
 }
 
 .btn-default {
-  color: $btn-default-color !important;
+    color: $btn-default-color !important;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.modal .modal-header {
+  align-items: center;
 }
