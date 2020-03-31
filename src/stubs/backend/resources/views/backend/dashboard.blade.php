@@ -25,8 +25,23 @@
 
   <hr/>
 
-  <x-listing title="User list" model="User" route="backend.users" header="Name|Description" :items="$users" show-id />
+  <x-listing title="List of users" model="User" route="backend.users" header="Name|Description" :items="$users" show-id />
 
-  <x-statistic title="My statistic" value="57" color="primary" icon="icon-graph-line" />
+  <hr/>
+
+  <div class="row">
+    <div class="col">
+      <x-statistic title="My statistic" value="57'065" unit="CHF" color="brand" icon="icon-graph-line" />
+    </div>
+    <div class="col">
+      <x-statistic title="My statistic" value="211" color="primary" icon="icon-lightbulb" />
+    </div>
+    <div class="col">
+      <x-statistic title="My statistic" value="57" unit="piece" color="success" icon="icon-graph-pie" />
+    </div>
+    <div class="col">
+      <x-statistic title="My statistic" value="126" color="danger" icon="icon-hourglass" />
+    </div>
+  </div>
 
 @endsection
