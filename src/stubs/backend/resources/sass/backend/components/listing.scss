@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| Backend List Bloc Design
+| Backend Listing Bloc Design
 |--------------------------------------------------------------------------
 |
 | Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
@@ -9,11 +9,17 @@
 
 .listing {
 
+    .listing-header {
+      > h2 {
+        margin:0;
+      }
+    }
+
     .listing-body {
 
         border:1px solid $border-color;
         background: $card-bg;
-        margin: 0.5rem 0;
+        margin: 1rem 0;
 
         > .table {
 
