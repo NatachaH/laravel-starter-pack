@@ -21,7 +21,7 @@
 
       <div class="input-group mb-3">
           <span class="input-group-text" id="email"><i class="icon icon-user"></i></span>
-          <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="{{ __('E-Mail Address') }}" aria-label="{{ __('E-Mail Address') }}" aria-describedby="email" required autofocus>
+          <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="{{ __('E-Mail Address') }}" aria-label="{{ __('E-Mail Address') }}" aria-describedby="email" required autofocus>
           @error('email')
               <span class="invalid-feedback" role="alert">
                   {{ $message }}
