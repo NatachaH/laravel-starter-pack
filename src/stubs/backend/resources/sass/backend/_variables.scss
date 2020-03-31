@@ -13,8 +13,9 @@ $enable-transitions:                          true;
 $enable-responsive-font-sizes:                true;
 
 // Colors
+$white:     #FFFFFF;
 $secondary: #B1B1B1;
-$default: $default;
+$default:   #F1F1F1;
 
 $theme-colors: (
   'brand' : $brand,
@@ -23,8 +24,9 @@ $theme-colors: (
 
 $yiq-contrasted-threshold:  170;
 
-$border-color:          $default;
-$component-active-bg:   $brand;
+$border-color:            $default;
+$component-active-color:  $white;
+$component-active-bg:     $brand;
 
 // Body
 $body-bg: #FAFAFA;
@@ -94,7 +96,7 @@ $main-spacer-y:   2rem;
 // Mainbar
 $mainbar-height:  4rem;
 $mainbar-bg:      $brand;
-$mainbar-color:   #fff;
+$mainbar-color:   $white;
 
 // Sidebar Header
 $sidebar-header-height:   $mainbar-height;
@@ -102,7 +104,7 @@ $sidebar-header-height:   $mainbar-height;
 // Sidebar Body
 $sidebar-body-padding:    2rem;
 $sidebar-nav-spacer-y:    2rem;
-$sidebar-bg:              #fff;
+$sidebar-bg:              $white;
 
 // Sidebar Nav Header
 $sidebar-nav-header-color:        $brand;
