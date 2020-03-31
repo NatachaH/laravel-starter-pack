@@ -21,14 +21,17 @@
       p {
 
           font-family: $headings-font-family;
+
           &.statistic-title {
-            margin:0.25rem 0;
+              margin:0.25rem 0;
           }
+
           &.statistic-value {
               font-size: 1.75rem;
               line-height: 1.2;
               font-weight: $font-weight-bold;
           }
+          
       }
 
   }
