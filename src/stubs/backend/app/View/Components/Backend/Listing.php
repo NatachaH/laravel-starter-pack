@@ -91,7 +91,7 @@ class Listing extends Component
         $this->items      = $items;
         $this->showId     = $showId;
         $this->showDates  = $showDates;
-        $this->viewFolder = Str::plural(Str::lower($model));
+        $this->viewFolder = 'backend.'.Str::plural(Str::lower($model));
     }
 
     /**
