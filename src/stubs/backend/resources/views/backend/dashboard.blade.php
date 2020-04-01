@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', 'Dashboard avec un nom super long')
+@section('title', __('backend.dashboard'))
 
 @section('content')
 

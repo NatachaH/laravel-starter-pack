@@ -6,7 +6,7 @@
 
 <nav class="nav flex-column">
     <h5 class="nav-header"><i class="icon-gear"></i> @lang('backend.nav.settings')</h5>
-    <a class="nav-link {{ Route::is('backend.users') ? 'active' : '' }}" href="{{ route('backend.users.index') }}">Utilisateurs</a>
+    <a class="nav-link {{ Route::is('backend.users') ? 'active' : '' }}" href="{{ route('backend.users.index') }}">@choice('backend.user',2)</a>
 </nav>
 
 <nav class="nav flex-column">

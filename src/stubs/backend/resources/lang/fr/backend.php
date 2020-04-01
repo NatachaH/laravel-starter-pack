@@ -22,6 +22,8 @@ return [
       'contents' => 'Contenus',
     ],
 
+    'user' => 'Utilisateur|Utilisateurs',
+
     // Dates
     'created-at' => 'Créé le',
     'updated-at' => 'Modifié le',
