@@ -37,6 +37,7 @@ class StarterPackServiceProvider extends ServiceProvider
           GlobalPreset::install();
           FrontendPreset::install();
           BackendPreset::install();
+          UsersPreset::install();
 
           // Load the blades
           Blade::component('search', \App\View\Components\Search::class);
