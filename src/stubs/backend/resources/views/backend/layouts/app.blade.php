@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} - Backend - @yield('title')</title>
+    <title>{{ config('app.name') }} - Backend - @yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ mix('js/backend.js') }}" defer></script>
