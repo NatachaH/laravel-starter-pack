@@ -13,43 +13,20 @@ class FrontendPreset extends Preset
      */
     public static function install()
     {
-        static::updateScripts();
-        static::updateStyles();
-        static::updateViews();
+        static::updateResources();
         static::updateRoutes();
     }
 
     /**
-     * Updates the scripts files
+     * Updates the resources files
      * @return void
      */
-    public static function updateScripts()
+    public static function updateResources()
     {
-        $stub = __DIR__.'/stubs/frontend/resources/js';
-        $path = resource_path('js');
-        (new Filesystem)->copyDirectory($stub, $path);
-    }
-
-    /**
-     * Updates the style (sass) files
-     * @return void
-     */
-    public static function updateStyles()
-    {
-        $stub = __DIR__.'/stubs/frontend/resources/sass';
-        $path = resource_path('sass');
-        (new Filesystem)->copyDirectory($stub, $path);
-    }
-
-    /**
-     * Updates the views files
-     * @return void
-     */
-    public static function updateViews()
-    {
-        $stub = __DIR__.'/stubs/frontend/resources/views';
-        $path = resource_path('views');
-        (new Filesystem)->copyDirectory($stub, $path);
+        $stub = __DIR__.'/stubs/frontend/resources/';
+        (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
+        (new Filesystem)->copyDirectory($stub.'sass', resource_path('sass'));
+        (new Filesystem)->copyDirectory($stub.'views', resource_path('views'));
     }
 
     /**

@@ -14,13 +14,11 @@ class GlobalPreset extends Preset
      */
     public static function install()
     {
+
         static::updatePackages();
-        static::cleanResources();
-        static::updateWebpack();
         static::updateProviders();
-        static::updateScripts();
-        static::updateTranslations();
-        static::updateStyles();
+        static::updateResources();
+        static::updateWebpack();
     }
 
     /**
@@ -44,27 +42,6 @@ class GlobalPreset extends Preset
     }
 
     /**
-     * Clean the resources folders
-     * @return void
-     */
-    public static function cleanResources()
-    {
-      (new Filesystem)->cleanDirectory(resource_path('js'));
-      (new Filesystem)->cleanDirectory(resource_path('sass'));
-      (new Filesystem)->cleanDirectory(resource_path('views'));
-    }
-
-    /**
-     * Updates the webpack file
-     * @return void
-     */
-    public static function updateWebpack()
-    {
-        copy(__DIR__.'/stubs/global/webpack.mix.js', base_path('webpack.mix.js'));
-    }
-
-
-    /**
      * Updates the providers files
      * @return void
      */
@@ -76,36 +53,29 @@ class GlobalPreset extends Preset
     }
 
     /**
-     * Updates the scripts files
+     * Update the resources folders
      * @return void
      */
-    public static function updateScripts()
+    public static function updateResources()
     {
-        $stub = __DIR__.'/stubs/global/resources/js';
-        $path = resource_path('js');
-        (new Filesystem)->copyDirectory($stub, $path);
+        (new Filesystem)->cleanDirectory(resource_path('js'));
+        (new Filesystem)->cleanDirectory(resource_path('sass'));
+        (new Filesystem)->cleanDirectory(resource_path('views'));
+
+        $stub = __DIR__.'/stubs/global/resources/';
+
+        (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
+        (new Filesystem)->copyDirectory($stub.'lang', resource_path('lang'));
+
     }
 
     /**
-     * Updates the translations files
+     * Updates the webpack file
      * @return void
      */
-    public static function updateTranslations()
+    public static function updateWebpack()
     {
-        $stub = __DIR__.'/stubs/global/resources/lang';
-        $path = resource_path('lang');
-        (new Filesystem)->copyDirectory($stub, $path);
-    }
-
-    /**
-     * Updates the style (sass) files
-     * @return void
-     */
-    public static function updateStyles()
-    {
-        $stub = __DIR__.'/stubs/global/resources/sass';
-        $path = resource_path('sass');
-        (new Filesystem)->copyDirectory($stub, $path);
+        copy(__DIR__.'/stubs/global/webpack.mix.js', base_path('webpack.mix.js'));
     }
 
 }
