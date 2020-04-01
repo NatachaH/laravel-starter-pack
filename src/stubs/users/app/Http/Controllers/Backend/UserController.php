@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.users.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('backend.users.show', compact('user'));
     }
 
     /**
@@ -60,7 +60,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('backend.users.edit', compact('user'));
     }
 
     /**
@@ -82,6 +82,28 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
+    {
+        //
+    }
+
+    /**
+     * Restore the specified resource from storage.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function restore(User $user)
+    {
+        //
+    }
+
+    /**
+     * Remove definitely the specified resource from storage.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function forceDelete(User $user)
     {
         //
     }
