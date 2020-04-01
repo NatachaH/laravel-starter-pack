@@ -4,8 +4,8 @@
 
 @section('content')
 
-  <x-search action="#" />
+  <x-sp-search action="#" />
 
-  <x-listing title="List of users" model="User" route="backend.users" header="Name|Email" :items="$users" show-id />
+  <x-sp-listing title="List of users" model="User" route="backend.users" header="Name|Email" :items="$users" show-id />
 
 @endsection

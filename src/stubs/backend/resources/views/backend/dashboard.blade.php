@@ -22,22 +22,22 @@
 
   <div class="row">
     <div class="col">
-      <x-statistic title="My statistic" value="57'065" unit="CHF" color="brand" icon="icon-graph-line" />
+      <x-sp-statistic title="My statistic" value="57'065" unit="CHF" color="brand" icon="icon-graph-line" />
     </div>
     <div class="col">
-      <x-statistic title="My statistic" value="211" color="primary" icon="icon-lightbulb" />
+      <x-sp-statistic title="My statistic" value="211" color="primary" icon="icon-lightbulb" />
     </div>
     <div class="col">
-      <x-statistic title="My statistic" value="57" unit="piece" color="success" icon="icon-graph-pie" />
+      <x-sp-statistic title="My statistic" value="57" unit="piece" color="success" icon="icon-graph-pie" />
     </div>
     <div class="col">
-        <x-statistic title="My statistic" value="126" color="danger" icon="icon-hourglass">
+        <x-sp-statistic title="My statistic" value="126" color="danger" icon="icon-hourglass">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Cras justo odio</li>
             <li class="list-group-item">Dapibus ac facilisis in</li>
             <li class="list-group-item">Vestibulum at eros</li>
           </ul>
-        </x-statistic>
+        </x-sp-statistic>
     </div>
   </div>
 
