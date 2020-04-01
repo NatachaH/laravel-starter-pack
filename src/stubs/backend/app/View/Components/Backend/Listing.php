@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use Illuminate\Support\Str;
 
 class Listing extends Component
 {
@@ -61,7 +62,7 @@ class Listing extends Component
     /**
      * The view folder of the items.
      * This is used for customize the listing <td></td>.
-     * By default it's the model in lowercase (ex: user/listing/detail.blade.php).
+     * By default it's the model in lowercase and plural (ex: users/listing/detail.blade.php).
      *
      * @var string
      */
@@ -90,7 +91,7 @@ class Listing extends Component
         $this->items      = $items;
         $this->showId     = $showId;
         $this->showDates  = $showDates;
-        $this->viewFolder       = strtolower($model);
+        $this->viewFolder = Str::plural(Str::lower($model));
     }
 
     /**
