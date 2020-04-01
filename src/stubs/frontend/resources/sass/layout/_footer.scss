@@ -1,0 +1,20 @@
+/*
+|--------------------------------------------------------------------------
+| Frontend - Layout - Footer - Layout Design
+|--------------------------------------------------------------------------
+*/
+
+footer {
+    margin-top: auto;
+    text-align: right;
+    .copyright {
+        font-size: 0.75rem;
+        font-style: italic;
+        a {
+            color: $body-color;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}

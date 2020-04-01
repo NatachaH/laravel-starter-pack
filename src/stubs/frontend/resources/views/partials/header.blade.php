@@ -2,7 +2,7 @@
     <nav class="container navbar navbar-expand-md navbar-light">
 
       <a class="navbar-brand" href="{{ route('home') }}">
-        <img src="img/logo.svg" alt="{{ config('app.name', 'Laravel') }}" />
+        <img src="img/logo.svg" alt="Logo {{ config('app.name') }}" />
       </a>
 
       <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
