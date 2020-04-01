@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', __('backend.dashboard'))
+@section('title', __('backend.nav.dashboard'))
 
 @section('content')
 
