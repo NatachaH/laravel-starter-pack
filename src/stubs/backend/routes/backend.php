@@ -19,4 +19,4 @@ Route::get('/', function () {
 })->name('dashboard');
 
 // Users
-//Route::resource('users','UserController');
+Route::resource('users','UserController');
