@@ -1,0 +1,21 @@
+/*
+|--------------------------------------------------------------------------
+| Backend - Layout - Design
+|--------------------------------------------------------------------------
+*/
+
+@import 'main';
+@import 'mainbar';
+@import 'sidebar';
+
+.btn-default {
+    color: $btn-default-color !important;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.modal .modal-header {
+  align-items: center;
+}

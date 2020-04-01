@@ -7,25 +7,19 @@
 |
 */
 
-// Variables
-@import '../global';
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700|Open+Sans:300,400,700&display=swap');
-
-// Bootstrap
-@import 'variables';
-@import '~bootstrap/scss/bootstrap';
-
-// Icons
 @import 'icon-font';
 
+// Variables
+@import 'variables/bootstrap';
+@import 'variables/backend';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Layout
+@import 'layout/layout';
+
 // Components
-@import 'components/layout';
-@import 'components/mainbar';
-@import 'components/sidebar';
-@import 'components/search';
-@import 'components/listing';
-@import 'components/statistic';
-@import 'components/pagination';
-@import 'components/form';
+@import 'components/components';
