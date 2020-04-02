@@ -24,12 +24,11 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         $isNew = $this->getMethod() == 'POST';
-
         return [
-            'name' => 'required|unique:users',
-            'email' => 'required|email|unique:users',
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,'.$this->user->id,
             'password' => ($isNew ? 'required' : 'nullable').'|min:6|confirmed',
             'password_confirmation' => ($isNew ? 'required' : 'nullable')
         ];
-    }
+    } 
 }
