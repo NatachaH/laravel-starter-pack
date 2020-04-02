@@ -38,8 +38,10 @@
   </div>
 
   <div id="toastNotification">
-    @if($flash = session('toast'))
-      <x-sp-toast color="{{ $flash->type }}" message="{{ $flash->message }}" />
+    @if($toasts = session('toast'))
+      @foreach ($toasts as $key => $toast)
+        <x-sp-toast color="{{ $toast['type'] }}" message="{{ $toast['message'] }}" />
+      @endforeach
     @endif
   </div>
 
