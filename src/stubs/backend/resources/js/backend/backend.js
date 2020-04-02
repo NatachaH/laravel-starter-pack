@@ -12,3 +12,6 @@ require('../bootstrap');
 
 // Components
 require('./components/sidebar');
+
+// Load Toast Notification
+$('#toastNotification .toast').toast('show');

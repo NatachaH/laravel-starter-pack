@@ -37,6 +37,12 @@
 
   </div>
 
+  <div id="toastNotification">
+    @if($flash = session('toast'))
+      <x-sp-toast color="{{ $flash->type }}" message="{{ $flash->message }}" />
+    @endif
+  </div>
+
   <form id="logoutForm" class="d-none" action="{{ route('logout') }}" method="POST">
       @csrf
   </form>

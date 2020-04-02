@@ -1,0 +1,38 @@
+/*
+|--------------------------------------------------------------------------
+| Backend - Components - Toast - Design
+|--------------------------------------------------------------------------
+*/
+
+@mixin toast-variant($color, $size) {
+
+    .toast-body {
+      background: rgba($color,0.25);
+      color: $color;
+      i {
+          display: inline-block;
+          text-align: center;
+          background: $color;
+          color: $white;
+          @include border-radius(50%);
+          height: $size;
+          width: $size;
+          line-height: $size;
+      }
+    }
+
+}
+
+#toastNotification {
+
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+
+    @each $color, $value in $theme-colors {
+      .toast-#{$color} {
+        @include toast-variant($value,25px);
+      }
+    }
+
+}
