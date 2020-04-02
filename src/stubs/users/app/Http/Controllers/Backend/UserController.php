@@ -41,9 +41,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         User::create($request->only(['name','email','password']));
-        session()->flash('toast', [
-          ['success' => 'A new user has been created !']
-        ]);
+        session()->flash('toast', ['success' => 'A new user has been created !']);
         return redirect()->route('backend.users.index');
     }
 

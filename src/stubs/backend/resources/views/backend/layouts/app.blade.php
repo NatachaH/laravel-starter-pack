@@ -40,7 +40,7 @@
   <div id="toastNotification">
     @if($toasts = session('toast'))
       @foreach ($toasts as $key => $toast)
-        <x-sp-toast color="{{ $key }}" message="{{ $toast }}" />
+        <x-sp-toast :color="$key" :message="$toast" />
       @endforeach
     @endif
   </div>
