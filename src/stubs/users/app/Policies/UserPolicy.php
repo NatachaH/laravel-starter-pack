@@ -10,6 +10,17 @@ class UserPolicy
     use HandlesAuthorization;
 
     /**
+     * Determine whether the user can access to a model.
+     *
+     * @param  \App\User  $user
+     * @return mixed
+     */
+    public function before(User $user)
+    {
+        return true;
+    }
+
+    /**
      * Determine whether the user can view any models.
      *
      * @param  \App\User  $user

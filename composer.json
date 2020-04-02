@@ -4,7 +4,8 @@
     "license": "MIT",
     "type": "library",
     "require": {
-      "laravel/ui": "^2.0"
+      "laravel/ui": "^2.0",
+      "nh/bs-component": "dev-master"
     },
     "author": {
         "name": "Natacha Herth",
@@ -22,5 +23,11 @@
             ]
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "repositories": [
+      {
+        "type" : "vcs",
+        "url" : "https://github.com/NatachaH/laravel-bootstrap-component.git"
+      }
+    ]
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUser extends FormRequest
+class StoreUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreUser extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,13 @@ class StoreUser extends FormRequest
      */
     public function rules()
     {
+        $isNew = $this->getMethod() == 'POST';
+
         return [
-            //
+            'name' => 'required|unique:users',
+            'email' => 'required|email|unique:users',
+            'password' => ($isNew ? 'required' : 'nullable').'|min:6|confirmed',
+            'password_confirmation' => ($isNew ? 'required' : 'nullable')
         ];
     }
 }
