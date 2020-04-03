@@ -12,8 +12,8 @@
         @method($method)
         <div class="modal-body text-center">
           <p>{{ $message }}</p>
-          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-{{ $color }}">Confirm</button>
+          <button type="button" class="btn btn-outline-secondary rounded-pill" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-{{ $color }} rounded-pill">Confirm</button>
         </div>
       </form>
 

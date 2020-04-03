@@ -15,6 +15,13 @@ class ModalConfirm extends Component
     public $color;
 
     /**
+     * The icon of the modal.
+     *
+     * @var string
+     */
+    public $icon;
+
+    /**
      * The name of the modal.
      *
      * @var string
@@ -54,12 +61,13 @@ class ModalConfirm extends Component
      *
      * @return void
      */
-    public function __construct($color = 'danger', $name = 'confirmModal', $title, $message, $action = '#', $method = 'POST')
+    public function __construct($color = 'danger',$icon = 'icon-trash', $name = 'confirmModal', $title, $message, $action = '#', $method = 'POST')
     {
+        $this->color    = $color;
+        $this->icon     = $icon;
         $this->name     = $name;
         $this->title    = $title;
         $this->message  = $message;
-        $this->color    = $color;
         $this->action   = $action;
         $this->method   = $method;
     }
