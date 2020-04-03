@@ -34,7 +34,7 @@ function toast(string $message, string $model)
  * Return the mainbar title.
  * @param  string $section
  * @param  string $model
- * @param  string $action  
+ * @param  string $action
  * @return string
  */
 function mainbar(string $section, string $model = null, string $action = null)
@@ -44,12 +44,12 @@ function mainbar(string $section, string $model = null, string $action = null)
 
     if(!is_null($model))
     {
-      $title += ' : '.getBackendTranslation('backend.model.'.$model, true);
+      $title .= ' : '.getBackendTranslation('backend.model.'.$model, true);
     }
 
     if(!is_null($action))
     {
-      $title += ' : '.getBackendTranslation('backend.action.'.$action);
+      $title .= ' : '.getBackendTranslation('backend.action.'.$action);
     }
 
     return $title;
