@@ -11,7 +11,7 @@
 
       <fieldset >
 
-        <legend>Information</legend>
+        <legend>@lang('backend.field.informations')</legend>
 
         <div class="row mb-3">
 
