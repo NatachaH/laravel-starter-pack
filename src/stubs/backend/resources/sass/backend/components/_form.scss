@@ -22,7 +22,22 @@ form {
   }
 
   .invalid-feedback {
-    text-align: left;
+      text-align: left;
+  }
+
+  fieldset {
+
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid $border-color;
+
+      legend {
+          margin-bottom: 1rem;
+          font-size: 1rem;
+          color: $gray-600;
+        f ont-weight: $font-weight-bold;
+      }
+
   }
 
 }
