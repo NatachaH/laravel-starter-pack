@@ -38,6 +38,10 @@ form {
           font-weight: $font-weight-bold;
       }
 
+      > .row > div {
+          margin-bottom: 1rem;
+      }
+
   }
 
 }
