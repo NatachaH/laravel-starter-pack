@@ -13,7 +13,7 @@
     },
     "autoload": {
         "files": [
-            "app/Helpers/BackendTranslationHelper.php"
+            "src/Helpers/BackendTranslationHelper.php"
         ],
         "psr-4": {
             "Nh\\StarterPack\\": "src/"
