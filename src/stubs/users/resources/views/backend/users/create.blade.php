@@ -13,7 +13,7 @@
 
         <legend>@lang('backend.field.informations')</legend>
 
-        <div class="row mb-3">
+        <div class="row">
 
           <x-bs-input class="col-6" :label="__('backend.field.name')" type="text" name="name" />
 
