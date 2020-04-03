@@ -19,6 +19,7 @@ Route::get('/', function () {
 })->name('dashboard');
 
 // Users
+Route::any('/users/search', 'UserController@search')->name('users.search');
 Route::patch('/users/{id}/restore', 'UserController@restore')->name('users.restore');
 Route::delete('/users/{id}/forceDelete', 'UserController@forceDelete')->name('users.forceDelete');
 Route::resource('users','UserController');
