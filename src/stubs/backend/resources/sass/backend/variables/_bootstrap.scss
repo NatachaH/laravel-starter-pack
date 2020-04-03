@@ -44,17 +44,16 @@ $body-bg: #FAFAFA;
 $body-color: #6D6D6D;
 
 // Links
-$link-color:                              $brand;
-$link-decoration:                         none;
-$link-hover-color:                        darken($link-color, 15%) ;
-$link-hover-decoration:                   none;
+$link-color:                   $brand;
+$link-decoration:              none;
+$link-hover-color:             darken($link-color, 15%) ;
+$link-hover-decoration:        none;
 
 // Typography
 $font-family-base:            'Open Sans', sans-serif;
 $headings-font-family:        'Quicksand', sans-serif;
 $headings-color:              $brand;
-$font-weight-bold: 600;
-$headings-font-weight: 600;
+$headings-font-weight:        500;
 
 // Inputs & buttons
 $input-btn-focus-box-shadow:  none;
