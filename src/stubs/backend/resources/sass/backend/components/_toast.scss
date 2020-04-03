@@ -9,6 +9,8 @@
     .toast-body {
       background: rgba($color,0.25);
       color: $color;
+      display: flex;
+      align-items: center;
       i {
           display: inline-block;
           text-align: center;

@@ -89,7 +89,8 @@ return [
 
     // Models
     'model' => [
-      'user' => 'User|Users'
+      'user' => 'User|Users',
+      'account' => 'Account'
     ],
 
     // Help message
