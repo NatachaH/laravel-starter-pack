@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
-
+use Illuminate\Support\Facades\Auth;
 
 use App\User;
 
@@ -133,5 +133,32 @@ class UserController extends Controller
         $user->forceDelete();
         session()->flash('toast', ['success' => toast('force-deleted','user')]);
         return back();
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function editAccount()
+    {
+        $user = Auth::user();
+        return view('backend.users.account.edit', compact('user'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\StoreUserRequest  $request
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function updateAccount(StoreUserRequest $request)
+    {
+        $user = Auth::user();
+        $user->update($request->only(['name','email','password']));
+        session()->flash('toast', ['success' => toast('updated','account')]);
+        return redirect()->route('backend.users.account.edit');
     }
 }

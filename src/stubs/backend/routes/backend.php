@@ -23,3 +23,7 @@ Route::any('/users/search', 'UserController@search')->name('users.search');
 Route::patch('/users/{id}/restore', 'UserController@restore')->name('users.restore');
 Route::delete('/users/{id}/forceDelete', 'UserController@forceDelete')->name('users.forceDelete');
 Route::resource('users','UserController');
+
+// Account
+Route::get('/account/edit', 'UserController@editAccount')->name('account.edit');
+Route::patch('/account/edit', 'UserController@updateAccount')->name('account.update');
