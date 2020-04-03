@@ -24,7 +24,8 @@ function toast(string $message, string $model)
 
     if(\Lang::has($msgTrans))
     {
-        return __($msgTrans, ['model' => getBackendTranslation('backend.model.'.$model)]);
+        $name = getBackendTranslation('backend.model.'.$model);
+        return __($msgTrans, ['model' => strtolower($name)]);
     } else {
         return $message;
     }
