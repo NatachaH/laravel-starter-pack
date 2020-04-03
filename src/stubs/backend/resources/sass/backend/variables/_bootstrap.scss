@@ -13,19 +13,29 @@ $enable-transitions:                          true;
 $enable-responsive-font-sizes:                true;
 
 // Colors
-$white:     #FFFFFF;
+$white:    #fff !default;
+$gray-100: #F1F1F1 !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
 $brand:     #B790E5;
 $secondary: #B1B1B1;
-$default:   #F1F1F1;
 
 $theme-colors: (
   'brand' : $brand,
-  'default' : $default
+  'gray'  : $gray-100
 );
 
 $yiq-contrasted-threshold:  170;
 
-$border-color:            $default;
+$border-color:            $gray-100;
 $component-active-color:  $white;
 $component-active-bg:     $brand;
 
@@ -43,6 +53,8 @@ $link-hover-decoration:                   none;
 $font-family-base:            'Open Sans', sans-serif;
 $headings-font-family:        'Quicksand', sans-serif;
 $headings-color:              $brand;
+$font-weight-bold: 600;
+$headings-font-weight: 600;
 
 // Inputs & buttons
 $input-btn-focus-box-shadow:  none;
@@ -62,6 +74,7 @@ $custom-file-text: (
 
 $input-border-color:          $border-color;
 $input-group-addon-bg:        $white;
+$input-placeholder-color:     $gray-400;
 
 // Dropdown
 $dropdown-link-active-color:        $brand;

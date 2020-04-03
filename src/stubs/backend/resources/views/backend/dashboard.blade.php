@@ -10,11 +10,11 @@
 
   <hr/>
 
-  <a href="#" class="btn btn-default btn-sm rounded-circle"/><i class="icon icon-trash"></i></a>
-  <a href="#" class="btn btn-default  rounded-circle"/><i class="icon icon-trash"></i></a>
-  <a href="#" class="btn btn-default  btn-lg rounded-circle"/><i class="icon icon-trash"></i></a>
+  <a href="#" class="btn btn-gray btn-sm rounded-circle"/><i class="icon icon-trash"></i></a>
+  <a href="#" class="btn btn-gray  rounded-circle"/><i class="icon icon-trash"></i></a>
+  <a href="#" class="btn btn-gray  btn-lg rounded-circle"/><i class="icon icon-trash"></i></a>
 
-  <a href="#" class="btn btn-default rounded-circle disabled"/><i class="icon icon-trash"></i></a>
+  <a href="#" class="btn btn-gray rounded-circle disabled"/><i class="icon icon-trash"></i></a>
   <a href="#" class="btn btn-primary rounded-circle"/><i class="icon icon-trash"></i></a>
   <a href="#" class="btn btn-outline-primary rounded-circle"/><i class="icon icon-trash"></i></a>
 
