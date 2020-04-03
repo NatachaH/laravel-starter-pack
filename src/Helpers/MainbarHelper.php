@@ -15,12 +15,12 @@ function mainbar(string $section, string $model = null, string $action = null)
 
     if(!is_null($model))
     {
-        $title .= \Lang::has($translations.'.model.'.$model) ? trans_choice($translations.'.model.'.$model,2) : $model;
+        $title .= ' : '.(\Lang::has($translations.'.model.'.$model) ? trans_choice($translations.'.model.'.$model,2) : $model);
     }
 
     if(!is_null($action))
     {
-        $title .= \Lang::has($translations.'.action.'.$action) ? __($translations.'.action.'.$action) : $action;
+        $title .= ' : '.(\Lang::has($translations.'.action.'.$action) ? __($translations.'.action.'.$action) : $action);
     }
 
     return $title;
