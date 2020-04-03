@@ -15,7 +15,7 @@ class BackendPreset extends Preset
      */
     public static function install()
     {
-        static::updateComponents();
+        static::updateApp();
         static::updatePublic();
         static::updateResources();
         static::updateRoutes();
@@ -26,10 +26,10 @@ class BackendPreset extends Preset
      * Updates the blade components
      * @return void
      */
-    public static function updateComponents()
+    public static function updateApp()
     {
-        $stub = __DIR__.'/stubs/backend/app/View';
-        $path = app_path('View');
+        $stub = __DIR__.'/stubs/backend/app';
+        $path = app_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
 
