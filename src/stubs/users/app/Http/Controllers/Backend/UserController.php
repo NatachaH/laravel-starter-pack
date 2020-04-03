@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Auth;
 
 use App\User;
@@ -154,11 +155,11 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function updateAccount(StoreUserRequest $request)
+    public function updateAccount(UpdateAccountRequest $request)
     {
         $user = Auth::user();
         $user->update($request->only(['name','email','password']));
         session()->flash('toast', ['success' => toast('updated','account')]);
-        return redirect()->route('backend.users.account.edit');
+        return redirect()->route('backend.account.edit');
     }
 }
