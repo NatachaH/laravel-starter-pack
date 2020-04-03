@@ -7,11 +7,11 @@
         <div>
 
             @if(Route::has($route.'.export') && Auth::user()->can('export', $model))
-                <a href="{{ route($route.'.export') }}" class="btn btn-outline-secondary rounded-pill"><i class="icon icon-download"></i> @lang('backend.action.export')</a>
+                <a href="{{ route($route.'.export') }}" class="btn btn-outline-secondary rounded-pill btn-sm"><i class="icon icon-download"></i> @lang('backend.action.export')</a>
             @endif
 
             @if(Route::has($route.'.create') && Auth::user()->can('create', $model))
-                <a href="{{ route($route.'.create') }}" class="btn btn-brand rounded-pill"><i class="icon icon-plus"></i> @lang('backend.action.add')</a>
+                <a href="{{ route($route.'.create') }}" class="btn btn-brand rounded-pill btn-sm"><i class="icon icon-plus"></i> @lang('backend.action.add')</a>
             @endif
 
         </div>
