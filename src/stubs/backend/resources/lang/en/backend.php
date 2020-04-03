@@ -86,6 +86,7 @@ return [
 
     // Help message
     'help' => [
+      'required' => '* Required fields',
       'leave-empty' => 'Leave empty if you don\'t want to edit it.'
     ]
 
