@@ -70,13 +70,15 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreUserRequest  $request
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(StoreUserRequest $request, User $user)
     {
-        //
+        $user->update($request->only(['name','email','password']));
+        session()->flash('toast', ['success' => 'The user has been updated !']);
+        return redirect()->route('backend.users.index');
     }
 
     /**
