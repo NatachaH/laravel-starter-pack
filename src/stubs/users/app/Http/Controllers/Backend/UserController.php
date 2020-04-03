@@ -89,7 +89,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
     }
 
     /**
@@ -100,7 +100,7 @@ class UserController extends Controller
      */
     public function restore(User $user)
     {
-        //
+        $user->restore();
     }
 
     /**
@@ -111,6 +111,6 @@ class UserController extends Controller
      */
     public function forceDelete(User $user)
     {
-        //
+        $user->forceDelete();
     }
 }
