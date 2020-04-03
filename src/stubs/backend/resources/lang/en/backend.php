@@ -44,15 +44,16 @@ return [
 
     // Default fields name
     'field' => [
-      'name'        => 'Name',
-      'email'       => 'Email',
-      'title'       => 'Title',
-      'subtitle'    => 'Subtitle',
-      'description' => 'Description',
-      'created-at'  => 'Created at',
-      'updated-at'  => 'Updated at',
-      'deleted-at'  => 'Deleted at',
-      'actions'     => 'Actions',
+      'name'          => 'Name',
+      'email'         => 'Email',
+      'title'         => 'Title',
+      'subtitle'      => 'Subtitle',
+      'description'   => 'Description',
+      'created-at'    => 'Created at',
+      'updated-at'    => 'Updated at',
+      'deleted-at'    => 'Deleted at',
+      'actions'       => 'Actions',
+      'informations'  => 'Informations',
     ],
 
     // Listing
@@ -88,6 +89,10 @@ return [
 
     'model' => [
       'user' => 'User|Users'
+    ]
+
+    'help' => [
+      'leave-empty' => 'Leave empty if you don\'t want to edit it.'
     ]
 
 

@@ -15,20 +15,20 @@
 
         <div class="row mb-3">
 
-          <x-bs-input class="col-6" label="Your name" type="text" name="name" :value="$user->name" />
+          <x-bs-input class="col-6" :label="__('backend.field.name')" type="text" name="name" :value="$user->name"/>
 
-          <x-bs-input class="col-6" label="Your email" type="email" name="email" :value="$user->email" />
+          <x-bs-input class="col-6" :label="__('backend.field.email')" type="email" name="email" :value="$user->email"/>
 
-          <x-bs-input class="col-6" label="Your password" type="password" name="password" help="At least 6" />
+          <x-bs-input class="col-6" :label="__('Password')" type="password" name="password" :help="__('backend.help.leave-empty')" />
 
-          <x-bs-input class="col-6" label="confirm password" type="password" name="password_confirmation" />
+          <x-bs-input class="col-6" :label="__('Confirm Password')" type="password" name="password_confirmation" />
 
         </div>
 
       </fieldset>
 
-      <button type="submit" class="btn btn-brand btn-sm rounded-pill">Save</button>
-      <a href="{{ route('backend.users.index') }}" class="btn btn-outline-secondary btn-sm rounded-pill">Cancel</a>
+      <button type="submit" class="btn btn-brand btn-sm rounded-pill">@lang('backend.action.edit')</button>
+      <a href="{{ route('backend.users.index') }}" class="btn btn-outline-secondary btn-sm rounded-pill">@lang('backend.action.cancel')</a>
 
   </form>
 

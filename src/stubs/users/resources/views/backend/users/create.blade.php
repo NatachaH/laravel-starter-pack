@@ -11,24 +11,24 @@
 
       <fieldset >
 
-        <legend>Information</legend>
+        <legend>@lang('backend.field.informations')</legend>
 
         <div class="row mb-3">
 
-          <x-bs-input class="col-6" label="Your name" type="text" name="name" />
+          <x-bs-input class="col-6" :label="__('backend.field.name')" type="text" name="name" />
 
-          <x-bs-input class="col-6" label="Your email" type="email" name="email" />
+          <x-bs-input class="col-6" :label="__('backend.field.email')" type="email" name="email" />
 
-          <x-bs-input class="col-6" label="Your password" type="password" name="password" help="At least 6" />
+          <x-bs-input class="col-6" :label="__('Password')" type="password" name="password" :help="__('validation.min.string', ['attribute' => 'password', 'min' => 6])" />
 
-          <x-bs-input class="col-6" label="confirm password" type="password" name="password_confirmation" />
+          <x-bs-input class="col-6" :label="__('Confirm Password')" type="password" name="password_confirmation" />
 
         </div>
 
       </fieldset>
 
-      <button type="submit" class="btn btn-brand btn-sm rounded-pill">Save</button>
-      <a href="{{ route('backend.users.index') }}" class="btn btn-outline-secondary btn-sm rounded-pill">Cancel</a>
+      <button type="submit" class="btn btn-brand btn-sm rounded-pill">@lang('backend.action.create')</button>
+      <a href="{{ route('backend.users.index') }}" class="btn btn-outline-secondary btn-sm rounded-pill">@lang('backend.action.cancel')</a>
 
   </form>
 

@@ -6,6 +6,6 @@
 
   <x-sp-search route="backend.users" />
 
-  <x-sp-listing title="List of users" model="User" route="backend.users" header="Name|Email" :items="$users" show-id />
+  <x-sp-listing model="User" route="backend.users" header="name|email" :items="$users" show-id />
 
 @endsection

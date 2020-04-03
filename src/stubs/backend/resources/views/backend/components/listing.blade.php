@@ -28,11 +28,11 @@
                     <tr>
 
                         @if($showId)
-                            <th class="td-fit">#ID</th>
+                            <th class="td-fit">#</th>
                         @endif
 
                         @foreach ($header as $value)
-                            <th>{{ $value }}</th>
+                            <th>@lang('backend.field.'.$value)</th>
                         @endforeach
 
                         @if($showDates)
