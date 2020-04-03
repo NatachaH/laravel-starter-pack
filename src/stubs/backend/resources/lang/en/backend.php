@@ -87,10 +87,12 @@ return [
       'force-deleted' => 'The :model has been deleted with success !'
     ],
 
+    // Models
     'model' => [
       'user' => 'User|Users'
-    ]
+    ],
 
+    // Help message
     'help' => [
       'leave-empty' => 'Leave empty if you don\'t want to edit it.'
     ]
