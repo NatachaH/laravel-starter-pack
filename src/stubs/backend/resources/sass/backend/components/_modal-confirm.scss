@@ -1,0 +1,24 @@
+/*
+|--------------------------------------------------------------------------
+| Backend - Components - Modal confirm - Design
+|--------------------------------------------------------------------------
+*/
+
+.modal-confirm {
+
+    .modal-header,
+    .modal-body {
+      text-align: center;
+    }
+
+    .modal-header {
+        display:block;
+        padding: 1rem 0;
+        border-bottom-color: $border-color;
+    }
+
+    .modal-body {
+      background: $body-bg;
+    }
+
+}

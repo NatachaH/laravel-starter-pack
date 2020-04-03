@@ -49,5 +49,8 @@
       @csrf
   </form>
 
+  <x-sp-modal-confirm name="deleteConfirm" title="Confirm delete" message="Are you sure ... ?" method="DELETE"/>
+  <x-sp-modal-confirm name="forceDeleteConfirm" title="Confirm delete" message="Are you sure ... ? You can't undo this ..." method="DELETE"/>
+
 </body>
 </html>

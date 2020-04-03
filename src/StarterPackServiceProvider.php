@@ -49,6 +49,7 @@ class StarterPackServiceProvider extends ServiceProvider
       Blade::component('sp-listing', \App\View\Components\Backend\Listing::class);
       Blade::component('sp-statistic', \App\View\Components\Backend\Statistic::class);
       Blade::component('sp-toast', \App\View\Components\Backend\Toast::class);
+      Blade::component('sp-modal-confirm', \App\View\Components\Backend\ModalConfirm::class);
 
 
     }
