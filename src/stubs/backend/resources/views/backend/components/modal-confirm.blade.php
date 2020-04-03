@@ -2,6 +2,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <i class="icon {{ $icon }} bg-{{ $color }} text-white"></i>
         <h5 class="modal-title text-{{ $color }}" id="{{ $name.'Label' }}">
           {{ $title }}
         </h5>
