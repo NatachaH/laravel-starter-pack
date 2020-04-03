@@ -90,6 +90,8 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
+        session()->flash('toast', ['success' => 'The user has been deleted !']);
+        return back();
     }
 
     /**
@@ -101,6 +103,8 @@ class UserController extends Controller
     public function restore(User $user)
     {
         $user->restore();
+        session()->flash('toast', ['success' => 'The user has been restored !']);
+        return back();
     }
 
     /**
@@ -112,5 +116,7 @@ class UserController extends Controller
     public function forceDelete(User $user)
     {
         $user->forceDelete();
+        session()->flash('toast', ['success' => 'The user has been force deleted !']);
+        return back();
     }
 }

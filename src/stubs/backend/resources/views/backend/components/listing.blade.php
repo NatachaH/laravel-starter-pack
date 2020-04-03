@@ -70,7 +70,7 @@
                                 @endif
 
                                 @if(Route::has($route.'.destroy') && Auth::user()->can('delete', $item))
-                                    <a href="{{ route($route.'.destroy', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.delete')"><i class="icon icon-trash"></i></a>
+                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.destroy', $item->id) }}" data-target="#deleteConfirm" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.delete')"><i class="icon icon-trash"></i></button>
                                 @endif
 
                                 @if(Route::has($route.'.restore') && Auth::user()->can('restore', $item))
@@ -78,7 +78,7 @@
                                 @endif
 
                                 @if(Route::has($route.'.forceDelete') && Auth::user()->can('forceDelete', $item))
-                                    <a href="{{ route($route.'.forceDelete', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.force-delete')"><i class="icon icon-trash" alt="@lang('backend.force-delete')"></i></a>
+                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.forceDelete', $item->id) }}" data-target="#forceDeleteConfirm" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.force-delete')"><i class="icon icon-trash"></i></button>
                                 @endif
 
                             </td>
