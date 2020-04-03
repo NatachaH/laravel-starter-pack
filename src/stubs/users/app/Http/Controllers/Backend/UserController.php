@@ -97,11 +97,12 @@ class UserController extends Controller
     /**
      * Restore the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function restore(User $user)
+    public function restore(int $id)
     {
+        $user = User::onlyTrashed()->findOrFail($id);
         $user->restore();
         session()->flash('toast', ['success' => 'The user has been restored !']);
         return back();
@@ -110,11 +111,12 @@ class UserController extends Controller
     /**
      * Remove definitely the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function forceDelete(User $user)
+    public function forceDelete(int $id)
     {
+        $user = User::onlyTrashed()->findOrFail($id);
         $user->forceDelete();
         session()->flash('toast', ['success' => 'The user has been force deleted !']);
         return back();

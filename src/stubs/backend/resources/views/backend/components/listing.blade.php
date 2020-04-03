@@ -74,7 +74,7 @@
                                 @endif
 
                                 @if(Route::has($route.'.restore') && Auth::user()->can('restore', $item))
-                                    <a href="{{ route($route.'.restore', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.restore')"><i class="icon icon-time-reverse"></i></a>
+                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.restore', $item->id) }}" data-target="#restoreConfirm" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.restore')"><i class="icon icon-time-reverse"></i></button>
                                 @endif
 
                                 @if(Route::has($route.'.forceDelete') && Auth::user()->can('forceDelete', $item))

@@ -50,6 +50,7 @@
   </form>
 
   <x-sp-modal-confirm name="deleteConfirm" title="Confirm delete" message="Are you sure ... ?" method="DELETE"/>
+  <x-sp-modal-confirm name="restoreConfirm" title="Confirm restore" message="Are you sure ... ?" method="PATCH" color="brand" icon="icon-time-reverse"/>
   <x-sp-modal-confirm name="forceDeleteConfirm" title="Confirm delete" message="Are you sure ... ? You can't undo this ..." method="DELETE"/>
 
 </body>
