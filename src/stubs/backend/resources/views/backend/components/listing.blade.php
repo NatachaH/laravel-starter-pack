@@ -95,7 +95,7 @@
     </div>
 
     @if($hasPagination)
-        <div class="listing-footer d-flex">
+        <div class="listing-footer d-flex align-items-center">
             {{ $items->appends(request()->only('search'))->links('backend.components.pagination') }}
             <span class="listing-total ml-auto">@lang('backend.listing.total') {{$items->count().'/'.$items->total()}}</span>
         </div>
