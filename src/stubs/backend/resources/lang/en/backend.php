@@ -19,6 +19,12 @@ return [
       'contents'  => 'Contents',
     ],
 
+    // Models
+    'model' => [
+      'user' => 'User|Users',
+      'account' => 'Account'
+    ],
+
     // Account menu
     'account' => [
       'preview' => 'My account',
@@ -76,21 +82,6 @@ return [
         'title' => 'Confirm force delete',
         'message' => 'Are you sure you want to delete this ?<br/><b>Warning: </b>This cannot be undone.'
       ]
-    ],
-
-    // Flash Toast message
-    'toast' => [
-      'added'         => 'The :model has been added with success !',
-      'updated'       => 'The :model has been updated with success !',
-      'deleted'       => 'The :model has been deleted with success !',
-      'restored'      => 'The :model has been restored with success !',
-      'force-deleted' => 'The :model has been deleted with success !'
-    ],
-
-    // Models
-    'model' => [
-      'user' => 'User|Users',
-      'account' => 'Account'
     ],
 
     // Help message

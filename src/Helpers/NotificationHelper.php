@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Return a notification message.
+ * @param  string $message
+ * @param  string $attribute
+ * @return string
+ */
+function notification(string $message, string $attribute)
+{
+    $translations   = 'notification.';
+
+    if(\Lang::has($translations.$message))
+    {
+        $attr = \Lang::has($translations.$attribute) ? __($translations.$attribute) : $attribute;
+        return __($translations.$message, ['attribute' => $attr]);
+    } else {
+        return $message;
+    }
+}

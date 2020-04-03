@@ -6,6 +6,6 @@
 
   <x-sp-search route="backend.users" />
 
-  <x-sp-listing model="User" route="backend.users" header="name|email" :items="$users" show-id />
+  <x-sp-listing :title="trans_choice('backend.model.user',2)" model="User" route="backend.users" header="name|email" :items="$users" show-id />
 
 @endsection

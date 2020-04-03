@@ -13,7 +13,8 @@
     },
     "autoload": {
         "files": [
-            "src/Helpers/BackendTranslationHelper.php"
+            "src/Helpers/MainbarHelper.php",
+            "src/Helpers/NotificationHelper.php"
         ],
         "psr-4": {
             "Nh\\StarterPack\\": "src/"

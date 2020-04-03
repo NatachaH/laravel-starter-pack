@@ -82,9 +82,9 @@ class Listing extends Component
      *
      * @return void
      */
-    public function __construct($title = null, $model, $route, $header, $items, $showId = false, $showDates = false)
+    public function __construct($title, $model, $route, $header, $items, $showId = false, $showDates = false)
     {
-        $this->title      = is_null($title) ? getBackendTranslation('backend.model.'.Str::lower($model),true) : $title;
+        $this->title      = $title;
         $this->model      = 'App\\'.$model;
         $this->route      = $route;
         $this->header     = explode('|', $header);

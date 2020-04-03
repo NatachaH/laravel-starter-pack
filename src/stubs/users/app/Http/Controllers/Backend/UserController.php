@@ -55,7 +55,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         User::create($request->only(['name','email','password']));
-        session()->flash('toast', ['success' => toast('added','user')]);
+        session()->flash('toast', ['success' => notification('added','user')]);
         return redirect()->route('backend.users.index');
     }
 
@@ -91,7 +91,7 @@ class UserController extends Controller
     public function update(StoreUserRequest $request, User $user)
     {
         $user->update($request->only(['name','email','password']));
-        session()->flash('toast', ['success' => toast('updated','user')]);
+        session()->flash('toast', ['success' => notification('updated','user')]);
         return redirect()->route('backend.users.index');
     }
 
@@ -104,7 +104,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        session()->flash('toast', ['success' => toast('deleted','user')]);
+        session()->flash('toast', ['success' => notification('deleted','user')]);
         return back();
     }
 
@@ -118,7 +118,7 @@ class UserController extends Controller
     {
         $user = User::onlyTrashed()->findOrFail($id);
         $user->restore();
-        session()->flash('toast', ['success' => toast('restored','user')]);
+        session()->flash('toast', ['success' => notification('restored','user')]);
         return back();
     }
 
@@ -132,7 +132,7 @@ class UserController extends Controller
     {
         $user = User::onlyTrashed()->findOrFail($id);
         $user->forceDelete();
-        session()->flash('toast', ['success' => toast('force-deleted','user')]);
+        session()->flash('toast', ['success' => notification('force-deleted','user')]);
         return back();
     }
 
@@ -159,7 +159,7 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $user->update($request->only(['name','email','password']));
-        session()->flash('toast', ['success' => toast('updated','account')]);
+        session()->flash('toast', ['success' => notification('updated','account')]);
         return redirect()->route('backend.account.edit');
     }
 }
