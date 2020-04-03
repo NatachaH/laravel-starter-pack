@@ -96,7 +96,7 @@
 
     @if($hasPagination)
         <div class="listing-footer d-flex justify-content-between">
-            {{ $items->links('backend.components.pagination') }}
+            {{ $items->appends(request()->only('search'))->links('backend.components.pagination') }}
             <span class="listing-total">@lang('backend.total') {{$items->count().'/'.$items->total()}}</span>
         </div>
     @endif

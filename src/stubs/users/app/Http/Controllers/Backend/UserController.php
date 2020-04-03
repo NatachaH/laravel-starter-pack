@@ -23,6 +23,19 @@ class UserController extends Controller
     }
 
     /**
+     * Display a listing of ht resource filtered by a search request.
+     * @param  Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $keyword = $request->input('search.text');
+        $users = User::search($keyword)->paginate(5);
+        $request->flash();
+        return view('backend.users.index', compact('users'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

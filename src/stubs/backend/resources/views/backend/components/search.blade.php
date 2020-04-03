@@ -1,16 +1,21 @@
-<form {{ $attributes->merge(['class' => 'search-form']) }} action="{{ $action }}" method="post">
+<form {{ $attributes->merge(['class' => 'search-form']) }} action="{{ route($action) }}" method="post">
 
     @csrf
 
     <div class="input-group">
-      <input type="search" class="form-control" placeholder="@lang('backend.search')" aria-label="@lang('backend.search')">
+
+      <input type="search" name="search[text]" value="{{ old('search.text') }}" class="form-control" placeholder="@lang('backend.search')" aria-label="@lang('backend.search')">
+
       @if($isAdvanced)
         <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#{{ $collapseId }}" aria-expanded="false" aria-controls="{{ $collapseId }}"><i class="icon icon-toggles"></i></button>
       @endif
-      <button class="btn btn-outline-brand" type="button"><i class="icon icon-search"></i> @lang('backend.search')</button>
+
+      <button class="btn btn-outline-brand" type="submit"><i class="icon icon-search"></i> @lang('backend.search')</button>
+
       @if($hasSearchData)
-        <button class="btn btn-outline-secondary" type="button"><i class="icon icon-cross"></i> @lang('backend.reset')</button>
+        <a href="{{ route($reset) }}" class="btn btn-outline-secondary"><i class="icon icon-cross"></i> @lang('backend.reset')</a>
       @endif
+
     </div>
 
     @if($isAdvanced)

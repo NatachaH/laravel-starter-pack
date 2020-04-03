@@ -14,6 +14,13 @@ class Search extends Component
     public $action;
 
     /**
+     * The reset url.
+     *
+     * @var string
+     */
+    public $reset;
+
+    /**
      * Is the form have an advanced search bloc.
      *
      * @var boolean
@@ -26,7 +33,7 @@ class Search extends Component
      * @var boolean
      */
     public function hasSearchData(){
-      return false;
+        return request()->has('search');
     }
 
     /**
@@ -41,9 +48,10 @@ class Search extends Component
      *
      * @return void
      */
-    public function __construct($action, $isAdvanced = false, $collapseId = 'collapseSearch')
+    public function __construct($route, $isAdvanced = false, $collapseId = 'collapseSearch')
     {
-        $this->action = $action;
+        $this->action     = $route.'.search';
+        $this->reset      = $route.'.index';
         $this->isAdvanced = $isAdvanced;
         $this->collapseId = $collapseId;
     }
