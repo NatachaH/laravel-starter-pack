@@ -15,6 +15,7 @@ class UsersPreset extends Preset
     public static function install()
     {
         static::updateApp();
+        static::updateDatabase();
         static::updateResources();
     }
 
@@ -26,6 +27,16 @@ class UsersPreset extends Preset
     {
         $stub = __DIR__.'/stubs/users/app';
         (new Filesystem)->copyDirectory($stub, app_path());
+    }
+
+    /**
+     * Updates the dtabase files
+     * @return void
+     */
+    public static function updateDatabase()
+    {
+        $stub = __DIR__.'/stubs/users/database/';
+        (new Filesystem)->copyDirectory($stub, database_path());
     }
 
     /**
