@@ -54,7 +54,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         User::create($request->only(['name','email','password']));
-        session()->flash('toast', ['success' => 'A new user has been created !']);
+        session()->flash('toast', ['success' => toast('added','user')]);
         return redirect()->route('backend.users.index');
     }
 
@@ -90,7 +90,7 @@ class UserController extends Controller
     public function update(StoreUserRequest $request, User $user)
     {
         $user->update($request->only(['name','email','password']));
-        session()->flash('toast', ['success' => 'The user has been updated !']);
+        session()->flash('toast', ['success' => toast('updated','user')]);
         return redirect()->route('backend.users.index');
     }
 
@@ -103,7 +103,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        session()->flash('toast', ['success' => 'The user has been deleted !']);
+        session()->flash('toast', ['success' => toast('deleted','user')]);
         return back();
     }
 
@@ -117,7 +117,7 @@ class UserController extends Controller
     {
         $user = User::onlyTrashed()->findOrFail($id);
         $user->restore();
-        session()->flash('toast', ['success' => 'The user has been restored !']);
+        session()->flash('toast', ['success' => toast('restored','user')]);
         return back();
     }
 
@@ -131,7 +131,7 @@ class UserController extends Controller
     {
         $user = User::onlyTrashed()->findOrFail($id);
         $user->forceDelete();
-        session()->flash('toast', ['success' => 'The user has been force deleted !']);
+        session()->flash('toast', ['success' => toast('force-deleted','user')]);
         return back();
     }
 }

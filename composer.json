@@ -12,6 +12,9 @@
         "email": "info@natachaherth.ch"
     },
     "autoload": {
+        "files": [
+            "app/Helpers/BackendTranslationHelper.php"
+        ],
         "psr-4": {
             "Nh\\StarterPack\\": "src/"
         }

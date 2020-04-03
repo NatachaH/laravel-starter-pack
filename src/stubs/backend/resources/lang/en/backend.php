@@ -11,38 +11,85 @@ return [
     |
     */
 
-    // Mainbar
-    'my-account' => 'My account',
-    'edit-profile' => 'Edit my profile',
-
-    // Sidebar
-    'nav' => [
+    // Sidebar sections
+    'sidebar' => [
       'dashboard' => 'Dashboard',
-      'settings' => 'Settings',
-      'contents' => 'Contents',
+      'settings'  => 'Settings',
+      'users'     => 'Users',
+      'contents'  => 'Contents',
     ],
 
-    'user' => 'User|Users',
+    // Account menu
+    'account' => [
+      'preview' => 'My account',
+      'edit'    => 'Edit my profile',
+    ],
 
-    // Dates
-    'created-at' => 'Created at',
-    'updated-at' => 'Updated at',
-    'deleted-at' => 'Deleted at',
+    // Actions for buttons
+    'action' => [
+        'search'        => 'Search',
+        'reset'         => 'Reset',
+        'export'        => 'Export',
+        'add'           => 'Add',
+        'preview'       => 'Preview',
+        'create'        => 'Create',
+        'edit'          => 'Edit',
+        'delete'        => 'Delete',
+        'restore'       => 'Restore',
+        'force-delete'  => 'Force delete',
+        'cancel'        => 'Cancel',
+        'confirm'       => 'Confirm',
+        'show'          => 'Detail'
+    ],
 
-    // List
-    'no-result' => 'There is no result',
-    'total' => 'Total',
+    // Default fields name
+    'field' => [
+      'name'        => 'Name',
+      'email'       => 'Email',
+      'title'       => 'Title',
+      'subtitle'    => 'Subtitle',
+      'description' => 'Description',
+      'created-at'  => 'Created at',
+      'updated-at'  => 'Updated at',
+      'deleted-at'  => 'Deleted at',
+      'actions'     => 'Actions',
+    ],
 
-    // Actions
-    'action'        => 'Action|Actions',
-    'search'        => 'Search',
-    'reset'         => 'Reset',
-    'export'        => 'Export',
-    'add'           => 'Add',
-    'preview'       => 'Preview',
-    'edit'          => 'Edit',
-    'delete'        => 'Delete',
-    'restore'       => 'Restore',
-    'force-delete'  => 'Force delete',
+    // Listing
+    'listing' => [
+      'no-result' => 'There is no result',
+      'total'     => 'Total',
+    ],
+
+    // Modal Confirmation
+    'modal-confirm' => [
+      'delete' => [
+        'title' => 'Confirm delete',
+        'message' => 'Are you sure you want to delete this ?'
+      ],
+      'restore' => [
+        'title' => 'Confirm restore',
+        'message' => 'Are you sure you want to delete this ?'
+      ],
+      'force-delete' => [
+        'title' => 'Confirm force delete',
+        'message' => 'Are you sure you want to delete this ?<br/><b>Warning: </b>This cannot be undone.'
+      ]
+    ],
+
+    // Flash Toast message
+    'toast' => [
+      'added'         => 'The :model has been added with success !',
+      'updated'       => 'The :model has been updated with success !',
+      'deleted'       => 'The :model has been deleted with success !',
+      'restored'      => 'The :model has been restored with success !',
+      'force-deleted' => 'The :model has been deleted with success !'
+    ],
+
+    'model' => [
+      'user' => 'User|Users'
+    ]
+
+
 
 ];

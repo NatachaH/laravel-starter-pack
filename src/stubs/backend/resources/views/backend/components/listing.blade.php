@@ -7,11 +7,11 @@
         <div>
 
             @if(Route::has($route.'.export') && Auth::user()->can('export', $model))
-                <a href="{{ route($route.'.export') }}" class="btn btn-outline-secondary rounded-pill"><i class="icon icon-download"></i> @lang('backend.export')</a>
+                <a href="{{ route($route.'.export') }}" class="btn btn-outline-secondary rounded-pill"><i class="icon icon-download"></i> @lang('backend.action.export')</a>
             @endif
 
             @if(Route::has($route.'.create') && Auth::user()->can('create', $model))
-                <a href="{{ route($route.'.create') }}" class="btn btn-brand rounded-pill"><i class="icon icon-plus"></i> @lang('backend.add')</a>
+                <a href="{{ route($route.'.create') }}" class="btn btn-brand rounded-pill"><i class="icon icon-plus"></i> @lang('backend.action.add')</a>
             @endif
 
         </div>
@@ -36,11 +36,11 @@
                         @endforeach
 
                         @if($showDates)
-                            <th class="td-fit">@lang('backend.created-at')</th>
-                            <th class="td-fit">@lang('backend.updated-at')</th>
+                            <th class="td-fit">@lang('backend.field.created-at')</th>
+                            <th class="td-fit">@lang('backend.field.updated-at')</th>
                         @endif
 
-                        <th class="td-fit">@choice('backend.action',2)</th>
+                        <th class="td-fit">@lang('backend.field.actions')</th>
 
                     </tr>
                 </thead>
@@ -62,23 +62,23 @@
                             <td class="td-fit">
 
                                 @if(Route::has($route.'.show') && Auth::user()->can('view', $item))
-                                    <a href="{{ route($route.'.show', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.preview')"><i class="icon icon-preview"></i></a>
+                                    <a href="{{ route($route.'.show', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.action.preview')"><i class="icon icon-preview"></i></a>
                                 @endif
 
                                 @if(Route::has($route.'.edit') && Auth::user()->can('update', $item))
-                                    <a href="{{ route($route.'.edit', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.edit')"><i class="icon icon-pencil"></i></a>
+                                    <a href="{{ route($route.'.edit', $item->id) }}" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.action.edit')"><i class="icon icon-pencil"></i></a>
                                 @endif
 
                                 @if(Route::has($route.'.destroy') && Auth::user()->can('delete', $item))
-                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.destroy', $item->id) }}" data-target="#deleteConfirm" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.delete')"><i class="icon icon-trash"></i></button>
+                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.destroy', $item->id) }}" data-target="#deleteConfirm" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.action.delete')"><i class="icon icon-trash"></i></button>
                                 @endif
 
                                 @if(Route::has($route.'.restore') && Auth::user()->can('restore', $item))
-                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.restore', $item->id) }}" data-target="#restoreConfirm" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.restore')"><i class="icon icon-time-reverse"></i></button>
+                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.restore', $item->id) }}" data-target="#restoreConfirm" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.action.restore')"><i class="icon icon-time-reverse"></i></button>
                                 @endif
 
                                 @if(Route::has($route.'.forceDelete') && Auth::user()->can('forceDelete', $item))
-                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.forceDelete', $item->id) }}" data-target="#forceDeleteConfirm" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.force-delete')"><i class="icon icon-trash"></i></button>
+                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.forceDelete', $item->id) }}" data-target="#forceDeleteConfirm" class="btn btn-default btn-sm rounded-circle" aria-label="@lang('backend.action.force-delete')"><i class="icon icon-trash"></i></button>
                                 @endif
 
                             </td>
@@ -89,15 +89,15 @@
             </table>
 
         @else
-            <div class="alert alert-info m-3">@lang('backend.no-result')</div>
+            <div class="alert alert-info m-3">@lang('backend.listing.no-result')</div>
         @endif
 
     </div>
 
     @if($hasPagination)
-        <div class="listing-footer d-flex justify-content-between">
+        <div class="listing-footer d-flex">
             {{ $items->appends(request()->only('search'))->links('backend.components.pagination') }}
-            <span class="listing-total">@lang('backend.total') {{$items->count().'/'.$items->total()}}</span>
+            <span class="listing-total ml-auto">@lang('backend.listing.total') {{$items->count().'/'.$items->total()}}</span>
         </div>
     @endif
 

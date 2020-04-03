@@ -11,9 +11,9 @@
         @csrf
         @method($method)
         <div class="modal-body text-center">
-          <p>{{ $message }}</p>
-          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-{{ $color }}">Confirm</button>
+          <p>{!! $message !!}</p>
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">@lang('backend.action.cancel')</button>
+          <button type="submit" class="btn btn-{{ $color }}">@lang('backend.action.confirm')</button>
         </div>
       </form>
 

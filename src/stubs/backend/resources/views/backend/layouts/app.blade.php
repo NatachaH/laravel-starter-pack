@@ -49,9 +49,9 @@
       @csrf
   </form>
 
-  <x-sp-modal-confirm name="deleteConfirm" title="Confirm delete" message="Are you sure ... ?" method="DELETE"/>
-  <x-sp-modal-confirm name="restoreConfirm" title="Confirm restore" message="Are you sure ... ?" method="PATCH" color="brand" icon="icon-time-reverse"/>
-  <x-sp-modal-confirm name="forceDeleteConfirm" title="Confirm delete" message="Are you sure ... ? You can't undo this ..." method="DELETE"/>
+  <x-sp-modal-confirm name="deleteConfirm" title="@lang('backend.modal-confirm.delete.title')" message="@lang('backend.modal-confirm.delete.message')" method="DELETE"/>
+  <x-sp-modal-confirm name="restoreConfirm" title="@lang('backend.modal-confirm.restore.title')" message="@lang('backend.modal-confirm.restore.message')" method="PATCH" color="brand" icon="icon-time-reverse"/>
+  <x-sp-modal-confirm name="forceDeleteConfirm" title="@lang('backend.modal-confirm.force-delete.title')" message="@lang('backend.modal-confirm.force-delete.message')" method="DELETE"/>
 
 </body>
 </html>

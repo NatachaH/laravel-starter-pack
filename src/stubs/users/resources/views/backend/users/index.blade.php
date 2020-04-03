@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', trans_choice('backend.user',2))
+@section('title', mainbar('settings','user'))
 
 @section('content')
 
