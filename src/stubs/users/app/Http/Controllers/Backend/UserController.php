@@ -43,8 +43,8 @@ class UserController extends Controller
      */
     public function search(Request $request)
     {
-        $search = new Search('users', $request->input('search'));
-        $keyword = $search->get('text');
+        $search = Search::new('users', $request->input('search'));
+        $keyword = $search->attribute('text');
         $users = User::search($keyword)->paginate(5);
         $request->flash();
         return view('backend.users.index', compact('users'));
