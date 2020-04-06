@@ -12,6 +12,17 @@ use App\User;
 
 class UserController extends Controller
 {
+
+    /**
+    * Instantiate a new controller instance.
+    *
+    * @return void
+    */
+    public function __construct()
+    {
+        $this->middleware('search:users')->only('index');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +41,8 @@ class UserController extends Controller
      */
     public function search(Request $request)
     {
-        $keyword = $request->input('search.text');
+        $search = new Search('users', $request->input('search'));
+        $keyword = $search->get('text');
         $users = User::search($keyword)->paginate(5);
         $request->flash();
         return view('backend.users.index', compact('users'));
