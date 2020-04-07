@@ -22,7 +22,7 @@ class UserController extends Controller
     */
     public function __construct()
     {
-        $this->middleware('search:users')->only('index');
+
     }
 
     /**
@@ -43,23 +43,9 @@ class UserController extends Controller
      */
     public function trashed()
     {
-        $this->authorize('viewTrashed', 'App\User'); 
+        $this->authorize('viewTrashed', 'App\User');
         $users = User::onlyTrashed()->paginate(5);
         return view('backend.users.trashed', compact('users'));
-    }
-
-    /**
-     * Display a listing of ht resource filtered by a search request.
-     * @param  Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function search(Request $request)
-    {
-        $search = Search::new('users', $request->input('search'));
-        $keyword = $search->attribute('text');
-        $users = User::search($keyword)->paginate(5);
-        $request->flash();
-        return view('backend.users.index', compact('users'));
     }
 
     /**

@@ -6,13 +6,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Nh\Searchable\Traits\Searchable;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
-    use Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -39,15 +37,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-    ];
-
-    /**
-     * The attributes that can be used for the search.
-     *
-     * @var array
-     */
-    protected $searchable = [
-        'name','email'
     ];
 
     /**

@@ -50,8 +50,8 @@ class Search extends Component
      */
     public function __construct($route, $isAdvanced = false, $collapseId = 'collapseSearch')
     {
-        $this->action     = $route.'.search';
-        $this->reset      = $route.'.index';
+        $this->action     = '#';
+        $this->reset      = '#';
         $this->isAdvanced = $isAdvanced;
         $this->collapseId = $collapseId;
     }

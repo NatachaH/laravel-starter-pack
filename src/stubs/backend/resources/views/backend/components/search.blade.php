@@ -1,10 +1,10 @@
-<form {{ $attributes->merge(['class' => 'search-form']) }} action="{{ route($action) }}" method="post">
+<form {{ $attributes->merge(['class' => 'search-form']) }} action="{{ $action }}" method="post">
 
     @csrf
 
     <div class="input-group">
 
-      <input type="text" name="search[text]" value="{{ old('search.text') }}" class="form-control" placeholder="@lang('backend.action.search')" aria-label="@lang('backend.action.search')">
+      <input type="text" name="search[text]" class="form-control" placeholder="@lang('backend.action.search')" aria-label="@lang('backend.action.search')">
 
       @if($isAdvanced)
         <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#{{ $collapseId }}" aria-expanded="false" aria-controls="{{ $collapseId }}"><i class="icon icon-toggles"></i></button>
