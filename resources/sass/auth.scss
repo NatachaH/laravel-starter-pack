@@ -1,0 +1,55 @@
+/*
+|--------------------------------------------------------------------------
+| Auth - Design
+|--------------------------------------------------------------------------
+|
+| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
+*/
+
+// Variables
+@import 'variables/bootstrap';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Components
+@import 'components/form';
+
+// Design
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  background: $body-bg;
+}
+
+#auth {
+
+  width: 100%;
+  max-width: 330px;
+  margin: auto;
+
+  > .card-header,
+  > .card-subheader {
+
+    background: $white;
+    border-bottom:1px solid $border-color;
+
+    > h1,
+    > h2 {
+      margin: 0;
+    }
+
+    > h2 {
+      color: $secondary;
+      font-size: 1.5rem;
+      padding: 0.5rem 0;
+    }
+
+  }
+
+}
