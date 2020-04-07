@@ -7,9 +7,6 @@
 |
 */
 
-// Bootstrap
-require('../bootstrap');
-
 // Components
 require('./components/sidebar');
 
