@@ -47,6 +47,9 @@ class StarterPackServiceProvider extends ServiceProvider
       // VIEWS
       $this->loadViewsFrom(__DIR__.'/../resources/views', 'sp');
 
+      // TRANSLATIONS
+      $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'sp');
+
       // Load the blades
       Blade::component('sp-search', \Nh\StarterPack\View\Components\Search::class);
       Blade::component('sp-listing', \Nh\StarterPack\View\Components\Listing::class);
