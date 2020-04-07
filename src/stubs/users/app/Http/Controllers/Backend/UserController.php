@@ -37,6 +37,17 @@ class UserController extends Controller
     }
 
     /**
+     * Display a listing of the resource that are soft deleted.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function trashed()
+    {
+        $users = User::onlyTrashed()->paginate(5);
+        return view('backend.users.trash', compact('users'));
+    }
+
+    /**
      * Display a listing of ht resource filtered by a search request.
      * @param  Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response

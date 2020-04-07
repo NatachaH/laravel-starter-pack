@@ -2,7 +2,16 @@
 
     <div class="listing-header d-flex justify-content-between">
 
-        <h2>{{ $title }}</h2>
+        <h2>
+          {{ $title }}
+          @if($isSoftDeleting)
+            <small>
+              <a class="{{ Route::is($route.'.index') ? 'active' : '' }}" href="{{ route($route.'.index') }}">@lang('backend.listing.all', ['nbr' => $total['all']])</a>
+              |
+              <a class="{{ Route::is($route.'.trashed') ? 'active' : '' }}" href="{{ route($route.'.trashed') }}">@lang('backend.listing.trash', ['nbr' => $total['trash']])</a>
+            </small>
+          @endif
+        </h2>
 
         <div>
 

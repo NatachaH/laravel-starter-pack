@@ -7,9 +7,21 @@
 .listing {
 
     .listing-header {
-      > h2 {
-        margin:0;
-      }
+        > h2 {
+            margin:0;
+            > small {
+                color: $secondary;
+                font-size: 1rem;
+                font-weight: 300;
+                > a {
+                    color: $secondary;
+                    &:hover,
+                    &.active {
+                      color: $body-color;
+                    }
+                }
+            }
+        }
     }
 
     .listing-body {

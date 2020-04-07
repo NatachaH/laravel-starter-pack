@@ -78,6 +78,32 @@ class Listing extends Component
     }
 
     /**
+     * Check if the model has Soft Deleting methods.
+     * @return boolean
+     */
+    public function isSoftDeleting()
+    {
+        return in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($this->model));
+    }
+
+    /**
+     * Get total number element that are (not) in trash.
+     * @return array
+     */
+    public function total()
+    {
+        if($this->isSoftDeleting())
+        {
+            $model = new $this->model;
+
+            $total['all'] = $model->count();
+            $total['trash'] = $model->onlyTrashed()->count();
+
+            return $total;
+        }
+    }
+
+    /**
      * Create a new component instance.
      *
      * @return void

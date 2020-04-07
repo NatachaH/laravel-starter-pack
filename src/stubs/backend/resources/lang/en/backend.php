@@ -45,7 +45,8 @@ return [
         'force-delete'  => 'Force delete',
         'cancel'        => 'Cancel',
         'confirm'       => 'Confirm',
-        'show'          => 'Detail'
+        'show'          => 'Detail',
+        'trash'         => 'Trash'
     ],
 
     // Default fields name
@@ -66,6 +67,8 @@ return [
     'listing' => [
       'no-result' => 'There is no result',
       'total'     => 'Total',
+      'all'       => 'All (:nbr)',
+      'trash'     => 'Trash (:nbr)',
     ],
 
     // Modal Confirmation
