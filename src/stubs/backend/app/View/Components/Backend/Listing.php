@@ -5,6 +5,8 @@ namespace App\View\Components\Backend;
 use Illuminate\View\Component;
 use Illuminate\Support\Str;
 
+use Auth;
+
 class Listing extends Component
 {
     /**
@@ -83,7 +85,7 @@ class Listing extends Component
      */
     public function isSoftDeleting()
     {
-        return in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($this->model)) && Auth::user()->can('viewTrashed');
+        return in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($this->model)) && Auth::user()->can('viewTrashed', $this->model);
     }
 
     /**
