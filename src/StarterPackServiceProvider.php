@@ -50,13 +50,19 @@ class StarterPackServiceProvider extends ServiceProvider
       // TRANSLATIONS
       $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'sp');
 
-      // Load the blades
+      // BLADES
       Blade::component('sp-search', \Nh\StarterPack\View\Components\Search::class);
       Blade::component('sp-listing', \Nh\StarterPack\View\Components\Listing::class);
       Blade::component('sp-statistic', \Nh\StarterPack\View\Components\Statistic::class);
       Blade::component('sp-toast', \Nh\StarterPack\View\Components\Toast::class);
       Blade::component('sp-modal-confirm', \Nh\StarterPack\View\Components\ModalConfirm::class);
 
+      // COMMANDES
+      if ($this->app->runningInConsole()) {
+          $this->commands([
+              \Nh\StarterPack\Commands\NewContentCommand::class,
+          ]);
+      }
 
     }
 }
