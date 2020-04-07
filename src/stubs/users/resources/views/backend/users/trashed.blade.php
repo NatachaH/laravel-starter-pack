@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', mainbar('settings','user', 'trash'))
+@section('title', mainbar('settings','user', 'trashed'))
 
 @section('content')
 

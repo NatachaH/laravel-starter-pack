@@ -44,7 +44,7 @@ class UserController extends Controller
     public function trashed()
     {
         $users = User::onlyTrashed()->paginate(5);
-        return view('backend.users.trash', compact('users'));
+        return view('backend.users.trashed', compact('users'));
     }
 
     /**

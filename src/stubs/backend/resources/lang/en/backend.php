@@ -46,7 +46,7 @@ return [
         'cancel'        => 'Cancel',
         'confirm'       => 'Confirm',
         'show'          => 'Detail',
-        'trash'         => 'Trash'
+        'trashed'       => 'Trashed'
     ],
 
     // Default fields name
