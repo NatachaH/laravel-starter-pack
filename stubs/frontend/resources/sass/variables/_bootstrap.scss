@@ -13,7 +13,7 @@ $enable-transitions:                          true !default;
 $enable-responsive-font-sizes:                true !default;
 
 // Colors
-$primary:       #B790E5;
+$primary:       $brand;
 
 // Inputs & buttons
 $input-btn-focus-box-shadow: none;
