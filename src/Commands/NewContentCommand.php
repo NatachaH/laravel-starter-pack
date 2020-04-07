@@ -110,7 +110,7 @@ class NewContentCommand extends Command
         $this->copy_file($sp_database,$new_database);
 
         // View
-        $views = glob($stub.'resources/views/backend/spcontents', GLOB_BRACE);
+        $views = glob($stub.'resources/views/backend/spcontents/*.php', GLOB_BRACE);
         foreach($views as $view) {
           $sp_view = $view;
           $new_view = resource_path('views/backend/'.$this->pname);
