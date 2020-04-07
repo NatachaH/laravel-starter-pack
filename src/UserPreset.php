@@ -25,7 +25,7 @@ class UsersPreset extends Preset
      */
     public static function updateApp()
     {
-        $stub = __DIR__.'/stubs/users/app';
+        $stub = __DIR__.'/../stubs/users/app';
         (new Filesystem)->copyDirectory($stub, app_path());
     }
 
@@ -35,7 +35,7 @@ class UsersPreset extends Preset
      */
     public static function updateDatabase()
     {
-        $stub = __DIR__.'/stubs/users/database/';
+        $stub = __DIR__.'/../stubs/users/database/';
         (new Filesystem)->copyDirectory($stub, database_path());
     }
 
@@ -45,7 +45,7 @@ class UsersPreset extends Preset
      */
     public static function updateResources()
     {
-        $stub = __DIR__.'/stubs/users/resources/';
+        $stub = __DIR__.'/../stubs/users/resources/';
         (new Filesystem)->copyDirectory($stub.'views', resource_path('views'));
     }
 

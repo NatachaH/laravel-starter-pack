@@ -48,7 +48,7 @@ class GlobalPreset extends Preset
      */
     public static function updateProviders()
     {
-        $stub = __DIR__.'/stubs/global/app/Providers';
+        $stub = __DIR__.'/../stubs/global/app/Providers';
         $path = app_path('Providers');
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -63,7 +63,7 @@ class GlobalPreset extends Preset
         (new Filesystem)->cleanDirectory(resource_path('sass'));
         (new Filesystem)->cleanDirectory(resource_path('views'));
 
-        $stub = __DIR__.'/stubs/global/resources/';
+        $stub = __DIR__.'/../stubs/global/resources/';
 
         (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
         (new Filesystem)->copyDirectory($stub.'lang', resource_path('lang'));
@@ -76,7 +76,7 @@ class GlobalPreset extends Preset
      */
     public static function updateRoutes()
     {
-        $stub = __DIR__.'/stubs/global/routes';
+        $stub = __DIR__.'/../stubs/global/routes';
         $path = base_path('routes');
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -87,7 +87,7 @@ class GlobalPreset extends Preset
      */
     public static function updateWebpack()
     {
-        copy(__DIR__.'/stubs/global/webpack.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__.'/../stubs/global/webpack.mix.js', base_path('webpack.mix.js'));
     }
 
 }

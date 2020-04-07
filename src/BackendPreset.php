@@ -27,7 +27,7 @@ class BackendPreset extends Preset
      */
     public static function updateApp()
     {
-        $stub = __DIR__.'/stubs/backend/app';
+        $stub = __DIR__.'/../stubs/backend/app';
         $path = app_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -38,7 +38,7 @@ class BackendPreset extends Preset
      */
     public static function updatePublic()
     {
-        $stub = __DIR__.'/stubs/backend/public';
+        $stub = __DIR__.'/../stubs/backend/public';
         $path = public_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -49,7 +49,7 @@ class BackendPreset extends Preset
      */
     public static function updateResources()
     {
-        $stub = __DIR__.'/stubs/backend/resources/';
+        $stub = __DIR__.'/../stubs/backend/resources/';
         (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
         (new Filesystem)->copyDirectory($stub.'lang', resource_path('lang'));
         (new Filesystem)->copyDirectory($stub.'sass', resource_path('sass'));
