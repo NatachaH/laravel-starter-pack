@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 // Users
 Route::any('/users/search', 'UserController@search')->name('users.search');
-Route::any('/users/trashed', 'UserController@trashed')->middleware('can:viewTrashed')->name('users.trashed');
+Route::any('/users/trashed', 'UserController@trashed')->name('users.trashed');
 Route::patch('/users/{id}/restore', 'UserController@restore')->name('users.restore');
 Route::delete('/users/{id}/forceDelete', 'UserController@forceDelete')->name('users.forceDelete');
 Route::resource('users','UserController');
