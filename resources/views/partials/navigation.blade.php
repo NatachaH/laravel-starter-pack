@@ -1,14 +1,25 @@
-<nav class="nav flex-column">
-    <h5 class="nav-header">
-      <a class="nav-header-link {{ Route::is('backend.dashboard') ? 'active' : '' }}" href="{{ route('backend.dashboard') }}"><i class="icon-dashboard"></i> @lang('backend.sidebar.dashboard')</a>
-    </h5>
-</nav>
+@foreach (config('backend.sidebar') as $key => $value)
+  <nav class="nav flex-column">
 
-<nav class="nav flex-column">
-    <h5 class="nav-header"><i class="icon-gear"></i> @lang('backend.sidebar.settings')</h5>
-    <a class="nav-link {{ Route::is('backend.users.*') ? 'active' : '' }}" href="{{ route('backend.users.index') }}">@lang('backend.sidebar.users')</a>
-</nav>
+      @if(is_null($value['link']))
+        <h5 class="nav-header"><i class="{{ $value['icon'] }}"></i> @lang('backend.sidebar.'.$key)</h5>
+      @else
+        <h5 class="nav-header">
+            <a class="nav-header-link {{ Route::is($value['link']) ? 'active' : '' }}" href="{{ route($value['link']) }}"><i class="{{ $value['icon'] }}"></i> @lang('backend.sidebar.'.$key)</a>
+        </h5>
+      @endif
 
-<nav class="nav flex-column">
-    <h5 class="nav-header"><i class="icon-content"></i> @lang('backend.sidebar.contents')</h5>
-</nav>
+      @if(!is_null($value['items']))
+          @foreach ($value['items'] as $key => $value)
+
+            @if(is_array($value))
+                <a class="nav-link {{ Route::is($value['active']) ? 'active' : '' }}" href="{{ route($value['link']) }}">@lang('backend.sidebar.'.$key)</a>
+            @else
+                <a class="nav-link {{ Route::is($value.'.*') ? 'active' : '' }}" href="{{ route($value.'.index') }}">@lang('backend.sidebar.'.$key)</a>
+            @endif
+
+          @endforeach
+      @endif
+
+  </nav>
+@endforeach
