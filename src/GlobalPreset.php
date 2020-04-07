@@ -66,6 +66,7 @@ class GlobalPreset extends Preset
         $stub = __DIR__.'/../stubs/global/resources/';
 
         (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
+        (new Filesystem)->copyDirectory($stub.'sass', resource_path('sass'));
         (new Filesystem)->copyDirectory($stub.'lang', resource_path('lang'));
 
     }
