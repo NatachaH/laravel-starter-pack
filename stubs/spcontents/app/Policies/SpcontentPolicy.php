@@ -5,9 +5,9 @@ namespace App\Policies;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 use App\User;
-use App\{{ UNAME }};
+use App\{{ UCNAME }};
 
-class {{ UNAME }}Policy
+class {{ UCNAME }}Policy
 {
     use HandlesAuthorization;
 
@@ -48,10 +48,10 @@ class {{ UNAME }}Policy
      * Determine whether the user can view the model.
      *
      * @param  \App\User  $user
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return mixed
      */
-    public function view(User $user, {{ UNAME }} ${{ NAME }})
+    public function view(User $user, {{ UCNAME }} ${{ NAME }})
     {
         return false;
     }
@@ -71,10 +71,10 @@ class {{ UNAME }}Policy
      * Determine whether the user can update the model.
      *
      * @param  \App\User  $user
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return mixed
      */
-    public function update(User $user, {{ UNAME }} ${{ NAME }})
+    public function update(User $user, {{ UCNAME }} ${{ NAME }})
     {
         return !${{ NAME }}->trashed();
     }
@@ -83,10 +83,10 @@ class {{ UNAME }}Policy
      * Determine whether the user can delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return mixed
      */
-    public function delete(User $user, {{ UNAME }} ${{ NAME }})
+    public function delete(User $user, {{ UCNAME }} ${{ NAME }})
     {
         return !${{ NAME }}->trashed();
     }
@@ -95,10 +95,10 @@ class {{ UNAME }}Policy
      * Determine whether the user can restore the model.
      *
      * @param  \App\User  $user
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return mixed
      */
-    public function restore(User $user, {{ UNAME }} ${{ NAME }})
+    public function restore(User $user, {{ UCNAME }} ${{ NAME }})
     {
         return ${{ NAME }}->trashed();
     }
@@ -107,10 +107,10 @@ class {{ UNAME }}Policy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return mixed
      */
-    public function forceDelete(User $user, {{ UNAME }} ${{ NAME }})
+    public function forceDelete(User $user, {{ UCNAME }} ${{ NAME }})
     {
         return ${{ NAME }}->trashed();
     }

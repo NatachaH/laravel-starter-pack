@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\Store{{ UNAME }}Request;
+use App\Http\Requests\Store{{ UCNAME }}Request;
 use App\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Auth;
 
-use App\{{ UNAME }};
+use App\{{ UCNAME }};
 
-class {{ UNAME }}Controller extends Controller
+class {{ UCNAME }}Controller extends Controller
 {
 
     /**
@@ -30,7 +30,7 @@ class {{ UNAME }}Controller extends Controller
      */
     public function index()
     {
-        ${{ PNAME }} = {{ UNAME }}::paginate(5);
+        ${{ PNAME }} = {{ UCNAME }}::paginate(5);
         return view('backend.{{ PNAME }}.index', compact('{{ PNAME }}'));
     }
 
@@ -41,8 +41,8 @@ class {{ UNAME }}Controller extends Controller
      */
     public function trashed()
     {
-        $this->authorize('viewTrashed', 'App\{{ UNAME }}');
-        ${{ PNAME }} = {{ UNAME }}::onlyTrashed()->paginate(5);
+        $this->authorize('viewTrashed', 'App\{{ UCNAME }}');
+        ${{ PNAME }} = {{ UCNAME }}::onlyTrashed()->paginate(5);
         return view('backend.{{ PNAME }}.trashed', compact('{{ PNAME }}'));
     }
 
@@ -59,12 +59,12 @@ class {{ UNAME }}Controller extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Store{{ UNAME }}Request  $request
+     * @param  \App\Http\Requests\Store{{ UCNAME }}Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Store{{ UNAME }}Request $request)
+    public function store(Store{{ UCNAME }}Request $request)
     {
-        {{ UNAME }}::create($request->only(['name','email','password']));
+        {{ UCNAME }}::create($request->only(['name','email','password']));
         session()->flash('toast', ['success' => notification('added','{{ NAME }}')]);
         return redirect()->route('backend.{{ PNAME }}.index');
     }
@@ -72,10 +72,10 @@ class {{ UNAME }}Controller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return \Illuminate\Http\Response
      */
-    public function show({{ UNAME }} ${{ NAME }})
+    public function show({{ UCNAME }} ${{ NAME }})
     {
         return view('backend.{{ PNAME }}.show', compact('{{ NAME }}'));
     }
@@ -83,10 +83,10 @@ class {{ UNAME }}Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return \Illuminate\Http\Response
      */
-    public function edit({{ UNAME }} ${{ NAME }})
+    public function edit({{ UCNAME }} ${{ NAME }})
     {
         return view('backend.{{ PNAME }}.edit', compact('{{ NAME }}'));
     }
@@ -94,11 +94,11 @@ class {{ UNAME }}Controller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Store{{ UNAME }}Request  $request
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\Http\Requests\Store{{ UCNAME }}Request  $request
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return \Illuminate\Http\Response
      */
-    public function update(Store{{ UNAME }}Request $request, {{ UNAME }} ${{ NAME }})
+    public function update(Store{{ UCNAME }}Request $request, {{ UCNAME }} ${{ NAME }})
     {
         ${{ NAME }}->update($request->only(['name','email','password']));
         session()->flash('toast', ['success' => notification('updated','{{ NAME }}')]);
@@ -108,10 +108,10 @@ class {{ UNAME }}Controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return \Illuminate\Http\Response
      */
-    public function destroy({{ UNAME }} ${{ NAME }})
+    public function destroy({{ UCNAME }} ${{ NAME }})
     {
         ${{ NAME }}->delete();
         session()->flash('toast', ['success' => notification('deleted','{{ NAME }}')]);
@@ -126,7 +126,7 @@ class {{ UNAME }}Controller extends Controller
      */
     public function restore(int $id)
     {
-        ${{ NAME }} = {{ UNAME }}::onlyTrashed()->findOrFail($id);
+        ${{ NAME }} = {{ UCNAME }}::onlyTrashed()->findOrFail($id);
         ${{ NAME }}->restore();
         session()->flash('toast', ['success' => notification('restored','{{ NAME }}')]);
         return back();
@@ -140,7 +140,7 @@ class {{ UNAME }}Controller extends Controller
      */
     public function forceDelete(int $id)
     {
-        ${{ NAME }} = {{ UNAME }}::onlyTrashed()->findOrFail($id);
+        ${{ NAME }} = {{ UCNAME }}::onlyTrashed()->findOrFail($id);
         ${{ NAME }}->forceDelete();
         session()->flash('toast', ['success' => notification('force-deleted','{{ NAME }}')]);
         return back();

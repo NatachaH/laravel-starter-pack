@@ -2,17 +2,17 @@
 
 namespace App\Observers;
 
-use App\{{ UNAME }};
+use App\{{ UCNAME }};
 
-class {{ UNAME }}Observer
+class {{ UCNAME }}Observer
 {
     /**
      * Handle the {{ NAME }} "created" event.
      *
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return void
      */
-    public function created({{ UNAME }} ${{ NAME }})
+    public function created({{ UCNAME }} ${{ NAME }})
     {
         //
     }
@@ -20,10 +20,10 @@ class {{ UNAME }}Observer
     /**
      * Handle the {{ NAME }} "updated" event.
      *
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return void
      */
-    public function updated({{ UNAME }} ${{ NAME }})
+    public function updated({{ UCNAME }} ${{ NAME }})
     {
         //
     }
@@ -31,10 +31,10 @@ class {{ UNAME }}Observer
     /**
      * Handle the {{ NAME }} "deleted" event.
      *
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return void
      */
-    public function deleted({{ UNAME }} ${{ NAME }})
+    public function deleted({{ UCNAME }} ${{ NAME }})
     {
         //
     }
@@ -42,10 +42,10 @@ class {{ UNAME }}Observer
     /**
      * Handle the {{ NAME }} "restored" event.
      *
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return void
      */
-    public function restored({{ UNAME }} ${{ NAME }})
+    public function restored({{ UCNAME }} ${{ NAME }})
     {
         //
     }
@@ -53,10 +53,10 @@ class {{ UNAME }}Observer
     /**
      * Handle the {{ NAME }} "force deleted" event.
      *
-     * @param  \App\{{ UNAME }}  ${{ NAME }}
+     * @param  \App\{{ UCNAME }}  ${{ NAME }}
      * @return void
      */
-    public function forceDeleted({{ UNAME }} ${{ NAME }})
+    public function forceDeleted({{ UCNAME }} ${{ NAME }})
     {
         //
     }
