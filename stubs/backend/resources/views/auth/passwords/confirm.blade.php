@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('sp::layouts.auth')
 
 @section('title', __('Confirm Password'))
 
