@@ -6,7 +6,7 @@
 
 
 // Bootstrap
-require('bootstrap');
+require('./bootstrap');
 
 // Backend scripts
 require('../../vendor/nh/starter-pack/resources/js/backend');
