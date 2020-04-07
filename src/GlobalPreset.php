@@ -18,6 +18,7 @@ class GlobalPreset extends Preset
         static::updatePackages();
         static::updateProviders();
         static::updateResources();
+        static::updateRoutes();
         static::updateWebpack();
     }
 
@@ -67,6 +68,17 @@ class GlobalPreset extends Preset
         (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
         (new Filesystem)->copyDirectory($stub.'lang', resource_path('lang'));
 
+    }
+
+    /**
+     * Updates the routes files
+     * @return void
+     */
+    public static function updateRoutes()
+    {
+        $stub = __DIR__.'/stubs/global/routes';
+        $path = base_path('routes');
+        (new Filesystem)->copyDirectory($stub, $path);
     }
 
     /**
