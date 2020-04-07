@@ -111,10 +111,17 @@ class NewContentCommand extends Command
 
         // View
         $views = glob($stub.'resources/views/backend/spcontents/*.php', GLOB_BRACE);
+        $folder = resource_path('views/backend/'.$this->pname);
+
+        if(!is_dir($folder))
+        {
+            $viewFolder = mkdir($folder, 0777, true);
+        }
+
         foreach($views as $view) {
-          $sp_view = $view;
-          $new_view = resource_path('views/backend/'.$this->pname);
-          $this->copy_file($sp_view,$new_view);
+            $sp_view = $view;
+            $new_view = $folder.'/'.basename($sp_view);
+            $this->copy_file($sp_view,$new_view);
         }
 
         // End
