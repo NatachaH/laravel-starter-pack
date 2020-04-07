@@ -44,12 +44,15 @@ class StarterPackServiceProvider extends ServiceProvider
 
       });
 
+      // VIEWS
+      $this->loadViewsFrom(__DIR__.'/../resources/views', 'sp');
+
       // Load the blades
-      Blade::component('sp-search', \App\View\Components\Backend\Search::class);
-      Blade::component('sp-listing', \App\View\Components\Backend\Listing::class);
-      Blade::component('sp-statistic', \App\View\Components\Backend\Statistic::class);
-      Blade::component('sp-toast', \App\View\Components\Backend\Toast::class);
-      Blade::component('sp-modal-confirm', \App\View\Components\Backend\ModalConfirm::class);
+      Blade::component('sp-search', \Sp\View\Components\Search::class);
+      Blade::component('sp-listing', \Sp\View\Components\Listing::class);
+      Blade::component('sp-statistic', \Sp\View\Components\Statistic::class);
+      Blade::component('sp-toast', \Sp\View\Components\Toast::class);
+      Blade::component('sp-modal-confirm', \Sp\View\Components\ModalConfirm::class);
 
 
     }

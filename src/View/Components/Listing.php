@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Backend;
+namespace Sp\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\Support\Str;
@@ -129,6 +129,6 @@ class Listing extends Component
      */
     public function render()
     {
-        return view('backend.components.listing');
+        return view('sp::components.listing');
     }
 }

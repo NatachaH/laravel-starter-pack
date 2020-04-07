@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Backend;
+namespace Sp\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\Support\Str;
@@ -79,6 +79,6 @@ class ModalConfirm extends Component
      */
     public function render()
     {
-        return view('backend.components.modal-confirm');
+        return view('sp::components.modal-confirm');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Backend;
+namespace Sp\View\Components;
 
 use Illuminate\View\Component;
 
@@ -63,6 +63,6 @@ class Search extends Component
      */
     public function render()
     {
-        return view('backend.components.search');
+        return view('sp::components.search');
     }
 }

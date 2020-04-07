@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Backend;
+namespace Sp\View\Components;
 
 use Illuminate\View\Component;
 
@@ -62,6 +62,6 @@ class Statistic extends Component
      */
     public function render()
     {
-        return view('backend.components.statistic');
+        return view('sp::components.statistic');
     }
 }

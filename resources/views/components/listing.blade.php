@@ -61,7 +61,7 @@
                                 <td class="td-fit">{{ $item->id }}</td>
                             @endif
 
-                            @includeFirst([$viewFolder.'.listing.detail', 'backend.components.listing-detail'])
+                            @includeFirst([$viewFolder.'.listing.detail', 'sp::components.listing-detail'])
 
                             @if($showDates)
                                 <td class="td-fit">{{ $item->created_at }}</td>
@@ -105,7 +105,7 @@
 
     @if($hasPagination)
         <div class="listing-footer d-flex align-items-center">
-            {{ $items->links('backend.components.pagination') }}
+            {{ $items->links('sp::components.pagination') }}
             <span class="listing-total ml-auto">@lang('backend.listing.total') {{$items->count().'/'.$items->total()}}</span>
         </div>
     @endif

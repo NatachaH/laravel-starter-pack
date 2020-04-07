@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Backend;
+namespace Sp\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\Support\Str;
@@ -74,6 +74,6 @@ class Toast extends Component
      */
     public function render()
     {
-        return view('backend.components.toast');
+        return view('sp::components.toast');
     }
 }
