@@ -9,7 +9,7 @@
 
     <div class="sidebar-body flex-fill" id="menu">
 
-        @include('backend.partials.navigation')
+        @include('sp::partials.navigation')
 
     </div>
 

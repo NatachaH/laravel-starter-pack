@@ -21,11 +21,11 @@
 
       <div class="row">
 
-          @include('backend.partials.sidebar')
+          @include('sp::partials.sidebar')
 
           <main class="col-lg-9 col-xl-10">
 
-              @include('backend.partials.mainbar')
+              @include('sp::partials.mainbar')
 
               <div class="main-body">
                 @yield('content')
