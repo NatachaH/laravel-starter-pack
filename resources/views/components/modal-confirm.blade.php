@@ -13,8 +13,8 @@
         @method($method)
         <div class="modal-body text-center">
           <p>{!! $message !!}</p>
-          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">@lang('backend.action.cancel')</button>
-          <button type="submit" class="btn btn-{{ $color }}">@lang('backend.action.confirm')</button>
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">@lang('sp::action.cancel')</button>
+          <button type="submit" class="btn btn-{{ $color }}">@lang('sp::action.confirm')</button>
         </div>
       </form>
 

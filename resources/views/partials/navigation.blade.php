@@ -11,6 +11,4 @@
 
 <nav class="nav flex-column">
     <h5 class="nav-header"><i class="icon-content"></i> @lang('backend.sidebar.contents')</h5>
-    <a class="nav-link" href="#">Un lien</a>
-    <a class="nav-link" href="#">Un autre lien</a>
 </nav>

@@ -8,7 +8,7 @@
  */
 function notification(string $message, string $attribute)
 {
-    $translations   = 'notification';
+    $translations   = 'sp::notification';
 
     if(\Lang::has($translations.'.'.$message))
     {

@@ -21,7 +21,7 @@ return [
     'sended'        => ':Attribute has been sended with success !',
 
     // Models
-    'Attributes' => [
+    'attributes' => [
       'user' => 'the user',
       'account' => 'your account'
     ],

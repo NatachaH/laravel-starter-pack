@@ -13,9 +13,9 @@
        <i class="icon-user"></i> <span>{{ Auth::user() ? Auth::user()->name : 'Username' }}</span>
     </button>
     <ul class="dropdown-menu " aria-labelledby="accountDropdown">
-      <li><h6 class="dropdown-header">@lang('backend.account.preview')</h6></li>
+      <li><h6 class="dropdown-header">@lang('sp::account.preview')</h6></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item {{ Route::is('backend.account.edit') ? 'active' : '' }}" href="{{ route('backend.account.edit') }}">@lang('backend.account.edit')</a></li>
+      <li><a class="dropdown-item {{ Route::is('backend.account.edit') ? 'active' : '' }}" href="{{ route('backend.account.edit') }}">@lang('sp::account.edit')</a></li>
       <li><a class="dropdown-item" href="{{ route('logout')}}" onclick="event.preventDefault();document.getElementById('logoutForm').submit();">@lang('Logout')</a></li>
     </ul>
   </div>

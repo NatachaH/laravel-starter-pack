@@ -20,7 +20,7 @@ function mainbar(string $section, string $model = null, string $action = null)
 
     if(!is_null($action))
     {
-        $title .= ' : '.(\Lang::has($translations.'.action.'.$action) ? __($translations.'.action.'.$action) : $action);
+        $title .= ' : '.(\Lang::has('sp::action.'.$action) ? __('sp::action.'.$action) : $action);
     }
 
     return $title;
