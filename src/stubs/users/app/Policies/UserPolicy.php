@@ -32,6 +32,17 @@ class UserPolicy
     }
 
     /**
+     * Determine whether the user can view the trashed models.
+     *
+     * @param  \App\User  $user
+     * @return mixed
+     */
+    public function viewTrashed(User $user)
+    {
+        return true;
+    }
+
+    /**
      * Determine whether the user can view the model.
      *
      * @param  \App\User  $user

@@ -78,12 +78,12 @@ class Listing extends Component
     }
 
     /**
-     * Check if the model has Soft Deleting methods.
+     * Check if the model has Soft Deleting methods and that the Auth user can see the trashed items.
      * @return boolean
      */
     public function isSoftDeleting()
     {
-        return in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($this->model));
+        return in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($this->model)) && Auth::user()->can('viewTrashed');
     }
 
     /**
