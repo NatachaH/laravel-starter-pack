@@ -1,6 +1,6 @@
 <?php
 
-namespace Sp\View\Components;
+namespace Nh\StarterPack\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\Support\Str;
