@@ -8,8 +8,6 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Auth;
 
-use Search;
-
 use App\User;
 
 class UserController extends Controller
