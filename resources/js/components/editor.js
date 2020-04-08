@@ -18,8 +18,9 @@ Quill.register(ColorClass, true);
 var editors = document.querySelectorAll('.editor');
 Array.prototype.forEach.call(editors, function(el, i) {
     var parent = el.parentElement;
-    var toolbar = parent.querySelector('.toolbar');
-    var editor = new Quill(el, {
+    var toolbar = parent.querySelector('.ql-toolbar');
+    var editor = parent.querySelector('.ql-container');
+    var ql = new Quill(editor, {
       modules: {
       toolbar: {
         container: toolbar
@@ -31,12 +32,11 @@ Array.prototype.forEach.call(editors, function(el, i) {
 // If a form is submit =>
 var form = document.querySelector('form');
 form.onsubmit = function() {
-
   // Populate hidden form on submit
   Array.prototype.forEach.call(editors, function(el, i) {
     var parent = el.parentElement;
-    var textarea = parent.querySelector('textarea');
-    var html = el.firstChild.innerHTML;
+    var textarea = parent.querySelector('.ql-textarea');
+    var html = parent.querySelector('.ql-editor').innerHTML;
 
     // Clean the <p><br/></p> to <br/>
     html = html.replace(new RegExp('<p><br></p>', 'g'), '<br>');

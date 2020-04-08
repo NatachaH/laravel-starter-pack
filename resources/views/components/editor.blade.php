@@ -6,11 +6,11 @@
 
     <div class="ql-toolbar btn-toolbar">
 
-      @includeWhen($hasHeader, 'sp::components.editor.header')
-      @includeWhen($hasFormat, 'sp::components.editor.format')
-      @includeWhen($hasList, 'sp::components.editor.list')
-      @includeWhen($hasLink, 'sp::components.editor.link')
-      @includeWhen($hasColor, 'sp::components.editor.color', ['colors' => $colors])
+      @includeWhen($toolbarHasHeader, 'sp::components.editor.header')
+      @includeWhen($toolbarHasFormat, 'sp::components.editor.format')
+      @includeWhen($toolbarHasList, 'sp::components.editor.list')
+      @includeWhen($toolbarHasLink, 'sp::components.editor.link')
+      @includeWhen($toolbarHasColor, 'sp::components.editor.color', ['colors' => $toolbarColors])
 
       <div class="ql-formats btn-group">
         <button class="btn ql-clean" aria-label="@lang('sp::editor.clean')">
@@ -23,9 +23,14 @@
 
     </div>
 
-    <div class="ql-container">{!! old($name,$value) !!}</div>
+    <div
+      class="ql-container @error($name) is-invalid @enderror"
+      @if($help) aria-describedby="{{ $name.'FieldHelp' }}" @endif
+    >
+      {!! old($name,$value) !!}
+    </div>
 
-    <textarea class="ql-textarea" name="{{ $name }}" {{ $isRequired ? 'required' : ''}}></textarea>
+    <textarea class="ql-textarea" name="{{ $name }}"></textarea>
 
     @if($help)
       <small id="{{ $name.'FieldHelp' }}" class="form-text text-muted">{{ $help }}</small>

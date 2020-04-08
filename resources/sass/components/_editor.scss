@@ -23,9 +23,15 @@
           button {
               line-height: 0;
               padding: 0.25rem;
-              &.ql-active {
+              background: $white;
+              &.ql-active,
+              &:hover {
                 background: $border-color;
               }
+          }
+
+          .dropdown-toggle::after {
+              vertical-align: middle !important;
           }
 
           .dropdown-menu {
@@ -38,15 +44,31 @@
   .ql-container {
 
     .ql-editor {
+        background: $input-bg;
         border: $input-border-width solid $input-border-color;
         @include border-radius($input-border-radius);
-        padding: $input-padding-x $input-padding-y;
+        padding: $input-padding-y $input-padding-x;
         font-size: $input-font-size;
         line-height: $input-line-height;
         color: $input-color;
         @include form-control-focus($ignore-warning: true);
         > p:last-child {
             margin-bottom: 0;
+        }
+    }
+
+    &.is-invalid > .ql-editor{
+        border-color: $form-feedback-invalid-color;
+        @if $enable-validation-icons {
+          padding-right: $input-height-inner;
+          background-image: escape-svg($form-feedback-icon-invalid);
+          background-repeat: no-repeat;
+          background-position: top $input-height-inner-quarter right $input-height-inner-quarter;
+          background-size: $input-height-inner-half $input-height-inner-half;
+        }
+        &:focus {
+          border-color: $form-feedback-invalid-color;
+          box-shadow: 0 0 0 $input-focus-width rgba($form-feedback-invalid-color, .25);
         }
     }
 
