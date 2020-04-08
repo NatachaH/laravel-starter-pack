@@ -1,0 +1,67 @@
+/*
+|--------------------------------------------------------------------------
+| Backend - Components - Editor - Design
+|--------------------------------------------------------------------------
+*/
+
+.editor {
+
+  .ql-toolbar {
+
+      margin-bottom: 0.5rem;
+
+      .ql-formats {
+
+          border: 1px solid $border-color;
+          @include border-radius($btn-border-radius;)
+          margin-right: 0.5rem;
+
+          &:last-child {
+              margin-right: 0;
+          }
+
+          button {
+              line-height: 0;
+              padding: 0.25rem;
+              &.ql-active {
+                background: $border-color;
+              }
+          }
+
+          .dropdown-menu {
+              min-width: auto !important;
+          }
+      }
+
+  }
+
+  .ql-container {
+
+    .ql-editor {
+        border: $input-border-width solid $input-border-color;
+        @include border-radius($input-border-radius)
+        padding: $input-padding-x $input-padding-y;
+        font-size: $input-font-size;
+        line-height: $input-line-height;
+        color: $input-color;
+        @include form-control-focus($ignore-warning: true);
+        > p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .ql-clipboard {
+        left:-100000px;
+        height: 1px;
+        overflow-y: hidden;
+        position: absolute;
+        top:50%;
+    }
+
+  }
+
+  .ql-textarea {
+      display:none;
+  }
+
+}

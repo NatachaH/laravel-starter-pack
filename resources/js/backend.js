@@ -8,7 +8,9 @@
 */
 
 // Components
+require('./components/editor');
 require('./components/sidebar');
+
 
 // Load Toast Notification
 $('#toastNotification .toast').toast('show');
