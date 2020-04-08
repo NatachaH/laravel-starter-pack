@@ -30,7 +30,7 @@ class {{ UCNAME }}Controller extends Controller
      */
     public function index()
     {
-        ${{ PNAME }} = {{ UCNAME }}::paginate(5);
+        ${{ PNAME }} = {{ UCNAME }}::paginate();
         return view('backend.{{ PNAME }}.index', compact('{{ PNAME }}'));
     }
 
@@ -42,7 +42,7 @@ class {{ UCNAME }}Controller extends Controller
     public function trashed()
     {
         $this->authorize('viewTrashed', 'App\{{ UCNAME }}');
-        ${{ PNAME }} = {{ UCNAME }}::onlyTrashed()->paginate(5);
+        ${{ PNAME }} = {{ UCNAME }}::onlyTrashed()->paginate();
         return view('backend.{{ PNAME }}.trashed', compact('{{ PNAME }}'));
     }
 

@@ -18,4 +18,10 @@ class {{ UCNAME }} extends Model
         'name'
     ];
 
+    /**
+     * Default number of items per page.
+     * @var int
+     */
+    protected $perPage = 10;
+
 }
