@@ -125,16 +125,19 @@ class NewContentCommand extends Command
         }
 
         // Route
-        $route =  file_get_contents($stub.'/routes/route.stub');
-        $route = str_replace('{{ UCNAME }}', $this->ucname, $route);
-        $route = str_replace('{{ UCPNAME }}', $this->ucpname, $route);
-        $route = str_replace('{{ PNAME }}', $this->pname, $route);
-
-        file_put_contents(
-            base_path('routes/backend.php'),
-            $route,
-            FILE_APPEND
-        );
+        $backenRoute = base_path('routes/backend.php');
+        if(file_exists($backenRoute))
+        {
+            $new_route = file_get_contents($stub.'/routes/route.stub');
+            $new_route = str_replace('{{ UCNAME }}', $this->ucname, $new_route);
+            $new_route = str_replace('{{ UCPNAME }}', $this->ucpname, $new_route);
+            $new_route = str_replace('{{ PNAME }}', $this->pname, $new_route);
+            file_put_contents(
+                $backenRoute,
+                $new_route,
+                FILE_APPEND
+            );
+        }
 
         // End
         $this->line('The model '.$this->name.' has been created !');
@@ -153,10 +156,10 @@ class NewContentCommand extends Command
         if (!copy($original, $destination)) {
             echo "failed to copy";
         } else {
-          file_put_contents($destination, str_replace('{{ NAME }}', $this->name, file_get_contents($destination)));
-          file_put_contents($destination, str_replace('{{ UCNAME }}', $this->ucname, file_get_contents($destination)));
-          file_put_contents($destination, str_replace('{{ UCPNAME }}', $this->ucpname, file_get_contents($destination)));
-          file_put_contents($destination, str_replace('{{ PNAME }}', $this->pname, file_get_contents($destination)));
+            file_put_contents($destination, str_replace('{{ NAME }}', $this->name, file_get_contents($destination)));
+            file_put_contents($destination, str_replace('{{ UCNAME }}', $this->ucname, file_get_contents($destination)));
+            file_put_contents($destination, str_replace('{{ UCPNAME }}', $this->ucpname, file_get_contents($destination)));
+            file_put_contents($destination, str_replace('{{ PNAME }}', $this->pname, file_get_contents($destination)));
         }
     }
 
