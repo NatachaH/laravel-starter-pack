@@ -1,3 +1,4 @@
+
 // {{ UCPNAME }}
 Route::any('/{{ PNAME }}/trashed', '{{ UCNAME }}Controller@trashed')->name('{{ PNAME }}.trashed');
 Route::patch('/{{ PNAME }}/{id}/restore', '{{ UCNAME }}Controller@restore')->name('{{ PNAME }}.restore');
