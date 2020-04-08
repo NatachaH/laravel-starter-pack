@@ -15,7 +15,7 @@
 
         <div class="row">
 
-          <x-bs-input :label="__('sp::field.name')" type="text" name="name" required/>
+          <x-bs-input class="col-12" :label="__('sp::field.name')" type="text" name="name" required/>
 
         </div>
 
