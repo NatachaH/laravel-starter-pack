@@ -40,6 +40,12 @@ class User extends Authenticatable
     ];
 
     /**
+     * Default number of items per page.
+     * @var int
+     */
+    protected $perPage = 10;
+
+    /**
      * Encrypt the password when is set.
      * @param string $password
      */
