@@ -25,6 +25,8 @@ class Store{{ UCNAME }}Request extends FormRequest
     public function rules()
     {
         $isNew = $this->getMethod() == 'POST';
-        return [];
+        return [
+          'title' => ['required']
+        ];
     }
 }

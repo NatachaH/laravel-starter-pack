@@ -15,7 +15,11 @@
 
         <div class="row">
 
-          <x-bs-input class="col-12" :label="__('sp::field.name')" type="text" name="name" :value="${{ NAME }}->name" required/>
+          <x-bs-input class="col-12" :label="__('sp::field.title')" type="text" name="title" :value="${{ NAME }}->title" required/>
+
+          <x-bs-input class="col-12" :label="__('sp::field.subtitle')" type="text" name="subtitle" :value="${{ NAME }}->subtitle" />
+
+          <x-bs-input class="col-12" :label="__('sp::field.description')" type="text" name="description" :value="${{ NAME }}->description" />
 
         </div>
 

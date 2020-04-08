@@ -1,1 +1,1 @@
-<td><b>{{ $item->name }}</b></td>
+<td><b>{{ $item->title }}</b></td>
