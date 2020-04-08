@@ -36,7 +36,8 @@ class GlobalPreset extends Preset
         $preset = [
           "bootstrap" => "^4.4.1",
           "jquery"    => "^3.2",
-          "popper.js" => "^1.12"
+          "popper.js" => "^1.12",
+          "quilljs"   => "^1.3.6"
         ];
 
         return array_merge($laravel,$preset);
