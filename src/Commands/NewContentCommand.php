@@ -124,6 +124,18 @@ class NewContentCommand extends Command
             $this->copy_file($sp_view,$new_view);
         }
 
+        // Route
+        $route =  file_get_contents($stub.'/routes/route.stub');
+        $route = str_replace('{{ UCNAME }}', $this->ucname, $route);
+        $route = str_replace('{{ UCPNAME }}', $this->ucpname, $route);
+        $route = str_replace('{{ PNAME }}', $this->pname, $route);
+
+        file_put_contents(
+            base_path('routes/backend.php'),
+            $route,
+            FILE_APPEND
+        );
+
         // End
         $this->line('The model '.$this->name.' has been created !');
 
