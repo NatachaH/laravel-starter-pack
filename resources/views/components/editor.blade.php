@@ -25,12 +25,13 @@
 
     <div
       class="ql-container @error($name) is-invalid @enderror"
-      @if($help) aria-describedby="{{ $name.'FieldHelp' }}" @endif
     >
       {!! old($name,$value) !!}
     </div>
 
     <textarea class="ql-textarea" name="{{ $name }}"></textarea>
+
+    <small class="form-text text-muted">{!! __('sp::help.line-break') !!}</small>
 
     @if($help)
       <small id="{{ $name.'FieldHelp' }}" class="form-text text-muted">{{ $help }}</small>
