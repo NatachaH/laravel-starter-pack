@@ -12,6 +12,7 @@ import Quill from 'Quill';
 // Imports
 let ColorClass = Quill.import('attributors/class/color');
 import SmartBreak from './editor/smart-break';
+import HelperLink from './editor/helper-link';
 
 // Add class for colors
 ColorClass.keyName = 'text'
@@ -29,6 +30,7 @@ Array.prototype.forEach.call(editors, function(el, i) {
 
     var headerDropdown = parent.querySelector('.ql-dropdown-header');
     var colorDropdown = parent.querySelector('.ql-dropdown-color');
+    var linkBtn = parent.querySelector('.ql-link');
 
     var ql = new Quill(editor, {
       modules: {
@@ -38,23 +40,24 @@ Array.prototype.forEach.call(editors, function(el, i) {
                 // handlers object will be merged with default handlers object
                 'link': function(value) {
                   if (value) {
-                    var href = prompt('URL');
 
-                    var patternUrl = new RegExp('^(https?:\\/\\/)?'+ // protocol
-                       '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-                       '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-                       '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-                       '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-                       '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+                    // Get the current selection and check is not null
+                    let range = this.quill.getSelection();
+                    if (range == null || range.length == 0) return;
 
-                    var patternEmail = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+                    // Select the preview text and check if is a link
+                    let preview =  HelperLink.preview(this.quill.getText(range));
 
-                    if(!!patternUrl.test(href))
-                    {
-                      this.quill.format('link', href);
-                    } else if (!!patternEmail.test(href)) {
-                      this.quill.format('link', 'mailto:'+href);
-                    }
+                    // Prompt with default preview
+                    let href = prompt('URL', preview);
+
+                    // Check if href is valid
+                    if (!HelperLink.isUrl(href) && !HelperLink.isEmail(href)) return;
+
+                    // Set the link and init the tooltip
+                    if(HelperLink.isEmail(href)) href = 'mailto:'+href ;
+                    this.quill.format('link', href);
+                    HelperLink.initTooltip();
 
                   } else {
                     this.quill.format('link', false);
@@ -107,6 +110,9 @@ Array.prototype.forEach.call(editors, function(el, i) {
 
     });
 });
+
+// Init the first time the tooltip
+HelperLink.initTooltip();
 
 // If a form is submit =>
 var form = document.querySelector('form');
