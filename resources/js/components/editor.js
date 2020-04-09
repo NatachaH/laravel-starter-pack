@@ -7,12 +7,18 @@
 |
 */
 
-window.Quill = require('Quill');
+import Quill from 'Quill';
+
+// Imports
+let ColorClass = Quill.import('attributors/class/color');
+import SmartBreak from './editor/smart-break';
 
 // Add class for colors
-var ColorClass = Quill.import('attributors/class/color');
 ColorClass.keyName = 'text'
 Quill.register(ColorClass, true);
+
+// Add class for smart break
+Quill.register(SmartBreak, true);
 
 // Select all .edito
 var editors = document.querySelectorAll('.editor');
@@ -22,10 +28,29 @@ Array.prototype.forEach.call(editors, function(el, i) {
     var editor = parent.querySelector('.ql-container');
     var ql = new Quill(editor, {
       modules: {
-      toolbar: {
-        container: toolbar
+          toolbar: {
+              container: toolbar
+          },
+          keyboard: {
+            bindings: {
+
+              shiftEnter: {
+            			key: 13,
+            			shiftKey: true,
+            			handler: function(range, context) {
+                    let currentLeaf = this.quill.getLeaf(range.index)[0]
+                    let nextLeaf = this.quill.getLeaf(range.index + 1)[0]
+                    this.quill.insertEmbed(range.index, 'smartbreak', true, 'user');
+                    if (nextLeaf === null || (currentLeaf.parent !== nextLeaf.parent)) {
+                      this.quill.insertEmbed(range.index, 'smartbreak', true, 'user');
+                    }
+                    this.quill.setSelection(range.index + 2, 'silent');
+                  }
+          		}
+
+            }
+          }
       }
-    }
     });
 });
 
