@@ -19,7 +19,7 @@
 
           <x-bs-input class="col-12" :label="__('sp::field.subtitle')" type="text" name="subtitle" />
 
-          <x-bs-input class="col-12" :label="__('sp::field.description')" type="text" name="description" />
+          <x-sp-editor class="col-12" :label="__('sp::field.description')" name="description" />
 
         </div>
 
