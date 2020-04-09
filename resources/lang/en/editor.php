@@ -11,7 +11,7 @@ return [
     |
     */
 
-
+    'heading' => 'Heading',
     'paragraphe' => 'Paragraphe',
     'h1' => 'Heading 1',
     'h2' => 'Heading 2',

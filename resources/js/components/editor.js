@@ -26,6 +26,8 @@ Array.prototype.forEach.call(editors, function(el, i) {
     var parent = el.parentElement;
     var toolbar = parent.querySelector('.ql-toolbar');
     var editor = parent.querySelector('.ql-container');
+
+    var headerDropdown = parent.querySelector('.ql-dropdown-header');
     var colorDropdown = parent.querySelector('.ql-dropdown-color');
 
     var ql = new Quill(editor, {
@@ -55,12 +57,27 @@ Array.prototype.forEach.call(editors, function(el, i) {
       }
     });
 
-    ql.on('editor-change', function() {
+    // When selection change
+    ql.on('selection-change', function() {
+
+      // Color dropdown state
       if(ql.getFormat().color) {
         colorDropdown.classList.add('ql-active');
       } else {
         colorDropdown.classList.remove('ql-active');
       }
+
+      // Header dropdown state
+      var headerValue = '';
+      if(ql.getFormat().header) {
+        headerDropdown.classList.add('ql-active');
+        headerValue = ql.getFormat().header;
+      } else {
+        headerDropdown.classList.remove('ql-active');
+      };
+      var headerText = document.querySelector('.ql-header[value="'+headerValue+'"]').innerHTML;
+      headerDropdown.querySelector('small').textContent = headerText;
+
     });
 });
 
