@@ -26,6 +26,8 @@ Array.prototype.forEach.call(editors, function(el, i) {
     var parent = el.parentElement;
     var toolbar = parent.querySelector('.ql-toolbar');
     var editor = parent.querySelector('.ql-container');
+    var colorDropdown = parent.querySelector('.ql-dropdown-color');
+
     var ql = new Quill(editor, {
       modules: {
           toolbar: {
@@ -50,6 +52,14 @@ Array.prototype.forEach.call(editors, function(el, i) {
 
             }
           }
+      }
+    });
+
+    ql.on('editor-change', function() {
+      if(ql.getFormat().color) {
+        colorDropdown.classList.add('ql-active');
+      } else {
+        colorDropdown.classList.remove('ql-active');
       }
     });
 });
