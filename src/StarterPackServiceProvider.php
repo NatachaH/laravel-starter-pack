@@ -10,6 +10,7 @@ use Nh\StarterPack\FrontendPreset;
 use Nh\StarterPack\GlobalPreset;
 use Nh\StarterPack\UserPreset;
 use Nh\StarterPack\RolePreset;
+use Nh\StarterPack\PermissionPreset;
 
 class StarterPackServiceProvider extends ServiceProvider
 {
@@ -40,6 +41,8 @@ class StarterPackServiceProvider extends ServiceProvider
           BackendPreset::install();
           UserPreset::install();
           RolePreset::install();
+          PermissionPreset::install();
+
 
           // Create a default user
           $username = $command->anticipate('What is your username ?', ['natacha']);
