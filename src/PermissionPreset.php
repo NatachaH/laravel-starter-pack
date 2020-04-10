@@ -5,8 +5,6 @@ namespace Nh\StarterPack;
 use Laravel\Ui\Presets\Preset;
 use Illuminate\Filesystem\Filesystem;
 
-use Artisan;
-
 class PermissionPreset extends Preset
 {
     /**

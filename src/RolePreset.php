@@ -5,8 +5,6 @@ namespace Nh\StarterPack;
 use Laravel\Ui\Presets\Preset;
 use Illuminate\Filesystem\Filesystem;
 
-use Artisan;
-
 class RolePreset extends Preset
 {
     /**
@@ -16,13 +14,7 @@ class RolePreset extends Preset
     public static function install()
     {
         static::updateApp();
-        static::updateDatabase();
         static::updateResources();
-
-        // Publish the access-control packages and make migration for user
-        Artisan::call('vendor:publish --tag=access-control');
-        Artisan::call('role:new user');
-
     }
 
     /**
@@ -33,16 +25,6 @@ class RolePreset extends Preset
     {
         $stub = __DIR__.'/../stubs/roles/app';
         (new Filesystem)->copyDirectory($stub, app_path());
-    }
-
-    /**
-     * Updates the dtabase files
-     * @return void
-     */
-    public static function updateDatabase()
-    {
-        $stub = __DIR__.'/../stubs/roles/database/';
-        (new Filesystem)->copyDirectory($stub, database_path());
     }
 
     /**

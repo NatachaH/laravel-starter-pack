@@ -43,18 +43,6 @@ class StarterPackServiceProvider extends ServiceProvider
           RolePreset::install();
           PermissionPreset::install();
 
-
-          // Create a default user
-          $username = $command->anticipate('What is your username ?', ['natacha']);
-          $email = $command->anticipate('What is your email ?', ['info@natachaherth.ch']);
-          $password = $command->secret('What is your password ?');
-
-          $user = User::create([
-              'name' => $username,
-              'email' => $email,
-              'password' => $password
-          ]);
-
           // Return success
           $command->info('The Starter Pack Preset is installed !');
 
@@ -82,4 +70,5 @@ class StarterPackServiceProvider extends ServiceProvider
       }
 
     }
+
 }
