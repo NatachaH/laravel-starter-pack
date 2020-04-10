@@ -6,7 +6,7 @@ use Laravel\Ui\Presets\Preset;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
 
-class UsersPreset extends Preset
+class UserPreset extends Preset
 {
     /**
      * Install the preset

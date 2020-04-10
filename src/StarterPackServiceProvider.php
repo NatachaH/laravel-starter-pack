@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Blade;
 use Nh\StarterPack\BackendPreset;
 use Nh\StarterPack\FrontendPreset;
 use Nh\StarterPack\GlobalPreset;
-
+use Nh\StarterPack\UserPreset;
 
 class StarterPackServiceProvider extends ServiceProvider
 {
@@ -37,7 +37,7 @@ class StarterPackServiceProvider extends ServiceProvider
           GlobalPreset::install();
           FrontendPreset::install();
           BackendPreset::install();
-          UsersPreset::install();
+          UserPreset::install();
 
           // Return success
           $command->info('Starter Pack Preset installed !');
