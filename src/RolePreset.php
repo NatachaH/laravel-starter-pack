@@ -7,7 +7,7 @@ use Illuminate\Filesystem\Filesystem;
 
 use Artisan;
 
-class UsersPreset extends Preset
+class RolePreset extends Preset
 {
     /**
      * Install the preset
