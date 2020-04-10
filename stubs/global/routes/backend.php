@@ -27,3 +27,9 @@ Route::resource('users','UserController');
 // Account
 Route::get('/account/edit', 'UserController@editAccount')->name('account.edit');
 Route::patch('/account/edit', 'UserController@updateAccount')->name('account.update');
+
+// Roles
+Route::resource('roles','RoleController');
+
+// Permissions
+Route::resource('permissions','PermissionController');
