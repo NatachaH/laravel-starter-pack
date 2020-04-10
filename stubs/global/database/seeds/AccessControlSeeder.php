@@ -51,7 +51,7 @@ class AccessControlSeeder extends Seeder
         // User
         $actions[] = 'restore';
         $actions[] = 'force-delete';
-        foreach ($user_actions as $action)
+        foreach ($actions as $action)
         {
             $permission = Permission::create([
                 'name' => 'user-'.$action,
