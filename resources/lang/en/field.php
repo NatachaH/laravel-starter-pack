@@ -21,5 +21,7 @@ return [
     'deleted-at'    => 'Deleted at',
     'actions'       => 'Actions',
     'informations'  => 'Informations',
+    'model'         => 'Model',
+    'action'        => 'Action'
 
 ];

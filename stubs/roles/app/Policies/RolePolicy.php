@@ -30,7 +30,7 @@ class RolePolicy
      */
     public function viewAny(User $user)
     {
-        return true;
+        return $user->hasAccess('role','view');
     }
 
 
@@ -43,7 +43,7 @@ class RolePolicy
      */
     public function view(User $user, Role $role)
     {
-        return false;
+        return $user->hasAccess('role','view');
     }
 
     /**
@@ -54,7 +54,7 @@ class RolePolicy
      */
     public function create(User $user)
     {
-        return true;
+        return $user->hasAccess('role','create');
     }
 
     /**
@@ -66,7 +66,7 @@ class RolePolicy
      */
     public function update(User $user, Role $role)
     {
-        return true;
+        return $user->hasAccess('role','update');
     }
 
     /**
@@ -78,7 +78,7 @@ class RolePolicy
      */
     public function delete(User $user, Role $role)
     {
-        return true;
+        return $user->hasAccess('role','delete');
     }
 
 }

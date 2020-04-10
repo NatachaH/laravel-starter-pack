@@ -28,7 +28,7 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        return true;
+        return $user->hasAccess('user','view');
     }
 
     /**
@@ -39,7 +39,7 @@ class UserPolicy
      */
     public function viewTrashed(User $user)
     {
-        return true;
+        return $user->hasAccess('user', ['restore','force-delete']);
     }
 
     /**
@@ -51,7 +51,7 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        return false;
+        return $user->hasAccess('user','view');
     }
 
     /**
@@ -62,7 +62,7 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        return true;
+        return $user->hasAccess('user','create');
     }
 
     /**
@@ -74,7 +74,7 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        return !$model->trashed();
+        return $user->hasAccess('user','update') && !$model->trashed();
     }
 
     /**
@@ -86,7 +86,7 @@ class UserPolicy
      */
     public function delete(User $user, User $model)
     {
-        return !$model->trashed();
+        return $user->hasAccess('user','delete') && !$model->trashed();
     }
 
     /**
@@ -98,7 +98,7 @@ class UserPolicy
      */
     public function restore(User $user, User $model)
     {
-        return $model->trashed();
+        return $user->hasAccess('user','restore') && $model->trashed();
     }
 
     /**
@@ -110,6 +110,6 @@ class UserPolicy
      */
     public function forceDelete(User $user, User $model)
     {
-        return $model->trashed();
+        return $user->hasAccess('user','force-delete') && $model->trashed();
     }
 }

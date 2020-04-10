@@ -30,7 +30,7 @@ class PermissionPolicy
      */
     public function viewAny(User $user)
     {
-        return true;
+        return $user->hasAccess('permission','view');
     }
 
 
@@ -43,7 +43,7 @@ class PermissionPolicy
      */
     public function view(User $user, Permission $permission)
     {
-        return false;
+        return $user->hasAccess('permission','view');
     }
 
     /**
@@ -54,7 +54,7 @@ class PermissionPolicy
      */
     public function create(User $user)
     {
-        return true;
+        return $user->hasAccess('permission','create');
     }
 
     /**
@@ -66,7 +66,7 @@ class PermissionPolicy
      */
     public function update(User $user, Permission $permission)
     {
-        return true;
+        return $user->hasAccess('permission','update');
     }
 
     /**
@@ -78,7 +78,7 @@ class PermissionPolicy
      */
     public function delete(User $user, Permission $permission)
     {
-        return true;
+        return $user->hasAccess('permission','delete');
     }
 
 }
