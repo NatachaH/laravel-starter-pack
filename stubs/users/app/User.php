@@ -7,10 +7,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use Nh\AccessControl\Traits\HasAccess;
+
 class User extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
+    use HasAccess;
 
     /**
      * The attributes that are mass assignable.

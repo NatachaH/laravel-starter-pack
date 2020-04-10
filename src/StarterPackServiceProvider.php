@@ -9,6 +9,7 @@ use Nh\StarterPack\BackendPreset;
 use Nh\StarterPack\FrontendPreset;
 use Nh\StarterPack\GlobalPreset;
 use Nh\StarterPack\UserPreset;
+use Nh\StarterPack\RolePreset;
 
 class StarterPackServiceProvider extends ServiceProvider
 {
@@ -38,9 +39,21 @@ class StarterPackServiceProvider extends ServiceProvider
           FrontendPreset::install();
           BackendPreset::install();
           UserPreset::install();
+          RolePreset::install();
+
+          // Create a default user
+          $username = $command->anticipate('What is your username ?', ['natacha']);
+          $email = $command->anticipate('What is your email ?', ['info@natachaherth.ch']);
+          $password = $command->secret('What is your password ?');
+
+          $user = User::create([
+              'name' => $username,
+              'email' => $email,
+              'password' => $password
+          ]);
 
           // Return success
-          $command->info('Starter Pack Preset installed !');
+          $command->info('The Starter Pack Preset is installed !');
 
       });
 

@@ -5,7 +5,8 @@
     "type": "library",
     "require": {
       "laravel/ui": "^2.0",
-      "nh/bs-component": "dev-master"
+      "nh/bs-component": "dev-master",
+      "nh/access-control": "dev-master"
     },
     "author": {
         "name": "Natacha Herth",
