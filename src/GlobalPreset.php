@@ -17,6 +17,7 @@ class GlobalPreset extends Preset
 
         static::updatePackages();
         static::updateProviders();
+        static::updateDatabase();
         static::updateResources();
         static::updateRoutes();
         static::updateWebpack();
@@ -51,6 +52,17 @@ class GlobalPreset extends Preset
     {
         $stub = __DIR__.'/../stubs/global/app/Providers';
         $path = app_path('Providers');
+        (new Filesystem)->copyDirectory($stub, $path);
+    }
+
+    /**
+     * Updates the database files
+     * @return void
+     */
+    public static function updateDatabase()
+    {
+        $stub = __DIR__.'/../stubs/global/database';
+        $path = database_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
 
