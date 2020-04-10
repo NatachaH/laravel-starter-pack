@@ -66,6 +66,7 @@ class StarterPackServiceProvider extends ServiceProvider
       if ($this->app->runningInConsole()) {
           $this->commands([
               \Nh\StarterPack\Commands\NewContentCommand::class,
+              \Nh\StarterPack\Commands\NewUserCommand::class,
           ]);
       }
 
