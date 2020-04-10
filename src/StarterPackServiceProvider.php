@@ -5,6 +5,8 @@ use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiCommand;
 use Illuminate\Support\Facades\Blade;
 
+use Artisan;
+
 use Nh\StarterPack\BackendPreset;
 use Nh\StarterPack\FrontendPreset;
 use Nh\StarterPack\GlobalPreset;
@@ -42,6 +44,10 @@ class StarterPackServiceProvider extends ServiceProvider
           UserPreset::install();
           RolePreset::install();
           PermissionPreset::install();
+
+          // Artisan commandes for Access Control Package
+          Artisan::call('vendor:publish --tag=access-control');
+          Artisan::call('role:new user');
 
           // Return success
           $command->info('The Starter Pack Preset is installed !');
