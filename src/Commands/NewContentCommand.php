@@ -151,7 +151,7 @@ class NewContentCommand extends Command
      * @param  string $destination Destination of the new file
      * @return void
      */
-    public function copy_file($original, $destination)
+    private function copy_file($original, $destination)
     {
         if (!copy($original, $destination)) {
             echo "failed to copy";
