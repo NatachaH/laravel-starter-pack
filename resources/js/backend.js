@@ -26,4 +26,4 @@ Array.prototype.forEach.call(confirmModals, function(modal) {
 });
 
 // Library
-require('../../vendor/nh/access-control/resources/js/permission-checkboxes');
+require('../../../access-control/resources/js/permission-checkboxes');
