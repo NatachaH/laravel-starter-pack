@@ -21,8 +21,8 @@
 
       </fieldset>
 
-      <x-ac-permission-fieldset legend="trans_choice('backend.model.permission',2)" :values="$role->permissions->modelKeys()"/>
-    
+      <x-ac-permission-fieldset :legend="trans_choice('backend.model.permission',2)" :values="$role->permissions->modelKeys()"/>
+
 
       @include('sp::partials.form-footer')
 
