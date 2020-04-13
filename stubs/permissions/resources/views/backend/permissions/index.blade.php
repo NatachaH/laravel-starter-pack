@@ -6,6 +6,6 @@
 
   <x-sp-search route="#"/>
 
-  <x-sp-listing :title="trans_choice('backend.model.permission',2)" model="Permission" route="backend.permissions" header="name|model|action" :items="$permissions" show-id />
+  <x-sp-listing :title="trans_choice('backend.model.permission',2)" model="\Nh\AccessControl\Permission" route="backend.permissions" header="name|model|action" :items="$permissions" show-id />
 
 @endsection
