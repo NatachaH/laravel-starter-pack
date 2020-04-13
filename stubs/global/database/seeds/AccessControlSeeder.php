@@ -36,18 +36,6 @@ class AccessControlSeeder extends Seeder
             $ids_permission_superadmin[] = $permission->id;
         }
 
-        // Permission
-        foreach ($actions as $action)
-        {
-            $permission = Permission::create([
-                'name' => 'permission-'.$action,
-                'model' => 'permission',
-                'action' => $action
-            ]);
-
-            $ids_permission_superadmin[] = $permission->id;
-        }
-
         // User
         $actions[] = 'restore';
         $actions[] = 'force-delete';
