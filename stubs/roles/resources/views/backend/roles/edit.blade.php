@@ -17,6 +17,8 @@
 
           <x-bs-input class="col-12" :label="__('sp::field.name')" type="text" name="name" :value="$role->name" required/>
 
+          <x-ac-permission-checkbox translation="backend.model" :values="$role->permissions()->modelKeys()"/>
+
         </div>
 
       </fieldset>
