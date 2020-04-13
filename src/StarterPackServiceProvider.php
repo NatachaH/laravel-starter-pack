@@ -74,7 +74,7 @@ class StarterPackServiceProvider extends ServiceProvider
 
       // POLICIES
       Gate::policy('App\User', \Nh\StarterPack\Policies\UserPolicy::class);
-      Gate::policy('\Nh\AccessControl\Role', \Nh\StarterPack\Policies\RolePolicy::class);
+      Gate::policy('Nh\AccessControl\Role', \Nh\StarterPack\Policies\RolePolicy::class);
 
     }
 
