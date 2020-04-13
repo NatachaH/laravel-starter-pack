@@ -40,7 +40,6 @@ class StarterPackServiceProvider extends ServiceProvider
           GlobalPreset::install();
           FrontendPreset::install();
           BackendPreset::install();
-          UserPreset::install();
 
           // Artisan commandes for Access Control Package
           Artisan::call('vendor:publish --tag=access-control');
@@ -74,6 +73,7 @@ class StarterPackServiceProvider extends ServiceProvider
       }
 
       // POLICIES
+      Gate::policy('App\User', \Nh\StarterPack\Policies\UserPolicy::class);
       Gate::policy('\Nh\AccessControl\Role', \Nh\StarterPack\Policies\RolePolicy::class);
 
     }
