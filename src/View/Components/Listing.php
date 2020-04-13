@@ -113,7 +113,7 @@ class Listing extends Component
     public function __construct($title, $model, $route, $header, $items, $showId = false, $showDates = false)
     {
         $this->title      = $title;
-        $this->model      = 'App\\'.$model;
+        $this->model      = Str::startsWith($model,'\\') ? $model : 'App\\'.$model;
         $this->route      = $route;
         $this->header     = explode('|', $header);
         $this->items      = $items;
