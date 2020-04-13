@@ -24,3 +24,6 @@ Array.prototype.forEach.call(confirmModals, function(modal) {
     modal.querySelector('form').action = action
   });
 });
+
+// Library
+require('./vendor/nh/access-control/resources/js/permission-checkboxes');
