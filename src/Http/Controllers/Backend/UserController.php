@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace Nh\StarterPack\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -31,7 +31,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate();
-        return view('backend.users.index', compact('users'));
+        return view('sp::backend.users.index', compact('users'));
     }
 
     /**
@@ -43,7 +43,7 @@ class UserController extends Controller
     {
         $this->authorize('viewTrashed', 'App\User');
         $users = User::onlyTrashed()->paginate();
-        return view('backend.users.trashed', compact('users'));
+        return view('sp::backend.users.trashed', compact('users'));
     }
 
     /**
@@ -53,7 +53,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('backend.users.create');
+        return view('sp::backend.users.create');
     }
 
     /**
@@ -88,7 +88,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('backend.users.edit', compact('user'));
+        return view('sp::backend.users.edit', compact('user'));
     }
 
     /**
@@ -155,7 +155,7 @@ class UserController extends Controller
     public function editAccount()
     {
         $user = Auth::user();
-        return view('backend.users.account.edit', compact('user'));
+        return view('sp::backend.users.account.edit', compact('user'));
     }
 
     /**

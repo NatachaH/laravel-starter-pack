@@ -19,14 +19,14 @@ Route::get('/', function () {
 })->name('dashboard');
 
 // Users
-Route::any('/users/trashed', 'UserController@trashed')->name('users.trashed');
-Route::patch('/users/{id}/restore', 'UserController@restore')->name('users.restore');
-Route::delete('/users/{id}/forceDelete', 'UserController@forceDelete')->name('users.forceDelete');
-Route::resource('users','UserController');
+Route::any('/users/trashed', '\Nh\StarterPack\Http\Controllers\Backend\UserController@trashed')->name('users.trashed');
+Route::patch('/users/{id}/restore', '\Nh\StarterPack\Http\Controllers\Backend\UserController@restore')->name('users.restore');
+Route::delete('/users/{id}/forceDelete', '\Nh\StarterPack\Http\Controllers\Backend\UserController@forceDelete')->name('users.forceDelete');
+Route::resource('users','\Nh\StarterPack\Http\Controllers\Backend\UserController');
 
 // Account
-Route::get('/account/edit', 'UserController@editAccount')->name('account.edit');
-Route::patch('/account/edit', 'UserController@updateAccount')->name('account.update');
+Route::get('/account/edit', '\Nh\StarterPack\Http\Controllers\Backend\UserController@editAccount')->name('account.edit');
+Route::patch('/account/edit', '\Nh\StarterPack\Http\Controllers\Backend\UserController@updateAccount')->name('account.update');
 
 // Roles
 Route::resource('roles','\Nh\StarterPack\Http\Controllers\Backend\RoleController');

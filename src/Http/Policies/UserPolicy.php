@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies;
+namespace Nh\StarterPack\Policies;
 
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
