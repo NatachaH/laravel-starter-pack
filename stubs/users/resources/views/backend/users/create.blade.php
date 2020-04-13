@@ -27,6 +27,8 @@
 
       </fieldset>
 
+      <x-ac-role-fieldset :legend="trans_choice('backend.model.role',1)" required/>
+
       @include('sp::partials.form-footer')
 
   </form>

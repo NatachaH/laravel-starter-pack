@@ -21,15 +21,7 @@
 
       </fieldset>
 
-      <fieldset >
-
-        <legend>@choice('backend.model.permission',2)</legend>
-
-        <div class="card">
-          <x-ac-permission-checkbox class="mb-0" translation="backend.model"/>
-        </div>
-
-      </fieldset>
+      <x-ac-permission-fieldset legend="trans_choice('backend.model.permission',2)"/>
 
       @include('sp::partials.form-footer')
 

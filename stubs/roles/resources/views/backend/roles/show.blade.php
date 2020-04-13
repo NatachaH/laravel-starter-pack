@@ -8,7 +8,7 @@
 
   <div class="card">
     <div class="card-body p-0">
-      <x-ac-permission-table class="mb-0" translation="backend.model" :values="$role->permissions->modelKeys()"/>
+      <x-ac-permission-table class="mb-0" :values="$role->permissions->modelKeys()"/>
     </div>
   </div>
 
