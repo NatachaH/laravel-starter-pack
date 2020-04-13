@@ -4,8 +4,8 @@ namespace Nh\StarterPack\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateAccountRequest;
+use Nh\StarterPack\Http\Requests\StoreUserRequest;
+use Nh\StarterPack\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Auth;
 
 use App\User;
