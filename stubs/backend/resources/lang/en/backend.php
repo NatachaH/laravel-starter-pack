@@ -27,7 +27,7 @@ return [
       'user'        => 'User|Users',
       'account'     => 'Account',
       'role'        => 'Role|Roles',
-      'permission'  => 'Permission|Permission'
+      'permission'  => 'Permission|Permissions'
     ],
 
 ];

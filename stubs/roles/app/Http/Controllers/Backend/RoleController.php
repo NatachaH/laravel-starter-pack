@@ -52,9 +52,9 @@ class RoleController extends Controller
     public function store(StoreRoleRequest $request)
     {
         $role = Role::create($request->only(['name']));
-        if($request->exist('permissions'))
+        if($request->has('permissions'))
         {
-            $role->permissions()->attach($request->only('permissions'));
+            $role->permissions()->attach($request->permissions);
         }
         session()->flash('toast', ['success' => notification('added','role')]);
         return redirect()->route('backend.roles.index');
@@ -68,7 +68,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //return view('backend.roles.show', compact('role'));
+        return view('backend.roles.show', compact('role'));
     }
 
     /**
@@ -92,7 +92,7 @@ class RoleController extends Controller
     public function update(StoreRoleRequest $request, Role $role)
     {
         $role->update($request->only(['name']));
-        $role->permissions()->sync($request->only('permissions'));
+        $role->permissions()->sync($request->permissions);
         session()->flash('toast', ['success' => notification('updated','role')]);
         return redirect()->route('backend.roles.index');
     }

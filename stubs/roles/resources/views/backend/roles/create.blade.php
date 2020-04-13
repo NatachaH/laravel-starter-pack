@@ -17,8 +17,16 @@
 
           <x-bs-input class="col-12" :label="__('sp::field.name')" type="text" name="name" required/>
 
-          <x-ac-permission-checkbox translation="backend.model"/>
+        </div>
 
+      </fieldset>
+
+      <fieldset >
+
+        <legend>@choice('backend.model.permission',2)</legend>
+
+        <div class="card">
+          <x-ac-permission-checkbox class="mb-0" translation="backend.model"/>
         </div>
 
       </fieldset>
