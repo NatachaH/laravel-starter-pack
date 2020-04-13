@@ -11,6 +11,7 @@ return [
     |
     */
 
+    'save'          => 'Save',
     'search'        => 'Search',
     'reset'         => 'Reset',
     'export'        => 'Export',
