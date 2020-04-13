@@ -42,8 +42,8 @@ class StarterPackServiceProvider extends ServiceProvider
           FrontendPreset::install();
           BackendPreset::install();
           UserPreset::install();
-          RolePreset::install();
-          PermissionPreset::install();
+          //RolePreset::install();
+          //PermissionPreset::install();
 
           // Artisan commandes for Access Control Package
           Artisan::call('vendor:publish --tag=access-control');
