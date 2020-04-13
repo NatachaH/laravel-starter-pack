@@ -61,7 +61,7 @@
                                 <td class="td-fit">{{ $item->id }}</td>
                             @endif
 
-                            @includeFirst([$viewFolder.'.listing.detail', 'sp::components.listing-detail'])
+                            @includeFirst([$route.'.listing.detail', 'sp::components.listing-detail'])
 
                             @if($showDates)
                                 <td class="td-fit">{{ $item->created_at }}</td>

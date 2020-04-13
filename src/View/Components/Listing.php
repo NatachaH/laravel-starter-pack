@@ -61,14 +61,6 @@ class Listing extends Component
      */
     public $showDates;
 
-    /**
-     * The view folder of the items.
-     * This is used for customize the listing <td></td>.
-     * By default it's the model in lowercase and plural (ex: users/listing/detail.blade.php).
-     *
-     * @var string
-     */
-    public $viewFolder;
 
     /**
      * Check if the items have pagination.
@@ -119,7 +111,6 @@ class Listing extends Component
         $this->items      = $items;
         $this->showId     = $showId;
         $this->showDates  = $showDates;
-        $this->viewFolder = 'backend.'.Str::plural(Str::lower($model));
     }
 
     /**
