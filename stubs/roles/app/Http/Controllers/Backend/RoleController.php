@@ -8,7 +8,7 @@ use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Auth;
 
-use NH\AccessControl\Models\Role;
+use Nh\AccessControl\Role;
 
 class RoleController extends Controller
 {
@@ -64,7 +64,7 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \NH\AccessControl\Models\Role  $role
+     * @param  \Nh\AccessControl\Role  $role
      * @return \Illuminate\Http\Response
      */
     public function show(Role $role)
@@ -75,7 +75,7 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \NH\AccessControl\Models\Role  $role
+     * @param  \Nh\AccessControl\Role  $role
      * @return \Illuminate\Http\Response
      */
     public function edit(Role $role)
@@ -87,7 +87,7 @@ class RoleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\StoreRoleRequest  $request
-     * @param  \NH\AccessControl\Models\Role  $role
+     * @param  \Nh\AccessControl\Role  $role
      * @return \Illuminate\Http\Response
      */
     public function update(StoreRoleRequest $request, Role $role)
@@ -101,7 +101,7 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \NH\AccessControl\Models\Role  $role
+     * @param  \Nh\AccessControl\Role  $role
      * @return \Illuminate\Http\Response
      */
     public function destroy(Role $role)

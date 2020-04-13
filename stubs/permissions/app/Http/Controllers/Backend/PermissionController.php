@@ -8,7 +8,7 @@ use App\Http\Requests\StorePermissionRequest;
 use App\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Auth;
 
-use NH\AccessControl\Models\Permission;
+use Nh\AccessControl\Permission;
 
 class PermissionController extends Controller
 {
@@ -60,7 +60,7 @@ class PermissionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \NH\AccessControl\Models\Permission  $permission
+     * @param  \Nh\AccessControl\Permission  $permission
      * @return \Illuminate\Http\Response
      */
     public function show(Permission $permission)
@@ -71,7 +71,7 @@ class PermissionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \NH\AccessControl\Models\Permission  $permission
+     * @param  \Nh\AccessControl\Permission  $permission
      * @return \Illuminate\Http\Response
      */
     public function edit(Permission $permission)
@@ -83,7 +83,7 @@ class PermissionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\StorePermissionRequest  $request
-     * @param  \NH\AccessControl\Models\Permission  $permission
+     * @param  \Nh\AccessControl\Permission  $permission
      * @return \Illuminate\Http\Response
      */
     public function update(StorePermissionRequest $request, Permission $permission)
@@ -96,7 +96,7 @@ class PermissionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \NH\AccessControl\Models\Permission  $permission
+     * @param  \Nh\AccessControl\Permission  $permission
      * @return \Illuminate\Http\Response
      */
     public function destroy(Permission $permission)

@@ -2,14 +2,14 @@
 
 namespace App\Observers;
 
-use NH\AccessControl\Models\Role;
+use Nh\AccessControl\Role;
 
 class RoleObserver
 {
     /**
      * Handle the role "created" event.
      *
-     * @param  \NH\AccessControl\Models\Role  $role
+     * @param  \Nh\AccessControl\Role  $role
      * @return void
      */
     public function created(Role $role)
@@ -20,7 +20,7 @@ class RoleObserver
     /**
      * Handle the role "updated" event.
      *
-     * @param  \NH\AccessControl\Models\Role  $role
+     * @param  \Nh\AccessControl\Role  $role
      * @return void
      */
     public function updated(Role $role)
@@ -31,7 +31,7 @@ class RoleObserver
     /**
      * Handle the role "deleted" event.
      *
-     * @param  \NH\AccessControl\Models\Role  $role
+     * @param  \Nh\AccessControl\Role  $role
      * @return void
      */
     public function deleted(Role $role)
@@ -42,7 +42,7 @@ class RoleObserver
     /**
      * Handle the role "restored" event.
      *
-     * @param  \NH\AccessControl\Models\Role  $role
+     * @param  \Nh\AccessControl\Role  $role
      * @return void
      */
     public function restored(Role $role)
@@ -53,7 +53,7 @@ class RoleObserver
     /**
      * Handle the role "force deleted" event.
      *
-     * @param  \NH\AccessControl\Models\Role  $role
+     * @param  \Nh\AccessControl\Role  $role
      * @return void
      */
     public function forceDeleted(Role $role)
