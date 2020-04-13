@@ -61,6 +61,13 @@ class Listing extends Component
      */
     public $showDates;
 
+    /**
+     * Path of the folder
+     *
+     * @var string
+     */
+    public $folder;
+
 
     /**
      * Check if the items have pagination.
@@ -102,7 +109,7 @@ class Listing extends Component
      *
      * @return void
      */
-    public function __construct($title, $model, $route, $header, $items, $showId = false, $showDates = false)
+    public function __construct($title, $model, $route, $header, $items, $showId = false, $showDates = false, $folder = '')
     {
         $this->title      = $title;
         $this->model      = Str::startsWith($model,'\\') ? $model : 'App\\'.$model;
@@ -111,6 +118,7 @@ class Listing extends Component
         $this->items      = $items;
         $this->showId     = $showId;
         $this->showDates  = $showDates;
+        $this->folder     = empty($folder) ? $route : $folder;
     }
 
     /**
