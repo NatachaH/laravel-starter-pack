@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\StorePermissionRequest;
-use App\Http\Requests\UpdateAccountRequest;
+use Nh\AccessControl\Http\Requests\StorePermissionRequest;
 use Illuminate\Support\Facades\Auth;
 
 use Nh\AccessControl\Permission;
