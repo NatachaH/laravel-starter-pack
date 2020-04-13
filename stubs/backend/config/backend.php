@@ -28,8 +28,7 @@ return [
             'link'  => null,
             'items' => [
                 'users' => 'backend.users',
-                'roles' => 'backend.roles',
-                'permissions' => 'backend.permissions',
+                'roles' => 'backend.roles'
             ]
         ],
 

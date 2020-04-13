@@ -30,6 +30,3 @@ Route::patch('/account/edit', 'UserController@updateAccount')->name('account.upd
 
 // Roles
 Route::resource('roles','\Nh\StarterPack\Http\Controllers\Backend\RoleController');
-
-// Permissions
-Route::resource('permissions','\Nh\StarterPack\Http\Controllers\Backend\PermissionController');
