@@ -57,7 +57,7 @@ class RoleController extends Controller
             $role->permissions()->attach($request->permissions);
         }
         session()->flash('toast', ['success' => notification('added','role')]);
-        return redirect()->route('sp::backend.roles.index');
+        return redirect()->route('backend.roles.index');
     }
 
     /**
@@ -94,7 +94,7 @@ class RoleController extends Controller
         $role->update($request->only(['name']));
         $role->permissions()->sync($request->permissions);
         session()->flash('toast', ['success' => notification('updated','role')]);
-        return redirect()->route('sp::backend.roles.index');
+        return redirect()->route('backend.roles.index');
     }
 
     /**

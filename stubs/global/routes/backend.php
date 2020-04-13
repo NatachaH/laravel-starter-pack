@@ -29,7 +29,7 @@ Route::get('/account/edit', 'UserController@editAccount')->name('account.edit');
 Route::patch('/account/edit', 'UserController@updateAccount')->name('account.update');
 
 // Roles
-Route::resource('roles','RoleController');
+Route::resource('roles','\Nh\StarterPack\Http\Controllers\Backend\RoleController');
 
 // Permissions
-Route::resource('permissions','PermissionController');
+Route::resource('permissions','\Nh\StarterPack\Http\Controllers\Backend\PermissionController');

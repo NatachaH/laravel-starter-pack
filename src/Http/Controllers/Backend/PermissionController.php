@@ -53,7 +53,7 @@ class PermissionController extends Controller
     {
         Permission::create($request->only(['name']));
         session()->flash('toast', ['success' => notification('added','permission')]);
-        return redirect()->route('sp::backend.permissions.index');
+        return redirect()->route('backend.permissions.index');
     }
 
     /**
@@ -89,7 +89,7 @@ class PermissionController extends Controller
     {
         $permission->update($request->only(['name']));
         session()->flash('toast', ['success' => notification('updated','permission')]);
-        return redirect()->route('sp::backend.permissions.index');
+        return redirect()->route('backend.permissions.index');
     }
 
     /**
