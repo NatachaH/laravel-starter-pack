@@ -4,7 +4,7 @@ namespace Nh\StarterPack\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Nh\AccessControl\Http\Requests\StoreRoleRequest;
+use Nh\StarterPack\Http\Requests\StoreRoleRequest;
 use Illuminate\Support\Facades\Auth;
 
 use Nh\AccessControl\Role;

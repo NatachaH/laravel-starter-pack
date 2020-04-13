@@ -4,6 +4,7 @@ namespace Nh\StarterPack;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiCommand;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Gate;
 
 use Artisan;
 
@@ -11,8 +12,6 @@ use Nh\StarterPack\BackendPreset;
 use Nh\StarterPack\FrontendPreset;
 use Nh\StarterPack\GlobalPreset;
 use Nh\StarterPack\UserPreset;
-use Nh\StarterPack\RolePreset;
-use Nh\StarterPack\PermissionPreset;
 
 class StarterPackServiceProvider extends ServiceProvider
 {
@@ -42,8 +41,6 @@ class StarterPackServiceProvider extends ServiceProvider
           FrontendPreset::install();
           BackendPreset::install();
           UserPreset::install();
-          //RolePreset::install();
-          //PermissionPreset::install();
 
           // Artisan commandes for Access Control Package
           Artisan::call('vendor:publish --tag=access-control');
@@ -75,6 +72,9 @@ class StarterPackServiceProvider extends ServiceProvider
               \Nh\StarterPack\Commands\NewUserCommand::class,
           ]);
       }
+
+      // POLICIES
+      Gate::policy('\Nh\AccessControl\Role', \Nh\StarterPack\Policies\RolePolicy::class);
 
     }
 
