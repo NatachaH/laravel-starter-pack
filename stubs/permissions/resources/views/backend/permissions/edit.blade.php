@@ -21,7 +21,7 @@
 
       </fieldset>
 
-      @include('sp::partials.form-footer')
+      @include('sp::partials.form-footer', ['cancel' => 'backend.permissions.index'])
 
   </form>
 
