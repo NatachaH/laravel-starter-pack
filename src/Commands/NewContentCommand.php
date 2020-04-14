@@ -5,8 +5,6 @@ namespace Nh\StarterPack\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
-use Artisan;
-
 class NewContentCommand extends Command
 {
     /**
@@ -81,16 +79,19 @@ class NewContentCommand extends Command
         $stub = __DIR__.'/../../stubs/spcontents/';
 
         // Controller
+        $this->create_folder(app_path('Http/Controllers/Backend'));
         $sp_controller   = $stub.'app/Http/Controllers/Backend/SpcontentController.php';
         $new_controller  = app_path('Http/Controllers/Backend/'.$this->ucname.'Controller.php');
         $this->copy_file($sp_controller,$new_controller);
 
         // Request
+        $this->create_folder(app_path('Http/Requests'));
         $sp_request   = $stub.'app/Http/Requests/StoreSpcontentRequest.php';
         $new_request  = app_path('Http/Requests/Store'.$this->ucname.'Request.php');
         $this->copy_file($sp_request,$new_request);
 
         // Policy
+        $this->create_folder(app_path('Policies'));
         $sp_policy   = $stub.'app/Policies/SpcontentPolicy.php';
         $new_policy  = app_path('Policies/'.$this->ucname.'Policy.php');
         $this->copy_file($sp_policy,$new_policy);
@@ -108,11 +109,7 @@ class NewContentCommand extends Command
         // View
         $views = glob($stub.'resources/views/backend/spcontents/*.php', GLOB_BRACE);
         $folder = resource_path('views/backend/'.$this->pname);
-
-        if(!is_dir($folder))
-        {
-            $viewFolder = mkdir($folder, 0777, true);
-        }
+        $this->create_folder($folder);
 
         foreach($views as $view) {
             $sp_view = $view;
@@ -142,7 +139,7 @@ class NewContentCommand extends Command
         $permission = $this->confirm('Do you want to create the permissions for this model ? [yes|no]','yes');
         if($permission)
         {
-            Artisan::call('php artisan permission:new --model='.$this->name);
+            $this->call('permission:new', ['--model' => $this->name]);
         }
 
     }
@@ -162,6 +159,19 @@ class NewContentCommand extends Command
             file_put_contents($destination, str_replace('{{ UCNAME }}', $this->ucname, file_get_contents($destination)));
             file_put_contents($destination, str_replace('{{ UCPNAME }}', $this->ucpname, file_get_contents($destination)));
             file_put_contents($destination, str_replace('{{ PNAME }}', $this->pname, file_get_contents($destination)));
+        }
+    }
+
+    /**
+     * Create a folder if not exist
+     * @param  string $folder Folder path
+     * @return void
+     */
+    private function create_folder($folder)
+    {
+        if(!is_dir($folder))
+        {
+            mkdir($folder, 0777, true);
         }
     }
 
