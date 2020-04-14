@@ -3,7 +3,6 @@
 namespace Nh\StarterPack\View\Components;
 
 use Illuminate\View\Component;
-use Illuminate\Support\Str;
 
 use Auth;
 
@@ -112,7 +111,7 @@ class Listing extends Component
     public function __construct($title, $model, $route, $header, $items, $showId = false, $showDates = false, $folder = '')
     {
         $this->title      = $title;
-        $this->model      = Str::startsWith($model,'\\') ? $model : 'App\\'.$model;
+        $this->model      = $model;
         $this->route      = $route;
         $this->header     = explode('|', $header);
         $this->items      = $items;
