@@ -11,7 +11,7 @@
 
       <fieldset >
 
-        <legend>@lang('sp::field.informations')</legend>
+        <legend>@lang('sp::field.information')</legend>
 
         <div class="row">
 
