@@ -20,7 +20,7 @@ return [
     // Confirm restore
     'restore' => [
       'title' => 'Confirm restore',
-      'message' => 'Are you sure you want to delete this ?'
+      'message' => 'Are you sure you want to restor this ?'
     ],
 
     // Confirm force delete

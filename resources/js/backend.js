@@ -5,6 +5,8 @@
 |
 | Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
 |
+| Libraries: Jquery & Bootstrap 4.0
+|
 */
 
 // Components
@@ -25,5 +27,5 @@ Array.prototype.forEach.call(confirmModals, function(modal) {
   });
 });
 
-// Library
+// Libraries
 require('../../../access-control/resources/js/permission-checkboxes');

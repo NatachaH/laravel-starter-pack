@@ -7,7 +7,7 @@ return [
     | Help Language Lines
     |--------------------------------------------------------------------------
     |
-    | The following language lines are used for the hepl informations
+    | The following language lines are used for the help informations in forms
     |
     */
 

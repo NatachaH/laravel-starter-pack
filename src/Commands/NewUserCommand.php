@@ -46,14 +46,14 @@ class NewUserCommand extends Command
         $name = $this->anticipate('What is the name ?', ['natacha']);
         $email = $this->anticipate('What is the email ?', ['info@natachaherth.ch']);
         $password = $this->secret('What is the password?');
-        $roleName = $this->anticipate('What is the role ?', ['superadmin','admin']);
+        $roleName = $this->choice('What is the role ?', ['superadmin','admin']);
 
         $user = User::updateOrCreate(
             ['email' => $email],
             ['name' => $name, 'password' => $password]
         );
 
-        $role = Role::where('name',$roleName)->first();
+        $role = Role::firstWhere('name',$roleName);
 
         if(!empty($role))
         {

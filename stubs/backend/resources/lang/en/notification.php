@@ -22,8 +22,9 @@ return [
 
     // Models
     'attributes' => [
-      'user' => 'the user',
-      'account' => 'your account'
+      'user'    => 'the user',
+      'account' => 'your account',
+      'role'    => 'the role'
     ],
 
 

@@ -17,7 +17,6 @@ return [
       'settings'    => 'Settings',
       'users'       => 'Users',
       'roles'       => 'Roles',
-      'permissions' => 'Permissions',
       'contents'    => 'Contents',
 
     ],

@@ -51,7 +51,7 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        return $user->hasAccess('user','view');
+        return false;//$user->hasAccess('user','view');
     }
 
     /**
@@ -74,7 +74,7 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        return $user->hasAccess('user','update') && !$model->trashed();
+        return $user->hasAccess('user','update') && !$model->trashed() && (!$model->hasRoles('superadmin') || $user->hasRoles('superadmin'));
     }
 
     /**
@@ -86,7 +86,7 @@ class UserPolicy
      */
     public function delete(User $user, User $model)
     {
-        return $user->hasAccess('user','delete') && !$model->trashed();
+        return $user->hasAccess('user','delete') && !$model->trashed() && (!$model->hasRoles('superadmin') || $user->hasRoles('superadmin'));
     }
 
     /**

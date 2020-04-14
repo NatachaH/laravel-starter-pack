@@ -3,6 +3,7 @@
 | Backend - Editor - Smat break - Script
 |--------------------------------------------------------------------------
 |
+| The SmartBreak will make able to add a line break in a paragraphe
 | Plugin: https://quilljs.com/
 |
 */

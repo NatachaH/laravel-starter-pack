@@ -51,7 +51,7 @@ class Toast extends Component
     /**
      * The delay before autohide.
      *
-     * @var string
+     * @var int
      */
     public $delay;
 
@@ -60,7 +60,7 @@ class Toast extends Component
      *
      * @return void
      */
-    public function __construct($message, $color = 'success', $delay = '10000')
+    public function __construct($message, $color = 'success', $delay = 10000)
     {
         $this->message   = $message;
         $this->color     = $color;

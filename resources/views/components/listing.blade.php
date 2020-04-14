@@ -45,8 +45,11 @@
                         @endforeach
 
                         @if($showDates)
-                            <th class="td-fit">@lang('sp::field.created-at')</th>
-                            <th class="td-fit">@lang('sp::field.updated-at')</th>
+                          <th class="td-fit">@lang('sp::field.created-at')</th>
+                          <th class="td-fit">@lang('sp::field.updated-at')</th>
+                          @if(Route::is($route.'.trashed'))
+                            <th class="td-fit">@lang('sp::field.deleted-at')</th>
+                          @endif
                         @endif
 
                         <th class="td-fit">@lang('sp::field.actions')</th>
@@ -66,6 +69,9 @@
                             @if($showDates)
                                 <td class="td-fit">{{ $item->created_at }}</td>
                                 <td class="td-fit">{{ $item->updated_at }}</td>
+                                @if(Route::is($route.'.trashed'))
+                                  <td class="td-fit">{{ $item->deleted_at }}</td>
+                                @endif
                             @endif
 
                             <td class="td-fit">

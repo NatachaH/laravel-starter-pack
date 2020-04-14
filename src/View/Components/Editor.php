@@ -7,14 +7,14 @@ use Illuminate\View\Component;
 class Editor extends Component
 {
     /**
-     * The label of the input.
+     * The label of the editor.
      *
      * @var string
      */
     public $label;
 
     /**
-     * Name of the textarea
+     * Name of the editor textarea
      *
      * @var string
      */
@@ -28,14 +28,14 @@ class Editor extends Component
     public $value;
 
     /**
-     * The help message of the input.
+     * The help message of the editor.
      *
      * @var string
      */
     public $help;
 
     /**
-     * Is the input required.
+     * Is the editor textarea is required.
      *
      * @var boolean
      */
@@ -77,13 +77,11 @@ class Editor extends Component
     public $toolbarHasColor;
 
     /**
-     * Toolbar colors
+     * Toolbar colors available
      *
      * @var array
      */
     public $toolbarColors;
-
-
 
     /**
      * Create a new component instance.

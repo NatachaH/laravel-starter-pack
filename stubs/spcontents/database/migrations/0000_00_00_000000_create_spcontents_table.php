@@ -15,7 +15,9 @@ class Create{{ UCPNAME }}Table extends Migration
     {
         Schema::create('{{ PNAME }}', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
+            $table->string('subtitle');
+            $table->text('description');
             $table->timestamps();
             $table->softDeletes();
         });

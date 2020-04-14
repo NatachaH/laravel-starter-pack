@@ -30,7 +30,7 @@ class {{ UCNAME }}Policy
      */
     public function viewAny(User $user)
     {
-        return true;
+        return $user->hasAccess('{{ NAME }}','view');
     }
 
     /**
@@ -41,7 +41,7 @@ class {{ UCNAME }}Policy
      */
     public function viewTrashed(User $user)
     {
-        return true;
+        return $user->hasAccess('{{ NAME }}', ['restore','force-delete']);
     }
 
     /**
@@ -53,7 +53,7 @@ class {{ UCNAME }}Policy
      */
     public function view(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return false;
+        return $user->hasAccess('{{ NAME }}','view');
     }
 
     /**
@@ -64,7 +64,7 @@ class {{ UCNAME }}Policy
      */
     public function create(User $user)
     {
-        return true;
+        return $user->hasAccess('{{ NAME }}','create');
     }
 
     /**
@@ -76,7 +76,7 @@ class {{ UCNAME }}Policy
      */
     public function update(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return !${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}','update') && !${{ NAME }}->trashed();
     }
 
     /**
@@ -88,7 +88,7 @@ class {{ UCNAME }}Policy
      */
     public function delete(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return !${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}','delete') && !${{ NAME }}->trashed();
     }
 
     /**
@@ -100,7 +100,7 @@ class {{ UCNAME }}Policy
      */
     public function restore(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return ${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}','restore') && ${{ NAME }}->trashed();
     }
 
     /**
@@ -112,6 +112,6 @@ class {{ UCNAME }}Policy
      */
     public function forceDelete(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return ${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}','force-delete') && ${{ NAME }}->trashed();
     }
 }

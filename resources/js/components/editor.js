@@ -14,11 +14,11 @@ let ColorClass = Quill.import('attributors/class/color');
 import SmartBreak from './editor/smart-break';
 import HelperLink from './editor/helper-link';
 
-// Add class for colors
+// Add class for colors (ex: text-primary)
 ColorClass.keyName = 'text'
 Quill.register(ColorClass, true);
 
-// Add class for smart break
+// Add the smart break
 Quill.register(SmartBreak, true);
 
 // Select all .edito
@@ -72,6 +72,7 @@ Array.prototype.forEach.call(editors, function(el, i) {
             			key: 13,
             			shiftKey: true,
             			handler: function(range, context) {
+                    // Make a line break with shift+enter 
                     let currentLeaf = this.quill.getLeaf(range.index)[0]
                     let nextLeaf = this.quill.getLeaf(range.index + 1)[0]
                     this.quill.insertEmbed(range.index, 'smartbreak', true, 'user');

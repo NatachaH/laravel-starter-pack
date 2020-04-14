@@ -11,21 +11,17 @@
 
       <fieldset >
 
-        <legend>@lang('sp::field.informations')</legend>
+        <legend>@lang('sp::field.information')</legend>
 
-        <div class="row">
+        <x-bs-input :label="__('sp::field.title')" type="text" name="title" required/>
 
-          <x-bs-input class="col-12" :label="__('sp::field.title')" type="text" name="title" required/>
+        <x-bs-input :label="__('sp::field.subtitle')" type="text" name="subtitle" />
 
-          <x-bs-input class="col-12" :label="__('sp::field.subtitle')" type="text" name="subtitle" />
-
-          <x-sp-editor class="col-12" :label="__('sp::field.description')" name="description" />
-
-        </div>
+        <x-sp-editor :label="__('sp::field.description')" name="description" />
 
       </fieldset>
 
-      @include('sp::partials.form-footer')
+      @include('sp::partials.form-footer', ['cancel' => 'backend.{{ PNAME }}.index'])
 
   </form>
 

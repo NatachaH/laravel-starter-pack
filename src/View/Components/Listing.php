@@ -33,9 +33,8 @@ class Listing extends Component
 
     /**
      * The array of the table header columns.
-     * Must be a string with pipe separator.
      *
-     * @var string
+     * @var array
      */
     public $header;
 
@@ -66,7 +65,6 @@ class Listing extends Component
      * @var string
      */
     public $folder;
-
 
     /**
      * Check if the items have pagination.

@@ -5,6 +5,8 @@ namespace Nh\StarterPack\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
+use Artisan;
+
 class NewContentCommand extends Command
 {
     /**
@@ -75,7 +77,6 @@ class NewContentCommand extends Command
         $this->ucname   = ucfirst($name);
         $this->ucpname  = ucfirst($this->pname);
 
-
         // Copy the files
         $stub = __DIR__.'/../../stubs/spcontents/';
 
@@ -88,11 +89,6 @@ class NewContentCommand extends Command
         $sp_request   = $stub.'app/Http/Requests/StoreSpcontentRequest.php';
         $new_request  = app_path('Http/Requests/Store'.$this->ucname.'Request.php');
         $this->copy_file($sp_request,$new_request);
-
-        // Observer
-        $sp_observer   = $stub.'app/Observers/SpcontentObserver.php';
-        $new_observer  = app_path('Observers/'.$this->ucname.'Observer.php');
-        $this->copy_file($sp_observer,$new_observer);
 
         // Policy
         $sp_policy   = $stub.'app/Policies/SpcontentPolicy.php';
@@ -140,8 +136,14 @@ class NewContentCommand extends Command
         }
 
         // End
-        $this->line('The model '.$this->name.' has been created !');
+        $this->info('The model '.$this->name.' has been created !');
 
+        // Run the artisan commande for create the permissions of the new model (nh/access-control)
+        $permission = $this->confirm('Do you want to create the permissions for this model ? [yes|no]','yes');
+        if($permission)
+        {
+            Artisan::call('php artisan permission:new --model='.$this->name);
+        }
 
     }
 

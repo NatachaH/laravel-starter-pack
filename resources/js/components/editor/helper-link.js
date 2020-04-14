@@ -2,11 +2,15 @@
 |--------------------------------------------------------------------------
 | Backend - Editor - Helper - Link - Script
 |--------------------------------------------------------------------------
+|
+| Libraries: Jquery & Bootstrap v4.0
+|
 */
+
 var exports = module.exports = {};
 
 /**
- * Init the Bootstrap tooltip
+ * Init the Bootstrap tooltip for the link
  * @return void
  */
 exports.initTooltip = function()
