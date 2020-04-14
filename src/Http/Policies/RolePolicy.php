@@ -66,7 +66,7 @@ class RolePolicy
      */
     public function update(User $user, Role $role)
     {
-        return $user->hasAccess('role','update') && !in_array($role->name, ['superadmin','admin']);
+        return $user->hasAccess('role','update') && (!in_array($role->name, ['superadmin','admin']) || $user->hasRoles('superadmin'));
     }
 
     /**
