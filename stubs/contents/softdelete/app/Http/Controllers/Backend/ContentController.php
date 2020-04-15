@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Http\Requests\Store{{ UCNAME }}Request;
-use App\Http\Requests\UpdateAccountRequest;
-use Illuminate\Support\Facades\Auth;
 
 use App\{{ UCNAME }};
 

@@ -75,39 +75,43 @@ class NewContentCommand extends Command
         $this->ucname   = ucfirst($name);
         $this->ucpname  = ucfirst($this->pname);
 
+        // Define if need the soft delete
+        $softdelete = $this->confirm('Is the model using SoftDeletes ? [yes|no]', false);
+
         // Copy the files
-        $stub = __DIR__.'/../../stubs/spcontents/';
+        $stub_global = __DIR__.'/../../stubs/contents/global/';
+        $stub = __DIR__.'/../../stubs/contents/'.($softdelete ? 'softdelete/' : 'classic/');
 
         // Controller
         $this->create_folder(app_path('Http/Controllers/Backend'));
-        $sp_controller   = $stub.'app/Http/Controllers/Backend/SpcontentController.php';
+        $sp_controller   = $stub.'app/Http/Controllers/Backend/ContentController.php';
         $new_controller  = app_path('Http/Controllers/Backend/'.$this->ucname.'Controller.php');
         $this->copy_file($sp_controller,$new_controller);
 
-        // Request
+        // Request (Global stub)
         $this->create_folder(app_path('Http/Requests'));
-        $sp_request   = $stub.'app/Http/Requests/StoreSpcontentRequest.php';
+        $sp_request   = $stub_global.'app/Http/Requests/StoreContentRequest.php';
         $new_request  = app_path('Http/Requests/Store'.$this->ucname.'Request.php');
         $this->copy_file($sp_request,$new_request);
 
         // Policy
         $this->create_folder(app_path('Policies'));
-        $sp_policy   = $stub.'app/Policies/SpcontentPolicy.php';
+        $sp_policy   = $stub.'app/Policies/ContentPolicy.php';
         $new_policy  = app_path('Policies/'.$this->ucname.'Policy.php');
         $this->copy_file($sp_policy,$new_policy);
 
         // Model
-        $sp_model   = $stub.'app/Spcontent.php';
+        $sp_model   = $stub.'app/Content.php';
         $new_model  = app_path($this->ucname.'.php');
         $this->copy_file($sp_model,$new_model);
 
         // Database
-        $sp_database   = $stub.'database/migrations/0000_00_00_000000_create_spcontents_table.php';
+        $sp_database   = $stub.'database/migrations/0000_00_00_000000_create_contents_table.php';
         $new_database  = database_path('migrations/'.date('Y_m_d').'_000000_create_'.$this->pname.'_table.php');
         $this->copy_file($sp_database,$new_database);
 
-        // View
-        $views = glob($stub.'resources/views/backend/spcontents/*.php', GLOB_BRACE);
+        // View (Global stub)
+        $views = glob($stub_global.'resources/views/backend/contents/*.php', GLOB_BRACE);
         $folder = resource_path('views/backend/'.$this->pname);
         $this->create_folder($folder);
 

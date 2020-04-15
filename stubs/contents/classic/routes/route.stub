@@ -1,0 +1,3 @@
+
+// {{ UCPNAME }}
+Route::resource('{{ PNAME }}','{{ UCNAME }}Controller');
