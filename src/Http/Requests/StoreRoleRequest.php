@@ -5,6 +5,9 @@ namespace Nh\StarterPack\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
+use Nh\StarterPack\Rules\Lowercase;
+use Nh\StarterPack\Rules\WithoutSpace;
+
 class StoreRoleRequest extends FormRequest
 {
     /**
@@ -26,7 +29,7 @@ class StoreRoleRequest extends FormRequest
     {
         $isNew = $this->getMethod() == 'POST';
         return [
-            'name' => ['required', Rule::unique('roles', 'name')->ignore($this->role)]
+            'name' => ['required', Rule::unique('roles', 'name')->ignore($this->role), new Lowercase, new WithoutSpace]
         ];
     }
 }
