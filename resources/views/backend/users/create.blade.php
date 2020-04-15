@@ -27,7 +27,7 @@
 
       </fieldset>
 
-      <x-ac-role-fieldset :legend="trans_choice('backend.model.role',1)" required/>
+      <x-ac-role-fieldset :legend="trans_choice('backend.model.role',1)" required :disabled="$rolesDisabled"/>
 
       @include('sp::partials.form-footer', ['cancel' => 'backend.users.index'])
 

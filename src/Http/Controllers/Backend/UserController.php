@@ -9,6 +9,7 @@ use Nh\StarterPack\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Auth;
 
 use App\User;
+use Nh\AccessControl\Role;
 
 class UserController extends Controller
 {
@@ -53,7 +54,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('sp::backend.users.create');
+        $rolesDisabled = Auth::user()->hasRoles('superadmin') ? false : Role::firstWhere('name', 'superadmin')->modelKeys();
+        return view('sp::backend.users.create', compact('rolesDisabled'));
     }
 
     /**
@@ -88,7 +90,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('sp::backend.users.edit', compact('user'));
+        $rolesDisabled = Auth::user()->hasRoles('superadmin') ? false : Role::firstWhere('name', 'superadmin')->modelKeys();
+        return view('sp::backend.users.edit', compact('user', 'rolesDisabled'));
     }
 
     /**
