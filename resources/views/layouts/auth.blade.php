@@ -18,7 +18,7 @@
     <div id="auth" class="card">
 
       <div class="card-header">
-        <h1><span class="text-brand font-weight-normal">BACK</span><span class="text-secondary font-weight-light">END</span></h1>
+        <h1><span class="text-primary font-weight-normal">BACK</span><span class="text-secondary font-weight-light">END</span></h1>
       </div>
 
       <div class="card-subheader">

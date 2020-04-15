@@ -10,7 +10,7 @@
         <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#{{ $collapseId }}" aria-expanded="false" aria-controls="{{ $collapseId }}"><i class="icon icon-toggles"></i></button>
       @endif
 
-      <button class="btn btn-outline-brand" type="submit"><i class="icon icon-search"></i> @lang('sp::action.search')</button>
+      <button class="btn btn-outline-primary" type="submit"><i class="icon icon-search"></i> @lang('sp::action.search')</button>
 
       @if($hasSearchData)
         <a href="{{ route($reset) }}" class="btn btn-outline-secondary"><i class="icon icon-cross"></i> @lang('sp::action.reset')</a>

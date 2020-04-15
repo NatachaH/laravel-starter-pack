@@ -21,7 +21,7 @@
           @enderror
       </div>
 
-      <button type="submit" class="btn btn-block btn-brand">{{ __('Confirm Password') }}</button>
+      <button type="submit" class="btn btn-block btn-primary">{{ __('Confirm Password') }}</button>
 
       @if (Route::has('password.request'))
           <a class="btn btn-sm btn-block btn-link" href="{{ route('password.request') }}">

@@ -20,7 +20,7 @@
             @endif
 
             @if(Route::has($route.'.create') && Auth::user()->can('create', $model))
-                <a href="{{ route($route.'.create') }}" class="btn btn-brand rounded-pill btn-sm"><i class="icon icon-plus"></i> @lang('sp::action.add')</a>
+                <a href="{{ route($route.'.create') }}" class="btn btn-primary rounded-pill btn-sm"><i class="icon icon-plus"></i> @lang('sp::action.add')</a>
             @endif
 
         </div>

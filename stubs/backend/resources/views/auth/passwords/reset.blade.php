@@ -48,7 +48,7 @@
           </div>
 
 
-          <button type="submit" class="btn btn-block btn-brand">{{ __('Reset Password') }}</button>
+          <button type="submit" class="btn btn-block btn-primary">{{ __('Reset Password') }}</button>
 
       @endif
 

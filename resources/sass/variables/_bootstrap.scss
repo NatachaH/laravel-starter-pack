@@ -25,10 +25,10 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+$primary: $brand;
 $secondary: #B1B1B1;
 
 $theme-colors: (
-  'brand' : $brand,
   'gray'  : $gray-100
 );
 

@@ -37,11 +37,6 @@
           .dropdown-menu {
               min-width: auto !important;
           }
-
-          .ql-color > svg.text-primary {
-              // Primary color in Frontend is Brand color
-              color: $brand !important;
-          }
       }
 
   }
@@ -59,10 +54,6 @@
         @include form-control-focus($ignore-warning: true);
         > p:last-child {
             margin-bottom: 0;
-        }
-        .text-primary {
-          // Primary color in Frontend is Brand color
-          color: $brand !important
         }
     }
 
