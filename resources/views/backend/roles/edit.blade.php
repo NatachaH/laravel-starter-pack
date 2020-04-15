@@ -13,11 +13,7 @@
 
         <legend>@lang('sp::field.information')</legend>
 
-        <div class="row">
-
-          <x-bs-input class="col-12" :label="__('sp::field.name')" type="text" name="name" :value="$role->name" required/>
-
-        </div>
+        <x-bs-input :label="__('sp::field.name')" type="text" name="name" :value="$role->name" required/>
 
       </fieldset>
 
