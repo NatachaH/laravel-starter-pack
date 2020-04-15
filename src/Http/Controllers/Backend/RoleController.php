@@ -108,7 +108,7 @@ class RoleController extends Controller
         $permissions = array_merge($request->permissions, $request->disabled_permissions);
 
         // Sync the permissions
-        $role->permissions()->sync($request->permissions);
+        $role->permissions()->sync($permissions);
 
         // Success
         session()->flash('toast', ['success' => notification('updated','role')]);
