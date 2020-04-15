@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Nh\StarterPack\Http\Requests\StoreUserRequest;
 use Nh\StarterPack\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 use App\User;
 use Nh\AccessControl\Role;
@@ -66,6 +67,7 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
+        Gate::authorize('set-user-role', $request->role);
         User::create($request->only(['name','email','password']));
         session()->flash('toast', ['success' => notification('added','user')]);
         return redirect()->route('backend.users.index');
@@ -103,6 +105,7 @@ class UserController extends Controller
      */
     public function update(StoreUserRequest $request, User $user)
     {
+        Gate::authorize('set-user-role', $request->role);
         $user->update($request->only(['name','email','password']));
         session()->flash('toast', ['success' => notification('updated','user')]);
         return redirect()->route('backend.users.index');
