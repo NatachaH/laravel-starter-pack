@@ -41,7 +41,7 @@ class RoleController extends Controller
     public function create()
     {
         $permissionsDisabled = Auth::user()->role->restrictions()->modelKeys();
-        return view('sp::backend.roles.create','permissionsDisabled');
+        return view('sp::backend.roles.create',compact('permissionsDisabled'));
     }
 
     /**
