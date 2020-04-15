@@ -17,7 +17,7 @@ class {{ UCNAME }}Controller extends Controller
     */
     public function __construct()
     {
-
+        $this->authorizeResource({{ UCNAME }}::class, '{{ NAME }}');
     }
 
     /**
