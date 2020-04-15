@@ -10,8 +10,16 @@ return [
 
     /*
     | This is for construct the sidebar menu automatically.
-    | The items can be a string (=> the route base name) or an array with 'link' and 'active' keys
     | The sidebar translation are in the file lang/en/backend.php
+    |
+    |    Exemple for customize the link in the sidebar:
+    |    'posts' => [
+    |        'model' => 'App\Post',
+    |        'route' => 'backend.posts',
+    |        'link'  => 'backend.posts.create',
+    |        'action' => 'create'
+    |      ]
+    |
     */
 
     'sidebar' => [
@@ -26,17 +34,21 @@ return [
         // Settings
         'settings' =>  [
             'icon'  => 'icon-gear',
-            'link'  => null,
             'items' => [
-                'users' => 'backend.users',
-                'roles' => 'backend.roles'
+                'users' => [
+                  'model' => 'App\User',
+                  'route' => 'backend.users'
+                ],
+                'roles' => [
+                  'model' => 'Nh\AccessControl\Role',
+                  'route' => 'backend.roles'
+                ]
             ]
         ],
 
         // Contents
         'contents' =>  [
             'icon'  => 'icon-content',
-            'link' => null,
             'items' => null
         ]
 
