@@ -53,7 +53,7 @@ class {{ UCNAME }}Policy
      */
     public function view(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return $user->hasAccess('{{ NAME }}','view');
+        return $user->hasAccess('{{ NAME }}','view') && !${{ NAME }}->trashed();
     }
 
     /**
