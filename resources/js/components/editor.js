@@ -56,6 +56,7 @@ Array.prototype.forEach.call(editors, function(el, i) {
 
                     // Set the link and init the tooltip
                     if(HelperLink.isEmail(href)) href = 'mailto:'+href ;
+                    if(href.substring(0, 4) !== 'http') href = 'http://'+href;
                     this.quill.format('link', href);
                     HelperLink.initTooltip();
 
@@ -72,7 +73,7 @@ Array.prototype.forEach.call(editors, function(el, i) {
             			key: 13,
             			shiftKey: true,
             			handler: function(range, context) {
-                    // Make a line break with shift+enter 
+                    // Make a line break with shift+enter
                     let currentLeaf = this.quill.getLeaf(range.index)[0]
                     let nextLeaf = this.quill.getLeaf(range.index + 1)[0]
                     this.quill.insertEmbed(range.index, 'smartbreak', true, 'user');
