@@ -144,10 +144,10 @@ class NewContentCommand extends Command
         $this->info('The model '.$this->name.' has been created !');
 
         // Run the artisan commande for create the permissions of the new model (nh/access-control)
-        $permission = $this->confirm('Do you want to create the permissions for this model ? [yes|no]','yes');
+        $permission = $this->confirm('Do you want to create the permissions for this model ? [yes|no]', true);
         if($permission)
         {
-            $this->call('permission:new', ['--model' => $this->name]);
+            $this->call('permission:new', ['--model' => $this->name, '--softDelete' => $softdelete ]);
         }
 
     }
