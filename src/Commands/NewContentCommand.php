@@ -116,6 +116,10 @@ class NewContentCommand extends Command
         $this->create_folder($folder);
 
         foreach($views as $view) {
+            if(!$softdelete && basename($view) == 'trashed.blade.php')
+            {
+              continue;
+            }
             $sp_view = $view;
             $new_view = $folder.'/'.basename($sp_view);
             $this->copy_file($sp_view,$new_view);
