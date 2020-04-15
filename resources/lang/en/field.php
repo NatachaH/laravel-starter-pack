@@ -20,6 +20,7 @@ return [
     'updated-at'    => 'Updated at',
     'deleted-at'    => 'Deleted at',
     'actions'       => 'Actions',
-    'information'   => 'Information'
+    'information'   => 'Information',
+    'role'          => 'Role'
 
 ];
