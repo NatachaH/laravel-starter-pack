@@ -92,23 +92,27 @@ Array.prototype.forEach.call(editors, function(el, i) {
     // When selection change
     ql.on('selection-change', function() {
 
-      // Color dropdown state
-      if(ql.getFormat().color) {
-        colorDropdown.classList.add('ql-active');
-      } else {
-        colorDropdown.classList.remove('ql-active');
-      }
+      if(ql.hasFocus()) {
 
-      // Header dropdown state
-      var headerValue = '';
-      if(ql.getFormat().header) {
-        headerDropdown.classList.add('ql-active');
-        headerValue = ql.getFormat().header;
-      } else {
-        headerDropdown.classList.remove('ql-active');
-      };
-      var headerText = document.querySelector('.ql-header[value="'+headerValue+'"]').innerHTML;
-      headerDropdown.querySelector('small').textContent = headerText;
+        // Color dropdown state
+        if(ql.getFormat().color) {
+          colorDropdown.classList.add('ql-active');
+        } else {
+          colorDropdown.classList.remove('ql-active');
+        }
+
+        // Header dropdown state
+        var headerValue = '';
+        if(ql.getFormat().header) {
+          headerDropdown.classList.add('ql-active');
+          headerValue = ql.getFormat().header;
+        } else {
+          headerDropdown.classList.remove('ql-active');
+        };
+        var headerText = document.querySelector('.ql-header[value="'+headerValue+'"]').innerHTML;
+        headerDropdown.querySelector('small').textContent = headerText;
+        
+      }
 
     });
 });
