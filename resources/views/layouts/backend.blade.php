@@ -50,7 +50,7 @@
   </form>
 
   <x-sp-modal-confirm name="deleteConfirm" :title="__('sp::modal.delete.title')" :message="__('sp::modal.delete.message')" method="DELETE"/>
-  <x-sp-modal-confirm name="restoreConfirm" :title="__('sp::modal.restore.title')" :message="__('sp::modal.restore.message')" method="PATCH" color="brand" icon="icon-time-reverse"/>
+  <x-sp-modal-confirm name="restoreConfirm" :title="__('sp::modal.restore.title')" :message="__('sp::modal.restore.message')" method="PATCH" color="primary" icon="icon-time-reverse"/>
   <x-sp-modal-confirm name="forceDeleteConfirm" :title="__('sp::modal.force-delete.title')" :message="__('sp::modal.force-delete.message')" method="DELETE"/>
 
 </body>
