@@ -82,6 +82,12 @@ class StarterPackServiceProvider extends ServiceProvider
           return $user->hasRoles('superadmin') || $role->name != 'superadmin';
       });
 
+      // Only set the permission that the user have access
+      Gate::define('set-role-permissions', function ($user, $permissions) {
+          $restrictions = $user->role->restrictions()->modelKeys();
+          return empty(array_intersect($permissions,$restrictions));
+      });
+
     }
 
 }

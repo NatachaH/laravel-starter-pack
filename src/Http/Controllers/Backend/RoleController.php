@@ -55,6 +55,7 @@ class RoleController extends Controller
         $role = Role::create($request->only(['name']));
         if($request->has('permissions'))
         {
+            Gate::authorize('set-role-permissions', [$request->permissions]);
             $role->permissions()->attach($request->permissions);
         }
         session()->flash('toast', ['success' => notification('added','role')]);
@@ -94,6 +95,7 @@ class RoleController extends Controller
     public function update(StoreRoleRequest $request, Role $role)
     {
         $role->update($request->only(['name']));
+        Gate::authorize('set-role-permissions', [$request->permissions]);
         $role->permissions()->sync($request->permissions);
         session()->flash('toast', ['success' => notification('updated','role')]);
         return redirect()->route('backend.roles.index');
