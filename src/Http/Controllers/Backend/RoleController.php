@@ -94,9 +94,23 @@ class RoleController extends Controller
      */
     public function update(StoreRoleRequest $request, Role $role)
     {
+        // Update the role
         $role->update($request->only(['name']));
+
+        // Check if all permissions input are available for this user
         Gate::authorize('set-role-permissions', [$request->permissions]);
+
+        // Get the permissions ids that are disabled (That the user can't change!)
+        $restrictions = Auth::user()->role->restrictions()->modelKeys();
+        $permissionsDisabled = $role->permissions->whereIn('id',$restrictions)->modelKeys();
+
+        // Merge the $request with the $permissionsDisabled
+        $permissions = array_merge($request->permissions, $request->disabled_permissions);
+
+        // Sync the permissions
         $role->permissions()->sync($request->permissions);
+
+        // Success
         session()->flash('toast', ['success' => notification('updated','role')]);
         return redirect()->route('backend.roles.index');
     }
