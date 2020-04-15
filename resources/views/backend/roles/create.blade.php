@@ -17,7 +17,7 @@
 
       </fieldset>
 
-      <x-ac-permission-fieldset :legend="trans_choice('backend.model.permission',2)" translation="backend.model"/>
+      <x-ac-permission-fieldset :legend="trans_choice('backend.model.permission',2)" translation="backend.model" :disabled="$permissionsDisabled"/>
 
       @include('sp::partials.form-footer', ['cancel' => 'backend.roles.index'])
 

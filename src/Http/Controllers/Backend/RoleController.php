@@ -40,7 +40,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('sp::backend.roles.create');
+        $permissionsDisabled = Auth::user()->role->restrictions()->modelKeys();
+        return view('sp::backend.roles.create','permissionsDisabled');
     }
 
     /**
@@ -79,7 +80,8 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        return view('sp::backend.roles.edit', compact('role'));
+        $permissionsDisabled = Auth::user()->role->restrictions()->modelKeys();
+        return view('sp::backend.roles.edit', compact('role','permissionsDisabled'));
     }
 
     /**
