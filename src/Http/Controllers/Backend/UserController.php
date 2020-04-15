@@ -3,7 +3,6 @@
 namespace Nh\StarterPack\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Nh\StarterPack\Http\Requests\StoreUserRequest;
 use Nh\StarterPack\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Auth;
