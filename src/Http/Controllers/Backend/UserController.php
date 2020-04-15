@@ -54,7 +54,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $rolesDisabled = Auth::user()->hasRoles('superadmin') ? false : Role::firstWhere('name', 'superadmin')->modelKeys();
+        $rolesDisabled = Auth::user()->hasRoles('superadmin') ? false : Role::select('id')->firstWhere('name', 'superadmin')->toArray();
         return view('sp::backend.users.create', compact('rolesDisabled'));
     }
 
@@ -90,7 +90,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        $rolesDisabled = Auth::user()->hasRoles('superadmin') ? false : Role::firstWhere('name', 'superadmin')->modelKeys();
+        $rolesDisabled = Auth::user()->hasRoles('superadmin') ? false : Role::select('id')->firstWhere('name', 'superadmin')->toArray();
         return view('sp::backend.users.edit', compact('user', 'rolesDisabled'));
     }
 
