@@ -52,8 +52,16 @@
         line-height: $input-line-height;
         color: $input-color;
         @include form-control-focus($ignore-warning: true);
+
         > p:last-child {
             margin-bottom: 0;
+        }
+
+        // Make all .ql-color- as the bootstrap class .text-
+        @each $color, $value in $theme-colors {
+          .ql-color-#{$color} {
+            color: $value;
+          }
         }
     }
 

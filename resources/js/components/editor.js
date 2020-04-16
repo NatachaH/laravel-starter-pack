@@ -14,8 +14,8 @@ let ColorClass = Quill.import('attributors/class/color');
 import SmartBreak from './editor/smart-break';
 import HelperLink from './editor/helper-link';
 
-// Add class for colors (ex: text-primary)
-ColorClass.keyName = 'text'
+// Add class for colors
+ColorClass.keyName = 'ql-color'
 Quill.register(ColorClass, true);
 
 // Add the smart break
@@ -31,6 +31,9 @@ Array.prototype.forEach.call(editors, function(el, i) {
     var headerDropdown = parent.querySelector('.ql-dropdown-header');
     var colorDropdown = parent.querySelector('.ql-dropdown-color');
     var linkBtn = parent.querySelector('.ql-link');
+
+    // Clean the innerHTML Bootstrap class 'text'
+    editor.innerHTML = editor.innerHTML.replace(/text-/g, 'ql-color-');
 
     var ql = new Quill(editor, {
       modules: {
@@ -111,7 +114,7 @@ Array.prototype.forEach.call(editors, function(el, i) {
         };
         var headerText = document.querySelector('.ql-header[value="'+headerValue+'"]').innerHTML;
         headerDropdown.querySelector('small').textContent = headerText;
-        
+
       }
 
     });
@@ -132,6 +135,9 @@ form.onsubmit = function() {
     // Clean the <p><br/></p> to <br/>
     html = html.replace(new RegExp('<p><br></p>', 'g'), '<br>');
     html = html.replace(new RegExp('/^(\s*<br\s*\/?\s*>\s*)*|(\s*<br\s*\/?\s*>\s*)*\s*$','g'), '')
+
+    // Clean the .ql-color- as .text-
+    html = html.replace(/ql-color-/g, 'text-');
 
     // Populate the textarea if not empty
     if(html != '<br>') {
