@@ -46,19 +46,18 @@ class NewUserCommand extends Command
         $name = $this->anticipate('What is the name ?', ['natacha']);
         $email = $this->anticipate('What is the email ?', ['info@natachaherth.ch']);
         $password = $this->secret('What is the password?');
-        $roleName = $this->choice('What is the role ?', ['superadmin','admin']);
 
+        // Create the user
         $user = User::updateOrCreate(
             ['email' => $email],
             ['name' => $name, 'password' => $password]
         );
 
-        $role = Role::firstWhere('name',$roleName);
-
-        if(!empty($role))
-        {
-            $user->role()->associate($role)->save();
-        }
+        // Associate the role
+        $roles = Role::select('name')->get()->pluck('name')->toArray();
+        $role_name = $this->choice('What is the name of the role ?',$roles);
+        $role = Role::firstWhere('name',$role_name);
+        $user->role()->associate($role)->save();
 
         // End
         $this->line('The user '.$name.' has been created !');
