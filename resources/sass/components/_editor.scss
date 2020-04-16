@@ -57,6 +57,8 @@
             margin-bottom: 0;
         }
 
+        height: calc((#{$input-height-inner}*2) + 2px);
+
         // Make all .ql-color- as the bootstrap class .text-
         @each $color, $value in $theme-colors {
           .ql-color-#{$color} {
