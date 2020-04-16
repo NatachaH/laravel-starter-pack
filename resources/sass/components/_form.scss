@@ -38,7 +38,8 @@ form {
           font-weight: $font-weight-bold;
       }
 
-      > .row > div {
+      > .row > div,
+      > div:not(.row) {
           margin-bottom: 1rem;
       }
 

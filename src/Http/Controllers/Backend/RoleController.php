@@ -105,7 +105,7 @@ class RoleController extends Controller
         $permissionsDisabled = $role->permissions->whereIn('id',$restrictions)->modelKeys();
 
         // Merge the $request with the $permissionsDisabled
-        $permissions = array_merge($request->permissions, $request->disabled_permissions);
+        $permissions = array_merge($request->permissions, $permissionsDisabled);
 
         // Sync the permissions
         $role->permissions()->sync($permissions);
