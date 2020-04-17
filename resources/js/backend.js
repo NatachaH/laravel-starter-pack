@@ -29,3 +29,4 @@ Array.prototype.forEach.call(confirmModals, function(modal) {
 
 // Libraries
 require('../../../access-control/resources/js/permission-checkboxes');
+require('../../../bs-component/resources/js/dynamic');
