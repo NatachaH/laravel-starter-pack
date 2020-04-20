@@ -4,9 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Nh\Mediable\Traits\Mediable;
+
 class {{ UCNAME }} extends Model
 {
-  
+
+    use Mediable;
+
     /**
      * The attributes that are mass assignable.
      *

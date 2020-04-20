@@ -11,6 +11,7 @@ return [
     |
     */
 
+    'media'   => 'Media|Media',
     'add'     => 'Add a media',
     'remove'  => 'Remove a media',
     'delete'  => 'Delete a media',

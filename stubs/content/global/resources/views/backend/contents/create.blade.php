@@ -21,6 +21,8 @@
 
       </fieldset>
 
+      <x-sp-media-fieldset type="pictures" has-name is-multiple />
+
       @include('sp::partials.form-footer', ['cancel' => 'backend.{{ PNAME }}.index'])
 
   </form>
