@@ -19,13 +19,13 @@
   @endforeach
 
   <x-slot name="template">
-    <input type="hidden" name="media_to_add[KEY][type]" value="{{ $type }}" />
+    <input type="hidden" name="media_to_add[KEY_{{ $type }}][type]" value="{{ $type }}" />
 
     @if($hasName)
-      <x-bs-input class="w-50 mr-2" :label="__('sp::media.input.name')" name="media_to_add[KEY][name]" :placeholder="__('sp::media.input.name')" />
+      <x-bs-input class="w-50 mr-2" :label="__('sp::media.input.name')" :name="'media_to_add[KEY_'.$type.'][name]'" :placeholder="__('sp::media.input.name')" />
     @endif
 
-    <x-bs-input-file :class="$hasName ? 'w-50 mr-2' : 'w-100 mr-2'" :label="__('sp::media.input.file.label')" name="media_to_add[KEY][file]" :placeholder="__('sp::media.input.file.placeholder')" :button="__('sp::media.input.file.button')" />
+    <x-bs-input-file :class="$hasName ? 'w-50 mr-2' : 'w-100 mr-2'" :label="__('sp::media.input.file.label')" :name="'media_to_add[KEY_'.$type.'][file]'" :placeholder="__('sp::media.input.file.placeholder')" :button="__('sp::media.input.file.button')" />
   </x-slot>
 
 </x-bs-dynamic>
