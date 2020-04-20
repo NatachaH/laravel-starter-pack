@@ -47,7 +47,7 @@ form {
 
         margin-bottom: 0.5rem;
 
-        &:first-child > .btn-group-toggle {
+        &:first-child > .dynamic-item-btn {
           align-self: flex-end;
           margin-bottom: 0.25rem;
         }
@@ -57,7 +57,7 @@ form {
         }
 
         &.dynamic-item-delete {
-          > .btn-group-toggle .icon-trash:before{
+          > .dynamic-item-btn .icon-trash:before{
             content: "\e035" // Change the icon for a plus
           }
           input {

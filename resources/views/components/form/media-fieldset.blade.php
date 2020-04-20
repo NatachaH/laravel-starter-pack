@@ -9,7 +9,7 @@
 
       <x-bs-input :class="$hasName ? 'w-50 mr-2' : 'w-100 mr-2'" :label="__('sp::media.input.file.label')" :name="'media_to_edit['.$media->id.'][file]'" :value="$media->filename" readonly/>
 
-      <div class="btn-group-toggle ml-auto" data-toggle="buttons">
+      <div class="dynamic-item-btn btn-group-toggle ml-auto" data-toggle="buttons">
          <label class="btn btn-sm btn-gray rounded-circle active">
              <input class="dynamic-delete" type="checkbox" name="media_to_delete[]" value="{{ $media->id }}" aria-label="@lang('sp::media.delete')"><i class="icon icon-trash"></i>
          </label>
