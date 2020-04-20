@@ -19,6 +19,7 @@ return [
     'input' => [
       'name'              => 'Name of the media',
       'file'  => [
+        'label'       => 'File',
         'placeholder' => 'Choose a file',
         'button'      => 'Browse'
       ]
