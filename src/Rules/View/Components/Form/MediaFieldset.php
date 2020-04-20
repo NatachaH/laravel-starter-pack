@@ -57,7 +57,7 @@ class MediaFieldset extends Component
      */
     public function __construct($legend = null, $type, $current = [], $hasName = false, $isMultiple = false, $min = 1, $max = null)
     {
-        $this->legend       = is_null($legend) trans_choice('sp::media.media', ($isMultiple ? 2 : 1)) : $legend;
+        $this->legend       = is_null($legend) ? trans_choice('sp::media.media', ($isMultiple ? 2 : 1)) : $legend;
         $this->type         = $type;
         $this->current      = $current;
         $this->hasName      = $hasName;

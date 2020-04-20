@@ -45,6 +45,9 @@ class StarterPackServiceProvider extends ServiceProvider
           Artisan::call('vendor:publish --tag=access-control');
           Artisan::call('role:new user');
 
+          // Artisan commandes for Mediable Package
+          Artisan::call('vendor:publish --tag=mediable');
+
           // Return success
           $command->info('The Starter Pack Preset is installed !');
 

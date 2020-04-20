@@ -17,8 +17,12 @@ return [
     'delete'  => 'Delete a media',
 
     'input' => [
-      'placeholder' => 'Choose a file',
-      'button'      => 'Browse'
+      'name'              => 'Name of the media',
+      'file'  => [
+        'placeholder' => 'Choose a file',
+        'button'      => 'Browse'
+      ]
+
     ],
 
 ];

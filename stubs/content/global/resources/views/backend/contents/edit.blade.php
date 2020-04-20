@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <form action="{{ route('backend.{{ PNAME }}.update', ${{ NAME }}->id) }}" method="POST" autocomplete="off">
+  <form action="{{ route('backend.{{ PNAME }}.update', ${{ NAME }}->id) }}" method="POST" autocomplete="off" enctype="multipart/form-data">
 
       @csrf
       @method('PATCH')

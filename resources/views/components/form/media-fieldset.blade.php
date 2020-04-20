@@ -1,4 +1,4 @@
-<x-bs-dynamic :legend="$legend" :is-active="$isMultiple" :min="$min" :max="$max" :btnAdd="['class' => 'btn-gray rounded-circle','label' => __('sp::media.add'),'value' => '<i class='icon icon-plus'></i>']" :btnRemove="['class' => 'btn-gray rounded-circle','label' => __('sp::media.remove'),'value' => '<i class='icon icon-minus'></i>']">
+<x-bs-dynamic :legend="$legend" :is-active="$isMultiple" :min="$min" :max="$max" :btnAdd="['class' => 'btn-gray rounded-circle','label' => __('sp::media.add'),'value' => '<i class=icon-plus></i>']" :btnRemove="['class' => 'btn-gray rounded-circle','label' => __('sp::media.remove'),'value' => '<i class=icon-minus></i>']">
 
   @foreach ($current as $key => $media)
     <div class="d-flex align-items-end dynamic-item dynamic-current">
@@ -18,10 +18,10 @@
     <input type="hidden" name="media_to_add[KEY][type]" value="{{ $type }}" />
 
     @if($hasName)
-      <x-bs-input class="w-50 mr-2" label="Name" name="media_to_add[KEY][name]" :placeholder="__('mediable::mediable.input.name')" />
+      <x-bs-input class="w-50 mr-2" label="Name" name="media_to_add[KEY][name]" :placeholder="__('sp::media.input.name')" />
     @endif
 
-    <x-bs-input-file :class="$hasName ? 'w-50 mr-2' : 'w-100 mr-2'" label="File" name="media_to_add[KEY][file]" :placeholder="__('mediable::mediable.input.placeholder')" :button="__('mediable::mediable.input.button')" />
+    <x-bs-input-file :class="$hasName ? 'w-50 mr-2' : 'w-100 mr-2'" label="File" name="media_to_add[KEY][file]" :placeholder="__('sp::media.input.file.placeholder')" :button="__('sp::media.input.file.button')" />
   </x-slot>
 
 </x-bs-dynamic>
