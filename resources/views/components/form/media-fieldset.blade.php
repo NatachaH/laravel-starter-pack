@@ -7,7 +7,11 @@
         <x-bs-input class="w-50 mr-2" :label="__('sp::media.input.name')" :name="'media_to_edit['.$media->id.'][name]'" :value="$media->name" />
       @endif
 
-      <x-bs-input :class="$hasName ? 'w-50 mr-2' : 'w-100 mr-2'" :label="__('sp::media.input.file.label')" :name="'media_to_edit['.$media->id.'][file]'" :value="$media->filename" readonly/>
+      <x-bs-input :class="$hasName ? 'w-50 mr-2' : 'w-100 mr-2'" :label="__('sp::media.input.file.label')" :name="'media_to_edit['.$media->id.'][file]'" :value="$media->filename" readonly input-group>
+        <x-slot name="after">
+          <a href="{{ $media->url }}" class="btn btn-info" target="_blank" download ><i class="icon-download"></i></a>
+        </x-slot>
+      </x-bs-input>
 
       <div class="dynamic-item-btn btn-group-toggle ml-auto" data-toggle="buttons">
          <label class="btn btn-sm btn-gray rounded-circle active">
