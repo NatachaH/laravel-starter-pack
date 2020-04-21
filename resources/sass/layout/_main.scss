@@ -11,9 +11,27 @@ html, body {
 main {
     padding: 0 !important;
     margin-left: auto;
+
     > .main-body {
         padding: $main-spacer-y $main-spacer-x;
+
+        > .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: $main-spacer-y;
+            > h2 {
+              margin:0;
+            }
+        }
+
+        > .card {
+          margin-top: $main-spacer-y;
+        }
+
     }
+
 }
 
 button:disabled {
