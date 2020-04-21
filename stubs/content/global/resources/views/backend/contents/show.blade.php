@@ -35,7 +35,7 @@
               </li>
             @endforeach
           </ul>
-        <x-slot>
+        </x-slot>
       </x-bs-card>
 
     @endif
