@@ -76,10 +76,10 @@ class MediaFieldset extends Component
 
         if(!empty($this->formats))
         {
-          $help .= __('sp::help.media.formats',['formats' => $this->formats]).' ';
+          $help .= __('sp::help.media.formats',['formats' => $this->formats]).' | ';
         }
 
-        return $help;
+        return substr($help, 0, -3);
     }
 
     /**
