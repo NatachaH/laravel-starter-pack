@@ -51,11 +51,43 @@ class MediaFieldset extends Component
     public $max;
 
     /**
+     * Format of the media
+     * @var string
+     */
+    public $formats;
+
+    /**
+     * Help
+     * @var string
+     */
+    public function help()
+    {
+        $help = '';
+
+        if(!empty($this->min))
+        {
+          $help .= __('sp::help.media.min',['min' => $this->min]).' ';
+        }
+
+        if(!empty($this->max))
+        {
+          $help .= __('sp::help.media.max',['max' => $this->max]).' ';
+        }
+
+        if(!empty($this->formats))
+        {
+          $help .= __('sp::help.media.formats',['formats' => $this->formats]).' ';
+        }
+
+        return $help;
+    }
+
+    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($legend = null, $type, $current = [], $hasName = false, $isMultiple = false, $min = 1, $max = null)
+    public function __construct($legend = null, $type, $current = [], $hasName = false, $isMultiple = false, $min = 1, $max = null, $formats = null)
     {
         $this->legend       = is_null($legend) ? trans_choice('sp::media.media', ($isMultiple ? 2 : 1)) : $legend;
         $this->type         = $type;
@@ -64,6 +96,7 @@ class MediaFieldset extends Component
         $this->isMultiple   = $isMultiple;
         $this->min          = $min;
         $this->max          = $max;
+        $this->formats      = $formats;
     }
 
     /**
