@@ -66,12 +66,12 @@ class MediaFieldset extends Component
 
         if(!empty($this->min))
         {
-          $help .= __('sp::help.media.min',['min' => $this->min]).' ';
+          $help .= __('sp::help.media.min',['min' => $this->min]).' | ';
         }
 
         if(!empty($this->max))
         {
-          $help .= __('sp::help.media.max',['max' => $this->max]).' ';
+          $help .= __('sp::help.media.max',['max' => $this->max]).' | ';
         }
 
         if(!empty($this->formats))
