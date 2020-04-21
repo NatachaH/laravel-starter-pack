@@ -19,6 +19,10 @@ form {
           @include border-left-radius(0);
       }
 
+      > .btn:not([class*=" btn-outline-"]) {
+        border: none;
+      }
+
   }
 
   .invalid-feedback {
