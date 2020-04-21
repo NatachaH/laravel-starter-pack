@@ -1,4 +1,4 @@
-<x-bs-dynamic  :legend="$legend" :is-active="$isMultiple" :min="$min" :max="$max" :btnAdd="['class' => 'btn-gray rounded-circle','label' => __('sp::media.add'),'value' => '<i class=icon-plus></i>']" :btnRemove="['class' => 'btn-gray rounded-circle','label' => __('sp::media.remove'),'value' => '<i class=icon-minus></i>']">
+<x-bs-dynamic class="dynamic-media" :legend="$legend" :is-active="$isMultiple" :min="$min" :max="$max" :btnAdd="['class' => 'btn-gray rounded-circle','label' => __('sp::media.add'),'value' => '<i class=icon-plus></i>']" :btnRemove="['class' => 'btn-gray rounded-circle','label' => __('sp::media.remove'),'value' => '<i class=icon-minus></i>']">
 
   @foreach ($current as $key => $media)
     <div class="d-flex align-items-center dynamic-item dynamic-item-current">

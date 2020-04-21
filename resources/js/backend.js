@@ -13,7 +13,6 @@
 require('./components/editor');
 require('./components/sidebar');
 
-
 // Load Toast Notification
 $('#toastNotification .toast').toast('show');
 
@@ -30,3 +29,13 @@ Array.prototype.forEach.call(confirmModals, function(modal) {
 // Libraries
 require('../../../access-control/resources/js/permission-checkboxes');
 require('../../../bs-component/resources/js/dynamic');
+
+// Init the Dynamic to each .dynamic-media and init the bsCustomFileInput for file input
+var dynamicMedia = document.querySelectorAll('.dynamic-media');
+Array.prototype.forEach.call(dynamicMedia, function(el, i) {
+    new Dynamic(el, {
+      addCallback: function(){
+        bsCustomFileInput.init();
+      }
+    });
+});
