@@ -11,16 +11,19 @@ function mainbar(string $section, string $model = null, string $action = null)
 {
     $translations = 'backend';
 
-    $title = \Lang::has($translations.'.sidebar.'.$section) ? __($translations.'.sidebar.'.$section) : $section;
+    $sectionTitle = \Lang::has($translations.'.sidebar.'.$section) ? __($translations.'.sidebar.'.$section) : $section;
+    $title = ucfirst($sectionTitle);
 
     if(!is_null($model))
     {
-        $title .= ' : '.(\Lang::has($translations.'.model.'.$model) ? trans_choice($translations.'.model.'.$model,2) : $model);
+        $modelTitle = (\Lang::has($translations.'.model.'.$model) ? trans_choice($translations.'.model.'.$model,2) : $model);
+        $title .= ' : '.ucfirst($modelTitle);
     }
 
     if(!is_null($action))
     {
-        $title .= ' : '.(\Lang::has('sp::action.'.$action) ? __('sp::action.'.$action) : $action);
+        $actionTitle = (\Lang::has('sp::action.'.$action) ? __('sp::action.'.$action) : $action);
+        $title .= ' : '.ucfirst($actionTitle);
     }
 
     return $title;
