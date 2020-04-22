@@ -9,12 +9,12 @@ form {
   // Fix for Bootstrap V5
   .input-group {
 
-      > :not(:last-child) {
+      > :not(:last-child):not(input) {
           border-right: none;
           @include border-right-radius(0);
       }
 
-      > :not(:first-child) {
+      > :not(:first-child):not(input) {
           border-left: none;
           @include border-left-radius(0);
       }
