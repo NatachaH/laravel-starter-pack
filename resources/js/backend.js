@@ -41,7 +41,15 @@ Array.prototype.forEach.call(dynamicMedia, function(el, i) {
     });
 });
 
-var sortableSuccessCallback = function(reponse)
-{
-  console.log(reponse);
-}
+// Init the Sortable to each .sortable
+var sortable = document.querySelectorAll('.sortable');
+Array.prototype.forEach.call(sortable, function(el, i) {
+    new Sortable(el, {
+      successCallback: function(response){
+        // Here the callbacks
+      },
+      errorCallback: function(response){
+        // Here the callbacks
+      },
+    });
+});
