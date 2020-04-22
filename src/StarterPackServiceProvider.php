@@ -65,6 +65,7 @@ class StarterPackServiceProvider extends ServiceProvider
       Blade::component('sp-statistic', \Nh\StarterPack\View\Components\Statistic::class);
       Blade::component('sp-toast', \Nh\StarterPack\View\Components\Toast::class);
       Blade::component('sp-modal-confirm', \Nh\StarterPack\View\Components\ModalConfirm::class);
+      Blade::component('sp-media-listing', \Nh\StarterPack\View\Components\MediaListing::class);
 
       /* For forms */
       Blade::component('sp-editor', \Nh\StarterPack\View\Components\Form\Editor::class);
