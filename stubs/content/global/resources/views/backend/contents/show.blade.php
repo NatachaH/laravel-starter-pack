@@ -19,7 +19,7 @@
     @if(${{ NAME }}->hasMedia())
 
       <x-bs-card :title="trans_choice('sp::media.media',2)">
-        @foreach (${{ NAME }}->media as $media)
+        @foreach (${{ NAME }}->media->where('type','pictures') as $media)
           <img class="img-thumbnail" src="{{ $media->thumbnail }}"/>
         @endforeach
       </x-bs-card>
@@ -29,7 +29,7 @@
           <ul class="list-group list-group-flush">
             @foreach (${{ NAME }}->media as $media)
               <li class="list-group-item d-flex align-items-center">
-                <span clasS="mr-auto"><i class="icon-{{ $media->format }}"></i> {{ $media->name ?? $media->filename }}</span>
+                <span clasS="mr-auto"><i class="icon-file-{{ $media->format }}"></i> {{ $media->name ?? $media->filename }}</span>
                 <small class="text-muted font-italic mr-4">{{ $media->created_at }}</small>
                 <a href="{{ $media->url }}" class="btn btn-sm btn-gray rounded-circle " download target="_blank"><i class="icon-download"></i></a>
               </li>
