@@ -29,7 +29,7 @@
           <ul class="list-group list-group-flush">
             @foreach (${{ NAME }}->media as $media)
               <li class="list-group-item d-flex align-items-center">
-                <span clasS="mr-auto"><i class="icon-file-{{ $media->format }}"></i> {{ $media->name ?? $media->filename }}</span>
+                <span clasS="mr-auto"><i class="icon-file-{{ $media->format }}"></i> {{ $media->name ?? $media->filename }} @isset($media->name) <small class="text-muted font-italic">{{ $media->filename }}</small> @endisset</span>
                 <small class="text-muted font-italic mr-4">{{ $media->created_at }}</small>
                 <a href="{{ $media->url }}" class="btn btn-sm btn-gray rounded-circle " download target="_blank"><i class="icon-download"></i></a>
               </li>
