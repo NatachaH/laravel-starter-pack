@@ -19,12 +19,6 @@
     @if(${{ NAME }}->hasMedia())
 
       <x-bs-card :title="trans_choice('sp::media.media',2)">
-        @foreach (${{ NAME }}->media->where('type','pictures') as $media)
-          <img class="img-thumbnail" src="{{ $media->thumbnail }}"/>
-        @endforeach
-      </x-bs-card>
-
-      <x-bs-card :title="trans_choice('sp::media.media',2)">
         <x-slot name="before">
             <x-sp-media-listing :items="${{ NAME }}->media" show-date has-download/>
         </x-slot>
