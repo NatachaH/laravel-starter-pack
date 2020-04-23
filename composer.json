@@ -6,8 +6,8 @@
     "require": {
       "laravel/ui": "^2.0",
       "nh/bs-component": "dev-master",
-      "nh/access-control": "^1.0",
-      "nh/mediable": "^1.0",
+      "nh/access-control": "^1.0.2",
+      "nh/mediable": "^1.1",
       "nh/sortable": "^1.0"
     },
     "author": {
