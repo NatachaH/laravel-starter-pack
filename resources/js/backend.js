@@ -16,7 +16,6 @@ require('../../../sortable/resources/js/sortable');
 
 // Components
 require('./components/editor');
-require('./components/media');
 require('./components/sidebar');
 require('./components/sortable');
 
