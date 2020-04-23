@@ -8,7 +8,7 @@
 */
 
 // Init the Sortable to each .sortable
-var sortable = document.querySelectorAll('.sortable');
+var sortable = document.querySelectorAll('.sortable, .media-sortable');
 Array.prototype.forEach.call(sortable, function(el, i) {
     new Sortable(el, {
       successCallback: function(response){

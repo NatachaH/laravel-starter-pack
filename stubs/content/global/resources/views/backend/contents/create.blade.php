@@ -21,7 +21,7 @@
 
       </fieldset>
 
-      <x-sp-media-fieldset type="pictures" has-name is-multiple />
+      <x-mediable-fieldset type="pictures" has-name is-multiple has-download sortable />
 
       @include('sp::partials.form-footer', ['cancel' => 'backend.{{ PNAME }}.index'])
 

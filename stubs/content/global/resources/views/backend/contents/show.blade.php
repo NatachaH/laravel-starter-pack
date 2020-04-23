@@ -20,7 +20,7 @@
 
       <x-bs-card :title="trans_choice('sp::media.media',2)">
         <x-slot name="before">
-            <x-sp-media-listing :items="${{ NAME }}->media" show-date has-download sortable/>
+            <x-mediable-listing :items="${{ NAME }}->media" show-date has-download sortable/>
         </x-slot>
       </x-bs-card>
 

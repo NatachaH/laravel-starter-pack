@@ -13,6 +13,7 @@
 require('../../../access-control/resources/js/permission-checkboxes');
 require('../../../bs-component/resources/js/dynamic');
 require('../../../sortable/resources/js/sortable');
+require('../../../mediable/resources/js/mediable');
 
 // Components
 require('./components/editor');
