@@ -57,6 +57,12 @@ class MediaFieldset extends Component
     public $formats;
 
     /**
+     * Is the media input are sortable
+     * @var boolean
+     */
+    public $sortable;
+
+    /**
      * Help
      * @var string
      */
@@ -87,7 +93,7 @@ class MediaFieldset extends Component
      *
      * @return void
      */
-    public function __construct($legend = null, $type, $current = [], $hasName = false, $isMultiple = false, $min = 1, $max = null, $formats = null)
+    public function __construct($legend = null, $type, $current = [], $hasName = false, $isMultiple = false, $min = 1, $max = null, $formats = null, $sortable = false)
     {
         $this->legend       = is_null($legend) ? trans_choice('sp::media.media', ($isMultiple ? 2 : 1)) : $legend;
         $this->type         = $type;
@@ -97,6 +103,7 @@ class MediaFieldset extends Component
         $this->min          = $min;
         $this->max          = $max;
         $this->formats      = $formats;
+        $this->sortable     = $sortable;
     }
 
     /**

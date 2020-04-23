@@ -3,6 +3,11 @@
   @foreach ($current as $key => $media)
     <div class="d-flex align-items-center dynamic-item dynamic-item-current">
 
+      @if($sortable)
+        <i class="icon-move drag"></i>
+        <input type="hidden" class="dynamic-position" name="media_to_update[{{ $media->id }}][position]" value="{{ $media->position }}"/>
+      @endif
+
       @if($hasName)
         <x-bs-input class="w-50 mr-2" :label="__('sp::media.input.name')" :name="'media_to_update['.$media->id.'][name]'" :value="$media->name" />
       @endif
@@ -23,6 +28,12 @@
   @endforeach
 
   <x-slot name="template">
+
+    @if($sortable)
+      <i class="icon-move drag"></i>
+      <input type="hidden" class="dynamic-position" name="media_to_add[KEY_{{ $type }}][position]"/>
+    @endif
+
     <input type="hidden" name="media_to_add[KEY_{{ $type }}][type]" value="{{ $type }}" />
 
     @if($hasName)

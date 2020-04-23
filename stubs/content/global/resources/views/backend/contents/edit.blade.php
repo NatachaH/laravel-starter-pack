@@ -21,7 +21,7 @@
 
       </fieldset>
 
-      <x-sp-media-fieldset type="pictures" :current="${{ NAME }}->media" has-name is-multiple />
+      <x-sp-media-fieldset type="pictures" :current="${{ NAME }}->media" has-name is-multiple sortable />
 
       @include('sp::partials.form-footer', ['cancel' => 'backend.{{ PNAME }}.index'])
 

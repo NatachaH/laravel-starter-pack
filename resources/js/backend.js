@@ -9,9 +9,16 @@
 |
 */
 
+// Libraries
+require('../../../access-control/resources/js/permission-checkboxes');
+require('../../../bs-component/resources/js/dynamic');
+require('../../../sortable/resources/js/sortable');
+
 // Components
 require('./components/editor');
+require('./components/media');
 require('./components/sidebar');
+require('./components/sortable');
 
 // Load Toast Notification
 $('#toastNotification .toast:not(.toast-custom)').toast('show');
@@ -24,36 +31,4 @@ Array.prototype.forEach.call(confirmModals, function(modal) {
     var action = button.getAttribute('data-action');
     modal.querySelector('form').action = action
   });
-});
-
-// Libraries
-require('../../../access-control/resources/js/permission-checkboxes');
-require('../../../bs-component/resources/js/dynamic');
-require('../../../sortable/resources/js/sortable');
-
-// Init the Dynamic to each .dynamic-media and init the bsCustomFileInput for file input
-var dynamicMedia = document.querySelectorAll('.dynamic-media');
-Array.prototype.forEach.call(dynamicMedia, function(el, i) {
-    new Dynamic(el, {
-      addCallback: function(){
-        bsCustomFileInput.init();
-      }
-    });
-});
-
-// Init the Sortable to each .sortable
-var sortable = document.querySelectorAll('.sortable');
-Array.prototype.forEach.call(sortable, function(el, i) {
-    new Sortable(el, {
-      successCallback: function(response){
-          var toastSuccess = document.querySelector('.toast-custom.toast-success');
-          toastSuccess.querySelector('.toast-body span').innerHTML = response.data.message;
-          $(toastSuccess).toast('show');
-      },
-      errorCallback: function(response){
-          var toastError = document.querySelector('.toast-custom.toast-danger');
-          toastError.querySelector('.toast-body span').innerHTML = response.data.message;
-          $(toastError).toast('show');
-      }
-    });
 });
