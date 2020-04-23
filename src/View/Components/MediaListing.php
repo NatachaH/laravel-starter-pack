@@ -29,15 +29,23 @@ class MediaListing extends Component
     public $hasDownload;
 
     /**
+     * Enable the sortable.
+     *
+     * @var boolean
+     */
+    public $sortable;
+
+    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($items, $showDates = false, $hasDownload = true)
+    public function __construct($items, $showDates = false, $hasDownload = true, $sortable = false)
     {
         $this->items        = $items;
         $this->showDate     = $showDates;
         $this->hasDownload  = $hasDownload;
+        $this->sortable     = $sortable;
     }
 
     /**

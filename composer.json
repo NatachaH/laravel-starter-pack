@@ -8,7 +8,7 @@
       "nh/bs-component": "dev-master",
       "nh/access-control": "^1.0",
       "nh/mediable": "^1.0",
-      "nh/sortable": "dev-master"
+      "nh/sortable": "^1.0"
     },
     "author": {
         "name": "Natacha Herth",

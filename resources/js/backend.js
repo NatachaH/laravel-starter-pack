@@ -14,7 +14,7 @@ require('./components/editor');
 require('./components/sidebar');
 
 // Load Toast Notification
-$('#toastNotification .toast').toast('show');
+$('#toastNotification .toast:not(.toast-custom)').toast('show');
 
 // Open Confirm Modal
 var confirmModals = document.getElementsByClassName('modal-confirm');
@@ -51,9 +51,9 @@ Array.prototype.forEach.call(sortable, function(el, i) {
           $(toastSuccess).toast('show');
       },
       errorCallback: function(response){
-        var toastError = document.querySelector('.toast-custom.toast-danger');
-        toastError.querySelector('.toast-body span').innerHTML = response.data.message;
-        $(toastError).toast('show');
+          var toastError = document.querySelector('.toast-custom.toast-danger');
+          toastError.querySelector('.toast-body span').innerHTML = response.data.message;
+          $(toastError).toast('show');
       }
     });
 });
