@@ -43,6 +43,8 @@
         <x-sp-toast :color="$key" :message="$toast" />
       @endforeach
     @endif
+    <x-sp-toast class="toast-custom hide" color="success" message="" />
+    <x-sp-toast class="toast-custom hide" color="danger" message="" />
   </div>
 
   <form id="logoutForm" class="d-none" action="{{ route('logout') }}" method="POST">

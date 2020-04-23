@@ -85,6 +85,15 @@ class Listing extends Component
     }
 
     /**
+     * Check if the model has Soft Deleting methods and that the Auth user can see the trashed items.
+     * @return boolean
+     */
+    public function isSortable()
+    {
+        return in_array('Nh\Sortable\Trait\Sortable', class_uses($this->model));
+    }
+
+    /**
      * Get total number element that are (not) in trash.
      * @return array
      */

@@ -36,6 +36,10 @@
                 <thead>
                     <tr>
 
+                        @if($isSortable)
+                            <th class="td-fit"></th>
+                        @endif
+
                         @if($showId)
                             <th class="td-fit">#</th>
                         @endif
@@ -57,9 +61,14 @@
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody @if($isSortable) class="sortable" data-sortable-model="{{ $model }}" @endif >
                     @foreach ($items as $item)
-                        <tr>
+                        <tr data-id="{{ $item->id }}">
+
+                            @if($isSortable)
+                                <td class="td-fit"><i class="icon-move drag"></i></td>
+                            @endif
+
                             @if($showId)
                                 <td class="td-fit">{{ $item->id }}</td>
                             @endif
