@@ -113,6 +113,6 @@ class Editor extends Component
      */
     public function render()
     {
-        return view('sp::components.form.editor');
+        return view('sp::components.editor');
     }
 }

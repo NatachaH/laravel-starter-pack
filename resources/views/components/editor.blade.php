@@ -6,11 +6,11 @@
 
     <div class="ql-toolbar btn-toolbar">
 
-      @includeWhen($toolbarHasHeader, 'sp::components.form.editor.header')
-      @includeWhen($toolbarHasFormat, 'sp::components.form.editor.format')
-      @includeWhen($toolbarHasList, 'sp::components.form.editor.list')
-      @includeWhen($toolbarHasLink, 'sp::components.form.editor.link')
-      @includeWhen($toolbarHasColor, 'sp::components.form.editor.color', ['colors' => $toolbarColors])
+      @includeWhen($toolbarHasHeader, 'sp::components.editor.header')
+      @includeWhen($toolbarHasFormat, 'sp::components.editor.format')
+      @includeWhen($toolbarHasList, 'sp::components.editor.list')
+      @includeWhen($toolbarHasLink, 'sp::components.editor.link')
+      @includeWhen($toolbarHasColor, 'sp::components.editor.color', ['colors' => $toolbarColors])
 
       <div class="ql-formats btn-group">
         <button class="btn ql-clean" aria-label="@lang('sp::editor.clean')">

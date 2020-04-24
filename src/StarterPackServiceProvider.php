@@ -41,6 +41,9 @@ class StarterPackServiceProvider extends ServiceProvider
           FrontendPreset::install();
           BackendPreset::install();
 
+          // Artisan commandes for Bs Component Package
+          Artisan::call('vendor:publish --tag=bs-component');
+
           // Artisan commandes for Access Control Package
           Artisan::call('vendor:publish --tag=access-control');
           Artisan::call('role:new user');
@@ -65,9 +68,7 @@ class StarterPackServiceProvider extends ServiceProvider
       Blade::component('sp-statistic', \Nh\StarterPack\View\Components\Statistic::class);
       Blade::component('sp-toast', \Nh\StarterPack\View\Components\Toast::class);
       Blade::component('sp-modal-confirm', \Nh\StarterPack\View\Components\ModalConfirm::class);
-
-      /* For forms */
-      Blade::component('sp-editor', \Nh\StarterPack\View\Components\Form\Editor::class);
+      Blade::component('sp-editor', \Nh\StarterPack\View\Components\Editor::class);
 
 
       // COMMANDES
