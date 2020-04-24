@@ -25,6 +25,9 @@ return [
     'cancel'        => 'Cancel',
     'confirm'       => 'Confirm',
     'show'          => 'Detail',
-    'trashed'       => 'Trashed'
+    'trashed'       => 'Trashed',
+    'remove'        => 'Remove',
+    'download'      => 'Download',
+    'move'          => 'Move',
 
 ];
