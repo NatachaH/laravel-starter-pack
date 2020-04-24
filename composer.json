@@ -6,9 +6,9 @@
     "require": {
       "laravel/ui": "^2.0",
       "nh/bs-component": "dev-master",
-      "nh/access-control": "dev-master",
-      "nh/mediable": "dev-master",
-      "nh/sortable": "dev-master"
+      "nh/access-control": "^1.0.4",
+      "nh/mediable": "^1.2.1",
+      "nh/sortable": "^1.0.1"
     },
     "author": {
         "name": "Natacha Herth",
