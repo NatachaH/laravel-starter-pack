@@ -4,12 +4,7 @@
 
 @section('content')
 
-  <div class="page-header">
-    <h2>{{ $role->name }}</h2>
-    @if(Route::has('backend.roles.edit') && Auth::user()->can('update', $role))
-        <a href="{{ route('backend.roles.edit',$role->id) }}" class="btn btn-outline-primary rounded-pill" aria-label="@lang('sp::action.edit')"><i class="icon icon-pencil"></i> @lang('sp::action.edit')</a>
-    @endif
-  </div>
+  @include('sp::partials.page-header', ['title' => $role->name, 'route' => 'backend.roles', 'model' => $role])
 
   <x-bs-card :title="trans_choice('backend.model.permission',2)">
     <x-slot name="before">

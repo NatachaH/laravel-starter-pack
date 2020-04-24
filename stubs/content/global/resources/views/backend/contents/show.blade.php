@@ -4,12 +4,7 @@
 
 @section('content')
 
-    <div class="page-header">
-      <h2>{{ ${{ NAME }}->title }}</h2>
-      @if(Route::has('backend.{{ PNAME }}.edit') && Auth::user()->can('update', ${{ NAME }}))
-          <a href="{{ route('backend.{{ PNAME }}.edit', ${{ NAME }}->id) }}" class="btn btn-outline-primary rounded-pill" aria-label="@lang('sp::action.edit')"><i class="icon icon-pencil"></i> @lang('sp::action.edit')</a>
-      @endif
-    </div>
+    @include('sp::partials.page-header', ['title' => ${{ NAME }}->title, 'route' => 'backend.{{ PNAME }}', 'model' => ${{ NAME }}])
 
     <x-bs-card :title="__('sp::field.information')">
       <p class="lead">{{ ${{ NAME }}->subtitle }}</p>
