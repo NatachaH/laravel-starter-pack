@@ -16,11 +16,11 @@
         <div>
 
             @if(Route::has($route.'.export') && Auth::user()->can('export', $model))
-                <a href="{{ route($route.'.export') }}" class="btn btn-outline-secondary rounded-pill btn-sm"><i class="icon icon-download"></i> @lang('sp::action.export')</a>
+                <a href="{{ route($route.'.export') }}" class="btn btn-outline-secondary rounded-pill"><i class="icon icon-download"></i> @lang('sp::action.export')</a>
             @endif
 
             @if(Route::has($route.'.create') && Auth::user()->can('create', $model))
-                <a href="{{ route($route.'.create') }}" class="btn btn-primary rounded-pill btn-sm"><i class="icon icon-plus"></i> @lang('sp::action.add')</a>
+                <a href="{{ route($route.'.create') }}" class="btn btn-primary rounded-pill"><i class="icon icon-plus"></i> @lang('sp::action.add')</a>
             @endif
 
         </div>
@@ -86,23 +86,23 @@
                             <td class="td-fit">
 
                                 @if(Route::has($route.'.show') && Auth::user()->can('view', $item))
-                                    <a href="{{ route($route.'.show', $item->id) }}" class="btn btn-gray btn-sm rounded-circle" aria-label="@lang('sp::action.preview')"><i class="icon icon-preview"></i></a>
+                                    <a href="{{ route($route.'.show', $item->id) }}" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.preview')"><i class="icon icon-preview"></i></a>
                                 @endif
 
                                 @if(Route::has($route.'.edit') && Auth::user()->can('update', $item))
-                                    <a href="{{ route($route.'.edit', $item->id) }}" class="btn btn-gray btn-sm rounded-circle" aria-label="@lang('sp::action.edit')"><i class="icon icon-pencil"></i></a>
+                                    <a href="{{ route($route.'.edit', $item->id) }}" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.edit')"><i class="icon icon-pencil"></i></a>
                                 @endif
 
                                 @if(Route::has($route.'.destroy') && Auth::user()->can('delete', $item))
-                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.destroy', $item->id) }}" data-target="#{{ Route::has($route.'.forceDelete') ? 'softDeleteConfirm' : 'deleteConfirm' }}" class="btn btn-gray btn-sm rounded-circle" aria-label="@lang('sp::action.delete')"><i class="icon icon-trash"></i></button>
+                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.destroy', $item->id) }}" data-target="#{{ Route::has($route.'.forceDelete') ? 'softDeleteConfirm' : 'deleteConfirm' }}" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.delete')"><i class="icon icon-trash"></i></button>
                                 @endif
 
                                 @if(Route::has($route.'.restore') && Auth::user()->can('restore', $item))
-                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.restore', $item->id) }}" data-target="#restoreConfirm" class="btn btn-gray btn-sm rounded-circle" aria-label="@lang('sp::action.restore')"><i class="icon icon-time-reverse"></i></button>
+                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.restore', $item->id) }}" data-target="#restoreConfirm" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.restore')"><i class="icon icon-time-reverse"></i></button>
                                 @endif
 
                                 @if(Route::has($route.'.forceDelete') && Auth::user()->can('forceDelete', $item))
-                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.forceDelete', $item->id) }}" data-target="#deleteConfirm" class="btn btn-gray btn-sm rounded-circle" aria-label="@lang('sp::action.force-delete')"><i class="icon icon-trash"></i></button>
+                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.forceDelete', $item->id) }}" data-target="#deleteConfirm" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.force-delete')"><i class="icon icon-trash"></i></button>
                                 @endif
 
                             </td>
