@@ -70,7 +70,6 @@ class StarterPackServiceProvider extends ServiceProvider
       Blade::component('sp-modal-confirm', \Nh\StarterPack\View\Components\ModalConfirm::class);
       Blade::component('sp-editor', \Nh\StarterPack\View\Components\Editor::class);
 
-
       // COMMANDES
       if ($this->app->runningInConsole()) {
           $this->commands([
