@@ -1,6 +1,6 @@
 <?php
 
-namespace Nh\StarterPack\View\Components\Form;
+namespace Nh\StarterPack\View\Components;
 
 use Illuminate\View\Component;
 
