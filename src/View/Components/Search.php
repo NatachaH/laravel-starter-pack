@@ -6,6 +6,14 @@ use Illuminate\View\Component;
 
 class Search extends Component
 {
+
+    /**
+     * The session key of the Search.
+     *
+     * @var string
+     */
+    public $key;
+
     /**
      * The action of the form.
      *
@@ -33,7 +41,7 @@ class Search extends Component
      * @var boolean
      */
     public function hasSearchData(){
-        return request()->has('search');
+        return session()->exists($this->key);
     }
 
     /**
@@ -48,10 +56,11 @@ class Search extends Component
      *
      * @return void
      */
-    public function __construct($route, $isAdvanced = false, $collapseId = 'collapseSearch')
+    public function __construct($key, $action, $isAdvanced = false, $collapseId = 'collapseSearch')
     {
-        $this->action     = '#';
-        $this->reset      = '#';
+        $this->key        = $key;
+        $this->action     = $action;
+        $this->reset      = session('search.'.$key.'.redirections.reset');
         $this->isAdvanced = $isAdvanced;
         $this->collapseId = $collapseId;
     }

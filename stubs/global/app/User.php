@@ -8,12 +8,14 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Nh\AccessControl\Traits\HasAccess;
+use Nh\Searchable\Traits\Searchable;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
     use HasAccess;
+    use Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -40,6 +42,15 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+
+    /**
+     * The searchable columns.
+     *
+     * @var array
+     */
+    protected $searchable = [
+      'name', 'email'
     ];
 
     /**

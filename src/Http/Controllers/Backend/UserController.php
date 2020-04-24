@@ -8,6 +8,9 @@ use Nh\StarterPack\Http\Requests\UpdateAccountRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
+use Illuminate\Http\Request;
+use Nh\Searchable\Search
+
 use App\User;
 use Nh\AccessControl\Role;
 
@@ -22,6 +25,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->authorizeResource(User::class, 'user');
+        $this->middleware('search:users')->only('index');
     }
 
     /**
@@ -32,6 +36,27 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate();
+        return view('sp::backend.users.index', compact('users'));
+    }
+
+    /**
+     * Display a listing of the searched resource.
+     * @return \Illuminate\Http\Response
+     */
+    public function search()
+    {
+        // Make a Search Class
+        $search = new Search('users', $request->input('search'));
+
+        // Get an attribute in Search Class
+        $keywords = $search->attribute('text');
+
+        // Make the search query
+        // The search can be 'contains', 'start' or 'end'
+        // And you can decide if all columns match
+        $users = User::search($keywords,'contains',false)->paginate();
+
+        // Display the result
         return view('sp::backend.users.index', compact('users'));
     }
 

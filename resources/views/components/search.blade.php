@@ -1,4 +1,4 @@
-<form {{ $attributes->merge(['class' => 'search-form']) }} action="{{ $action }}" method="post">
+<form {{ $attributes->merge(['class' => 'search-form']) }} action="{{ route($action) }}" method="post">
 
     @csrf
 
