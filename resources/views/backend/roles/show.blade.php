@@ -11,7 +11,7 @@
     @endif
   </div>
 
-  <x-bs-card :title="__('sp::field.permission')">
+  <x-bs-card :title="trans_choice('backend.model.permission',2)">
     <x-slot name="before">
       <x-ac-permission-table class="mb-0" :checked="$role->permissions->modelKeys()" />
     </x-slot>
