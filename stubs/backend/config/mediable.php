@@ -58,7 +58,7 @@ return [
           'value' => '<i class="icon-download"></i>'
         ],
         'download-input-group' => [
-          'class' => 'btn-info',
+          'class' => 'btn-gray',
           'label' => 'sp::action.download',
           'value' => '<i class="icon-download"></i>'
         ]
