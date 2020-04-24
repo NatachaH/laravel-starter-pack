@@ -21,6 +21,7 @@ return [
     'deleted-at'    => 'Deleted at',
     'actions'       => 'Actions',
     'information'   => 'Information',
-    'role'          => 'Role'
+    'role'          => 'Role',
+    'media'         => 'Media'
 
 ];
