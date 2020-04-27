@@ -7,9 +7,9 @@
       "laravel/ui": "^2.0",
       "nh/bs-component": "dev-master",
       "nh/access-control": "^1.1",
-      "nh/mediable": "^1.2.2",
+      "nh/mediable": "^1.3",
       "nh/sortable": "^1.0.1",
-      "nh/searchable": "dev-master"
+      "nh/searchable": "^1.0"
     },
     "author": {
         "name": "Natacha Herth",
