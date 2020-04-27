@@ -3,6 +3,7 @@
 namespace Nh\StarterPack\View\Components;
 
 use Illuminate\View\Component;
+use Route;
 
 class Search extends Component
 {
@@ -50,7 +51,7 @@ class Search extends Component
     public function __construct($key, $action, $isAdvanced = false, $collapseId = 'collapseSearch')
     {
         $this->key        = $key;
-        $this->action     = $action;
+        $this->action     = Route::has($action) ? route($action) : $action;
         $this->isAdvanced = $isAdvanced;
         $this->collapseId = $collapseId;
         $this->search     = session()->exists('search.'.$this->key) ? session('search.'.$this->key) : null;
