@@ -72,17 +72,17 @@ class MediaFieldset extends Component
 
         if(!empty($this->min))
         {
-          $help .= __('mediable::media.help.min',['min' => $this->min]).' | ';
+          $help .= __('sp::help.min',['min' => $this->min]).' | ';
         }
 
         if(!empty($this->max))
         {
-          $help .= __('mediable::media.help.max',['max' => $this->max]).' | ';
+          $help .= __('sp::help.max',['max' => $this->max]).' | ';
         }
 
         if(!empty($this->formats))
         {
-          $help .= __('mediable::media.help.formats',['formats' => $this->formats]).' | ';
+          $help .= __('sp::help.formats',['formats' => $this->formats]).' | ';
         }
 
         return substr($help, 0, -3);
@@ -95,7 +95,7 @@ class MediaFieldset extends Component
      */
     public function __construct($legend = null, $min = 1, $max = null, $type = 'picture', $current = [], $formats = null, $hasName = false, $hasDownload = false, $sortable = false)
     {
-        $this->legend       = is_null($legend) ? trans_choice('mediable::media.media', 2) : $legend;
+        $this->legend       = is_null($legend) ? trans_choice('sp::backend.model.media', 2) : $legend;
         $this->min          = $min;
         $this->max          = $max;
         $this->type         = $type;
