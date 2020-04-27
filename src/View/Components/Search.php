@@ -22,13 +22,6 @@ class Search extends Component
     public $action;
 
     /**
-     * The reset url.
-     *
-     * @var string
-     */
-    public $reset;
-
-    /**
      * Is the form have an advanced search bloc.
      *
      * @var boolean
@@ -36,20 +29,18 @@ class Search extends Component
     public $isAdvanced;
 
     /**
-     * Check if the search have some datas.
-     *
-     * @var boolean
-     */
-    public function hasSearchData(){
-        return session()->exists($this->key);
-    }
-
-    /**
      * The id of the collapse bloc (by default: collapseSearch).
      *
      * @var string
      */
     public $collapseId;
+
+    /**
+     * The session Search.
+     *
+     * @var Nh\Searchable\Search
+     */
+    public $search;
 
     /**
      * Create a new component instance.
@@ -60,9 +51,9 @@ class Search extends Component
     {
         $this->key        = $key;
         $this->action     = $action;
-        $this->reset      = session('search.'.$key.'.redirections.reset');
         $this->isAdvanced = $isAdvanced;
         $this->collapseId = $collapseId;
+        $this->search     = session()->exists($this->key) ? session($this->key) : null;
     }
 
     /**
