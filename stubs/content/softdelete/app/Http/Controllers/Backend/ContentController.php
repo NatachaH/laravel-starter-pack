@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Store{{ UCNAME }}Request;
+use Illuminate\Http\Request;
 
 use Nh\Searchable\Search;
 use App\{{ UCNAME }};
@@ -35,9 +36,10 @@ class {{ UCNAME }}Controller extends Controller
 
     /**
      * Display a listing of the searched resource.
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function search()
+    public function search(Request  $request)
     {
         // Make a Search Class
         $search = new Search('{{ PNAME }}', $request->input('search'));

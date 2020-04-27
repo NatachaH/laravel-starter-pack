@@ -41,9 +41,10 @@ class UserController extends Controller
 
     /**
      * Display a listing of the searched resource.
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function search()
+    public function search(Request $request)
     {
         // Make a Search Class
         $search = new Search('users', $request->input('search'));
