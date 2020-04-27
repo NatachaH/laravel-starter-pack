@@ -21,7 +21,7 @@
 
       </fieldset>
 
-      <x-mediable-fieldset :legend="__('sp::field.media')" :current="${{ NAME }}->media" has-name has-download sortable  />
+      <x-sp-media-fieldset :legend="__('sp::field.media')" :current="${{ NAME }}->media" has-name has-download sortable  />
 
       @include('sp::partials.form-footer', ['cancel' => 'backend.{{ PNAME }}.index'])
 
