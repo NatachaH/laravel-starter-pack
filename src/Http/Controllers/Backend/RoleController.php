@@ -20,6 +20,7 @@ class RoleController extends Controller
     public function __construct()
     {
         $this->authorizeResource(Role::class, 'role');
+        $this->middleware('search:roles')->only('index');
     }
 
     /**
@@ -30,6 +31,27 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::paginate();
+        return view('sp::backend.roles.index', compact('roles'));
+    }
+
+    /**
+     * Display a listing of the searched resource.
+     * @return \Illuminate\Http\Response
+     */
+    public function search()
+    {
+        // Make a Search Class
+        $search = new Search('roles', $request->input('search'));
+
+        // Get an attribute in Search Class
+        $keywords = $search->attribute('text');
+
+        // Make the search query
+        // The search can be 'contains', 'start' or 'end'
+        // And you can decide if all columns match
+        $roles = Role::search($keywords,'contains',false)->paginate();
+
+        // Display the result
         return view('sp::backend.roles.index', compact('roles'));
     }
 

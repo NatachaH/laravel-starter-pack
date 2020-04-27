@@ -53,7 +53,7 @@ class Search extends Component
         $this->action     = $action;
         $this->isAdvanced = $isAdvanced;
         $this->collapseId = $collapseId;
-        $this->search     = session()->exists($this->key) ? session($this->key) : null;
+        $this->search     = session()->exists('search.'.$this->key) ? session('search.'.$this->key) : null;
     }
 
     /**

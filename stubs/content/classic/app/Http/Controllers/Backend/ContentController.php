@@ -18,6 +18,7 @@ class {{ UCNAME }}Controller extends Controller
     public function __construct()
     {
         $this->authorizeResource({{ UCNAME }}::class, '{{ NAME }}');
+        $this->middleware('search:{{ PNAME }}')->only('index');
     }
 
     /**
@@ -29,6 +30,27 @@ class {{ UCNAME }}Controller extends Controller
     {
         ${{ PNAME }} = {{ UCNAME }}::paginate();
         return view('backend.{{ PNAME }}.index', compact('{{ PNAME }}'));
+    }
+
+    /**
+     * Display a listing of the searched resource.
+     * @return \Illuminate\Http\Response
+     */
+    public function search()
+    {
+        // Make a Search Class
+        $search = new Search('{{ PNAME }}', $request->input('search'));
+
+        // Get an attribute in Search Class
+        $keywords = $search->attribute('text');
+
+        // Make the search query
+        // The search can be 'contains', 'start' or 'end'
+        // And you can decide if all columns match
+        ${{ PNAME }} = {{ UCNAME }}::search($keywords,'contains',false)->paginate();
+
+        // Display the result
+        return view('sp::backend.{{ PNAME }}.index', compact('{{ PNAME }}'));
     }
 
     /**
