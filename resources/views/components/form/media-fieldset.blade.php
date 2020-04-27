@@ -7,7 +7,7 @@
   :key="'KEY_'.$type"
   :sortable="$sortable"
   :items="$current"
-  viewItem="sp::backend.media.dynamic-media"
+  viewItem="sp::backend.media.includes.dynamic-media"
   :viewItemOptions="['hasName' => $hasName, 'hasDownload' => $hasDownload]"
   :help="$help"
 >
