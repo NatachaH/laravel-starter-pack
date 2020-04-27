@@ -8,7 +8,7 @@
 
   <x-bs-card :title="trans_choice('backend.model.permission',2)">
     <x-slot name="before">
-      @include('sp::permissions.table', ['checked' => $role->permissions->modelKeys()])
+      @include('sp::backend.permissions.table', ['checked' => $role->permissions->modelKeys()])
     </x-slot>
   </x-bs-card>
 

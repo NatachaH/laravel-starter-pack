@@ -18,12 +18,12 @@
           @foreach ($permissions as $key => $permission)
             <tr>
               <td><b>{{ \Lang::has('permission.'.$key) ? trans_choice('permission.'.$key,1) : $key  }}</b></td>
-              <td>@include('sp::permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','view')])</td>
-              <td>@include('sp::permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','create')])</td>
-              <td>@include('sp::permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','update')])</td>
-              <td>@include('sp::permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','delete')])</td>
-              <td>@include('sp::permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','restore')])</td>
-              <td>@include('sp::permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','force-delete')])</td>
+              <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','view')])</td>
+              <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','create')])</td>
+              <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','update')])</td>
+              <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','delete')])</td>
+              <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','restore')])</td>
+              <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','force-delete')])</td>
             </tr>
           @endforeach
         </tbody>

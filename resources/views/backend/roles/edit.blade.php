@@ -17,7 +17,7 @@
 
       </fieldset>
 
-      @include('sp::permissions.fieldset', ['checked' => $role->permissions->modelKeys(), 'disabled' => Auth::user()->role->restrictions()->modelKeys()])
+      @include('sp::backend.permissions.fieldset', ['checked' => $role->permissions->modelKeys(), 'disabled' => Auth::user()->role->restrictions()->modelKeys()])
 
       @include('sp::partials.form-footer', ['cancel' => 'backend.roles.index'])
 
