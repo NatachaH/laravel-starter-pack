@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use Nh\Searchable\Search;
 use Nh\AccessControl\Role;
+use Nh\AccessControl\Permission;
 
 class RoleController extends Controller
 {
@@ -50,8 +51,6 @@ class RoleController extends Controller
         $keywords = $search->attribute('text');
 
         // Make the search query
-        // The search can be 'contains', 'start' or 'end'
-        // And you can decide if all columns match
         $roles = Role::search($keywords,'contains',false)->paginate();
 
         // Display the result
@@ -65,8 +64,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $permissionsDisabled = Auth::user()->role->restrictions()->modelKeys();
-        return view('sp::backend.roles.create',compact('permissionsDisabled'));
+        $permissions = Permission::getByModel();
+        return view('sp::backend.roles.create',compact('permissions'));
     }
 
     /**
@@ -95,7 +94,8 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        return view('sp::backend.roles.show', compact('role'));
+        $permissions = Permission::getByModel();
+        return view('sp::backend.roles.show', compact('role','permissions'));
     }
 
     /**
@@ -106,8 +106,8 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        $permissionsDisabled = Auth::user()->role->restrictions()->modelKeys();
-        return view('sp::backend.roles.edit', compact('role','permissionsDisabled'));
+        $permissions = Permission::getByModel();
+        return view('sp::backend.roles.edit', compact('role','permissions'));
     }
 
     /**

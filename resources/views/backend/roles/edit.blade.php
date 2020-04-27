@@ -17,7 +17,7 @@
 
       </fieldset>
 
-      <x-ac-permission-fieldset :legend="trans_choice('backend.model.permission',2)" :checked="$role->permissions->modelKeys()" :disabled="$permissionsDisabled"/>
+      @include('sp::permissions.fieldset', ['checked' => $role->permissions->modelKeys(), 'disabled' => Auth::user()->role->restrictions()->modelKeys()])
 
       @include('sp::partials.form-footer', ['cancel' => 'backend.roles.index'])
 
