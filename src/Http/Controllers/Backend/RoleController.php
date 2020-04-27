@@ -7,6 +7,7 @@ use Nh\StarterPack\Http\Requests\StoreRoleRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
+use Nh\Searchable\Search;
 use Nh\AccessControl\Role;
 
 class RoleController extends Controller

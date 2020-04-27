@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Store{{ UCNAME }}Request;
 
+use Nh\Searchable\Search;
 use App\{{ UCNAME }};
 
 class {{ UCNAME }}Controller extends Controller
