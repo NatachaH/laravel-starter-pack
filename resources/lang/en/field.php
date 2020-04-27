@@ -22,6 +22,8 @@ return [
     'actions'       => 'Actions',
     'information'   => 'Information',
     'role'          => 'Role',
-    'media'         => 'Media'
+    'media'         => 'Media',
+    'filename'      => 'Name',
+    'file'          => 'File'
 
 ];

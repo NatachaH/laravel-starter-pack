@@ -17,6 +17,7 @@ require('../../../mediable/resources/js/mediable');
 
 // Components
 require('./components/editor');
+require('./components/media');
 require('./components/modal');
 require('./components/sidebar');
 require('./components/sortable');

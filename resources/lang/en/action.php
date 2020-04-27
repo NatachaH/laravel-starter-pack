@@ -30,5 +30,7 @@ return [
     'force-delete'  => 'Force delete',
     'cancel'        => 'Cancel',
     'confirm'       => 'Confirm',
+    'choose-file'   => 'Choose a file',
+    'Browse'        => 'Browse'
 
 ];
