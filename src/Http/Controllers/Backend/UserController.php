@@ -53,7 +53,7 @@ class UserController extends Controller
         $keywords = $search->attribute('text');
 
         // Make the search query
-        $users = User::search($keywords,'contains',false)->paginate();
+        $users = User::search($keywords,'contains',false)->withTrashed()->paginate();
 
         // Display the result
         return view('sp::backend.users.index', compact('users'));

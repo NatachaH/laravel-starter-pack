@@ -4,7 +4,7 @@
 
         <h2>
           {{ $title }}
-          @if($isSoftDeleting)
+          @if($isSoftDeleting && !Route::is($route.'.search'))
             <small>
               <a class="{{ Route::is($route.'.index') ? 'active' : '' }}" href="{{ route($route.'.index') }}">@lang('sp::listing.all', ['nbr' => $total['all']])</a>
               |
@@ -51,7 +51,7 @@
                         @if($showDates)
                           <th class="td-fit">@lang('sp::field.created-at')</th>
                           <th class="td-fit">@lang('sp::field.updated-at')</th>
-                          @if(Route::is($route.'.trashed'))
+                          @if(Route::is([$route.'.trashed',$route.'.search']))
                             <th class="td-fit">@lang('sp::field.deleted-at')</th>
                           @endif
                         @endif
@@ -78,7 +78,7 @@
                             @if($showDates)
                                 <td class="td-fit">{{ $item->created_at }}</td>
                                 <td class="td-fit">{{ $item->updated_at }}</td>
-                                @if(Route::is($route.'.trashed'))
+                                @if(Route::is([$route.'.trashed',$route.'.search']))
                                   <td class="td-fit">{{ $item->deleted_at }}</td>
                                 @endif
                             @endif

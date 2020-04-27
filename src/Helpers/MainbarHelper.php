@@ -14,13 +14,13 @@ function mainbar(string $section, string $model = null, string $action = null)
     $sectionTitle = \Lang::has($translations.'.sidebar.'.$section) ? __($translations.'.sidebar.'.$section) : $section;
     $title = ucfirst($sectionTitle);
 
-    if(!is_null($model))
+    if(!empty($model))
     {
         $modelTitle = (\Lang::has($translations.'.model.'.$model) ? trans_choice($translations.'.model.'.$model,2) : $model);
         $title .= ' : '.ucfirst($modelTitle);
     }
 
-    if(!is_null($action))
+    if(!empty($action))
     {
         $actionTitle = (\Lang::has('sp::action.'.$action) ? __('sp::action.'.$action) : $action);
         $title .= ' : '.ucfirst($actionTitle);

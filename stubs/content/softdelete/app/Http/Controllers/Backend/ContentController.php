@@ -50,7 +50,7 @@ class {{ UCNAME }}Controller extends Controller
         // Make the search query
         // The search can be 'contains', 'start' or 'end'
         // And you can decide if all columns match
-        ${{ PNAME }} = {{ UCNAME }}::search($keywords,'contains',false)->paginate();
+        ${{ PNAME }} = {{ UCNAME }}::search($keywords,'contains',false)->withTrashed()->paginate();
 
         // Display the result
         return view('backend.{{ PNAME }}.index', compact('{{ PNAME }}'));
