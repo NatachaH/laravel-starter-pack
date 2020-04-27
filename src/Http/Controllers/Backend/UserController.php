@@ -53,8 +53,6 @@ class UserController extends Controller
         $keywords = $search->attribute('text');
 
         // Make the search query
-        // The search can be 'contains', 'start' or 'end'
-        // And you can decide if all columns match
         $users = User::search($keywords,'contains',false)->paginate();
 
         // Display the result
@@ -80,8 +78,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        $roles = Role::orderBy('name')->get()->pluck('name','id');
         $rolesDisabled = Auth::user()->hasRoles('superadmin') ? false : Role::select('id')->firstWhere('name', 'superadmin')->toArray();
-        return view('sp::backend.users.create', compact('rolesDisabled'));
+        return view('sp::backend.users.create', compact('roles','rolesDisabled'));
     }
 
     /**
@@ -117,8 +116,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $roles = Role::orderBy('name')->get()->pluck('name','id');
         $rolesDisabled = Auth::user()->hasRoles('superadmin') ? false : Role::select('id')->firstWhere('name', 'superadmin')->toArray();
-        return view('sp::backend.users.edit', compact('user', 'rolesDisabled'));
+        return view('sp::backend.users.edit', compact('user','roles','rolesDisabled'));
     }
 
     /**

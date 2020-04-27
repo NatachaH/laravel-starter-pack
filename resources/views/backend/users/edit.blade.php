@@ -9,7 +9,7 @@
       @csrf
       @method('PATCH')
 
-      <fieldset >
+      <fieldset>
 
         <legend>@lang('sp::field.information')</legend>
 
@@ -27,7 +27,13 @@
 
       </fieldset>
 
-      <x-ac-role-fieldset :legend="trans_choice('backend.model.role',1)" :selected="$user->role->id" :disabled="$rolesDisabled" required/>
+      <fieldset>
+
+        <legend>@choice('backend.model.role',1)</legend>
+
+        <x-bs-select :label="trans_choice('backend.model.role',1)" name="role" :options="$roles" :selected="$user->role->id" :disabled="$rolesDisabled" required />
+
+      </fieldset>
 
       @include('sp::partials.form-footer', ['cancel' => 'backend.users.index'])
 
