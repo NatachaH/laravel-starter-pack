@@ -53,7 +53,7 @@ class {{ UCNAME }}Controller extends Controller
         ${{ PNAME }} = {{ UCNAME }}::search($keywords,'contains',false)->paginate();
 
         // Display the result
-        return view('sp::backend.{{ PNAME }}.index', compact('{{ PNAME }}'));
+        return view('backend.{{ PNAME }}.index', compact('{{ PNAME }}'));
     }
 
     /**
