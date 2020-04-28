@@ -67,6 +67,13 @@ class Listing extends Component
     public $folder;
 
     /**
+     * Total nbr of item
+     *
+     * @var array
+     */
+    public $total;
+
+    /**
      * Check if the items have pagination.
      * @return boolean
      */
@@ -97,16 +104,14 @@ class Listing extends Component
      * Get total number element that are (not) in trash.
      * @return array
      */
-    public function total()
+    public function defineTotal()
     {
+        $model = new $this->model;
+        $this->total['all'] = $model->count();
+
         if($this->isSoftDeleting())
         {
-            $model = new $this->model;
-
-            $total['all'] = $model->count();
-            $total['trash'] = $model->onlyTrashed()->count();
-
-            return $total;
+            $this->total['trash'] = $model->onlyTrashed()->count();
         }
     }
 
@@ -125,6 +130,7 @@ class Listing extends Component
         $this->showId     = $showId;
         $this->showDates  = $showDates;
         $this->folder     = empty($folder) ? $route : $folder;
+        $this->defineTotal();
     }
 
     /**

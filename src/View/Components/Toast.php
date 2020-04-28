@@ -16,9 +16,16 @@ class Toast extends Component
 
     /**
      * The icon to display in the toast.
+     *
+     * @var string
+     */
+    public $icon;
+
+    /**
+     * The icon to display in the toast.
      * @return string
      */
-    public function icon()
+    public function defineIcon()
     {
         switch ($this->color) {
           case 'success':
@@ -64,6 +71,7 @@ class Toast extends Component
     {
         $this->message   = $message;
         $this->color     = $color;
+        $this->icon      = $this->defineIcon();
         $this->delay     = $delay;
     }
 

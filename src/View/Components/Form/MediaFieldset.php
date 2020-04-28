@@ -63,10 +63,16 @@ class MediaFieldset extends Component
     public $sortable;
 
     /**
-     * Help
+     * The help message-
      * @var string
      */
-    public function help()
+    public $help;
+
+    /**
+     * Define the help string
+     * @var string
+     */
+    public function defineHelp()
     {
         $help = '';
 
@@ -104,6 +110,7 @@ class MediaFieldset extends Component
         $this->hasName      = $hasName;
         $this->hasDownload  = $hasDownload;
         $this->sortable     = $sortable;
+        $this->help         = $this->defineHelp();
     }
 
     /**

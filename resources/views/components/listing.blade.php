@@ -4,7 +4,7 @@
 
         <h2>
           {{ $title }}
-          @if($isSoftDeleting && !Route::is($route.'.search'))
+          @if($isSoftDeleting() && !Route::is($route.'.search'))
             <small>
               <a class="{{ Route::is($route.'.index') ? 'active' : '' }}" href="{{ route($route.'.index') }}">@lang('sp::listing.all', ['nbr' => $total['all']])</a>
               |
@@ -37,7 +37,7 @@
                 <thead>
                     <tr>
 
-                        @if($isSortable)
+                        @if($isSortable())
                             <th class="td-fit"></th>
                         @endif
 
@@ -52,7 +52,7 @@
                         @if($showDates)
                           <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.created-at')</th>
                           <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.updated-at')</th>
-                          @if($isSoftDeleting && Route::is([$route.'.trashed',$route.'.search']))
+                          @if($isSoftDeleting() && Route::is([$route.'.trashed',$route.'.search']))
                             <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.deleted-at')</th>
                           @endif
                         @endif
@@ -62,11 +62,11 @@
                     </tr>
                 </thead>
 
-                <tbody @if($isSortable) class="sortable" data-sortable-model="{{ $model }}" @endif >
+                <tbody @if($isSortable()) class="sortable" data-sortable-model="{{ $model }}" @endif >
                     @foreach ($items as $item)
                         <tr data-id="{{ $item->id }}">
 
-                            @if($isSortable)
+                            @if($isSortable())
                                 <td class="td-fit"><i class="icon-move drag"></i></td>
                             @endif
 
@@ -79,7 +79,7 @@
                             @if($showDates)
                                 <td class="td-fit d-none d-lg-table-cell">{{ $item->created_at }}</td>
                                 <td class="td-fit d-none d-lg-table-cell">{{ $item->updated_at }}</td>
-                                @if($isSoftDeleting && Route::is([$route.'.trashed',$route.'.search']))
+                                @if($isSoftDeleting() && Route::is([$route.'.trashed',$route.'.search']))
                                   <td class="td-fit d-none d-lg-table-cell">{{ $item->deleted_at }}</td>
                                 @endif
                             @endif
@@ -120,7 +120,7 @@
 
     </div>
 
-    @if($hasPagination)
+    @if($hasPagination())
         <div class="listing-footer d-flex align-items-center">
             {{ $items->links('sp::components.pagination') }}
             <span class="listing-total ml-auto">@lang('sp::listing.total') {{$items->count().'/'.$items->total()}}</span>
