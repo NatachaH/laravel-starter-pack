@@ -30,7 +30,7 @@
         background: $card-bg;
         margin: 1rem 0;
 
-        > .table {
+        .table {
 
             margin: 0;
 
@@ -42,10 +42,6 @@
 
             td {
                 vertical-align: middle;
-                &.td-fit {
-                    width: 1%;
-                    white-space: nowrap;
-                }
             }
 
         }
