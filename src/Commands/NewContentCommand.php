@@ -126,18 +126,28 @@ class NewContentCommand extends Command
         }
 
         // Route
-        $backenRoute = base_path('routes/backend.php');
-        if(file_exists($backenRoute))
+        $backendRoute = base_path('routes/backend.php');
+        if(file_exists($backendRoute))
         {
             $new_route = file_get_contents($stub.'/routes/route.stub');
             $new_route = str_replace('{{ UCNAME }}', $this->ucname, $new_route);
             $new_route = str_replace('{{ UCPNAME }}', $this->ucpname, $new_route);
             $new_route = str_replace('{{ PNAME }}', $this->pname, $new_route);
             file_put_contents(
-                $backenRoute,
+                $backendRoute,
                 $new_route,
                 FILE_APPEND
             );
+        }
+
+        // Config
+        $backendConfig = config_path('backend.php');
+        if(file_exists($backendConfig))
+        {
+            $new_config = file_get_contents($stub_global.'/config/backend.stub');
+            $new_config = str_replace('{{ UCNAME }}', $this->ucname, $new_config);
+            $new_config = str_replace('{{ PNAME }}', $this->pname, $new_config);
+            file_put_contents($backendConfig, str_replace('//{{ COPY CONFIG }}', $new_config, file_get_contents($backendConfig)));
         }
 
         // End
