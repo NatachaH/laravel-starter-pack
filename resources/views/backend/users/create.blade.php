@@ -15,13 +15,13 @@
 
         <div class="row">
 
-          <x-bs-input class="col-6" :label="__('sp::field.name')" type="text" name="name" required/>
+          <x-bs-input class="col-md-6" :label="__('sp::field.name')" type="text" name="name" required/>
 
-          <x-bs-input class="col-6" :label="__('sp::field.email')" type="email" name="email" required/>
+          <x-bs-input class="col-md-6" :label="__('sp::field.email')" type="email" name="email" required/>
 
-          <x-bs-input class="col-6" :label="__('Password')" type="password" name="password" :help="__('validation.min.string', ['attribute' => 'password', 'min' => 6])" required/>
+          <x-bs-input class="col-md-6" :label="__('Password')" type="password" name="password" :help="__('validation.min.string', ['attribute' => 'password', 'min' => 6])" required/>
 
-          <x-bs-input class="col-6" :label="__('Confirm Password')" type="password" name="password_confirmation" required/>
+          <x-bs-input class="col-md-6" :label="__('Confirm Password')" type="password" name="password_confirmation" required/>
 
         </div>
 

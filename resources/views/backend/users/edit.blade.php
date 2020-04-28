@@ -15,13 +15,13 @@
 
         <div class="row">
 
-          <x-bs-input class="col-6" :label="__('sp::field.name')" type="text" name="name" :value="$user->name" required/>
+          <x-bs-input class="col-md-6" :label="__('sp::field.name')" type="text" name="name" :value="$user->name" required/>
 
-          <x-bs-input class="col-6" :label="__('sp::field.email')" type="email" name="email" :value="$user->email" required/>
+          <x-bs-input class="col-md-6" :label="__('sp::field.email')" type="email" name="email" :value="$user->email" required/>
 
-          <x-bs-input class="col-6" :label="__('Password')" type="password" name="password" :help="__('sp::help.leave-empty')" />
+          <x-bs-input class="col-md-6" :label="__('Password')" type="password" name="password" :help="__('sp::help.leave-empty')" />
 
-          <x-bs-input class="col-6" :label="__('Confirm Password')" type="password" name="password_confirmation" />
+          <x-bs-input class="col-md-6" :label="__('Confirm Password')" type="password" name="password_confirmation" />
 
         </div>
 
