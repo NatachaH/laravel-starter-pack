@@ -12,10 +12,19 @@
     color: $btn-default-color !important;
 }
 
+button:disabled {
+  cursor: default;
+}
+
 p:last-child {
     margin-bottom: 0;
 }
 
 .modal .modal-header {
   align-items: center;
+}
+
+.td-fit {
+  white-space: nowrap;
+  width: 1%;
 }

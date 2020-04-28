@@ -36,7 +36,7 @@ class GlobalPreset extends Preset
 
         $preset = [
           "bootstrap" => "^4.4.1",
-          "jquery"    => "^3.2",
+          "jquery"    => "^3.4.1",
           "popper.js" => "^1.12",
           "quill"     => "^1.3.6",
           "bs-custom-file-input" => "^1.3.4",

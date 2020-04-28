@@ -31,6 +31,7 @@
 
         @if($items->count())
 
+          <div class="table-responsive">
             <table class="table">
 
                 <thead>
@@ -49,10 +50,10 @@
                         @endforeach
 
                         @if($showDates)
-                          <th class="td-fit">@lang('sp::field.created-at')</th>
-                          <th class="td-fit">@lang('sp::field.updated-at')</th>
+                          <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.created-at')</th>
+                          <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.updated-at')</th>
                           @if($isSoftDeleting && Route::is([$route.'.trashed',$route.'.search']))
-                            <th class="td-fit">@lang('sp::field.deleted-at')</th>
+                            <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.deleted-at')</th>
                           @endif
                         @endif
 
@@ -76,10 +77,10 @@
                             @includeFirst([$folder.'.listing.detail', 'sp::components.listing-detail'])
 
                             @if($showDates)
-                                <td class="td-fit">{{ $item->created_at }}</td>
-                                <td class="td-fit">{{ $item->updated_at }}</td>
+                                <td class="td-fit d-none d-lg-table-cell">{{ $item->created_at }}</td>
+                                <td class="td-fit d-none d-lg-table-cell">{{ $item->updated_at }}</td>
                                 @if($isSoftDeleting && Route::is([$route.'.trashed',$route.'.search']))
-                                  <td class="td-fit">{{ $item->deleted_at }}</td>
+                                  <td class="td-fit d-none d-lg-table-cell">{{ $item->deleted_at }}</td>
                                 @endif
                             @endif
 
@@ -111,6 +112,7 @@
                 </tbody>
 
             </table>
+          </div>
 
         @else
             <div class="alert alert-info m-3">@lang('sp::listing.no-result')</div>
