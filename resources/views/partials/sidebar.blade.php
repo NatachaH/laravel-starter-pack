@@ -14,7 +14,7 @@
     </div>
 
     <div class="sidebar-footer">
-        V1.0 © {{ now()->year }} <a href="https://www.natachaherth.ch">Natacha Herth</a>
+        V2.0 © {{ now()->year }} <a href="https://www.natachaherth.ch">Natacha Herth</a>
     </div>
 
 </div>
