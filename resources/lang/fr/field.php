@@ -11,19 +11,19 @@ return [
     |
     */
 
-    'name'          => 'Name',
+    'name'          => 'Nom',
     'email'         => 'Email',
-    'title'         => 'Title',
-    'subtitle'      => 'Subtitle',
+    'title'         => 'Titre',
+    'subtitle'      => 'Sous-titre',
     'description'   => 'Description',
-    'created-at'    => 'Created at',
-    'updated-at'    => 'Updated at',
-    'deleted-at'    => 'Deleted at',
+    'created-at'    => 'Créé le',
+    'updated-at'    => 'Modifié le',
+    'deleted-at'    => 'Supprimé le',
     'actions'       => 'Actions',
-    'information'   => 'Information',
-    'role'          => 'Role',
-    'media'         => 'Media',
-    'filename'      => 'Filename',
-    'file'          => 'File'
+    'information'   => 'Informations',
+    'role'          => 'Rôle',
+    'media'         => 'Médias',
+    'filename'      => 'Nom du fichier',
+    'file'          => 'Fichier'
 
 ];
