@@ -85,7 +85,13 @@ Array.prototype.forEach.call(editors, function(el, i) {
                     }
                     this.quill.setSelection(range.index + 2, 'silent');
                   }
-          		}
+          		},
+              tab: {
+                  key: 9,
+                  handler: function () {
+                      return true;
+                  }
+              }
 
             }
           }
@@ -118,6 +124,12 @@ Array.prototype.forEach.call(editors, function(el, i) {
       }
 
     });
+
+    // Remove the tabindex of the toolbar buttons
+    Array.prototype.forEach.call(toolbar.querySelectorAll('button'), function(el, i) {
+      el.tabIndex = -1;
+    });
+
 });
 
 // Init the first time the tooltip
