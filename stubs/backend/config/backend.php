@@ -49,7 +49,9 @@ return [
         // Contents
         'contents' =>  [
             'icon'  => 'icon-content',
-            'items' => null
+            'items' => [
+              //{{ COPY CONFIG }}
+            ]
         ]
 
       ]
