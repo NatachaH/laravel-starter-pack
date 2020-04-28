@@ -15,16 +15,13 @@ return [
     'sidebar' => [
       'dashboard'   => 'Tableau de bord',
       'settings'    => 'Paramètres',
-      'users'       => 'Utilisateurs',
-      'roles'       => 'Rôles',
       'contents'    => 'Contenus',
-
     ],
 
     // Models
     'model' => [
       'user'        => 'Utilisateur|Utilisateurs',
-      'account'     => 'Compte',
+      'account'     => 'Compte|Comptes',
       'role'        => 'Rôle|Rôles',
       'permission'  => 'Permission|Permissions',
       'media'       => 'Média|Médias',

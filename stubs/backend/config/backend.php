@@ -35,11 +35,11 @@ return [
         'settings' =>  [
             'icon'  => 'icon-gear',
             'items' => [
-                'users' => [
+                'user' => [
                   'model' => 'App\User',
                   'route' => 'backend.users'
                 ],
-                'roles' => [
+                'role' => [
                   'model' => 'Nh\AccessControl\Role',
                   'route' => 'backend.roles'
                 ]

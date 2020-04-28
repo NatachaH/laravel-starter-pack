@@ -145,6 +145,7 @@ class NewContentCommand extends Command
         if(file_exists($backendConfig))
         {
             $new_config = file_get_contents($stub_global.'/config/backend.stub');
+            $new_config = str_replace('{{ NAME }}', $this->name, $new_config);
             $new_config = str_replace('{{ UCNAME }}', $this->ucname, $new_config);
             $new_config = str_replace('{{ PNAME }}', $this->pname, $new_config);
             file_put_contents($backendConfig, str_replace('//{{ COPY CONFIG }}', $new_config, file_get_contents($backendConfig)));
