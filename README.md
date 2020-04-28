@@ -56,9 +56,9 @@ The commande will copy the default files that you needed. You can change them an
 php artisan migrate
 ```
 
-Next, add you new model in:
+Don't forget to add the name of your model in:
 
-- The config file : **backend.php**
 - The translation file : **backend.php**
+- The translation file : **permission.php**
 
 And enjoy !
