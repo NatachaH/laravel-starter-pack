@@ -77,10 +77,10 @@
                             @includeFirst([$folder.'.listing.detail', 'sp::components.listing-detail'])
 
                             @if($showDates)
-                                <td class="td-fit d-none d-lg-table-cell">{{ $item->created_at }}</td>
-                                <td class="td-fit d-none d-lg-table-cell">{{ $item->updated_at }}</td>
+                                <td class="td-fit d-none d-lg-table-cell">{{ $item->created_at->format('d.m.Y H:i') }}</td>
+                                <td class="td-fit d-none d-lg-table-cell">{{ $item->updated_at->format('d.m.Y H:i') }}</td>
                                 @if($isSoftDeleting() && Route::is([$route.'.trashed',$route.'.search']))
-                                  <td class="td-fit d-none d-lg-table-cell">{{ $item->deleted_at }}</td>
+                                  <td class="td-fit d-none d-lg-table-cell">{{ $item->deleted_at->format('d.m.Y H:i') }}</td>
                                 @endif
                             @endif
 
