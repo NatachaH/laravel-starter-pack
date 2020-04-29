@@ -1,6 +1,6 @@
 <div class="listing">
 
-    <div class="listing-header d-flex justify-content-between">
+    <div class="listing-header d-sm-flex justify-content-between">
 
         <h2>
           {{ $title }}
@@ -13,7 +13,7 @@
           @endif
         </h2>
 
-        <div>
+        <div class="listing-action mt-3 mt-sm-0">
 
             @if(Route::has($route.'.export') && Auth::user()->can('export', $model))
                 <a href="{{ route($route.'.export') }}" class="btn btn-outline-secondary rounded-pill"><i class="icon icon-download"></i> @lang('sp::action.export')</a>
