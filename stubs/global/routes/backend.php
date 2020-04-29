@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Dashboard
-Route::get('/', function () {
-    return view('backend.dashboard');
-})->name('dashboard');
+Route::get('/', 'DashboardController')->name('dashboard');
 
 // Users
 Route::any('/users/search', '\Nh\StarterPack\Http\Controllers\Backend\UserController@search')->name('users.search');

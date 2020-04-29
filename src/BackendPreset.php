@@ -15,10 +15,22 @@ class BackendPreset extends Preset
      */
     public static function install()
     {
+        static::updateApp();
         static::updateConfig();
         static::updatePublic();
         static::updateResources();
         static::installAuth();
+    }
+
+    /**
+     * Updates the config files
+     * @return void
+     */
+    public static function updateApp()
+    {
+        $stub = __DIR__.'/../stubs/backend/app';
+        $path = app_path();
+        (new Filesystem)->copyDirectory($stub, $path);
     }
 
     /**
