@@ -3,7 +3,6 @@
 namespace Nh\StarterPack\View\Components;
 
 use Illuminate\View\Component;
-use Illuminate\Support\Str;
 
 class TrackListing extends Component
 {
@@ -22,37 +21,29 @@ class TrackListing extends Component
     {
         switch ($event) {
           case 'created':
-            $icon = 'success';
+            $color = 'success';
             break;
           case 'updated':
-            $icon = 'info';
+            $color = 'info';
             break;
           case 'deleted':
-            $icon = 'danger';
+            $color = 'danger';
+            break;
+          case 'soft-deleted':
+            $color = 'danger';
             break;
           case 'restored':
-            $icon = 'success';
+            $color = 'success';
             break;
           case 'force-deleted':
-            $icon = 'danger';
+            $color = 'danger';
             break;
           default:
-            $icon = 'primary';
+            $color = 'primary';
             break;
         }
 
-        return $icon;
-    }
-
-    public function eventName($key)
-    {
-        return \Lang::has('trackable.event.'.$key) ? __('trackable.event.'.$key) : $key;
-    }
-
-    public function modelName($model)
-    {
-        $key = Str::lower(class_basename($model));
-        return \Lang::has('backend.model.'.$key) ? trans_choice('backend.model.'.$key,1) : $key;
+        return $color;
     }
 
     /**
