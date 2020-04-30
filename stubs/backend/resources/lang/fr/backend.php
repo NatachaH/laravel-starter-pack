@@ -25,6 +25,7 @@ return [
       'role'        => 'Rôle|Rôles',
       'permission'  => 'Permission|Permissions',
       'media'       => 'Média|Médias',
+      'track'       => 'Activité|Activités'
     ],
 
 ];

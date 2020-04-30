@@ -1,12 +1,11 @@
 <ul {{ $attributes->merge(['class' => 'list-group']) }}>
   @foreach ($tracks as $key => $track)
     <li class="list-group-item">
-      <p class="m-0">
-        <span class="badge badge-{{ $colorByEvent($track->name) }}">
+        <span class="badge badge-{{ $colorByEvent($track->name) }} mb-1">
           @lang('trackable.event.'.$track->name)
         </span>
-        @choice('backend.model.'.$track->model,1) - {{ $track->description }}</p>
-      <small class="text-muted">{{ $track->created_at->format('d.m.Y H:i:s') }} - {{ $track->user->name }}</small>
+        <p class="mb-1"><b>@choice('backend.model.'.$track->model,1)</b> - {{ $track->description }}</p>
+        <small class="text-muted d-block"><i class="icon-stopwatch"></i> {{ $track->created_at->diffForhumans() }} <i class="icon-user ml-2"></i> {{ $track->user->name }}</small>
     </li>
   @endforeach
 </ul>

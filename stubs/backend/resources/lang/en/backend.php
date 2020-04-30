@@ -25,6 +25,7 @@ return [
       'role'        => 'Role|Roles',
       'permission'  => 'Permission|Permissions',
       'media'       => 'Media|Media',
+      'track'       => 'Track|Tracks'
     ],
 
 ];

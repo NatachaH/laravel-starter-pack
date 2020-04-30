@@ -5,8 +5,8 @@
 @section('content')
 
   <div class="row">
-    <div class="col-8">
-      <div class="jumbotron text-center">
+    <div class="col-lg-8">
+      <div class="jumbotron text-center mb-3">
         <h2>{!! __('sp::dashboard.welcome', ['name' => Auth::user()->name]) !!}</h2>
         <p class="lead">
           @lang('sp::dashboard.lead')
@@ -18,21 +18,23 @@
 
       <div class="row">
         <div class="col">
-          <x-sp-statistic class="m-0" :title="trans_choice('backend.model.user',2)" :value="$statistics['users']" icon="icon-users"/>
+          <x-sp-statistic :title="trans_choice('backend.model.user',2)" :value="$statistics['users']" icon="icon-users"/>
         </div>
         <div class="col">
-          <x-sp-statistic class="m-0" title="Exemple" value="3" icon="icon-content"/>
+          <x-sp-statistic title="Exemple" value="3" icon="icon-content"/>
         </div>
         <div class="col">
-          <x-sp-statistic class="m-0" title="Exemple" value="300" icon="icon-rocket"/>
+          <x-sp-statistic title="Exemple" value="300" icon="icon-rocket"/>
         </div>
       </div>
 
     </div>
-    <div class="col-4">
-      <x-sp-statistic class="m-0 h-100" title="Last activities" :value="$tracks->first()->created_at->format('d-m-Y H:i:s')" icon="icon-time-reverse" color="secondary">
-        <x-sp-track-listing :tracks="$tracks" />
-      </x-sp-statistic>
+    <div class="col-lg-4">
+      <x-bs-card :title="trans_choice('trackable.latest',2)">
+        <x-slot name="before">
+          <x-sp-track-listing class="list-group-flush" :tracks="$tracks" />
+        </x-slot>
+      </x-bs-card>
     </div>
 
   </div>
