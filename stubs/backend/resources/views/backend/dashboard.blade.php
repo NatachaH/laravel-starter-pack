@@ -30,33 +30,8 @@
 
     </div>
     <div class="col-4">
-      <x-sp-statistic class="m-0 h-100" title="Last activities" value="20.10.2020 à 10:30" icon="icon-time-reverse" color="secondary">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            Add a new content
-            <small class="text-muted">20.04.2020 à 10:35 by Natacha</small>
-          </li>
-          <li class="list-group-item">
-            Add a new content
-            <small class="text-muted">20.04.2020 à 10:35 by Natacha</small>
-          </li>
-          <li class="list-group-item">
-            Add a new content
-            <small class="text-muted">20.04.2020 à 10:35 by Natacha</small>
-          </li>
-          <li class="list-group-item">
-            Add a new content
-            <small class="text-muted">20.04.2020 à 10:35 by Natacha</small>
-          </li>
-          <li class="list-group-item">
-            Add a new content
-            <small class="text-muted">20.04.2020 à 10:35 by Natacha</small>
-          </li>
-          <li class="list-group-item">
-            Add a new content
-            <small class="text-muted">20.04.2020 à 10:35 by Natacha</small>
-          </li>
-        </ul>
+      <x-sp-statistic class="m-0 h-100" title="Last activities" :value="$tracks->first()->created_at->format('d-m-Y H:i:s')" icon="icon-time-reverse" color="secondary">
+        <x-sp-track-listing :tracks="$tracks" />
       </x-sp-statistic>
     </div>
 

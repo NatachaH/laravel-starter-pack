@@ -71,8 +71,7 @@ class StarterPackServiceProvider extends ServiceProvider
       Blade::component('sp-editor', \Nh\StarterPack\View\Components\Form\Editor::class);
       Blade::component('sp-media-fieldset', \Nh\StarterPack\View\Components\Form\MediaFieldset::class);
       Blade::component('sp-media-listing', \Nh\StarterPack\View\Components\MediaListing::class);
-
-
+      Blade::component('sp-track-listing', \Nh\StarterPack\View\Components\TrackListing::class);
 
       // COMMANDES
       if ($this->app->runningInConsole()) {
