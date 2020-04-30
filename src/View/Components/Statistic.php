@@ -46,7 +46,7 @@ class Statistic extends Component
      *
      * @return void
      */
-    public function __construct($title, $value, $unit = '', $icon, $color = 'primary')
+    public function __construct($title, $value = '', $unit = '', $icon, $color = 'primary')
     {
         $this->title  = $title;
         $this->value  = $value;
