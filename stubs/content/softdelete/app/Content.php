@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Nh\Mediable\Traits\Mediable;
 use Nh\Searchable\Traits\Searchable;
+use Nh\Trackable\Traits\Trackable;
 
 class {{ UCNAME }} extends Model
 {
     use SoftDeletes;
     use Mediable;
     use Searchable;
+    use Trackable;
 
     /**
      * The attributes that are mass assignable.

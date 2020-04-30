@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Nh\AccessControl\Traits\HasAccess;
 use Nh\Searchable\Traits\Searchable;
+use Nh\Trackable\Traits\Trackable;
 
 class User extends Authenticatable
 {
@@ -16,6 +17,7 @@ class User extends Authenticatable
     use SoftDeletes;
     use HasAccess;
     use Searchable;
+    use Trackable;
 
     /**
      * The attributes that are mass assignable.
