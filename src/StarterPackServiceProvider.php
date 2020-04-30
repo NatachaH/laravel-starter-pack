@@ -46,6 +46,7 @@ class StarterPackServiceProvider extends ServiceProvider
 
           // Artisan commandes for Access Control Package
           Artisan::call('vendor:publish --tag=access-control');
+          Artisan::call('role:new user');
 
           // Artisan commandes for Mediable Package
           Artisan::call('vendor:publish --tag=mediable');
