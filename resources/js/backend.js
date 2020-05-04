@@ -12,6 +12,7 @@
 // Packages
 require('../../../bs-component/resources/js/dynamic');
 require('../../../bs-component/resources/js/checkbox-all');
+require('../../../bs-component/resources/js/datepicker');
 require('../../../sortable/resources/js/sortable');
 
 // Components
