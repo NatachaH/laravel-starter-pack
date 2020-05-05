@@ -29,6 +29,4 @@ return [
       'message' => 'Voulez-vous vraiment restaurer cet élément ?'
     ],
 
-
-
 ];

@@ -36,14 +36,14 @@ $yiq-contrasted-threshold:  170;
 
 $border-color:            $gray-100;
 $component-active-color:  $white;
-$component-active-bg:     $brand;
+$component-active-bg:     $primary;
 
 // Body
 $body-bg: #FAFAFA;
 $body-color: #6D6D6D;
 
 // Links
-$link-color:                   $brand;
+$link-color:                   $primary;
 $link-decoration:              none;
 $link-hover-color:             darken($link-color, 15%) ;
 $link-hover-decoration:        none;
@@ -51,13 +51,13 @@ $link-hover-decoration:        none;
 // Typography
 $font-family-base:            'Open Sans', sans-serif;
 $headings-font-family:        'Quicksand', sans-serif;
-$headings-color:              $brand;
+$headings-color:              $primary;
 $headings-font-weight:        500;
 $text-muted:                  $secondary;
 
 // Inputs & buttons
 $input-btn-focus-box-shadow:  none;
-$input-focus-border-color:    $brand;
+$input-focus-border-color:    $primary;
 
 // Button
 $btn-default-color:           $body-color; // Not for Bootstrap
@@ -76,7 +76,7 @@ $input-group-addon-bg:        $white;
 $input-placeholder-color:     $gray-400;
 
 // Dropdown
-$dropdown-link-active-color:        $brand;
+$dropdown-link-active-color:        $primary;
 $dropdown-link-active-bg:           transparent;
 $dropdown-border-color:             $border-color;
 $dropdown-header-color:             $secondary;

@@ -29,6 +29,4 @@ return [
       'message' => 'Are you sure you want to restore this ?'
     ],
 
-
-
 ];

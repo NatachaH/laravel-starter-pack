@@ -12,7 +12,7 @@
     > .input-group {
 
         border:1px solid $border-color;
-        border-bottom:2px solid $brand;
+        border-bottom:2px solid $primary;
 
         > input, > .btn {
             @include border-radius(0);

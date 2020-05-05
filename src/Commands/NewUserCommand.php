@@ -64,5 +64,4 @@ class NewUserCommand extends Command
 
     }
 
-
 }

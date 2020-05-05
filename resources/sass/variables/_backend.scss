@@ -12,7 +12,7 @@ $main-spacer-y:   2rem;
 
 // Mainbar
 $mainbar-height:  4rem;
-$mainbar-bg:      $brand;
+$mainbar-bg:      $primary;
 $mainbar-color:   $white;
 
 // Sidebar Header
@@ -24,7 +24,7 @@ $sidebar-nav-spacer-y:    2rem;
 $sidebar-bg:              $white;
 
 // Sidebar Nav Header
-$sidebar-nav-header-color:        $brand;
+$sidebar-nav-header-color:        $primary;
 $sidebar-nav-header-hover-color:  darken($sidebar-nav-header-color, 15%);
 $sidebar-nav-header-active-color: darken($sidebar-nav-header-color, 15%);
 
@@ -32,7 +32,7 @@ $sidebar-nav-header-active-color: darken($sidebar-nav-header-color, 15%);
 $sidebar-nav-link-padding:        0.25rem 0 0 1.9rem;
 $sidebar-nav-link-color:          $secondary;
 $sidebar-nav-link-hover-color:    darken($sidebar-nav-link-color, 15%);
-$sidebar-nav-link-active-color:   $brand;
+$sidebar-nav-link-active-color:   $primary;
 
 // Sidebar Footer
 $sidebar-footer-padding: 0.5rem 0;
