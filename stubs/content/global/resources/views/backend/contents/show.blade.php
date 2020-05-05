@@ -27,11 +27,15 @@
 
         <div class="col-lg-4">
 
-            <x-bs-card class="" :title="trans_choice('trackable.latest',2)">
-              <x-slot name="before">
-                <x-sp-track-listing class="list-group-flush" :tracks="${{ NAME }}->tracks" />
-              </x-slot>
-            </x-bs-card>
+            <x-sp-statistic :title="trans_choice('latest-activity-log',1)" :value="$page->tracks->first()->time" icon="icon-time-reverse" color="secondary">
+              <ul class="list-group list-group-flush ">
+                @foreach ($page->tracks as $key => $track)
+                  <li class="list-group-item">
+                    @lang('trackable.track', ['event' => $track->name, 'time' => $track->time, 'by' => $track->username])
+                  </li>
+                @endforeach
+              </ul>
+            </x-sp-statistic>
 
         </div>
 
