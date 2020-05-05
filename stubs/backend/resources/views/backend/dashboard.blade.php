@@ -6,7 +6,7 @@
 
   <div class="row">
     <div class="col-lg-8">
-      <div class="jumbotron text-center mb-3">
+      <div class="jumbotron text-center mb-0">
         <h2>{!! __('sp::dashboard.welcome', ['name' => Auth::user()->name]) !!}</h2>
         <p class="lead">
           @lang('sp::dashboard.lead')
