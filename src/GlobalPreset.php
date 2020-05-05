@@ -41,7 +41,7 @@ class GlobalPreset extends Preset
           "quill"     => "^1.3.6",
           "bs-custom-file-input" => "^1.3.4",
           "sortablejs" => "^1.10.2",
-          "flatpickr": "^4.6.3"
+          "flatpickr" => "^4.6.3"
         ];
 
         return array_merge($laravel,$preset);

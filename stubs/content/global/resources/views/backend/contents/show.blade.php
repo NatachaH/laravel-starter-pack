@@ -27,7 +27,7 @@
 
         <div class="col-lg-4">
 
-            <x-sp-statistic :title="trans_choice('latest-activity-log',1)" :value="$page->tracks->first()->time" icon="icon-time-reverse" color="secondary">
+            <x-sp-statistic :title="trans_choice('trackable.latest-activity-log',1)" :value="$page->tracks->first()->time" icon="icon-time-reverse" color="secondary">
               <ul class="list-group list-group-flush ">
                 @foreach ($page->tracks as $key => $track)
                   <li class="list-group-item">
