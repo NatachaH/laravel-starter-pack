@@ -22,7 +22,16 @@ class {{ UCNAME }} extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'subtitle', 'description'
+        'title', 'subtitle', 'description', 'published'
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+       'published' => 'boolean'
     ];
 
     /**

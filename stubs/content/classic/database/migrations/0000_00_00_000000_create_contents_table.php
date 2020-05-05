@@ -18,6 +18,7 @@ class Create{{ UCPNAME }}Table extends Migration
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('published')->default(0);
             $table->timestamps();
         });
     }

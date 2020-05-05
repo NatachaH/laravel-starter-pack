@@ -86,7 +86,7 @@ class {{ UCNAME }}Controller extends Controller
      */
     public function store(Store{{ UCNAME }}Request $request)
     {
-        {{ UCNAME }}::create($request->only(['title','subtitle','description']));
+        {{ UCNAME }}::create($request->only(['title','subtitle','description','published']));
         session()->flash('toast', ['success' => notification('added','{{ NAME }}')]);
         return redirect()->route('backend.{{ PNAME }}.index');
     }
@@ -122,7 +122,7 @@ class {{ UCNAME }}Controller extends Controller
      */
     public function update(Store{{ UCNAME }}Request $request, {{ UCNAME }} ${{ NAME }})
     {
-        ${{ NAME }}->update($request->only(['title','subtitle','description']));
+        ${{ NAME }}->update($request->only(['title','subtitle','description','published']));
         session()->flash('toast', ['success' => notification('updated','{{ NAME }}')]);
         return redirect()->route('backend.{{ PNAME }}.index');
     }
