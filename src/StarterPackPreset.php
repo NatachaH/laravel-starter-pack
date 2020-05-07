@@ -4,10 +4,10 @@ namespace Nh\StarterPack;
 
 use Laravel\Ui\Presets\Preset;
 use Illuminate\Filesystem\Filesystem;
-use Symfony\Component\Finder\SplFileInfo;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
-class BackendPreset extends Preset
+class StarterPackPreset extends Preset
 {
     /**
      * Install the preset
@@ -15,20 +15,47 @@ class BackendPreset extends Preset
      */
     public static function install()
     {
+        static::updatePackages();
         static::updateApp();
         static::updateConfig();
-        static::updatePublic();
+        static::updateDatabase();
         static::updateResources();
+        static::updateRoutes();
+        static::updateWebpack();
         static::installAuth();
     }
 
     /**
-     * Updates the config files
+     * Update the NPM packages
+     * @param  array $packages
+     * @return array
+     */
+    public static function updatePackageArray($packages)
+    {
+        $laravel = Arr::except($packages, [
+          'lodash'
+        ]);
+
+        $preset = [
+          "bootstrap" => "^4.4.1",
+          "jquery" => "^3.4.1",
+          "popper.js" => "^1.12",
+          "quill" => "^1.3.6",
+          "bs-custom-file-input" => "^1.3.4",
+          "sortablejs" => "^1.10.2",
+          "flatpickr" => "^4.6.3"
+        ];
+
+        return array_merge($laravel,$preset);
+    }
+
+    /**
+     * Updates the providers files
      * @return void
      */
     public static function updateApp()
     {
-        $stub = __DIR__.'/../stubs/backend/app';
+        $stub = __DIR__.'/../stubs/app';
         $path = app_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -39,33 +66,58 @@ class BackendPreset extends Preset
      */
     public static function updateConfig()
     {
-        $stub = __DIR__.'/../stubs/backend/config';
+        $stub = __DIR__.'/../stubs/config';
         $path = config_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
 
     /**
-     * Updates the public files
+     * Updates the database files
      * @return void
      */
-    public static function updatePublic()
+    public static function updateDatabase()
     {
-        $stub = __DIR__.'/../stubs/backend/public';
-        $path = public_path();
+        $stub = __DIR__.'/../stubs/global/database';
+        $path = database_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
 
     /**
-     * Updates the resources files
+     * Update the resources folders
      * @return void
      */
     public static function updateResources()
     {
-        $stub = __DIR__.'/../stubs/backend/resources/';
+        (new Filesystem)->cleanDirectory(resource_path('js'));
+        (new Filesystem)->cleanDirectory(resource_path('sass'));
+        (new Filesystem)->cleanDirectory(resource_path('views'));
+
+        $stub = __DIR__.'/../stubs/resources/';
+
         (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
         (new Filesystem)->copyDirectory($stub.'lang', resource_path('lang'));
         (new Filesystem)->copyDirectory($stub.'sass', resource_path('sass'));
         (new Filesystem)->copyDirectory($stub.'views', resource_path('views'));
+    }
+
+    /**
+     * Updates the routes files
+     * @return void
+     */
+    public static function updateRoutes()
+    {
+        $stub = __DIR__.'/../stubs/routes';
+        $path = base_path('routes');
+        (new Filesystem)->copyDirectory($stub, $path);
+    }
+
+    /**
+     * Updates the webpack file
+     * @return void
+     */
+    public static function updateWebpack()
+    {
+        copy(__DIR__.'/../stubs/webpack.mix.js', base_path('webpack.mix.js'));
     }
 
     /**

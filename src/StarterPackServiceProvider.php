@@ -8,10 +8,7 @@ use Illuminate\Support\Facades\Gate;
 
 use Artisan;
 
-use Nh\StarterPack\BackendPreset;
-use Nh\StarterPack\FrontendPreset;
-use Nh\StarterPack\GlobalPreset;
-use Nh\StarterPack\UserPreset;
+use Nh\StarterPack\StarterPackPreset;
 
 class StarterPackServiceProvider extends ServiceProvider
 {
@@ -37,9 +34,7 @@ class StarterPackServiceProvider extends ServiceProvider
       UiCommand::macro('sp', function(UiCommand $command) {
 
           // Install the Presets
-          GlobalPreset::install();
-          FrontendPreset::install();
-          BackendPreset::install();
+          StarterPackPreset::install();
 
           // Artisan commandes for Bs Component Package
           Artisan::call('vendor:publish --tag=bs-component');
