@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| Backend - Script
+| SP - Backend - Script
 |--------------------------------------------------------------------------
 |
 | Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
@@ -10,16 +10,14 @@
 */
 
 // Packages
-require('../../../bs-component/resources/js/dynamic');
-require('../../../bs-component/resources/js/checkbox-all');
-require('../../../bs-component/resources/js/datepicker');
+require('../../../bs-component/resources/js/bs-component');
 require('../../../sortable/resources/js/sortable');
-
-// Components
-require('./components/media');
-require('./components/modal');
-require('./components/sidebar');
-require('./components/sortable');
 
 // Load Toast Notification
 $('#toastNotification .toast:not(.toast-custom)').toast('show');
+
+// Layout
+require('./layout/layout');
+
+// Components
+require('./components/components');

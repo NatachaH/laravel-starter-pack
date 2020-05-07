@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| Backend - Media - Script
+| SP - Backend - Media - Script
 |--------------------------------------------------------------------------
 |
 | Require: require('vendor/nh/bs-component/resources/js/dynamic');
