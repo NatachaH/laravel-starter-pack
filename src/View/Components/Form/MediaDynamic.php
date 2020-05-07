@@ -4,7 +4,7 @@ namespace Nh\StarterPack\View\Components\Form;
 
 use Illuminate\View\Component;
 
-class MediaFieldset extends Component
+class MediaDynamic extends Component
 {
 
   /**
