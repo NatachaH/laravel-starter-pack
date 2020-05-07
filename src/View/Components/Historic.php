@@ -46,7 +46,7 @@ class Historic extends Component
     {
         $this->type       = in_array($type,['global','model','user']) ? $type : 'global';
         $this->items      = $items;
-        $this->isMultiple = is_null($items) || $items->count() == 0 ? false : true
+        $this->isMultiple = is_null($items) || $items->count() == 0 ? false : true;
         $this->value      = $this->isMultiple ? $items->first()->time : $value;
     }
 

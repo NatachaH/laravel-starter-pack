@@ -129,7 +129,7 @@ class Listing extends Component
         $model = new $this->model;
         $total['all'] = $model->count();
 
-        if($this->isSoftDeleting())
+        if($this->hasSoftDelete())
         {
             $total['trash'] = $model->onlyTrashed()->count();
         }
