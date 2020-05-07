@@ -28,4 +28,12 @@ return [
       'track'       => 'Track|Tracks'
     ],
 
+    // Mainbar sections
+    'mainbar' => [
+      'account' => [
+        'preview' => 'My account',
+        'edit'    => 'Edit my profile'
+      ]
+    ],
+
 ];

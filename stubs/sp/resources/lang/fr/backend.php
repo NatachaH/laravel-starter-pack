@@ -28,4 +28,12 @@ return [
       'track'       => 'Activité|Activités'
     ],
 
+    // Mainbar sections
+    'mainbar' => [
+      'account' => [
+        'preview' => 'Mon compte',
+        'edit'    => 'Modifier mon profil'
+      ]
+    ],
+
 ];

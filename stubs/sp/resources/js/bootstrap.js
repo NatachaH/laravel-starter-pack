@@ -8,7 +8,6 @@ try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
     window.bsCustomFileInput = require('bs-custom-file-input');
-
     require('bootstrap');
 } catch (e) {}
 

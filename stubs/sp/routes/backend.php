@@ -16,16 +16,16 @@ use Illuminate\Support\Facades\Route;
 // Dashboard
 Route::get('/', 'DashboardController')->name('dashboard');
 
+// Account
+Route::get('/account/edit', '\Nh\StarterPack\Http\Controllers\Backend\UserController@editAccount')->name('account.edit');
+Route::patch('/account/edit', '\Nh\StarterPack\Http\Controllers\Backend\UserController@updateAccount')->name('account.update');
+
 // Users
 Route::any('/users/search', '\Nh\StarterPack\Http\Controllers\Backend\UserController@search')->name('users.search');
 Route::any('/users/trashed', '\Nh\StarterPack\Http\Controllers\Backend\UserController@trashed')->name('users.trashed');
 Route::patch('/users/{id}/restore', '\Nh\StarterPack\Http\Controllers\Backend\UserController@restore')->name('users.restore');
 Route::delete('/users/{id}/forceDelete', '\Nh\StarterPack\Http\Controllers\Backend\UserController@forceDelete')->name('users.forceDelete');
 Route::resource('users','\Nh\StarterPack\Http\Controllers\Backend\UserController');
-
-// Account
-Route::get('/account/edit', '\Nh\StarterPack\Http\Controllers\Backend\UserController@editAccount')->name('account.edit');
-Route::patch('/account/edit', '\Nh\StarterPack\Http\Controllers\Backend\UserController@updateAccount')->name('account.update');
 
 // Roles
 Route::any('/roles/search', '\Nh\StarterPack\Http\Controllers\Backend\RoleController@search')->name('roles.search');
