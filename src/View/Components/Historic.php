@@ -56,7 +56,7 @@ class Historic extends Component
           case 'force-deleted':
             $color = 'danger';
             break;
-          case 'sorft-deleted':
+          case 'soft-deleted':
             $color = 'warning';
             break;
           default:

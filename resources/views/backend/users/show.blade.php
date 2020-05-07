@@ -11,12 +11,12 @@
         <div class="col-lg-8">
 
             <x-bs-card :title="__('sp::field.information')">
-              <dl class="row">
-                <dt class="col-sm-3">@lang('sp::field.email')</dt>
-                <dd class="col-sm-9">{{ $user->email }}</dd>
+              <dl class="row mb-0">
+                <dt class="col-sm-2">@lang('sp::field.email')</dt>
+                <dd class="col-sm-10"><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></dd>
 
-                <dt class="col-sm-3">@lang('sp::field.role')</dt>
-                <dd class="col-sm-9">{{ $user->role->name }}</dd>
+                <dt class="col-sm-2">@lang('sp::field.role')</dt>
+                <dd class="col-sm-10 mb-0">{{ $user->role->name }}</dd>
               </dl>
             </x-bs-card>
 
