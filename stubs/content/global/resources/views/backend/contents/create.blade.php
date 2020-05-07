@@ -19,7 +19,7 @@
 
         <x-bs-input :label="__('sp::field.subtitle')" type="text" name="subtitle" />
 
-        <x-sp-editor :label="__('sp::field.description')" name="description" />
+        <x-bs-editor :label="__('sp::field.description')" name="description" />
 
       </fieldset>
 

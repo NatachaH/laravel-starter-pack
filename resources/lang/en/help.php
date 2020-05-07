@@ -13,7 +13,6 @@ return [
 
     'required' => '* Required fields',
     'leave-empty' => 'Leave empty if you don\'t want to edit it.',
-    'line-break' => 'To make a line break press <kbd class="bg-secondary"><i class="bi-shift"></i>shift</kbd> and <kbd class="bg-secondary"><i class="bi-enter"></i>enter',
 
     'min'       => 'Min: :min',
     'max'       => 'Max: :max',

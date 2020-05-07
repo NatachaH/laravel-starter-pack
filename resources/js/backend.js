@@ -16,7 +16,6 @@ require('../../../bs-component/resources/js/datepicker');
 require('../../../sortable/resources/js/sortable');
 
 // Components
-require('./components/editor');
 require('./components/media');
 require('./components/modal');
 require('./components/sidebar');
