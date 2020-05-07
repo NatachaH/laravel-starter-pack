@@ -55,7 +55,7 @@ class StarterPackPreset extends Preset
      */
     public static function updateApp()
     {
-        $stub = __DIR__.'/../stubs/app';
+        $stub = __DIR__.'/../stubs/sp/app';
         $path = app_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -66,7 +66,7 @@ class StarterPackPreset extends Preset
      */
     public static function updateConfig()
     {
-        $stub = __DIR__.'/../stubs/config';
+        $stub = __DIR__.'/../stubs/sp/config';
         $path = config_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -77,7 +77,7 @@ class StarterPackPreset extends Preset
      */
     public static function updateDatabase()
     {
-        $stub = __DIR__.'/../stubs/global/database';
+        $stub = __DIR__.'/../stubs/sp/database';
         $path = database_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -92,7 +92,7 @@ class StarterPackPreset extends Preset
         (new Filesystem)->cleanDirectory(resource_path('sass'));
         (new Filesystem)->cleanDirectory(resource_path('views'));
 
-        $stub = __DIR__.'/../stubs/resources/';
+        $stub = __DIR__.'/../stubs/sp/resources/';
 
         (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
         (new Filesystem)->copyDirectory($stub.'lang', resource_path('lang'));
@@ -106,7 +106,7 @@ class StarterPackPreset extends Preset
      */
     public static function updateRoutes()
     {
-        $stub = __DIR__.'/../stubs/routes';
+        $stub = __DIR__.'/../stubs/sp/routes';
         $path = base_path('routes');
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -117,7 +117,7 @@ class StarterPackPreset extends Preset
      */
     public static function updateWebpack()
     {
-        copy(__DIR__.'/../stubs/webpack.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__.'/../stubs/sp/webpack.mix.js', base_path('webpack.mix.js'));
     }
 
     /**
