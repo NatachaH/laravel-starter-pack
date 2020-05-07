@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('sp::partials.page-header', ['title' => $user->name, 'route' => 'backend.users', 'model' => $user])
+    @include('sp::includes.page-header', ['title' => $user->name, 'route' => 'backend.users', 'model' => $user])
 
     <div class="row">
 

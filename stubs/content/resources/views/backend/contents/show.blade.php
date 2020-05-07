@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('sp::partials.page-header', ['title' => ${{ NAME }}->title, 'route' => 'backend.{{ PNAME }}', 'model' => ${{ NAME }}])
+    @include('sp::includes.page-header', ['title' => ${{ NAME }}->title, 'route' => 'backend.{{ PNAME }}', 'model' => ${{ NAME }}])
 
     <div class="row">
 

@@ -4,7 +4,7 @@
 
 @section('content')
 
-  @include('sp::partials.page-header', ['title' => $role->name, 'route' => 'backend.roles', 'model' => $role])
+  @include('sp::includes.page-header', ['title' => $role->name, 'route' => 'backend.roles', 'model' => $role])
 
   <x-bs-card :title="trans_choice('backend.model.permission',2)">
     <x-slot name="before">
