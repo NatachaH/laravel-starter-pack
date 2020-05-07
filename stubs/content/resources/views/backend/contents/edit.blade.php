@@ -23,7 +23,7 @@
 
       </fieldset>
 
-      <x-sp-media-fieldset :legend="__('sp::field.media')" :current="${{ NAME }}->media" has-name has-download sortable  />
+      <x-sp-media-dynamic :legend="__('sp::field.media')" :current="${{ NAME }}->media" has-name has-download sortable  />
 
       @include('sp::includes.form.footer', ['cancel' => 'backend.{{ PNAME }}.index'])
 

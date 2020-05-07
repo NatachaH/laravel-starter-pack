@@ -18,7 +18,7 @@
             @if(${{ NAME }}->hasMedia())
               <x-bs-card :title="__('sp::field.media')">
                 <x-slot name="before">
-                    <x-sp-media-listing :items="${{ NAME }}->media" show-date has-download sortable/>
+                    <x-sp-media-listing :items="${{ NAME }}->media" show-dates has-download sortable/>
                 </x-slot>
               </x-bs-card>
             @endif

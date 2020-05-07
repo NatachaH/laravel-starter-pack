@@ -79,39 +79,38 @@ class NewContentCommand extends Command
         $softdelete = $this->confirm('Is the model using SoftDeletes ? [yes|no]', false);
 
         // Copy the files
-        $stub_global = __DIR__.'/../../stubs/content/global/';
-        $stub = __DIR__.'/../../stubs/content/'.($softdelete ? 'softdelete/' : 'classic/');
+        $stub = __DIR__.'/../../stubs/content/';
 
         // Controller
         $this->create_folder(app_path('Http/Controllers/Backend'));
-        $sp_controller   = $stub.'app/Http/Controllers/Backend/ContentController.php';
+        $sp_controller   = $stub.'app/Http/Controllers/Backend/Content'.($softdelete ? 'SD' : '').'Controller.php';
         $new_controller  = app_path('Http/Controllers/Backend/'.$this->ucname.'Controller.php');
         $this->copy_file($sp_controller,$new_controller);
 
         // Request (Global stub)
         $this->create_folder(app_path('Http/Requests'));
-        $sp_request   = $stub_global.'app/Http/Requests/StoreContentRequest.php';
+        $sp_request   = $stub.'app/Http/Requests/StoreContentRequest.php';
         $new_request  = app_path('Http/Requests/Store'.$this->ucname.'Request.php');
         $this->copy_file($sp_request,$new_request);
 
         // Policy
         $this->create_folder(app_path('Policies'));
-        $sp_policy   = $stub.'app/Policies/ContentPolicy.php';
+        $sp_policy   = $stub.'app/Policies/Content'.($softdelete ? 'SD' : '').'Policy.php';
         $new_policy  = app_path('Policies/'.$this->ucname.'Policy.php');
         $this->copy_file($sp_policy,$new_policy);
 
         // Model
-        $sp_model   = $stub.'app/Content.php';
+        $sp_model   = $stub.'app/Content'.($softdelete ? 'SD' : '').'.php';
         $new_model  = app_path($this->ucname.'.php');
         $this->copy_file($sp_model,$new_model);
 
         // Database
-        $sp_database   = $stub.'database/migrations/0000_00_00_000000_create_contents_table.php';
+        $sp_database   = $stub.'database/migrations/0000_00_00_000000_create_contents'.($softdelete ? 'SD' : '').'_table.php';
         $new_database  = database_path('migrations/'.date('Y_m_d').'_000000_create_'.$this->pname.'_table.php');
         $this->copy_file($sp_database,$new_database);
 
         // View (Global stub)
-        $views = glob($stub_global.'resources/views/backend/contents/*.php', GLOB_BRACE);
+        $views = glob($stub.'resources/views/backend/contents/*.php', GLOB_BRACE);
         $folder = resource_path('views/backend/'.$this->pname);
         $this->create_folder($folder);
 
@@ -129,7 +128,7 @@ class NewContentCommand extends Command
         $backendRoute = base_path('routes/backend.php');
         if(file_exists($backendRoute))
         {
-            $new_route = file_get_contents($stub.'/routes/route.stub');
+            $new_route = file_get_contents($stub.'/routes/route'.($softdelete ? 'SD' : '').'.stub');
             $new_route = str_replace('{{ UCNAME }}', $this->ucname, $new_route);
             $new_route = str_replace('{{ UCPNAME }}', $this->ucpname, $new_route);
             $new_route = str_replace('{{ PNAME }}', $this->pname, $new_route);
@@ -144,7 +143,7 @@ class NewContentCommand extends Command
         $backendConfig = config_path('backend.php');
         if(file_exists($backendConfig))
         {
-            $new_config = file_get_contents($stub_global.'/config/backend.stub');
+            $new_config = file_get_contents($stub.'/config/backend.stub');
             $new_config = str_replace('{{ NAME }}', $this->name, $new_config);
             $new_config = str_replace('{{ UCNAME }}', $this->ucname, $new_config);
             $new_config = str_replace('{{ PNAME }}', $this->pname, $new_config);
