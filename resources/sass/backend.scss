@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| Backend - Design
+| SP - Backend - Design
 |--------------------------------------------------------------------------
 |
 | Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
@@ -18,8 +18,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Packages
-@import '../../vendor/nh/bs-component/resources/sass/form';
-@import '../../vendor/nh/bs-component/resources/sass/datepicker';
+@import '../../vendor/nh/bs-component/resources/sass/bs-component';
 
 // Layout
 @import 'layout/layout';
