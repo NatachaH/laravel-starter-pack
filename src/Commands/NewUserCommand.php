@@ -55,12 +55,9 @@ class NewUserCommand extends Command
 
         // Associate the role
         $roles = Role::select('name')->get()->pluck('name')->toArray();
-        if($roles->count() > 0)
-        {
-            $role_name = $this->choice('What is the name of the role ?',$roles);
-            $role = Role::firstWhere('name',$role_name);
-            $user->role()->associate($role)->save();
-        }
+        $role_name = $this->choice('What is the name of the role ?',$roles);
+        $role = Role::firstWhere('name',$role_name);
+        $user->role()->associate($role)->save();
 
         // End
         $this->line('The user '.$name.' has been created !');
