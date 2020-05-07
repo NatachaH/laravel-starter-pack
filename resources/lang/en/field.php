@@ -25,6 +25,7 @@ return [
     'media'         => 'Media',
     'filename'      => 'Filename',
     'file'          => 'File',
-    'published'     => 'Published'
+    'published'     => 'Published',
+    'not-published' => 'Not published'
 
 ];
