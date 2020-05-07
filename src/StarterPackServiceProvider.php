@@ -71,9 +71,8 @@ class StarterPackServiceProvider extends ServiceProvider
       Blade::component('sp-statistic', \Nh\StarterPack\View\Components\Statistic::class);
       Blade::component('sp-toast', \Nh\StarterPack\View\Components\Toast::class);
       Blade::component('sp-modal-confirm', \Nh\StarterPack\View\Components\ModalConfirm::class);
-      Blade::component('sp-media-fieldset', \Nh\StarterPack\View\Components\Form\MediaFieldset::class);
+      Blade::component('sp-media-dynamic', \Nh\StarterPack\View\Components\Form\MediaDynamic::class);
       Blade::component('sp-media-listing', \Nh\StarterPack\View\Components\MediaListing::class);
-      Blade::component('sp-track-listing', \Nh\StarterPack\View\Components\TrackListing::class);
 
       // COMMANDES
       if ($this->app->runningInConsole()) {
