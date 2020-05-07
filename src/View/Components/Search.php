@@ -30,7 +30,8 @@ class Search extends Component
     public $isAdvanced;
 
     /**
-     * The id of the collapse bloc (by default: collapseSearch).
+     * The id of the collapse bloc.
+     * By default: collapseSearch.
      *
      * @var string
      */

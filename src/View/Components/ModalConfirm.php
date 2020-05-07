@@ -61,7 +61,7 @@ class ModalConfirm extends Component
      *
      * @return void
      */
-    public function __construct($color = 'danger',$icon = 'icon-trash', $name = 'confirmModal', $title, $message, $action = '#', $method = 'POST')
+    public function __construct($color = 'primary', $icon = 'icon-rocket', $name = 'confirmModal', $title, $message, $action = '#', $method = 'POST')
     {
         $this->color    = $color;
         $this->icon     = $icon;
