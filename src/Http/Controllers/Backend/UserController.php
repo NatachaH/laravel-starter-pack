@@ -105,7 +105,10 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //return view('backend.users.show', compact('user'));
+        $user = $user->load(['tracks' => function($q){
+          return $q->latest()->take(10);
+        }]);
+        return view('backend.users.show', compact('user'));
     }
 
     /**

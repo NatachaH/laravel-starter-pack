@@ -73,6 +73,8 @@ class StarterPackServiceProvider extends ServiceProvider
       Blade::component('sp-modal-confirm', \Nh\StarterPack\View\Components\ModalConfirm::class);
       Blade::component('sp-media-dynamic', \Nh\StarterPack\View\Components\Form\MediaDynamic::class);
       Blade::component('sp-media-listing', \Nh\StarterPack\View\Components\MediaListing::class);
+      Blade::component('sp-historic', \Nh\StarterPack\View\Components\Historic::class);
+
 
       // COMMANDES
       if ($this->app->runningInConsole()) {

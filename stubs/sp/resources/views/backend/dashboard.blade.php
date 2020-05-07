@@ -29,12 +29,9 @@
       </div>
 
     </div>
+
     <div class="col-lg-4">
-      <x-bs-card class="mt-lg-0" :title="trans_choice('trackable.latest-activity-log',2)">
-        <x-slot name="before">
-          <x-sp-track-listing class="list-group-flush" :tracks="$tracks" />
-        </x-slot>
-      </x-bs-card>
+      <x-sp-historic :items="$tracks" />  
     </div>
 
   </div>

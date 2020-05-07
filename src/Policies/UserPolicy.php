@@ -51,7 +51,7 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        return false;//$user->hasAccess('user','view');
+        return $user->hasAccess('user','view');
     }
 
     /**
