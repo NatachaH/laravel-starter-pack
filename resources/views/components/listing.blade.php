@@ -1,4 +1,4 @@
-<div class="listing">
+<div {{ $attributes->merge(['class' => 'listing']) }}>
 
     <div class="listing-header d-sm-flex justify-content-between">
 

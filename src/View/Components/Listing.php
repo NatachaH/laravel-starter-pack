@@ -19,7 +19,7 @@ class Listing extends Component
     /**
      * The array of items.
      *
-     * @var array
+     * @var Illuminate\Database\Eloquent\Collection
      */
     public $items;
 
