@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| Backend - Sortable - Script
+| SP - Backend - Sortable - Script
 |--------------------------------------------------------------------------
 |
 | Plugin: https://sortablejs.github.io/Sortable/
