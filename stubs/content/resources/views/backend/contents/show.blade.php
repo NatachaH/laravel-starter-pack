@@ -26,7 +26,7 @@
         </div>
 
         <div class="col-lg-4">
-            <x-sp-historic type="model" :items="$page->tracks" />
+            <x-sp-historic type="model" :items="${{ NAME }}->tracks" />
         </div>
 
     </div>
