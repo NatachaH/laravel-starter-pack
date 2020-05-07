@@ -7,13 +7,13 @@
       <input type="text" name="search[text]" class="form-control" placeholder="@lang('sp::action.search')" aria-label="@lang('sp::action.search')" value="{{ $search ? $search->attribute('text') : '' }}">
 
       @if($isAdvanced)
-        <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#{{ $collapseId }}" aria-expanded="false" aria-controls="{{ $collapseId }}"><i class="icon icon-toggles"></i></button>
+        <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#{{ $collapseId }}" aria-expanded="false"  aria-label="@lang('sp::action.collapse')" aria-controls="{{ $collapseId }}"><i class="icon-toggles"></i></button>
       @endif
 
-      <button class="btn btn-outline-primary" type="submit"><i class="icon icon-search"></i> @lang('sp::action.search')</button>
+      <button class="btn btn-outline-primary" type="submit"><i class="icon-search"></i> @lang('sp::action.search')</button>
 
       @if(!is_null($search))
-        <a href="{{ route('searchable.reset', ['key' => $key]) }}" class="btn btn-outline-secondary"><i class="icon icon-cross"></i> @lang('sp::action.reset')</a>
+        <a href="{{ route('searchable.reset', ['key' => $key]) }}" class="btn btn-outline-secondary"><i class="icon-cross"></i> @lang('sp::action.reset')</a>
       @endif
 
     </div>

@@ -40,20 +40,20 @@
   <div id="toastNotification">
     @if($toasts = session('toast'))
       @foreach ($toasts as $key => $toast)
-        <x-sp-toast :color="$key" :message="$toast" />
+        <x-sp-toast :message="$toast" :color="$key" />
       @endforeach
     @endif
-    <x-sp-toast class="toast-custom hide" color="success" message="" />
-    <x-sp-toast class="toast-custom hide" color="danger" message="" />
+    <x-sp-toast class="toast-custom hide" message="" color="success" />
+    <x-sp-toast class="toast-custom hide" message="" color="danger" />
   </div>
 
   <form id="logoutForm" class="d-none" action="{{ route('logout') }}" method="POST">
       @csrf
   </form>
 
-  <x-sp-modal-confirm name="deleteConfirm" :title="__('sp::modal.delete.title')" :message="__('sp::modal.delete.message')" method="DELETE"/>
-  <x-sp-modal-confirm name="softDeleteConfirm" :title="__('sp::modal.soft-delete.title')" :message="__('sp::modal.soft-delete.message')" method="DELETE"/>
-  <x-sp-modal-confirm name="restoreConfirm" :title="__('sp::modal.restore.title')" :message="__('sp::modal.restore.message')" method="PATCH" color="primary" icon="icon-time-reverse"/>
+  <x-sp-modal-confirm color="danger" icon="icon-trash" name="deleteConfirm" :title="__('sp::modal.delete.title')" :message="__('sp::modal.delete.message')" method="DELETE"/>
+  <x-sp-modal-confirm color="danger" icon="icon-trash" name="softDeleteConfirm" :title="__('sp::modal.soft-delete.title')" :message="__('sp::modal.soft-delete.message')" method="DELETE"/>
+  <x-sp-modal-confirm icon="icon-time-reverse" name="restoreConfirm" :title="__('sp::modal.restore.title')" :message="__('sp::modal.restore.message')" method="PATCH" />
 
 </body>
 </html>
