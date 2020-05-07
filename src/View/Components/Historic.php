@@ -38,6 +38,35 @@ class Historic extends Component
     public $isMultiple;
 
     /**
+     * Define the badge color by event name.
+     *
+     * @var string
+     */
+    public function colorByEvent($event)
+    {
+        switch ($event) {
+          case 'created':
+          case 'restored':
+            $color = 'success';
+            break;
+          case 'updated':
+            $color = 'info';
+            break;
+          case 'deleted':
+          case 'force-deleted':
+            $color = 'danger';
+            break;
+          case 'sorft-deleted':
+            $color = 'warning';
+            break;
+          default:
+            $color = 'gray';
+            break;
+        }
+        return $color;
+    }
+
+    /**
      * Create a new component instance.
      *
      * @return void

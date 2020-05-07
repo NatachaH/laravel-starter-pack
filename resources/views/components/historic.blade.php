@@ -3,7 +3,7 @@
     <ul class="list-group list-group-flush">
       @foreach ($items as $key => $item)
         <li class="list-group-item">
-          <span class="badge badge-secondary">@lang('trackable.event.'.$item->name)</span>
+          <span class="badge badge-{{ $colorByEvent($item->name) }}">@lang('trackable.event.'.$item->name)</span>
           @if($type != 'model')
             @choice('backend.model.'.$item->model, 1)
             -
