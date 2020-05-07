@@ -4,12 +4,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Backend Configurations
+    | Customize the sidebar
     |--------------------------------------------------------------------------
-    */
-
-    /*
-    | This is for construct the sidebar menu automatically.
+    |
+    | Here you may specify the links in the sidebar.
     | The sidebar translation are in the file lang/en/backend.php
     |
     |    Exemple for customize the link in the sidebar:
@@ -53,6 +51,24 @@ return [
               //{{ COPY CONFIG }}
             ]
         ]
+
+      ],
+
+      /*
+      |--------------------------------------------------------------------------
+      | Customize the mainbar
+      |--------------------------------------------------------------------------
+      |
+      | Here you may specify the links in the mainbar.
+      |
+      */
+
+      'mainbar' => [
+
+          // Account
+          'account' => [
+              'edit' => 'backend.account.edit'
+          ],
 
       ]
 
