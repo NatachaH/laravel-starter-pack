@@ -4,6 +4,7 @@ namespace Nh\StarterPack;
 
 use Laravel\Ui\Presets\Preset;
 use Illuminate\Filesystem\Filesystem;
+use Symfony\Component\Finder\SplFileInfo;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
