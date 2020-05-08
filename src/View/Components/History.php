@@ -4,12 +4,12 @@ namespace Nh\StarterPack\View\Components;
 
 use Illuminate\View\Component;
 
-class Historic extends Component
+class History extends Component
 {
 
 
     /**
-     * Type of Historic
+     * Type of History
      * Global, Model, User
      *
      * @var string
@@ -31,7 +31,7 @@ class Historic extends Component
     public $value;
 
     /**
-     * Is there multiple historic or only one.
+     * Is there multiple history or only one.
      *
      * @var boolean
      */
@@ -87,6 +87,6 @@ class Historic extends Component
      */
     public function render()
     {
-        return view('sp::components.historic');
+        return view('sp::components.history');
     }
 }

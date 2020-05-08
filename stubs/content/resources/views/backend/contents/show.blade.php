@@ -27,7 +27,7 @@
 
         <div class="col-lg-4">
             <x-sp-statistic :title="${{ NAME }}->published ? __('sp::field.published') : __('sp::field.not-published')" :color="${{ NAME }}->published ? 'success' : 'danger'" icon="icon-preview" />
-            <x-sp-historic type="model" :items="${{ NAME }}->tracks" />
+            <x-sp-history type="model" :items="${{ NAME }}->tracks" />
         </div>
 
     </div>

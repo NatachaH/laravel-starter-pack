@@ -19,7 +19,7 @@
       </div>
 
       <div class="col-lg-4">
-          <x-sp-historic type="model" :items="$role->tracks" />
+          <x-sp-history type="model" :items="$role->tracks" />
       </div>
 
   </div>
