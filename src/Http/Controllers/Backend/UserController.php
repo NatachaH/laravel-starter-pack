@@ -158,9 +158,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function restore(int $id)
+    public function restore(User $use)
     {
-        $user = User::onlyTrashed()->findOrFail($id);
+        $this->authorize('restore', $user);
         $user->restore();
         session()->flash('toast', ['success' => notification('restored','user')]);
         return back();
@@ -172,9 +172,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function forceDelete(int $id)
+    public function forceDelete(User $user)
     {
-        $user = User::onlyTrashed()->findOrFail($id);
+        $this->authorize('forceDelete', $user);
         $user->forceDelete();
         session()->flash('toast', ['success' => notification('force-deleted','user')]);
         return back();

@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
+use Auth;
+use App\User;
+
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -30,9 +33,13 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+
+        // Bind User with trashed
+        Route::bind('user', function ($value) {
+            $user = Auth::user()->can('viewTrashed', User::class) ? User::withTrashed() : new User;
+            return $user->where('id', $value)->firstOrFail();
+        });
     }
 
     /**

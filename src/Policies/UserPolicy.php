@@ -32,17 +32,6 @@ class UserPolicy
     }
 
     /**
-     * Determine whether the user can view the trashed models.
-     *
-     * @param  \App\User  $user
-     * @return mixed
-     */
-    public function viewTrashed(User $user)
-    {
-        return $user->hasAccess('user', ['restore','force-delete']);
-    }
-
-    /**
      * Determine whether the user can view the model.
      *
      * @param  \App\User  $user
@@ -87,6 +76,17 @@ class UserPolicy
     public function delete(User $user, User $model)
     {
         return $user->hasAccess('user','delete') && !$model->trashed() && ($user->id !== $model->id) && (!$model->hasRoles('superadmin') || $user->hasRoles('superadmin'));
+    }
+
+    /**
+     * Determine whether the user can view the trashed models.
+     *
+     * @param  \App\User  $user
+     * @return mixed
+     */
+    public function viewTrashed(User $user)
+    {
+        return $user->hasAccess('user', ['restore','force-delete']);
     }
 
     /**
