@@ -1,4 +1,4 @@
-<form {{ $attributes->merge(['class' => 'search-form']) }} action="{{ $action }}" method="post">
+<form {{ $attributes->merge(['class' => 'search-form']) }} action="{{ route($route.'.search') }}" method="post">
 
     @csrf
 
@@ -19,10 +19,10 @@
     </div>
 
     @if($isAdvanced)
-      <div class="collapse collapse-search" id="{{ $collapseId }}">
+      <div class="collapse collapse-search {{ !is_null($search) && $search->attributes->length > 1 ? 'show' : '' }}" id="{{ $collapseId }}">
         <div class="collapse-search-body">
           {!! $slot !!}
-          @includeIf($advancedView)
+          @includeIf($folder.'.includes.advanced-search')
         </div>
       </div>
     @endif

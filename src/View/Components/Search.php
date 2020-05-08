@@ -16,11 +16,18 @@ class Search extends Component
     public $key;
 
     /**
-     * The action of the form.
+     * Base route for action and views.
      *
      * @var string
      */
-    public $action;
+    public $route;
+
+    /**
+     * Path of the folder
+     *
+     * @var string
+     */
+    public $folder;
 
     /**
      * Is the form have an advanced search bloc.
@@ -28,13 +35,6 @@ class Search extends Component
      * @var boolean
      */
     public $isAdvanced;
-
-    /**
-     * Path of the advanced form view
-     *
-     * @var string
-     */
-    public $advancedView;
 
     /**
      * The id of the collapse bloc.
@@ -51,17 +51,18 @@ class Search extends Component
      */
     public $search;
 
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($key, $action, $isAdvanced = false, $advancedView = '', $collapseId = 'collapseSearch')
+    public function __construct($key, $route, $folder = '', $isAdvanced = false, $collapseId = 'collapseSearch')
     {
         $this->key            = $key;
-        $this->action         = Route::has($action) ? route($action) : $action;
+        $this->route          = $route;
+        $this->folder         = empty($folder) ? $route : $folder;
         $this->isAdvanced     = $isAdvanced;
-        $this->advancedView   = $advancedView;
         $this->collapseId     = $collapseId;
         $this->search         = session()->exists('search.'.$this->key) ? session('search.'.$this->key) : null;
     }
