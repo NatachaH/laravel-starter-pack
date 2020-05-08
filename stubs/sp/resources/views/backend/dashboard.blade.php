@@ -31,7 +31,7 @@
     </div>
 
     <div class="col-lg-4">
-      <x-sp-history :items="$tracks" />  
+      <x-sp-history class="mt-lg-0" :items="$tracks" />  
     </div>
 
   </div>

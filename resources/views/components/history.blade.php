@@ -1,4 +1,4 @@
-<x-sp-statistic :title="$title" :value="$value" icon="icon-clock" color="secondary">
+<x-sp-statistic class="{{ $attributes['class'] }}" :title="$title" :value="$value" icon="icon-clock" color="secondary">
   @if($isMultiple)
     <ul class="list-group list-group-flush">
       @foreach ($items as $key => $item)
