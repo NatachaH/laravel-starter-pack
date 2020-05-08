@@ -23,11 +23,11 @@
         </div>
 
         <div class="col-lg-6 col-xl-3">
-            <x-sp-historic type="user" :items="$user->activityTracks" />
+            <x-sp-history type="user" :items="$user->activityTracks" />
         </div>
 
         <div class="col-lg-6 col-xl-3">
-            <x-sp-historic type="model" :items="$user->tracks" />
+            <x-sp-history type="model" :items="$user->tracks" />
         </div>
 
     </div>
