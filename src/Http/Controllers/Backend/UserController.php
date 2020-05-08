@@ -107,6 +107,8 @@ class UserController extends Controller
     {
         $user = $user->load(['tracks' => function($q){
           return $q->latest()->take(10);
+        }, 'activityTracks' => function($q){
+          return $q->latest()->take(10);
         }]);
         return view('sp::backend.users.show', compact('user'));
     }

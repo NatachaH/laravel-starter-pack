@@ -7,6 +7,12 @@ use Illuminate\View\Component;
 class History extends Component
 {
 
+    /**
+     * Title of the History statistic
+     *
+     * @var string
+     */
+    public $title;
 
     /**
      * Type of History
@@ -68,16 +74,33 @@ class History extends Component
     }
 
     /**
+     * Define the title of the History statistic.
+     *
+     * @var string
+     */
+    private function defineTitle()
+    {
+        if($this->type == 'user')
+        {
+          $title = __('trackable.history');
+        } else {
+          $title = trans_choice('trackable.latest',($this->isMultiple ? 2 : 1));
+        }
+        return $title;
+    }
+
+    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($type = 'global', $items = null, $value = '')
+    public function __construct($title = null, $type = 'global', $items = null, $value = '')
     {
         $this->type       = in_array($type,['global','model','user']) ? $type : 'global';
         $this->items      = $items;
         $this->isMultiple = is_null($items) || $items->count() == 0 ? false : true;
         $this->value      = $this->isMultiple ? $items->first()->time : $value;
+        $this->title      = is_null($title) ? $this->defineTitle() : $title;
     }
 
     /**

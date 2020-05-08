@@ -8,7 +8,7 @@
 
     <div class="row">
 
-        <div class="col-lg-8">
+        <div class="col-xl-6">
 
             <x-bs-card :title="__('sp::field.information')">
               <dl class="row mb-0">
@@ -22,8 +22,12 @@
 
         </div>
 
-        <div class="col-lg-4">
-            <x-sp-history type="model" :items="$user->tracks" />
+        <div class="col-lg-6 col-xl-3">
+            <x-sp-historic type="user" :items="$user->activityTracks" />
+        </div>
+
+        <div class="col-lg-6 col-xl-3">
+            <x-sp-historic type="model" :items="$user->tracks" />
         </div>
 
     </div>

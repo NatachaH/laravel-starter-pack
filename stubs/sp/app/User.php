@@ -72,4 +72,13 @@ class User extends Authenticatable
           $this->attributes['password'] = bcrypt($password);
       }
     }
+
+    /**
+     * Get the tracks record associated with the user.
+     * @return Illuminate\Database\Eloquent\Collection
+     */
+    public function activityTracks()
+    {
+        return $this->hasMany('\Nh\Trackable\Track');
+    }
 }

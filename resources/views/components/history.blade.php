@@ -1,4 +1,4 @@
-<x-sp-statistic :title="trans_choice('trackable.latest-activity-log', ($isMultiple ? 2 : 1))" :value="$value" icon="icon-clock" color="secondary">
+<x-sp-statistic :title="$title" :value="$value" icon="icon-clock" color="secondary">
   @if($isMultiple)
     <ul class="list-group list-group-flush">
       @foreach ($items as $key => $item)
