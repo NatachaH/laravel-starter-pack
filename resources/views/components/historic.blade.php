@@ -11,7 +11,7 @@
             -
             {{ $item->description }}
           @endif
-          <span class="text-muted d-block">
+          <span class="text-muted d-block mt-1">
             <i class="icon-clock"></i> {{ $item->time }}
             @if($type != 'user')
             <i class="icon-user ml-2"></i> {{ $item->username }}
