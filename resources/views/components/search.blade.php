@@ -22,6 +22,7 @@
       <div class="collapse collapse-search" id="{{ $collapseId }}">
         <div class="collapse-search-body">
           {!! $slot !!}
+          @includeIf($advancedView)
         </div>
       </div>
     @endif

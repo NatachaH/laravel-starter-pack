@@ -30,6 +30,13 @@ class Search extends Component
     public $isAdvanced;
 
     /**
+     * Path of the advanced form view
+     *
+     * @var string
+     */
+    public $advancedView;
+
+    /**
      * The id of the collapse bloc.
      * By default: collapseSearch.
      *
@@ -49,13 +56,14 @@ class Search extends Component
      *
      * @return void
      */
-    public function __construct($key, $action, $isAdvanced = false, $collapseId = 'collapseSearch')
+    public function __construct($key, $action, $isAdvanced = false, $advancedView = '', $collapseId = 'collapseSearch')
     {
-        $this->key        = $key;
-        $this->action     = Route::has($action) ? route($action) : $action;
-        $this->isAdvanced = $isAdvanced;
-        $this->collapseId = $collapseId;
-        $this->search     = session()->exists('search.'.$this->key) ? session('search.'.$this->key) : null;
+        $this->key            = $key;
+        $this->action         = Route::has($action) ? route($action) : $action;
+        $this->isAdvanced     = $isAdvanced;
+        $this->advancedView   = $advancedView;
+        $this->collapseId     = $collapseId;
+        $this->search         = session()->exists('search.'.$this->key) ? session('search.'.$this->key) : null;
     }
 
     /**
