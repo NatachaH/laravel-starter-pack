@@ -36,7 +36,7 @@ class StarterPackServiceProvider extends ServiceProvider
           // Install the Presets
           StarterPackPreset::install();
 
-          // Artisan commandes for Bs Component Package
+          // Artisan commandes for Bootstrap Component Package
           Artisan::call('vendor:publish --tag=bs-component');
 
           // Artisan commandes for Access Control Package
