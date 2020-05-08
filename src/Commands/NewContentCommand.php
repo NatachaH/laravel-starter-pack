@@ -133,7 +133,7 @@ class NewContentCommand extends Command
             $new_view = $folder.'/'.basename($sp_view);
             $this->copy_file($sp_view,$new_view);
         }
-      
+
         // Route
         $backendRoute = base_path('routes/backend.php');
         if(file_exists($backendRoute))
@@ -159,6 +159,21 @@ class NewContentCommand extends Command
             $new_config = str_replace('{{ PNAME }}', $this->pname, $new_config);
             file_put_contents($backendConfig, str_replace('//{{ COPY CONFIG }}', $new_config, file_get_contents($backendConfig)));
         }
+
+
+        if($softdelete)
+        {
+            // Route binding
+            $provider = app_path('Providers/RouteServiceProvider.php');
+            if(file_exists($provider))
+            {
+                $new_provider = file_get_contents($stub.'/app/Providers/RouteServiceProvider.stub');
+                $new_provider = str_replace('{{ NAME }}', $this->name, $new_provider);
+                $new_provider = str_replace('{{ UCNAME }}', $this->ucname, $new_provider);
+                file_put_contents($provider, str_replace('//{{ COPY ROUTE BINDING }}', $new_provider, file_get_contents($provider)));
+            }
+        }
+
 
         // End
         $this->info('The model '.$this->name.' has been created !');

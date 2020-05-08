@@ -6,7 +6,6 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Support\Facades\Route;
 
 use Auth;
-use App\User;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -37,9 +36,11 @@ class RouteServiceProvider extends ServiceProvider
 
         // Bind User with trashed
         Route::bind('user', function ($value) {
-            $user = Auth::user()->can('viewTrashed', User::class) ? User::withTrashed() : new User;
+            $user = Auth::user()->can('viewTrashed', \App\User::class) ? \App\User::withTrashed() : new \App\User;
             return $user->where('id', $value)->firstOrFail();
         });
+
+        //{{ COPY ROUTE BINDING }}
     }
 
     /**

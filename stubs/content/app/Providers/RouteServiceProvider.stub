@@ -1,0 +1,7 @@
+// Bind {{ UCNAME }} with trashed
+        Route::bind('{{ NAME }}', function ($value) {
+            ${{ NAME }} = Auth::user()->can('viewTrashed', \App\{{ UCNAME }}::class) ? \App\{{ UCNAME }}::withTrashed() : new \App\{{ UCNAME }};
+            return ${{ NAME }}->where('id', $value)->firstOrFail();
+        });
+
+        //{{ COPY ROUTE BINDING }}

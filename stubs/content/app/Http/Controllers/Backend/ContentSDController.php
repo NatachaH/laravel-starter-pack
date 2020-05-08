@@ -149,9 +149,9 @@ class {{ UCNAME }}Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function restore(int $id)
+    public function restore({{ UCNAME }} ${{ NAME }})
     {
-        ${{ NAME }} = {{ UCNAME }}::onlyTrashed()->findOrFail($id);
+        $this->authorize('restore', ${{ NAME }});
         ${{ NAME }}->restore();
         session()->flash('toast', ['success' => notification('restored','{{ NAME }}')]);
         return back();
@@ -163,9 +163,9 @@ class {{ UCNAME }}Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function forceDelete(int $id)
+    public function forceDelete({{ UCNAME }} ${{ NAME }})
     {
-        ${{ NAME }} = {{ UCNAME }}::onlyTrashed()->findOrFail($id);
+        $this->authorize('forceDelete', ${{ NAME }});
         ${{ NAME }}->forceDelete();
         session()->flash('toast', ['success' => notification('force-deleted','{{ NAME }}')]);
         return back();
