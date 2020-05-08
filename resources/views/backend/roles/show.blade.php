@@ -6,10 +6,22 @@
 
   @include('sp::includes.page-header', ['title' => $role->name, 'route' => 'backend.roles', 'model' => $role])
 
-  <x-bs-card :title="trans_choice('backend.model.permission',2)">
-    <x-slot name="before">
-      @include('sp::backend.permissions.table', ['checked' => $role->permissions->modelKeys()])
-    </x-slot>
-  </x-bs-card>
+  <div class="row">
+
+      <div class="col-lg-8">
+
+          <x-bs-card :title="trans_choice('backend.model.permission',2)">
+            <x-slot name="before">
+              @include('sp::backend.permissions.table', ['checked' => $role->permissions->modelKeys()])
+            </x-slot>
+          </x-bs-card>
+
+      </div>
+
+      <div class="col-lg-4">
+          <x-sp-historic type="model" :items="$role->tracks" />
+      </div>
+
+  </div>
 
 @endsection

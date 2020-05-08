@@ -94,6 +94,9 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
+        $role = $role->load(['tracks' => function($q){
+          return $q->latest()->take(10);
+        }]);
         $permissions = Permission::getByModel();
         return view('sp::backend.roles.show', compact('role','permissions'));
     }
@@ -122,15 +125,18 @@ class RoleController extends Controller
         // Update the role
         $role->update($request->only(['name']));
 
+        // Check if permissions requested is empty
+        $permissionsRequested = empty($request->permissions) ? [] : $request->permissions;
+
         // Check if all permissions input are available for this user
-        Gate::authorize('set-role-permissions', [$request->permissions]);
+        Gate::authorize('set-role-permissions', [$permissionsRequested]);
 
         // Get the permissions ids that are disabled (That the user can't change!)
         $restrictions = Auth::user()->role->restrictions()->modelKeys();
         $permissionsDisabled = $role->permissions->whereIn('id',$restrictions)->modelKeys();
 
         // Merge the $request with the $permissionsDisabled
-        $permissions = array_merge($request->permissions, $permissionsDisabled);
+        $permissions = array_merge($permissionsRequested, $permissionsDisabled);
 
         // Sync the permissions
         $role->permissions()->sync($permissions);
