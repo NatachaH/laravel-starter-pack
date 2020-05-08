@@ -23,8 +23,8 @@ Route::patch('/account/edit', '\Nh\StarterPack\Http\Controllers\Backend\UserCont
 // Users
 Route::any('/users/search', '\Nh\StarterPack\Http\Controllers\Backend\UserController@search')->name('users.search');
 Route::any('/users/trashed', '\Nh\StarterPack\Http\Controllers\Backend\UserController@trashed')->name('users.trashed');
-Route::patch('/users/{id}/restore', '\Nh\StarterPack\Http\Controllers\Backend\UserController@restore')->name('users.restore');
-Route::delete('/users/{id}/forceDelete', '\Nh\StarterPack\Http\Controllers\Backend\UserController@forceDelete')->name('users.forceDelete');
+Route::patch('/users/{user}/restore', '\Nh\StarterPack\Http\Controllers\Backend\UserController@restore')->name('users.restore');
+Route::delete('/users/{user}/forceDelete', '\Nh\StarterPack\Http\Controllers\Backend\UserController@forceDelete')->name('users.forceDelete');
 Route::resource('users','\Nh\StarterPack\Http\Controllers\Backend\UserController');
 
 // Roles

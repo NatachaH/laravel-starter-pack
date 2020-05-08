@@ -139,6 +139,7 @@ class NewContentCommand extends Command
         if(file_exists($backendRoute))
         {
             $new_route = file_get_contents($stub.'/routes/route'.($softdelete ? 'SD' : '').'.stub');
+            $new_route = str_replace('{{ NAME }}', $this->name, $new_route);
             $new_route = str_replace('{{ UCNAME }}', $this->ucname, $new_route);
             $new_route = str_replace('{{ UCPNAME }}', $this->ucpname, $new_route);
             $new_route = str_replace('{{ PNAME }}', $this->pname, $new_route);

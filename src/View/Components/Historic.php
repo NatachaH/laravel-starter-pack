@@ -50,6 +50,7 @@ class Historic extends Component
             $color = 'success';
             break;
           case 'updated':
+          case 'saved':
             $color = 'info';
             break;
           case 'deleted':

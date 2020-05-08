@@ -158,7 +158,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function restore(User $use)
+    public function restore(User $user)
     {
         $this->authorize('restore', $user);
         $user->restore();
