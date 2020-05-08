@@ -74,7 +74,7 @@
                                 <td class="td-fit">{{ $item->id }}</td>
                             @endif
 
-                            @includeFirst([$folder.'.listing.detail', 'sp::includes.listing-detail'])
+                            @includeFirst([$folder.'.includes.listing-detail', 'sp::includes.listing-detail'])
 
                             @if($showDates)
                                 <td class="td-fit d-none d-lg-table-cell">{{ $item->created_at->format('d.m.Y H:i') }}</td>
