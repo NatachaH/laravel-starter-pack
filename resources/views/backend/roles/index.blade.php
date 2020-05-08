@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <x-sp-search key="roles" action="backend.roles.search"/>
+  <x-sp-search key="roles" route="backend.roles"/>
 
   <x-sp-listing :title="trans_choice('backend.model.role',2)" :items="$roles" header="name" model="Nh\AccessControl\Role" route="backend.roles" folder="sp::backend.roles" show-id :show-dates="Auth::user()->hasRoles('superadmin')" />
 
