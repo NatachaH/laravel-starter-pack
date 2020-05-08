@@ -46,11 +46,21 @@ class {{ UCNAME }}Controller extends Controller
 
         // Get an attribute in Search Class
         $keywords = $search->attribute('text');
+        $published = $search->attribute('published');
 
         // Make the search query
         // The search can be 'contains', 'start' or 'end'
         // And you can decide if all columns match
-        ${{ PNAME }} = {{ UCNAME }}::search($keywords,'contains',false)->paginate();
+        ${{ PNAME }} = {{ UCNAME }}::search($keywords,'contains',false);
+
+        // Advanced search query
+        if($published)
+        {
+            ${{ PNAME }} = ${{ PNAME }}->where('published',1);
+        }
+
+        // Return the paginate result
+        ${{ PNAME }} = ${{ PNAME }}->paginate();
 
         // Display the result
         return view('backend.{{ PNAME }}.index', compact('{{ PNAME }}'));

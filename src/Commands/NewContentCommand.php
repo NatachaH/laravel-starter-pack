@@ -124,8 +124,8 @@ class NewContentCommand extends Command
             $this->copy_file($sp_view,$new_view);
         }
 
-        $subviews = glob($stub.'resources/views/backend/contents/listing/*.php', GLOB_BRACE);
-        $folder = resource_path('views/backend/'.$this->pname.'/listing');
+        $subviews = glob($stub.'resources/views/backend/contents/includes/*.php', GLOB_BRACE);
+        $folder = resource_path('views/backend/'.$this->pname.'/includes');
         $this->create_folder($folder);
 
         foreach($subviews as $view) {

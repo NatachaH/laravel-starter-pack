@@ -3,7 +3,7 @@
 namespace Nh\StarterPack\View\Components;
 
 use Illuminate\View\Component;
-use Route;
+use Illuminate\Support\Arr;
 
 class Search extends Component
 {
@@ -51,6 +51,20 @@ class Search extends Component
      */
     public $search;
 
+    /**
+     * Check if the advanced search bloc is open.
+     * @return boolean
+     */
+    public function isAdvancedOpen()
+    {
+        if(!is_null($this->search))
+        {
+            $attributes = Arr::except($this->search->attributes, ['text']);
+            return count($attributes) > 0 ? true : false;
+        } else {
+            return false;
+        }
+    }
 
     /**
      * Create a new component instance.

@@ -19,7 +19,7 @@
     </div>
 
     @if($isAdvanced)
-      <div class="collapse collapse-search {{ !is_null($search) && $search->attributes->length > 1 ? 'show' : '' }}" id="{{ $collapseId }}">
+      <div class="collapse collapse-search {{ $isAdvancedOpen() ? 'show' : '' }}" id="{{ $collapseId }}">
         <div class="collapse-search-body">
           {!! $slot !!}
           @includeIf($folder.'.includes.advanced-search')
