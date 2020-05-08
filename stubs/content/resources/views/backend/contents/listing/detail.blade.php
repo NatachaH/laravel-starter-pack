@@ -1,5 +1,5 @@
 <td><b>{{ $item->title }}</b></td>
-<td>
+<td class="td-fit">
   @if($item->published)
     <span class="badge bg-success text-white"><i class="icon-checkmark"></i> @lang('sp::field.published')</span>
   @else
