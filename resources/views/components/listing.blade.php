@@ -115,7 +115,9 @@
           </div>
 
         @else
-            <div class="alert alert-info m-3">@lang('sp::listing.no-result')</div>
+          <x-bs-alert class="m-3" color="info">
+            @lang('sp::listing.no-result')
+          </x-bs-alert>
         @endif
 
     </div>

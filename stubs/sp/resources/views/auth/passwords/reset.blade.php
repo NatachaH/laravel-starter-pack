@@ -11,9 +11,9 @@
 
       @if (session('status'))
 
-          <div class="alert alert-success mb-0" role="alert">
-              {{ session('status') }}
-          </div>
+          <x-bs-alert class="mb-0" color="success">
+            {{ session('status') }}
+          </x-bs-alert>
 
       @else
 
