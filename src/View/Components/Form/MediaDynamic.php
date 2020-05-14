@@ -164,7 +164,6 @@ class MediaDynamic extends Component
       $this->key              = $key.'_'.$type;
       $this->sortable         = $sortable;
       $this->items            = $items;
-      $this->help             = $this->defineHelp();
       $this->btnAdd           = empty($btnAdd) ? config('dynamic.buttons.add') : $btnAdd;
       $this->btnRemove        = empty($btnRemove) ? config('dynamic.buttons.remove') : $btnRemove;
       $this->btnDelete        = empty($btnDelete) ? config('dynamic.buttons.delete') : $btnDelete;
@@ -173,6 +172,7 @@ class MediaDynamic extends Component
       $this->formats          = $formats;
       $this->hasName          = $hasName;
       $this->hasDownload      = $hasDownload;
+      $this->help             = $this->defineHelp();
   }
 
   /**
