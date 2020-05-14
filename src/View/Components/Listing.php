@@ -98,7 +98,7 @@ class Listing extends Component
      */
     public function isSortable()
     {
-        return in_array('Nh\Sortable\Trait\Sortable', class_uses($this->model));
+        return in_array('Nh\Sortable\Traits\Sortable', class_uses($this->model));
     }
 
     /**
