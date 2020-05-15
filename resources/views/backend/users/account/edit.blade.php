@@ -1,6 +1,6 @@
 @extends('sp::layouts.backend')
 
-@section('title', __('backend.account.edit'))
+@section('title', mainbar('account',null,'edit'))
 
 @section('content')
 
