@@ -19,6 +19,8 @@ return [
     'created-at'    => 'Created at',
     'updated-at'    => 'Updated at',
     'deleted-at'    => 'Deleted at',
+    'start-at'      => 'Startat',
+    'end-at'        => 'End at',
     'actions'       => 'Actions',
     'information'   => 'Information',
     'role'          => 'Role',
@@ -26,6 +28,12 @@ return [
     'filename'      => 'Filename',
     'file'          => 'File',
     'published'     => 'Published',
-    'not-published' => 'Not published'
+    'not-published' => 'Not published',
+    'pictures'      => 'Pictures',
+    'dates'         => 'Dates',
+    'date'          => 'Date',
+    'link'          => 'Link',
+    'type'          => 'Type'
+
 
 ];
