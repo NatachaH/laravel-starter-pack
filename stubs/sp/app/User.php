@@ -65,13 +65,13 @@ class User extends Authenticatable
      * Encrypt the password when is set.
      * @param string $password
      */
-    public function setPasswordAttribute($password)
-    {
-      if ( $password !== null & $password !== "" )
-      {
-          $this->attributes['password'] = bcrypt($password);
-      }
-    }
+     public function setPasswordAttribute($password)
+     {
+       if ($password !== null & $password !== "")
+       {
+           $this->attributes['password'] = Str::startsWith($password, '$2y$') ? $password : bcrypt($password);
+       }
+     }
 
     /**
      * Get the tracks record associated with the user.
