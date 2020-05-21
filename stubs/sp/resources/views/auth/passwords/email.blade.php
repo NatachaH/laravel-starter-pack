@@ -7,7 +7,13 @@
   <form method="POST" action="{{ route('password.email') }}" class="needs-validation" novalidate>
       @csrf
 
-      @if (session('status'))
+      @if(is_null(config('mail.from.address')))
+
+          <x-bs-alert class="mb-0" color="warning">
+            @lang('passwords.no-reset', ['name' => config('backend.webmaster.name'), 'email' => config('backend.webmaster.email')])
+          </x-bs-alert>
+
+      @elseif (session('status'))
 
           <x-bs-alert class="mb-0" color="success">
             {{ session('status') }}
