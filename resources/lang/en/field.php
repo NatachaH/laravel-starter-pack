@@ -20,6 +20,7 @@ return [
     'type'          => 'Type',
     'filename'      => 'Filename',
     'file'          => 'File',
+    'icon'          => 'Icon',
 
     'dates'         => 'Dates',
     'date'          => 'Date',
@@ -34,9 +35,10 @@ return [
     'role'          => 'Role',
     'media'         => 'Media',
     'pictures'      => 'Pictures',
+    'documents'     => 'Documents',
 
     'published'     => 'Published',
     'not-published' => 'Not published',
-    
+
 
 ];

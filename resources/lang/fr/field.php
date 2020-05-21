@@ -20,6 +20,7 @@ return [
     'type'          => 'Type',
     'filename'      => 'Nom du fichier',
     'file'          => 'Fichier',
+    'icon'          => 'Icône',
 
     'dates'         => 'Dates',
     'date'          => 'Date',
@@ -34,6 +35,7 @@ return [
     'role'          => 'Rôle',
     'media'         => 'Médias',
     'pictures'      => 'Photos',
+    'documents'     => 'Documents',
 
     'published'     => 'Publié',
     'not-published' => 'Non publié',
