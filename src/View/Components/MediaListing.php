@@ -22,6 +22,13 @@ class MediaListing extends Component
     public $showDates;
 
     /**
+     * Enable the preview button.
+     *
+     * @var boolean
+     */
+    public $hasPreview;
+
+    /**
      * Enable the download button.
      *
      * @var boolean
@@ -40,10 +47,11 @@ class MediaListing extends Component
      *
      * @return void
      */
-    public function __construct($items, $showDates = false, $hasDownload = true, $sortable = false)
+    public function __construct($items, $showDates = false, $hasPreview = false, $hasDownload = false, $sortable = false)
     {
         $this->items        = $items;
         $this->showDates    = $showDates;
+        $this->hasPreview   = $hasPreview;
         $this->hasDownload  = $hasDownload;
         $this->sortable     = $sortable;
     }

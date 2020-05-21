@@ -19,6 +19,12 @@
             <small class="text-muted font-italic mr-4">{{ $item->created_at }}</small>
           @endif
 
+          @if($hasPreview && $item->thumbnail)
+            <button type="button" class="btn btn-gray rounded-circle mr-1 popover-media" data-container="body" data-toggle="popover" data-content="<img src='{{ $item->thumbnail }}' />">
+              <i class="icon-preview"></i>
+            </button>
+          @endif
+
           @if($hasDownload)
             <a href="{{ $item->url }}" class="btn btn-gray rounded-circle" download target="_blank" aria-label="@lang('sp::action.download')">
               <i class="icon-download"></i>
