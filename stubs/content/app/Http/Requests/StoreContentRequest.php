@@ -26,7 +26,20 @@ class Store{{ UCNAME }}Request extends FormRequest
     {
         $isNew = $this->getMethod() == 'POST';
         return [
-          'title' => ['required']
+          'title' => ['required'],
+          'media_to_add.*.file' => ['file','mimes:jpeg,png']
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+          'media_to_add.*.file' => strtolower(__('sp::field.file'))
         ];
     }
 }
