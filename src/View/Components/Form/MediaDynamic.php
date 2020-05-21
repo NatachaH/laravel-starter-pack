@@ -39,6 +39,12 @@ class MediaDynamic extends Component
   public $key;
 
   /**
+   * Type of the dynamic
+   * @var string
+   */
+  public $type;
+
+  /**
    * Is the list sortable ?
    * If true display a button to drag&drop + an input with the position.
    * @var boolean
@@ -98,13 +104,6 @@ class MediaDynamic extends Component
    */
   public $btnSortable;
 
-
-  /**
-   * Media type
-   * @var string
-   */
-  public $type;
-
   /**
    * Media available formats.
    * @var string
@@ -116,7 +115,6 @@ class MediaDynamic extends Component
    * @var boolean
    */
   public $hasName;
-
 
   /**
    * Are the Media can be download.
@@ -164,20 +162,20 @@ class MediaDynamic extends Component
    *
    * @return void
    */
-  public function __construct($legend, $template = null, $min = null, $max = null, $name = 'media', $key = 'KEY', $sortable = false, $items = [], $help = '', $btnAdd = [], $btnRemove = [], $btnDelete = [], $btnSortable = [], $type = 'media', $formats = null, $hasName = false, $hasDownload = false)
+  public function __construct($legend, $template = null, $min = null, $max = null, $name = 'media', $type = 'media', $sortable = false, $items = [], $help = '', $btnAdd = [], $btnRemove = [], $btnDelete = [], $btnSortable = [], $formats = null, $hasName = false, $hasDownload = false)
   {
       $this->legend           = $legend;
       $this->min              = $min;
       $this->max              = $max;
       $this->name             = $name;
-      $this->key              = $key.'_'.$type;
+      $this->type             = $type;
+      $this->key              = 'KEY_'.$type;
       $this->sortable         = $sortable;
       $this->items            = $items;
       $this->btnAdd           = empty($btnAdd) ? config('dynamic.buttons.add') : $btnAdd;
       $this->btnRemove        = empty($btnRemove) ? config('dynamic.buttons.remove') : $btnRemove;
       $this->btnDelete        = empty($btnDelete) ? config('dynamic.buttons.delete') : $btnDelete;
       $this->btnSortable      = empty($btnSortable) ? config('dynamic.buttons.sortable') : $btnSortable;
-      $this->type             = $type;
       $this->formats          = $formats;
       $this->hasName          = $hasName;
       $this->hasDownload      = $hasDownload;

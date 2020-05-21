@@ -63,3 +63,7 @@ Don't forget to add the name of your model in:
 - The translation file : **notification.php**
 
 And enjoy !
+
+# Components
+
+...
