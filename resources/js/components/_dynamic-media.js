@@ -8,28 +8,34 @@
 |
 */
 
-// Init the Dynamic to each .dynamic-media and init the bsCustomFileInput for file input
+// Init the Bootstrap File Input
+bsCustomFileInput.init();
+
+// Init the Dynamic to each .dynamic-media
 var dynamicMedia = document.querySelectorAll('.dynamic-media');
 Array.prototype.forEach.call(dynamicMedia, function(el, i) {
+
+    // Init the dynamic
     new Dynamic(el, {
       addCallback: function(){
         bsCustomFileInput.init();
       }
     });
-});
 
-// Init the sortable for the .dynamic-list in .dynamic-media
-var sortableDynamic = document.querySelector('.dynamic-media .dynamic-list');
-if(sortableDynamic)
-{
-  SortableJs.create(sortableDynamic, {
-     animation: 150,
-     handle: '.drag',
-     onEnd: function (evt) {
-       Array.prototype.forEach.call(sortableDynamic.children, function(el, i) {
-         var input = el.querySelector('.dynamic-position');
-         input.value = i+1;
-       });
-     }
-  });
-}
+    // Init the sortable on multiple list
+    var sortableDynamic = el.querySelector('.dynamic-list');
+    if(sortableDynamic)
+    {
+      SortableJs.create(sortableDynamic, {
+         animation: 150,
+         handle: '.drag',
+         onEnd: function (evt) {
+           Array.prototype.forEach.call(sortableDynamic.children, function(el, i) {
+             var input = el.querySelector('.dynamic-position');
+             input.value = i+1;
+           });
+         }
+      });
+    }
+
+});
