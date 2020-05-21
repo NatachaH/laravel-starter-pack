@@ -117,6 +117,12 @@ class MediaDynamic extends Component
   public $hasName;
 
   /**
+   * Are the Media can be previewd.
+   * @var boolean
+   */
+  public $hasPreview;
+
+  /**
    * Are the Media can be download.
    * @var boolean
    */
@@ -162,7 +168,7 @@ class MediaDynamic extends Component
    *
    * @return void
    */
-  public function __construct($legend, $template = null, $min = null, $max = null, $name = 'media', $type = 'media', $sortable = false, $items = [], $help = '', $btnAdd = [], $btnRemove = [], $btnDelete = [], $btnSortable = [], $formats = null, $hasName = false, $hasDownload = false)
+  public function __construct($legend, $template = null, $min = null, $max = null, $name = 'media', $type = 'media', $sortable = false, $items = [], $help = '', $btnAdd = [], $btnRemove = [], $btnDelete = [], $btnSortable = [], $formats = null, $hasName = false, $hasPreview = false, $hasDownload = false)
   {
       $this->legend           = $legend;
       $this->min              = $min;
@@ -178,6 +184,7 @@ class MediaDynamic extends Component
       $this->btnSortable      = empty($btnSortable) ? config('dynamic.buttons.sortable') : $btnSortable;
       $this->formats          = $formats;
       $this->hasName          = $hasName;
+      $this->hasPreview       = $hasPreview;
       $this->hasDownload      = $hasDownload;
       $this->help             = $this->defineHelp();
   }
