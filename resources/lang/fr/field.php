@@ -16,23 +16,26 @@ return [
     'title'         => 'Titre',
     'subtitle'      => 'Sous-titre',
     'description'   => 'Description',
+    'link'          => 'Lien',
+    'type'          => 'Type',
+    'filename'      => 'Nom du fichier',
+    'file'          => 'Fichier',
+
+    'dates'         => 'Dates',
+    'date'          => 'Date',
     'created-at'    => 'Créé le',
     'updated-at'    => 'Modifié le',
     'deleted-at'    => 'Supprimé le',
     'start-at'      => 'Début',
     'end-at'        => 'Fin',
+
     'actions'       => 'Actions',
     'information'   => 'Informations',
     'role'          => 'Rôle',
     'media'         => 'Médias',
-    'filename'      => 'Nom du fichier',
-    'file'          => 'Fichier',
+    'pictures'      => 'Photos',
+
     'published'     => 'Publié',
     'not-published' => 'Non publié',
-    'pictures'      => 'Photos',
-    'dates'         => 'Dates',
-    'date'          => 'Date',
-    'link'          => 'Lien',
-    'type'          => 'Type'
 
 ];

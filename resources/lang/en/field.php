@@ -16,24 +16,27 @@ return [
     'title'         => 'Title',
     'subtitle'      => 'Subtitle',
     'description'   => 'Description',
+    'link'          => 'Link',
+    'type'          => 'Type',
+    'filename'      => 'Filename',
+    'file'          => 'File',
+
+    'dates'         => 'Dates',
+    'date'          => 'Date',
     'created-at'    => 'Created at',
     'updated-at'    => 'Updated at',
     'deleted-at'    => 'Deleted at',
-    'start-at'      => 'Startat',
+    'start-at'      => 'Start at',
     'end-at'        => 'End at',
+
     'actions'       => 'Actions',
     'information'   => 'Information',
     'role'          => 'Role',
     'media'         => 'Media',
-    'filename'      => 'Filename',
-    'file'          => 'File',
+    'pictures'      => 'Pictures',
+
     'published'     => 'Published',
     'not-published' => 'Not published',
-    'pictures'      => 'Pictures',
-    'dates'         => 'Dates',
-    'date'          => 'Date',
-    'link'          => 'Link',
-    'type'          => 'Type'
-
+    
 
 ];
