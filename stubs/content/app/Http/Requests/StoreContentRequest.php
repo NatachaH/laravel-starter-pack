@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 class Store{{ UCNAME }}Request extends FormRequest
 {
@@ -39,7 +40,7 @@ class Store{{ UCNAME }}Request extends FormRequest
     public function attributes()
     {
         return [
-          'media_to_add.*.file' => strtolower(__('sp::field.file'))
+          'media_to_add.*.file' => Str::lower(__('sp::field.file'))
         ];
     }
 }
