@@ -94,7 +94,7 @@ class History extends Component
      *
      * @return void
      */
-    public function __construct($title = null, $type = 'global', $items = null, $value = '')
+    public function __construct($title = null, $type = 'global', $items = null, $value = null)
     {
         $this->type       = in_array($type,['global','model','user']) ? $type : 'global';
         $this->items      = $items;

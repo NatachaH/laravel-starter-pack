@@ -142,7 +142,7 @@ class Listing extends Component
      *
      * @return void
      */
-    public function __construct($title, $model, $route, $header, $items, $showId = false, $showDates = false, $folder = '')
+    public function __construct($title, $model, $route, $header, $items, $showId = false, $showDates = false, $folder = null)
     {
         $this->title      = $title;
         $this->model      = $model;

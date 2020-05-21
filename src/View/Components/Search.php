@@ -71,7 +71,7 @@ class Search extends Component
      *
      * @return void
      */
-    public function __construct($key, $route, $folder = '', $isAdvanced = false, $collapseId = 'collapseSearch')
+    public function __construct($key, $route, $folder = null, $isAdvanced = false, $collapseId = 'collapseSearch')
     {
         $this->key            = $key;
         $this->route          = $route;
