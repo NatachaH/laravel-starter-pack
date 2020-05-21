@@ -51,7 +51,7 @@ class {{ UCNAME }}Controller extends Controller
         // Make the search query
         // The search can be 'contains', 'start' or 'end'
         // And you can decide if all columns match
-        ${{ PNAME }} = ${{ PNAME }}::search($keywords,'contains',false);
+        ${{ PNAME }} = {{ UCNAME }}::search($keywords,'contains',false);
 
         // Advanced search query
         if($published)
