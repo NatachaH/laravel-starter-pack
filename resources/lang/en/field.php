@@ -21,6 +21,9 @@ return [
     'filename'      => 'Filename',
     'file'          => 'File',
     'icon'          => 'Icon',
+    'price'         => 'Price',
+    'phone'         => 'Phone',
+    'address'       => 'Address',
 
     'dates'         => 'Dates',
     'date'          => 'Date',
@@ -29,6 +32,13 @@ return [
     'deleted-at'    => 'Deleted at',
     'start-at'      => 'Start at',
     'end-at'        => 'End at',
+    'day'           => 'Day',
+    'week'          => 'Week',
+    'month'         => 'Month',
+    'year'          => 'Year',
+    'hour'          => 'Hour',
+    'minute'        => 'Minute',
+    'second'        => 'Second',
 
     'actions'       => 'Actions',
     'information'   => 'Information',

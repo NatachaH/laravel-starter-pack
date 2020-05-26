@@ -31,6 +31,7 @@ return [
     'cancel'        => 'Annuler',
     'confirm'       => 'Confirmer',
     'choose-file'   => 'Choisir un fichier',
-    'Browse'        => 'Parcourir'
+    'browse'        => 'Parcourir',
+    'send'          => 'Envoyer'
 
 ];

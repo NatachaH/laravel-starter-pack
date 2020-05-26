@@ -21,6 +21,9 @@ return [
     'filename'      => 'Nom du fichier',
     'file'          => 'Fichier',
     'icon'          => 'Icône',
+    'price'         => 'Prix',
+    'phone'         => 'Téléphone',
+    'address'       => 'Adresse',
 
     'dates'         => 'Dates',
     'date'          => 'Date',
@@ -29,6 +32,13 @@ return [
     'deleted-at'    => 'Supprimé le',
     'start-at'      => 'Début',
     'end-at'        => 'Fin',
+    'day'           => 'Jour',
+    'week'          => 'Semaine',
+    'month'         => 'Mois',
+    'year'          => 'Année',
+    'hour'          => 'Heure',
+    'minute'        => 'Minute',
+    'second'        => 'Seconde',
 
     'actions'       => 'Actions',
     'information'   => 'Informations',
