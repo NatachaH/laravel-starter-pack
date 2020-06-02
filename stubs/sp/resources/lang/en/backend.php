@@ -36,4 +36,19 @@ return [
       ]
     ],
 
+    // Custom Fields
+    'field' => [
+      // 'myfield' => 'My field'
+    ]
+
+    // Custom help
+    'help' => [
+      // 'myhelp' => 'My help'
+    ],
+
+    // Types of models (exemple for pages.)
+    'type' => [
+      // 'page-1' => 'Page one'
+    ]
+
 ];
