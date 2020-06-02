@@ -46,7 +46,9 @@
                         @endif
 
                         @foreach ($header as $value)
-                            <th>@lang('sp::field.'.$value)</th>
+                            <th>
+                              {{ \Lang::has('sp::field.'.$value) ? __('sp::field.'.$value) : __('backend.field.'.$value) }}
+                            </th>
                         @endforeach
 
                         @if($showDates)
