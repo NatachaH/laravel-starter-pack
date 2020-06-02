@@ -14,7 +14,10 @@
         <div class="modal-body text-center">
           <p>{!! $message !!}</p>
           <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">@lang('sp::action.cancel')</button>
-          <button type="submit" class="btn btn-{{ $color }}">@lang('sp::action.confirm')</button>
+          <button type="submit" class="btn btn-{{ $color }}">
+            <x-bs-loading class="d-none" type="border" size="sm" color="light"/>
+            @lang('sp::action.confirm')
+          </button>
         </div>
       </form>
 
