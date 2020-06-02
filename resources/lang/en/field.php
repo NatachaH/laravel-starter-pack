@@ -24,6 +24,9 @@ return [
     'price'         => 'Price',
     'phone'         => 'Phone',
     'address'       => 'Address',
+    'zip'           => 'ZIP code',
+    'city'          => 'City',
+    'country'       => 'Country',
 
     'dates'         => 'Dates',
     'date'          => 'Date',
@@ -49,6 +52,9 @@ return [
 
     'published'     => 'Published',
     'not-published' => 'Not published',
+
+    'yes'           => 'Yes',
+    'no'            => 'No',
 
 
 ];
