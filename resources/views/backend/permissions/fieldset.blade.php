@@ -17,7 +17,7 @@
           <tbody>
             @foreach ($permissions as $key => $permission)
               <tr>
-                <td class="td-fit"><b>{{ \Lang::has('permission.'.$key) ? trans_choice('permission.'.$key,1) : $key  }}</b></td>
+                <td class="td-fit"><b>{{ \Lang::has('permission.'.$key) ? __('permission.'.$key) : trans_choice('backend.model.'.$key,1) }}</b></td>
                 <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','view')])</td>
                 <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','create')])</td>
                 <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','update')])</td>

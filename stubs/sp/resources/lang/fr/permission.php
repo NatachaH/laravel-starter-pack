@@ -11,7 +11,6 @@ return [
     |
     */
 
-    'user'  => 'Utilisateur',
-    'role'  => 'Rôle',
+    //'mypermission'  => 'My custom permission',
 
 ];

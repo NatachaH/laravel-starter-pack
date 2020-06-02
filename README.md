@@ -59,7 +59,6 @@ php artisan migrate
 Don't forget to add the name of your model in:
 
 - The translation file : **backend.php**
-- The translation file : **permission.php**
 - The translation file : **notification.php**
 
 And enjoy !
