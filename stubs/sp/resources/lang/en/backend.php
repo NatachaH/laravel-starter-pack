@@ -39,7 +39,7 @@ return [
     // Custom Fields
     'field' => [
       // 'myfield' => 'My field'
-    ]
+    ],
 
     // Custom help
     'help' => [
