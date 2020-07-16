@@ -64,7 +64,7 @@
                     </tr>
                 </thead>
 
-                <tbody @if($isSortable()) class="sortable" data-sortable-model="{{ $model }}" @endif >
+                <tbody @if($isSortable()) class="sortable" data-sortable-model="{{ $model }}" data-sortable-order="{{ $sortableOrder }}" @endif >
                     @foreach ($items as $item)
                         <tr data-id="{{ $item->id }}">
 

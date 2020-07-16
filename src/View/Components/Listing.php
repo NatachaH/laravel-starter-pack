@@ -75,6 +75,13 @@ class Listing extends Component
     public $total;
 
     /**
+     * The sortable order
+     *
+     * @var string
+     */
+    public $sortableOrder;
+
+    /**
      * Check if the items are paginate.
      * @return boolean
      */
@@ -142,7 +149,7 @@ class Listing extends Component
      *
      * @return void
      */
-    public function __construct($title, $model, $route, $header, $items, $showId = false, $showDates = false, $folder = null)
+    public function __construct($title, $model, $route, $header, $items, $showId = false, $showDates = false, $folder = null, $sortableOrder = 'asc')
     {
         $this->title      = $title;
         $this->model      = $model;
@@ -153,6 +160,7 @@ class Listing extends Component
         $this->showDates  = $showDates;
         $this->folder     = empty($folder) ? $route : $folder;
         $this->total      = $this->defineTotal();
+        $this->sortableOrder  = $sortableOrder;
     }
 
     /**
