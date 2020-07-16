@@ -1,6 +1,6 @@
 <?php
 
-namespace Nh\StarterPack\Commands;
+namespace Nh\StarterPack\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
