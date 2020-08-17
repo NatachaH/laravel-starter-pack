@@ -79,7 +79,7 @@ class NewContentCommand extends Command
         $softdelete = $this->confirm('Is the model using SoftDeletes ? [yes|no]', false);
 
         // Copy the files
-        $stub = __DIR__.'/../../stubs/content/';
+        $stub = __DIR__.'/../../../stubs/content/';
 
         // Controller
         $this->create_folder(app_path('Http/Controllers/Backend'));
