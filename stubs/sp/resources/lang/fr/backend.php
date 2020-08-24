@@ -30,6 +30,7 @@ return [
 
     // Mainbar sections
     'mainbar' => [
+      'website' => 'Site internet',
       'account' => [
         'preview' => 'Mon compte',
         'edit'    => 'Modifier mon profil'

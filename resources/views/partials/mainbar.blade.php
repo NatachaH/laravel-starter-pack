@@ -8,6 +8,10 @@
     @yield('title')
   </h1>
 
+  <a class="btn " href="{{ url('/') }}" target="_blank" >
+     <i class="icon-web"></i> <span>@lang('backend.mainbar.website')</span>
+  </a>
+
   <div class="dropdown" id="accountDropdown">
     <button class="btn dropdown-toggle" type="button" id="accountDropdownBtn" data-toggle="dropdown" aria-expanded="false">
        <i class="icon-user"></i> <span>{{ Auth::user() ? Auth::user()->name : 'Username' }}</span>

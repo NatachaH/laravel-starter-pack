@@ -21,12 +21,18 @@
 
     // All the button are full height
     .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100%;
         border: none;
         background: none;
         color: $mainbar-color;
         padding: 0 $btn-spacer-x;
         @include border-radius(0);
+        > i {
+            margin-right: $icon-spacer-x;
+        }
         &:hover {
           background: rgba(0,0,0,0.3);
         }
@@ -39,10 +45,6 @@
 
         // Dropdown button
         > .dropdown-toggle {
-
-            > i {
-                margin-right: $icon-spacer-x;
-            }
 
             // Custom carret icon
             &:after {
@@ -102,9 +104,6 @@
 
         .btn {
             padding: 0 $btn-spacer-x * 0.75;
-        }
-
-        > .dropdown > .dropdown-toggle {
 
             > i {
               margin: 0;
@@ -112,9 +111,8 @@
             }
 
             > span, &:after {
-              display: none;
+              display: none !important;
             }
-
         }
 
         #openSidebarBtn {
