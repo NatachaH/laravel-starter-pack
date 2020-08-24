@@ -137,24 +137,6 @@ Get a listing of the media from the package nh/mediable.
 <x-sp-media-listing :items="$medias" show-dates has-preview has-download sortable/>
 ```
 
-## Modal Confirm
-
-Get a modal who send a confirmation form. Exemple for delete confirmation.
-
-| Attribute | Type | Default |
-| --------- | ---- | ------- |
-| color     | string | primary |         
-| icon      | string | icon-rocket |   
-| name      | string | confirmModal |   
-| title     | string |       |   
-| message   | string |       |   
-| action    | string | #     |   
-| method    | string | POST  |   
-
-```
-<x-sp-modal-confirm color="danger" icon="icon-trash" name="deleteConfirm" title="Delete something" message="Are you sure ?" method="DELETE"/>
-```
-
 ## Search
 
 Display a search bar using the package nh/searchable.

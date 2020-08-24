@@ -5,7 +5,7 @@
     "type": "library",
     "require": {
       "laravel/ui": "^2.0",
-      "nh/bs-component": "^1.1.2",
+      "nh/bs-component": "^1.2.0",
       "nh/access-control": "^1.2.2",
       "nh/mediable": "^1.4.1",
       "nh/sortable": "^1.0.4",

@@ -51,9 +51,17 @@
       @csrf
   </form>
 
-  <x-sp-modal-confirm color="danger" icon="icon-trash" name="deleteConfirm" :title="__('sp::modal.delete.title')" :message="__('sp::modal.delete.message')" method="DELETE"/>
-  <x-sp-modal-confirm color="danger" icon="icon-trash" name="softDeleteConfirm" :title="__('sp::modal.soft-delete.title')" :message="__('sp::modal.soft-delete.message')" method="DELETE"/>
-  <x-sp-modal-confirm icon="icon-time-reverse" name="restoreConfirm" :title="__('sp::modal.restore.title')" :message="__('sp::modal.restore.message')" method="PATCH" />
+  <x-bs-modal-confirm id="deleteConfirm" color="danger" icon="icon-trash" :title="__('sp::modal.delete.title')" method="DELETE" centered is-static>
+    <p>@lang('sp::modal.delete.message')</p>
+  </x-bs-modal-confirm>
+
+  <x-bs-modal-confirm id="softDeleteConfirm"  color="danger" icon="icon-trash" :title="__('sp::modal.soft-delete.title')" method="DELETE" centered is-static>
+    <p>@lang('sp::modal.soft-delete.message')</p>
+  </x-bs-modal-confirm>
+
+  <x-bs-modal-confirm id="restoreConfirm"  icon="icon-time-reverse" :title="__('sp::modal.restore.title')" method="PATCH" centered is-static>
+    <p>@lang('sp::modal.restore.message')</p>
+  </x-bs-modal-confirm>
 
 </body>
 </html>
