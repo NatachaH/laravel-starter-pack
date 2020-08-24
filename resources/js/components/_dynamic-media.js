@@ -13,7 +13,7 @@ bsCustomFileInput.init();
 
 // Init the Dynamic to each .dynamic-media
 var dynamicMedia = document.querySelectorAll('.dynamic-media');
-Array.prototype.forEach.call(dynamicMedia, function(el, i) {
+dynamicMedia.forEach((el, i) => {
 
     // Init the dynamic
     new Dynamic(el, {
@@ -30,7 +30,7 @@ Array.prototype.forEach.call(dynamicMedia, function(el, i) {
          animation: 150,
          handle: '.drag',
          onEnd: function (evt) {
-           Array.prototype.forEach.call(sortableDynamic.children, function(el, i) {
+           sortableDynamic.children.forEach((el, i) => {
              var input = el.querySelector('.dynamic-position');
              input.value = i+1;
            });
