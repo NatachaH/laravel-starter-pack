@@ -43,7 +43,7 @@ class NewUserCommand extends Command
     {
 
         // Defines
-        $name = $this->anticipate('What is the name ?', ['natacha']);
+        $name = $this->anticipate('What is the name ?', ['Natacha']);
         $email = $this->anticipate('What is the email ?', ['info@natachaherth.ch']);
         $password = $this->secret('What is the password?');
 
