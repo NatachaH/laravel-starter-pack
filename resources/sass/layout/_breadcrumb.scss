@@ -1,0 +1,19 @@
+/*
+|--------------------------------------------------------------------------
+| SP - Backend - Layout - Breadcrumb - Design
+|--------------------------------------------------------------------------
+*/
+
+#breadcrumb {
+
+  .breadcrumb-item:not(.active) {
+    color: $secondary;
+    > a {
+      color: $secondary;
+      &:hover {
+        color:$breadcrumb-active-color;
+      }
+    }
+  }
+
+}

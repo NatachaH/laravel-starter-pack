@@ -1,3 +1,3 @@
 @if($hasBreadcrumb)
-  <x-bs-breadcrumb :items="$crumbs"/>
+  <x-bs-breadcrumb id="breadcrumb" :items="$crumbs"/>
 @endif
