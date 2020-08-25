@@ -16,4 +16,12 @@
     }
   }
 
+  @include media-breakpoint-down(md) {
+
+    .breadcrumb {
+        padding: $breadcrumb-padding-y $breadcrumb-padding-x * 0.75;
+    }
+
+  }
+
 }
