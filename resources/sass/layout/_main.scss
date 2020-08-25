@@ -8,32 +8,67 @@ html, body {
     height: 100%;
 }
 
-main {
-    padding: 0 !important;
-    margin-left: auto;
+#backend {
 
-    > .main-body {
-        padding: $main-spacer-y $main-spacer-x;
+  main {
+      padding: 0 !important;
+      margin-left: auto;
+      @include make-col(12);
+      @include transition(all 1s ease-in-out);
 
-        @include media-breakpoint-down(md) {
-          padding: $main-spacer-y $main-spacer-x/2;
+      > .main-body {
+          padding: $main-spacer-y $main-spacer-x;
+
+          @include media-breakpoint-down(md) {
+            padding: $main-spacer-y $main-spacer-x/2;
+          }
+
+          > .page-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              border-bottom: 1px solid $border-color;
+              padding-bottom: $main-spacer-y;
+              > h2 {
+                margin:0;
+              }
+          }
+
+          .card {
+              margin-top: $main-spacer-y;
+          }
+
+      }
+
+  }
+
+  // When the sidebar is open
+  &.sidebar-open {
+
+      // Change toggle icon in mainbar
+      #mainbar .toggle-sidebar:before {
+          content: $icon-cross;
+      }
+
+      // Sidebar is visible
+      #sidebar {
+          width:100%;
+          opacity: 1;
+          transform: translateX(0);
+      }
+
+      @include media-breakpoint-up(md) {
+        main {
+          @include make-col(8);
         }
+      }
 
-        > .page-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid $border-color;
-            padding-bottom: $main-spacer-y;
-            > h2 {
-              margin:0;
-            }
+      @include media-breakpoint-up(lg) {
+        main {
+          @include make-col(10);
         }
+      }
 
-        .card {
-            margin-top: $main-spacer-y;
-        }
-
-    }
+  }
 
 }

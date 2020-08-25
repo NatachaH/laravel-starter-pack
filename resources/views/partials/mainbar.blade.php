@@ -1,8 +1,6 @@
 <div id="mainbar">
 
-  <button class="btn" type="button" id="openSidebarBtn" aria-label="Menu">
-    <i class="icon-menu"></i>
-  </button>
+  <button class="btn toggle-sidebar" type="button" aria-label="Menu"></button>
 
   <h1 class="text-truncate">
     @yield('title')

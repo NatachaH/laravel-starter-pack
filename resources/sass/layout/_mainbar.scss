@@ -11,10 +11,22 @@
     display: flex;
     align-items: center;
 
+    // Toggle button
+    .toggle-sidebar {
+        font-size: 1.75rem;
+        &:before {
+          display: inline-block;
+          border: none;
+          font-family: 'sp-icon';
+          content: $icon-menu;
+          line-height: 1;
+        }
+    }
+
     // Title of the page
     > h1 {
         margin: 0 auto 0 0;
-        padding: 0 $main-spacer-x;
+        padding: 0 $main-spacer-x 0 0;
         white-space: nowrap;
         color: $white;
     }
@@ -51,7 +63,7 @@
                 display: inline-block;
                 border: none;
                 font-family: 'sp-icon';
-                content: "\54";
+                content: $icon-chevron-down;
                 line-height: 1;
                 font-size: $font-size-sm;
                 vertical-align: baseline;
@@ -62,7 +74,7 @@
 
         // When dropdown is open change the carret
         &.show > .dropdown-toggle:after {
-            content: "\57";
+            content: $icon-chevron-up;
         }
 
         // Dropdown menu is under the mainbar and is the min length of the button
@@ -89,12 +101,6 @@
         background: rgba(0,0,0,0.2);
     }
 
-    // The menu button for Phone & Tablet
-    #openSidebarBtn {
-        display:none;
-        font-size: 1.75rem;
-    }
-
     // Responsive view for Phone & Tablet
     @include media-breakpoint-down(md) {
 
@@ -113,10 +119,6 @@
             > span, &:after {
               display: none !important;
             }
-        }
-
-        #openSidebarBtn {
-            display:inline-block;
         }
 
     }

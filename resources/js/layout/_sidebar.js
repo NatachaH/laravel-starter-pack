@@ -4,31 +4,27 @@
 |--------------------------------------------------------------------------
 */
 
-var openBtn = document.getElementById('openSidebarBtn');
-var closeBtn = document.getElementById('closeSidebarBtn');
-var sidebar = document.getElementById('sidebar');
+var backend = document.getElementById('backend');
+var toggles = document.querySelectorAll('.toggle-sidebar');
 
-// Open the sidebar
-openBtn.addEventListener('click',function(e){
-  toggleSidebar()
-},false);
+toggles.forEach((el, i) => {
+  el.addEventListener('click',function(e){
+    var isOpen = backend.classList.contains('sidebar-open');
+    sessionStorage.setItem('sidebar', !isOpen);
+    backend.classList.toggle('sidebar-open');
+  },false);
+});
 
-// Close the sidebar
-closeBtn.addEventListener('click',function(e){
-  toggleSidebar()
-},false);
 
-// Toggle function
-function toggleSidebar()
+// First init
+var state = sessionStorage.getItem('sidebar');
+var isMobile = document.body.clientWidth <= 992;
+
+console.log(isMobile);
+
+if(isMobile || state == 'false')
 {
-    var isOpen = sidebar.classList.contains('sidebar-open');
-
-    if(isOpen)
-    {
-      // Close the sidebar
-      sidebar.classList.remove('sidebar-open');
-    } else {
-      // Open the sidebar
-      sidebar.className += ' sidebar-open';
-    }
+  backend.classList.remove('sidebar-open');
+} else {
+  backend.classList.add('sidebar-open');
 }

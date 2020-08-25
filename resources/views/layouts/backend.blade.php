@@ -17,7 +17,7 @@
 </head>
 <body>
 
-  <div class="container-fluid">
+  <div class="container-fluid sidebar-open" id="backend">
 
       <div class="row">
 

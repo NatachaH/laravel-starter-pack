@@ -5,7 +5,8 @@
 */
 
 #sidebar {
-
+    width:0;
+    overflow: hidden;
     margin:0;
     padding:0;
     position: fixed;
@@ -18,7 +19,9 @@
     background-color: $sidebar-bg;
     border-right: 1px solid $border-color;
     outline: 0;
-    @include transition(transform 1s ease-in-out);
+    transform: translateX(-100%);
+    opacity: 0;
+    @include transition(all 1s ease-in-out);
 
     // Header of the sidebar
     > .sidebar-header {
@@ -35,11 +38,17 @@
         }
 
         // Close button for Phone & Tablet
-        #closeSidebarBtn {
+        .toggle-sidebar {
             display:none;
             font-size: 1.75rem;
             height: 100%;
-            padding: 0 $btn-spacer-x * 0.75;
+            &:before {
+              display: inline-block;
+              border: none;
+              font-family: 'sp-icon';
+              content: $icon-cross;
+              line-height: 1;
+            }
         }
 
     }
@@ -107,13 +116,7 @@
 
 
     // Responsive view for Phone & Tablet
-    @include media-breakpoint-down(md) {
-
-      left: -100%;
-
-      &.sidebar-open {
-          transform: translateX(100%);
-      }
+    @include media-breakpoint-down(sm) {
 
       > .sidebar-header {
 
@@ -126,7 +129,7 @@
               text-align: left;
           }
 
-          #closeSidebarBtn {
+          .toggle-sidebar {
               display:block;
           }
 
