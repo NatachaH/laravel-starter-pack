@@ -89,7 +89,6 @@ Get a listing of collection with pagination and default layout.
 
 | Attribute | Type | Default |
 | --------- | ---- | ------- |
-| title     | string |       |
 | model     | string |       |    
 | route     | string |       |     
 | header    | string |       |   
@@ -102,7 +101,7 @@ Get a listing of collection with pagination and default layout.
 *If there is no folder it will take the route attribute.*
 
 ```
-<x-sp-listing title="My list" model="App\Post" route="backend.posts" header="title|published" :items="$posts" show-id />
+<x-sp-listing model="App\Post" route="backend.posts" header="title|published" :items="$posts" show-id />
 ```
 
 ## Media Dynamic

@@ -2,16 +2,16 @@
 
     <div class="listing-header d-sm-flex justify-content-between">
 
-        <h2>
-          {{ $title }}
-          @if($hasSoftDelete() && !$isSearch())
-            <small>
-              <a class="{{ Route::is($route.'.index') ? 'active' : '' }}" href="{{ route($route.'.index') }}">@lang('sp::listing.all', ['nbr' => $total['all']])</a>
-              |
-              <a class="{{ Route::is($route.'.trashed') ? 'active' : '' }}" href="{{ route($route.'.trashed') }}">@lang('sp::listing.trash', ['nbr' => $total['trash']])</a>
-            </small>
+        <div class="listing-filter">
+          @if($isSearch())
+            <a class="active" href="#">@lang('sp::listing.result', ['nbr' => $items->total()])</a>
+          @else
+            <a class="{{ Route::is($route.'.index') ? 'active' : '' }}" href="{{ route($route.'.index') }}">@lang('sp::listing.all', ['nbr' => $total['all']])</a>
+            @if($hasSoftDelete())
+                | <a class="{{ Route::is($route.'.trashed') ? 'active' : '' }}" href="{{ route($route.'.trashed') }}">@lang('sp::listing.trash', ['nbr' => $total['trash']])</a>
+            @endif
           @endif
-        </h2>
+        </div>
 
         <div class="listing-action mt-3 mt-sm-0">
 

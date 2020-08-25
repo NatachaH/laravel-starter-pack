@@ -7,20 +7,21 @@
 .listing {
 
     .listing-header {
-        > h2 {
+        align-items:flex-end;
+        > .listing-filter {
+            font-family: $headings-font-family;
             margin:0;
-            > small {
+            color: $secondary;
+            font-size: 1rem;
+            font-weight: 300;
+            > a {
                 color: $secondary;
-                font-size: 1rem;
-                font-weight: 300;
-                > a {
-                    color: $secondary;
-                    &:hover,
-                    &.active {
-                      color: $body-color;
-                    }
+                &:hover,
+                &.active {
+                  color: $primary;
                 }
             }
+
         }
     }
 

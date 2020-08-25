@@ -9,12 +9,6 @@ use Route;
 
 class Listing extends Component
 {
-    /**
-     * The title of the list.
-     *
-     * @var string
-     */
-    public $title;
 
     /**
      * The array of items.
@@ -149,9 +143,8 @@ class Listing extends Component
      *
      * @return void
      */
-    public function __construct($title, $model, $route, $header, $items, $showId = false, $showDates = false, $folder = null, $sortableOrder = 'asc')
+    public function __construct($model, $route, $header, $items, $showId = false, $showDates = false, $folder = null, $sortableOrder = 'asc')
     {
-        $this->title      = $title;
         $this->model      = $model;
         $this->route      = $route;
         $this->header     = explode('|', $header);
