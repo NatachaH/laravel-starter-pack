@@ -27,6 +27,8 @@
 
               @include('sp::partials.mainbar')
 
+              @include('sp::partials.breadcrumb')
+
               <div class="main-body">
                 @yield('content')
               </div>
