@@ -2,9 +2,7 @@
 
     <div class="sidebar-header">
       <h1><span class="text-primary font-weight-normal">BACK</span><span class="text-secondary font-weight-light">END</span></h1>
-      <button class="btn" type="button" id="closeSidebarBtn">
-        <i class="icon-cross"></i>
-      </button>
+      <button class="btn toggle-sidebar" type="button" aria-label="Menu"></button>
     </div>
 
     <div class="sidebar-body flex-fill" id="menu">

@@ -21,7 +21,7 @@
     outline: 0;
     transform: translateX(-100%);
     opacity: 0;
-    @include transition(all 1s ease-in-out);
+    @include transition(all 1s ease-in-out, border 1ms);
 
     // Header of the sidebar
     > .sidebar-header {
