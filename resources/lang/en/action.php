@@ -17,6 +17,7 @@ return [
     'export'        => 'Export',
     'download'      => 'Download',
     'move'          => 'Drag & drop',
+    'index'         => 'Listing',
     'add'           => 'Add',
     'edit'          => 'Edit',
     'remove'        => 'Remove',

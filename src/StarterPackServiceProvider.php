@@ -5,6 +5,7 @@ use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiCommand;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
+use View;
 
 use Artisan;
 
@@ -56,6 +57,11 @@ class StarterPackServiceProvider extends ServiceProvider
 
       // VIEWS
       $this->loadViewsFrom(__DIR__.'/../resources/views', 'sp');
+
+      // VIEWS COMPOSERS
+      View::composer(
+          'sp::partials.breadcrumb', 'Nh\StarterPack\View\Composers\BreadcrumbComposer'
+      );
 
       // TRANSLATIONS
       $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'sp');
