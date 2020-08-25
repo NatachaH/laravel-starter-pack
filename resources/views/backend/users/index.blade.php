@@ -1,6 +1,6 @@
 @extends('sp::layouts.backend')
 
-@section('title', mainbar('settings','user', Route::is('backend.users.search') ? 'search' : ''))
+@section('title', trans_choice('backend.model.user',2))
 
 @section('content')
 

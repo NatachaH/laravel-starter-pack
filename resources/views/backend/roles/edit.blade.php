@@ -1,6 +1,6 @@
 @extends('sp::layouts.backend')
 
-@section('title', mainbar('settings','role','edit'))
+@section('title', trans_choice('backend.model.role',2))
 
 @section('content')
 

@@ -18,7 +18,6 @@
     },
     "autoload": {
         "files": [
-            "src/Helpers/MainbarHelper.php",
             "src/Helpers/NotificationHelper.php"
         ],
         "psr-4": {

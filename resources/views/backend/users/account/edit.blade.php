@@ -1,6 +1,6 @@
 @extends('sp::layouts.backend')
 
-@section('title', mainbar('account',null,'edit'))
+@section('title', trans_choice('backend.model.account',1))
 
 @section('content')
 
