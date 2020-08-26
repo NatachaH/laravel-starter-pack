@@ -17,13 +17,13 @@
 </head>
 <body>
 
-  <div class="container-fluid sidebar-open" id="backend">
+  <div class="container-fluid" id="backend">
 
       <div class="row">
 
           @include('sp::partials.sidebar')
 
-          <main class="col-lg-9 col-xl-10">
+          <main>
 
               @include('sp::partials.mainbar')
 

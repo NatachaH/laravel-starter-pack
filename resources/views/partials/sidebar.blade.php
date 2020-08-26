@@ -1,4 +1,4 @@
-<div class="col-md-4 col-lg-3 col-xl-2" id="sidebar">
+<div id="sidebar">
 
     <div class="sidebar-header">
       <h1><span class="text-primary font-weight-normal">BACK</span><span class="text-secondary font-weight-light">END</span></h1>

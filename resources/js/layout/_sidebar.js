@@ -9,9 +9,17 @@ var toggles = document.querySelectorAll('.toggle-sidebar');
 
 toggles.forEach((el, i) => {
   el.addEventListener('click',function(e){
-    var isOpen = backend.classList.contains('sidebar-open');
-    sessionStorage.setItem('sidebar', !isOpen);
-    backend.classList.toggle('sidebar-open');
+    var isOpen = backend.classList.contains('sidebar-on');
+    var state = isOpen ? 'sidebar-close' : 'sidebar-open';
+
+    backend.classList.add(state);
+
+    setTimeout(function() {
+        backend.classList.toggle('sidebar-on');
+        backend.classList.remove(state);
+        sessionStorage.setItem('sidebar', !isOpen);
+    }, 1000);
+
   },false);
 });
 
@@ -20,11 +28,9 @@ toggles.forEach((el, i) => {
 var state = sessionStorage.getItem('sidebar');
 var isMobile = document.body.clientWidth <= 992;
 
-console.log(isMobile);
-
 if(isMobile || state == 'false')
 {
-  backend.classList.remove('sidebar-open');
+  backend.classList.remove('sidebar-on');
 } else {
-  backend.classList.add('sidebar-open');
+  backend.classList.add('sidebar-on');
 }

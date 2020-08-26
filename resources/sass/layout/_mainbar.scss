@@ -7,7 +7,7 @@
 #mainbar {
     background: $mainbar-bg;
     color: $mainbar-color;
-    height: $mainbar-height;
+    height: $mainbar-height * .75;
     display: flex;
     align-items: center;
 
@@ -26,7 +26,7 @@
     // Title of the page
     > h1 {
         margin: 0 auto 0 0;
-        padding: 0 $main-spacer-x 0 0;
+        padding: 0 $main-spacer-x * 0.5;
         white-space: nowrap;
         color: $white;
     }
@@ -40,10 +40,14 @@
         border: none;
         background: none;
         color: $mainbar-color;
-        padding: 0 $btn-spacer-x;
+        padding: 0 $btn-spacer-x * .5;
         @include border-radius(0);
         > i {
-            margin-right: $icon-spacer-x;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        > span, &:after {
+            display: none  !important;
         }
         &:hover {
           background: rgba(0,0,0,0.3);
@@ -82,7 +86,7 @@
 
             min-width: 100%;
             transform: none !important;
-            top: $mainbar-height !important;
+            top: $mainbar-height * .75 !important;
             right: 0!important;
             left:auto!important;
             margin: 0;
@@ -96,39 +100,35 @@
 
     }
 
-    // Account button
-    #accountDropdown {
+    // Account button & toggle button
+    #accountDropdown,
+    .toggle-sidebar {
         background: rgba(0,0,0,0.2);
     }
 
-    // Responsive view for Phone & Tablet
-    @include media-breakpoint-down(md) {
+
+    // Responsive view for Phone
+    @include media-breakpoint-up(lg) {
+
+        height: $mainbar-height;
 
         > h1 {
-            padding: 0 $main-spacer-x * 0.75;
+            padding: 0 $main-spacer-x;
         }
 
         .btn {
-            padding: 0 $btn-spacer-x * 0.75;
-
-            > i {
-              margin: 0;
-              font-size: 1.5rem;
-            }
-
-            > span, &:after {
-              display: none !important;
-            }
+          padding: 0 $btn-spacer-x;
+          > i {
+              margin-right: $icon-spacer-x * 2;
+          }
+          > span, &:after {
+              display: block !important;
+          }
         }
 
-    }
-
-    // Responsive view for Phone
-    @include media-breakpoint-down(sm) {
-
-      > h1 {
-          padding: 0;
-      }
+        > .dropdown > .dropdown-menu {
+            top: $mainbar-height !important;
+        }
 
     }
 

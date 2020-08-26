@@ -5,7 +5,9 @@
 */
 
 #sidebar {
-    width:0;
+    visibility: hidden;
+    @include make-col(12);
+    width: 100%;
     overflow: hidden;
     margin:0;
     padding:0;
@@ -20,28 +22,28 @@
     border-right: 1px solid $border-color;
     outline: 0;
     transform: translateX(-100%);
-    opacity: 0;
-    @include transition(all 1s ease-in-out, border 1ms);
+
 
     // Header of the sidebar
     > .sidebar-header {
 
-        height: $sidebar-header-height;
+        height: $sidebar-header-height * .75;
         border-bottom: 1px solid $border-color;
         display: flex;
         align-items: center;
+        justify-content: space-between;
 
         // Backend title
         > h1 {
-            margin: 0 auto;
-            text-align: center;
+            margin: 0 $main-spacer-x * 0.75;
+            text-align: left;
         }
 
         // Close button for Phone & Tablet
         .toggle-sidebar {
-            display:none;
             font-size: 1.75rem;
             height: 100%;
+            padding: 0 $btn-spacer-x * 0.5;
             &:before {
               display: inline-block;
               border: none;
@@ -57,6 +59,7 @@
     > .sidebar-body {
 
         overflow-y: scroll;
+        overflow-x: hidden;
         padding: $sidebar-body-padding;
 
       // Block of links
@@ -114,26 +117,37 @@
 
     }
 
+    // Responsive view for Tablette
+    @include media-breakpoint-up(md) {
 
-    // Responsive view for Phone & Tablet
-    @include media-breakpoint-down(sm) {
+        @include make-col(4);
 
-      > .sidebar-header {
-
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-          > h1 {
-              padding-left: $main-spacer-x;
-              text-align: left;
-          }
-
-          .toggle-sidebar {
-              display:block;
-          }
-
-      }
+        > .sidebar-header {
+            > h1 {
+                margin: 0 $main-spacer-x;
+                text-align: center;
+            }
+            .toggle-sidebar {
+                display:none;
+            }
+        }
 
     }
+
+    // Responsive view for Laptop
+    @include media-breakpoint-up(lg) {
+
+        > .sidebar-header {
+          height: $sidebar-header-height;
+        }
+
+        @include make-col(3);
+    }
+
+    // Responsive view for Screen
+    @include media-breakpoint-up(xl) {
+        @include make-col(2);
+    }
+
+
 }
