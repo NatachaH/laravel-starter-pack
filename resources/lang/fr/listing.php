@@ -15,6 +15,7 @@ return [
     'total'     => 'Total',
     'all'       => 'Tous (:nbr)',
     'trash'     => 'Poubelle (:nbr)',
-    'result'    => 'Résultats de recherche (:nbr)'
+    'result'    => 'Résultats de recherche (:nbr)',
+    'by'        => 'par :name'
 
 ];

@@ -1,10 +1,8 @@
 /*
 |--------------------------------------------------------------------------
-| SP - Backend - Components
+| SP - Backend - History - Script
 |--------------------------------------------------------------------------
 */
 
-require('./_dynamic-media');
-require('./_history');
-require('./_popover-media');
-require('./_sortable');
+
+$('.history-tooltip').tooltip();

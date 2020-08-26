@@ -3,6 +3,10 @@
 namespace Nh\StarterPack\View\Components;
 
 use Illuminate\View\Component;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Route;
+use Auth;
+
 
 class History extends Component
 {
@@ -52,7 +56,6 @@ class History extends Component
     {
         switch ($event) {
           case 'created':
-          case 'restored':
             $color = 'success';
             break;
           case 'updated':
@@ -66,11 +69,76 @@ class History extends Component
           case 'soft-deleted':
             $color = 'warning';
             break;
+          case 'restored':
+            $color = 'primary';
+            break;
           default:
             $color = 'gray';
             break;
         }
         return $color;
+    }
+
+    /**
+     * Define the icon by event name.
+     *
+     * @var string
+     */
+    public function iconByEvent($event)
+    {
+        switch ($event) {
+          case 'created':
+            $icon = 'plus';
+            break;
+          case 'updated':
+          case 'saved':
+            $icon = 'pencil';
+            break;
+          case 'deleted':
+          case 'force-deleted':
+          case 'soft-deleted':
+            $icon = 'trash';
+            break;
+          case 'restored':
+            $icon = 'time-reverse';
+            break;
+          default:
+            $icon = 'rocket';
+            break;
+        }
+        return $icon;
+    }
+
+    /**
+     * Define the description by item and by type.
+     *
+     * @var string
+     */
+    public function descriptionByItem($item)
+    {
+        $model = \Lang::has('backend.model.'.$item->model) ? trans_choice('backend.model.'.$item->model,1) : Str::ucfirst($item->model);
+        $user = !is_null($item->user) ? __('sp::listing.by', ['name' => $item->username]) : null;
+        $route = 'backend.'.Str::plural($item->model).'.show';
+
+        // Defin if model exist to display a link
+        if($this->type !== 'model' && Route::has($route) && Auth::user()->can('view', $item->trackable))
+        {
+            $model = '<a href="'.route($route, $item->trackable_id).'">'.$model.'</a>';
+        }
+
+        switch ($this->type) {
+          case 'user':
+            $description = $model;
+            break;
+          case 'model':
+            $description = $user;
+            break;
+          default:
+            $description = '<b>'.$model.'</b> '.$user;
+            break;
+        }
+
+        return Str::ucfirst($description);
     }
 
     /**

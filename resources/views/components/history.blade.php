@@ -2,21 +2,12 @@
   @if($isMultiple)
     <ul class="list-group list-group-flush">
       @foreach ($items as $key => $item)
-        <li class="list-group-item">
-          <span class="badge badge-{{ $colorByEvent($item->name) }}">@lang('trackable.event.'.$item->name)</span>
-          @if($type != 'model')
-            <b>
-              @choice('backend.model.'.$item->model, 1)
-              {{ '#'.$item->trackable_id }}
-            </b>
-            {{ $item->description }}
-          @endif
-          <span class="text-muted d-block mt-1">
-            <i class="icon-clock"></i> {{ $item->time }}
-            @if($type != 'user')
-            <i class="icon-user ml-2"></i> {{ $item->username }}
-            @endif
+        <li class="list-group-item d-flex">
+          <span class="history-tooltip p-2 mr-2 badge badge-{{ $colorByEvent($item->name) }}" data-toggle="tooltip" data-placement="top" title="@lang('trackable.event.'.$item->name)">
+            <i class="icon-{{ $iconByEvent($item->name) }}" aria-label="@lang('trackable.event.'.$item->name)"></i>
           </span>
+          <span>{!! $descriptionByItem($item) !!}</span>
+          <small class="text-muted font-italic ml-auto">{{ $item->time }}</small>
         </li>
       @endforeach
     </ul>
