@@ -17,13 +17,13 @@
       </div>
 
       <div class="row">
-        <div class="col">
+        <div class="col-md-4">
           <x-sp-statistic :title="trans_choice('backend.model.user',2)" :value="$statistics['users']" icon="icon-users"/>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <x-sp-statistic title="Exemple" value="3" icon="icon-content"/>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <x-sp-statistic title="Exemple" value="300" icon="icon-rocket"/>
         </div>
       </div>
