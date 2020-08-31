@@ -21,7 +21,7 @@
               </dl>
 
               <p class="font-italic text-muted mt-3">
-                {!! $user->tracks->first()->formated !!}
+                {!! $user->tracks->last()->formated !!}
               </p>
 
             </x-bs-card>
