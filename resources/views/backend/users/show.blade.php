@@ -21,7 +21,7 @@
               </dl>
 
               <p class="font-italic text-muted mt-3">
-                @lang('trackable.track', ['event' => $user->last_track->name, 'time' => $user->last_track->time, 'by' => $user->last_track->username])
+                {!! $user->tracks->first()->formated !!}
               </p>
 
             </x-bs-card>
