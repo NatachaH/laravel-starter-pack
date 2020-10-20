@@ -5,7 +5,7 @@ namespace Nh\StarterPack\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
-use App\User;
+use App\Models\User;
 use App\Models\Role;
 
 class NewUserCommand extends Command

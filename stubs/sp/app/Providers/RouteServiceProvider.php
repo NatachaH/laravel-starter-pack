@@ -36,7 +36,7 @@ class RouteServiceProvider extends ServiceProvider
 
         // Bind User with trashed
         Route::bind('user', function ($value) {
-            $user = Auth::user()->can('viewTrashed', \App\User::class) ? \App\User::withTrashed() : new \App\User;
+            $user = Auth::user()->can('viewTrashed', \App\Models\User::class) ? \App\Models\User::withTrashed() : new \App\Models\User;
             return $user->where('id', $value)->firstOrFail();
         });
 

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Nh\Searchable\Search;
 
-use App\User;
+use App\Models\User;
 use App\Models\Role;
 
 class UserController extends Controller
@@ -66,7 +66,7 @@ class UserController extends Controller
      */
     public function trashed()
     {
-        $this->authorize('viewTrashed', 'App\User');
+        $this->authorize('viewTrashed', 'App\Models\User');
         $users = User::onlyTrashed()->paginate();
         return view('sp::backend.users.trashed', compact('users'));
     }
@@ -100,7 +100,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
@@ -114,7 +114,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
@@ -128,7 +128,7 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\StoreUserRequest  $request
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function update(StoreUserRequest $request, User $user)
@@ -142,7 +142,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
@@ -183,7 +183,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function editAccount()
@@ -196,7 +196,7 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\StoreUserRequest  $request
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function updateAccount(UpdateAccountRequest $request)

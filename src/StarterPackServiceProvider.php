@@ -85,7 +85,7 @@ class StarterPackServiceProvider extends ServiceProvider
       }
 
       // POLICIES
-      Gate::policy('App\User', \Nh\StarterPack\Policies\UserPolicy::class);
+      Gate::policy('App\Models\User', \Nh\StarterPack\Policies\UserPolicy::class);
       Gate::policy('App\Models\Role', \Nh\StarterPack\Policies\RolePolicy::class);
 
       // Only a superadmin can set the role superadmin !

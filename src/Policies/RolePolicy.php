@@ -2,7 +2,7 @@
 
 namespace Nh\StarterPack\Policies;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 use App\Models\Role;
@@ -14,7 +14,7 @@ class RolePolicy
     /**
      * Determine whether the user can access to a role.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function before(User $user)
@@ -25,7 +25,7 @@ class RolePolicy
     /**
      * Determine whether the user can view any roles.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function viewAny(User $user)
@@ -37,7 +37,7 @@ class RolePolicy
     /**
      * Determine whether the user can view the role.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @param  \App\Models\Role  $role
      * @return mixed
      */
@@ -49,7 +49,7 @@ class RolePolicy
     /**
      * Determine whether the user can create roles.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function create(User $user)
@@ -60,7 +60,7 @@ class RolePolicy
     /**
      * Determine whether the user can update the role.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @param  \App\Models\Role  $role
      * @return mixed
      */
@@ -72,7 +72,7 @@ class RolePolicy
     /**
      * Determine whether the user can delete the role.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @param  \App\Models\Role  $role
      * @return mixed
      */

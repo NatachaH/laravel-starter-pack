@@ -45,7 +45,7 @@ return [
             'icon'  => 'icon-gear',
             'items' => [
                 'user' => [
-                  'model' => 'App\User',
+                  'model' => 'App\Models\User',
                   'route' => 'backend.users'
                 ],
                 'role' => [
