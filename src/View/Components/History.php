@@ -141,21 +141,6 @@ class History extends Component
         return Str::ucfirst($description);
     }
 
-    /**
-     * Define the title of the History statistic.
-     *
-     * @var string
-     */
-    private function defineTitle()
-    {
-        if($this->type == 'user')
-        {
-          $title = __('trackable.history');
-        } else {
-          $title = trans_choice('trackable.latest',($this->isMultiple ? 2 : 1));
-        }
-        return $title;
-    }
 
     /**
      * Create a new component instance.
@@ -168,7 +153,7 @@ class History extends Component
         $this->items      = $items;
         $this->isMultiple = is_null($items) || $items->count() == 0 ? false : true;
         $this->value      = $this->isMultiple ? $items->first()->time : $value;
-        $this->title      = is_null($title) ? $this->defineTitle() : $title;
+        $this->title      = is_null($title) ? __('sp::field.history') : $title;
     }
 
     /**

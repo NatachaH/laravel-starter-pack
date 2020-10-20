@@ -56,4 +56,6 @@ return [
     'yes'           => 'Oui',
     'no'            => 'Non',
 
+    'history'       => 'Historique',
+
 ];
