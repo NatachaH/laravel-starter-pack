@@ -100,8 +100,8 @@ class NewContentCommand extends Command
         $this->copy_file($sp_policy,$new_policy);
 
         // Model
-        $sp_model   = $stub.'app/Content'.($softdelete ? 'SD' : '').'.php';
-        $new_model  = app_path($this->ucname.'.php');
+        $sp_model   = $stub.'app/Models/Content'.($softdelete ? 'SD' : '').'.php';
+        $new_model  = app_path('Models/'.$this->ucname.'.php');
         $this->copy_file($sp_model,$new_model);
 
         // Database
