@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
-use Nh\AccessControl\Permission;
-use Nh\AccessControl\Role;
+use App\Models\Permission;
+use App\Models\Role;
 
 
 class AccessControlSeeder extends Seeder

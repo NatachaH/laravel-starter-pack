@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
 use App\User;
-use Nh\AccessControl\Role;
+use App\Models\Role;
 
 class NewUserCommand extends Command
 {

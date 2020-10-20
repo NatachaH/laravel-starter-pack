@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Nh\Searchable\Search;
 
 use App\User;
-use Nh\AccessControl\Role;
+use App\Models\Role;
 
 class UserController extends Controller
 {

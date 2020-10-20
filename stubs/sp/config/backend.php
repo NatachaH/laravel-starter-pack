@@ -49,7 +49,7 @@ return [
                   'route' => 'backend.users'
                 ],
                 'role' => [
-                  'model' => 'Nh\AccessControl\Role',
+                  'model' => 'App\Models\Role',
                   'route' => 'backend.roles'
                 ]
             ]

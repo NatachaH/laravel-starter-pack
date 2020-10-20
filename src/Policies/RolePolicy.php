@@ -5,7 +5,7 @@ namespace Nh\StarterPack\Policies;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-use Nh\AccessControl\Role;
+use App\Models\Role;
 
 class RolePolicy
 {
@@ -38,7 +38,7 @@ class RolePolicy
      * Determine whether the user can view the role.
      *
      * @param  \App\User  $user
-     * @param  \Nh\AccessControl\Role  $role
+     * @param  \App\Models\Role  $role
      * @return mixed
      */
     public function view(User $user, Role $role)
@@ -61,7 +61,7 @@ class RolePolicy
      * Determine whether the user can update the role.
      *
      * @param  \App\User  $user
-     * @param  \Nh\AccessControl\Role  $role
+     * @param  \App\Models\Role  $role
      * @return mixed
      */
     public function update(User $user, Role $role)
@@ -73,7 +73,7 @@ class RolePolicy
      * Determine whether the user can delete the role.
      *
      * @param  \App\User  $user
-     * @param  \Nh\AccessControl\Role  $role
+     * @param  \App\Models\Role  $role
      * @return mixed
      */
     public function delete(User $user, Role $role)
