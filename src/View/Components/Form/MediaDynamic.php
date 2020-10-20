@@ -58,16 +58,16 @@ class MediaDynamic extends Component
   public $items;
 
   /**
-   * The path for the current item view
-   * @var string
-   */
-  public $viewItem;
-
-  /**
-   * Options to pass to the view
+   * The default items
    * @var array
    */
-  public $viewItemOptions;
+  public $defaults;
+
+  /**
+   * The disabled items
+   * @var array
+   */
+  public $itemsDisabled;
 
   /**
    * The help message of the fieldset.
@@ -102,7 +102,7 @@ class MediaDynamic extends Component
    * Class, label and value
    * @var array
    */
-  public $btnSortable;
+  public $btnMove;
 
   /**
    * Media available formats.
@@ -164,11 +164,49 @@ class MediaDynamic extends Component
   }
 
   /**
+   * Check if an item is disabled
+   * @param  string  $item
+   * @return boolean
+   */
+  public function isItemDisabled($item)
+  {
+      return in_array($item, $this->itemsDisabled);
+  }
+
+  /**
+   * Define the defaults.
+   *
+   * @var array
+   */
+  private function defineDefaults($defaults)
+  {
+      $old = old($this->name.'_to_add');
+      $defaultsItems = [];
+
+      if(!empty($old))
+      {
+
+          $defaultsItems = Arr::where($old, function ($value, $key) {
+              return Str::endsWith($key, '_'.$this->type);
+          });
+
+      } else if(!empty($defaults)) {
+
+          foreach ($defaults as $key => $value) {
+            $defaultsItems[$key.'_'.$this->type] = $value;
+          }
+
+      }
+
+      return $defaultsItems;
+  }
+
+  /**
    * Create a new component instance.
    *
    * @return void
    */
-  public function __construct($legend, $template = null, $min = null, $max = null, $name = 'media', $type = 'media', $sortable = false, $items = [], $help = '', $btnAdd = [], $btnRemove = [], $btnDelete = [], $btnSortable = [], $formats = null, $hasName = false, $hasPreview = false, $hasDownload = false)
+  public function __construct($legend, $template = null, $min = null, $max = null, $name = 'media', $type = 'media', $sortable = false, $items = [], $defaults = [], $itemsDisabled = [], $help = '', $btnAdd = [], $btnRemove = [], $btnDelete = [], $btnMove = [], $formats = null, $hasName = false, $hasPreview = false, $hasDownload = false)
   {
       $this->legend           = $legend;
       $this->min              = $min;
@@ -178,10 +216,12 @@ class MediaDynamic extends Component
       $this->key              = 'KEY_'.$type;
       $this->sortable         = $sortable;
       $this->items            = $items;
+      $this->defaults         = $this->defineDefaults($defaults);
+      $this->itemsDisabled    = is_array($itemsDisabled) ? $itemsDisabled : [$itemsDisabled];
       $this->btnAdd           = empty($btnAdd) ? config('dynamic.buttons.add') : $btnAdd;
       $this->btnRemove        = empty($btnRemove) ? config('dynamic.buttons.remove') : $btnRemove;
       $this->btnDelete        = empty($btnDelete) ? config('dynamic.buttons.delete') : $btnDelete;
-      $this->btnSortable      = empty($btnSortable) ? config('dynamic.buttons.sortable') : $btnSortable;
+      $this->btnMove          = empty($btnMove) ? config('dynamic.buttons.sortable') : $btnMove;
       $this->formats          = $formats;
       $this->hasName          = $hasName;
       $this->hasPreview       = $hasPreview;
