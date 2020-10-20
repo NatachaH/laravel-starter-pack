@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\User;
-use Nh\Trackable\Track;
+use Nh\Trackable\Models\Track;
 
 class DashboardController extends Controller
 {
