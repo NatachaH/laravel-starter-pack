@@ -6,6 +6,6 @@
 
   <x-sp-search key="{{ PNAME }}" route="backend.{{ PNAME }}" is-advanced />
 
-  <x-sp-listing :items="${{ PNAME }}" header="title|published" model="App\{{ UCNAME }}" route="backend.{{ PNAME }}" show-id />
+  <x-sp-listing :items="${{ PNAME }}" header="title|published" model="App\Models\{{ UCNAME }}" route="backend.{{ PNAME }}" show-id />
 
 @endsection

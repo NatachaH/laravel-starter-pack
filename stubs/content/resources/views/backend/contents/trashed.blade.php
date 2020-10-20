@@ -6,6 +6,6 @@
 
   <x-sp-search key="{{ PNAME }}" route="backend.{{ PNAME }}"/>
 
-  <x-sp-listing :title="trans_choice('backend.model.{{ NAME }}',2)" :items="${{ PNAME }}" header="title|published"  model="App\{{ UCNAME }}" route="backend.{{ PNAME }}" show-id show-dates />
+  <x-sp-listing :title="trans_choice('backend.model.{{ NAME }}',2)" :items="${{ PNAME }}" header="title|published"  model="App\Models\{{ UCNAME }}" route="backend.{{ PNAME }}" show-id show-dates />
 
 @endsection

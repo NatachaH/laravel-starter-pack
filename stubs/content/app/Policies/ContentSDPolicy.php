@@ -5,7 +5,7 @@ namespace App\Policies;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 use App\Models\User;
-use App\{{ UCNAME }};
+use App\Models\{{ UCNAME }};
 
 class {{ UCNAME }}Policy
 {
@@ -37,7 +37,7 @@ class {{ UCNAME }}Policy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\{{ UCNAME }}  ${{ NAME }}
+     * @param  \App\Models\{{ UCNAME }}  ${{ NAME }}
      * @return mixed
      */
     public function view(User $user, {{ UCNAME }} ${{ NAME }})
@@ -60,7 +60,7 @@ class {{ UCNAME }}Policy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\{{ UCNAME }}  ${{ NAME }}
+     * @param  \App\Models\{{ UCNAME }}  ${{ NAME }}
      * @return mixed
      */
     public function update(User $user, {{ UCNAME }} ${{ NAME }})
@@ -72,7 +72,7 @@ class {{ UCNAME }}Policy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\{{ UCNAME }}  ${{ NAME }}
+     * @param  \App\Models\{{ UCNAME }}  ${{ NAME }}
      * @return mixed
      */
     public function delete(User $user, {{ UCNAME }} ${{ NAME }})
@@ -95,7 +95,7 @@ class {{ UCNAME }}Policy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\{{ UCNAME }}  ${{ NAME }}
+     * @param  \App\Models\{{ UCNAME }}  ${{ NAME }}
      * @return mixed
      */
     public function restore(User $user, {{ UCNAME }} ${{ NAME }})
@@ -107,7 +107,7 @@ class {{ UCNAME }}Policy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\{{ UCNAME }}  ${{ NAME }}
+     * @param  \App\Models\{{ UCNAME }}  ${{ NAME }}
      * @return mixed
      */
     public function forceDelete(User $user, {{ UCNAME }} ${{ NAME }})

@@ -7,7 +7,7 @@ use App\Http\Requests\Store{{ UCNAME }}Request;
 use Illuminate\Http\Request;
 
 use Nh\Searchable\Search;
-use App\{{ UCNAME }};
+use App\Models\{{ UCNAME }};
 
 class {{ UCNAME }}Controller extends Controller
 {
@@ -73,7 +73,7 @@ class {{ UCNAME }}Controller extends Controller
      */
     public function trashed()
     {
-        $this->authorize('viewTrashed', 'App\{{ UCNAME }}');
+        $this->authorize('viewTrashed', 'App\Models\{{ UCNAME }}');
         ${{ PNAME }} = {{ UCNAME }}::onlyTrashed()->paginate();
         return view('backend.{{ PNAME }}.trashed', compact('{{ PNAME }}'));
     }
@@ -104,7 +104,7 @@ class {{ UCNAME }}Controller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\{{ UCNAME }}  ${{ NAME }}
+     * @param  \App\Models\{{ UCNAME }}  ${{ NAME }}
      * @return \Illuminate\Http\Response
      */
     public function show({{ UCNAME }} ${{ NAME }})
@@ -118,7 +118,7 @@ class {{ UCNAME }}Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\{{ UCNAME }}  ${{ NAME }}
+     * @param  \App\Models\{{ UCNAME }}  ${{ NAME }}
      * @return \Illuminate\Http\Response
      */
     public function edit({{ UCNAME }} ${{ NAME }})
@@ -130,7 +130,7 @@ class {{ UCNAME }}Controller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\Store{{ UCNAME }}Request  $request
-     * @param  \App\{{ UCNAME }}  ${{ NAME }}
+     * @param  \App\Models\{{ UCNAME }}  ${{ NAME }}
      * @return \Illuminate\Http\Response
      */
     public function update(Store{{ UCNAME }}Request $request, {{ UCNAME }} ${{ NAME }})
@@ -143,7 +143,7 @@ class {{ UCNAME }}Controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\{{ UCNAME }}  ${{ NAME }}
+     * @param  \App\Models\{{ UCNAME }}  ${{ NAME }}
      * @return \Illuminate\Http\Response
      */
     public function destroy({{ UCNAME }} ${{ NAME }})
