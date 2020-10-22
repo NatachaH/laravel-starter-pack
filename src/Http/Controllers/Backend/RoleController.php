@@ -94,9 +94,6 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        $role = $role->load(['tracks' => function($q){
-          return $q->latest()->take(10);
-        }]);
         $permissions = Permission::getByModel();
         return view('sp::backend.roles.show', compact('role','permissions'));
     }

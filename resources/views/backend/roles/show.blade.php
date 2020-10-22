@@ -8,7 +8,7 @@
 
   <div class="row">
 
-      <div class="col-lg-8">
+      <div class="col-lg-12">
 
           <x-bs-card :title="trans_choice('backend.model.permission',2)">
             <x-slot name="before">
@@ -16,10 +16,6 @@
             </x-slot>
           </x-bs-card>
 
-      </div>
-
-      <div class="col-lg-4">
-          <x-sp-history type="model" :items="$role->tracks" />
       </div>
 
   </div>
