@@ -12,7 +12,7 @@ class History extends Component
 {
 
     /**
-     * Title of the History statistic
+     * The title of the history.
      *
      * @var string
      */
@@ -34,25 +34,11 @@ class History extends Component
     public $items;
 
     /**
-     * The first track list time.
-     *
-     * @var string
-     */
-    public $value;
-
-    /**
-     * Is there multiple history or only one.
-     *
-     * @var boolean
-     */
-    public $isMultiple;
-
-    /**
      * Define the badge color by event name.
      *
      * @var string
      */
-    public function colorByEvent($event)
+    public function color($event)
     {
         switch ($event) {
           case 'created':
@@ -84,9 +70,9 @@ class History extends Component
      *
      * @var string
      */
-    public function iconByEvent($event)
+    public function icon($event)
     {
-        switch ($event) {
+        switch ($event){
           case 'created':
             $icon = 'plus';
             break;
@@ -110,17 +96,44 @@ class History extends Component
     }
 
     /**
+     * Define the icon by event name.
+     *
+     * @var string
+     */
+    public function relationIcon($relation)
+    {
+        switch ($relation){
+          case 'category':
+            $icon = 'tag';
+            break;
+          case 'address':
+            $icon = 'location';
+            break;
+          case 'status':
+            $icon = 'flag';
+            break;
+          case 'media':
+            $icon = 'image';
+            break;
+          default:
+            $icon = 'rocket';
+            break;
+        }
+        return $icon;
+    }
+
+    /**
      * Define the description by item and by type.
      *
      * @var string
      */
-    public function descriptionByItem($item)
+    public function description($item)
     {
-        $model = \Lang::has('backend.model.'.$item->model) ? trans_choice('backend.model.'.$item->model,1) : Str::ucfirst($item->model);
-        $user = !is_null($item->user) ? __('sp::listing.by', ['name' => $item->username]) : null;
-        $route = 'backend.'.Str::plural($item->model).'.show';
+        $model = \Lang::has('model.'.$item->model) ? trans_choice('model.'.$item->model,1) : Str::ucfirst($item->model);
+        $user = !is_null($item->user) ? __('listing.by', ['name' => $item->username]) : null;
+        $route = Str::plural($item->model).'.show';
 
-        // Defin if model exist to display a link
+        // Define if model exist to display a link
         if($this->type !== 'model' && Route::has($route) && Auth::user()->can('view', $item->trackable))
         {
             $model = '<a href="'.route($route, $item->trackable_id).'">'.$model.'</a>';
@@ -128,13 +141,13 @@ class History extends Component
 
         switch ($this->type) {
           case 'user':
-            $description = $model;
+            $description = $model.' #'.$item->trackable_id;
             break;
           case 'model':
             $description = $user;
             break;
           default:
-            $description = '<b>'.$model.'</b> '.$user;
+            $description = '<b>'.$model.' #'.$item->trackable_id.'</b> '.$user;
             break;
         }
 
@@ -147,13 +160,11 @@ class History extends Component
      *
      * @return void
      */
-    public function __construct($title = null, $type = 'global', $items = null, $value = null)
+    public function __construct($title = null, $type = 'global', $items = null)
     {
+        $this->title      = is_null($title) ? __('sp::field.history') : $title;
         $this->type       = in_array($type,['global','model','user']) ? $type : 'global';
         $this->items      = $items;
-        $this->isMultiple = is_null($items) || $items->count() == 0 ? false : true;
-        $this->value      = $this->isMultiple ? $items->first()->time : $value;
-        $this->title      = is_null($title) ? __('sp::field.history') : $title;
     }
 
     /**
