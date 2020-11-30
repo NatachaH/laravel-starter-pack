@@ -130,7 +130,7 @@ class History extends Component
     public function description($item)
     {
         $model = \Lang::has('model.'.$item->model) ? trans_choice('model.'.$item->model,1) : Str::ucfirst($item->model);
-        $user = !is_null($item->user) ? __('listing.by', ['name' => $item->username]) : null;
+        $user = !is_null($item->user) ? __('sp::listing.by', ['name' => $item->username]) : null;
         $route = Str::plural($item->model).'.show';
 
         // Define if model exist to display a link
