@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| SP - Backend - Bootstrap - Variables
+| Bootstrap variables
 |--------------------------------------------------------------------------
 */
 
@@ -13,40 +13,21 @@ $enable-transitions:                          true;
 $enable-responsive-font-sizes:                true;
 
 // Colors
-$white:    #fff !default;
-$gray-100: #F1F1F1 !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
-
 $primary: $brand;
 $secondary: #B1B1B1;
+$gray: #F1F1F1;
+$white: #FFF;
 
-$theme-colors: (
-  'gray'  : $gray-100
-);
+$min-contrast-ratio:   0.5 !default;
 
-$yiq-contrasted-threshold:  170;
-
-$border-color:            $gray-100;
+// Base components
+$border-color: $gray;
 $component-active-color:  $white;
 $component-active-bg:     $primary;
 
 // Body
 $body-bg: #FAFAFA;
 $body-color: #6D6D6D;
-
-// Links
-$link-color:                   $primary;
-$link-decoration:              none;
-$link-hover-color:             darken($link-color, 15%) ;
-$link-hover-decoration:        none;
 
 // Typography
 $font-family-base:            'Open Sans', sans-serif;
@@ -56,25 +37,24 @@ $headings-font-weight:        400;
 $text-muted:                  $secondary;
 $h1-font-size:                2rem;
 
+// Links
+$link-color:                   $primary;
+$link-decoration:              none;
+$link-hover-color:             darken($link-color, 15%) ;
+$link-hover-decoration:        none;
+
 // Inputs & buttons
 $input-btn-focus-box-shadow:  none;
 $input-focus-border-color:    $primary;
 
 // Button
-$btn-default-color:           $body-color; // Not for Bootstrap
-$btn-default-bg:              $border-color; // Not for Bootstrap
 $btn-focus-width:             0;
 $btn-focus-box-shadow:        none;
 
 // Form
-$custom-file-text: (
-  en: "Browse",
-  fr: "Parcourir"
-);
-
 $input-border-color:          $border-color;
 $input-group-addon-bg:        $white;
-$input-placeholder-color:     $gray-400;
+$input-placeholder-color:     $border-color;
 
 // Dropdown
 $dropdown-link-active-color:        $primary;
@@ -86,19 +66,20 @@ $dropdown-header-color:             $secondary;
 $card-border-radius:  0;
 $card-border-color:   $border-color;
 $card-cap-bg:         $white;
+$card-cap-padding-y:   .75rem;
 
 // List
 $list-group-border-color: $border-color;
 
 // Pagination
-$pagination-color:                  $btn-default-color;
-$pagination-bg:                     $btn-default-bg;
-$pagination-hover-color:            $btn-default-color;
-$pagination-hover-bg:               darken($btn-default-bg, 15%);
+$pagination-color:                  $body-color;
+$pagination-bg:                     $border-color;
+$pagination-hover-color:            $body-color;
+$pagination-hover-bg:               darken($border-color, 15%);
 $pagination-active-color:           $component-active-color;
 $pagination-active-bg:              $component-active-bg;
-$pagination-disabled-color:         rgba($btn-default-color,0.25);
-$pagination-disabled-bg:            $btn-default-bg;
+$pagination-disabled-color:         rgba($body-color,0.25);
+$pagination-disabled-bg:            $border-color;
 
 // Modal
 $modal-content-border-color: $border-color;
@@ -109,10 +90,16 @@ $toast-max-width:                   360px;
 // Breadcrumb
 $breadcrumb-font-size:              small;
 $breadcrumb-padding-y:              .5rem;
-$breadcrumb-padding-x:              2rem;
+$breadcrumb-padding-x:              1rem;
 $breadcrumb-item-padding:           .25rem;
 $breadcrumb-margin-bottom:          0;
 $breadcrumb-bg:                     $border-color;
 $breadcrumb-divider-color:          $secondary;
 $breadcrumb-active-color:           $primary;
 $breadcrumb-border-radius:          0;
+
+// Table
+$table-cell-padding-x:        1rem;
+$table-cell-padding-y:        .75rem;
+$table-cell-vertical-align:   middle;
+$table-group-separator-color: $border-color;

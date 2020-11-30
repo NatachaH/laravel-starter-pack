@@ -2,14 +2,14 @@
 |--------------------------------------------------------------------------
 | SP - Backend - Popover Media - Script
 |--------------------------------------------------------------------------
-|
-| Require: require('vendor/nh/bs-component/resources/js/dynamic');
-| Require: require('vendor/nh/sortable/resources/js/sortable');
-|
 */
 
-$('.popover-media').popover({
-  trigger: 'hover',
-  placement: 'left',
-  html: true,
+var mediaPopovers = document.querySelectorAll('.popover-media')
+
+Array.prototype.forEach.call(mediaPopovers, function(el, i) {
+    var tooltip = new Bootstrap.Popover(el,{
+      trigger: 'hover',
+      placement: 'left',
+      html: true,
+    })
 });

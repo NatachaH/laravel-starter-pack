@@ -14,7 +14,11 @@ require('../../../bs-component/resources/js/bs-component');
 require('../../../sortable/resources/js/sortable');
 
 // Load Toast Notification
-$('#toastNotification .toast:not(.toast-custom)').toast('show');
+var toastNotifications = document.querySelectorAll('#toastNotification .toast:not(.toast-custom)');
+Array.prototype.forEach.call(toastNotifications, function(el, i) {
+    var toast = new Bootstrap.Toast(el);
+    toast.show();
+});
 
 // Layout
 require('./layout/layout');

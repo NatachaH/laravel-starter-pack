@@ -1,12 +1,12 @@
 /*
 |--------------------------------------------------------------------------
-| SP - Backend - Components - Statistic - Design
+| Statistic component
 |--------------------------------------------------------------------------
 */
 
 .statistic {
 
-  > .statistic-body {
+  > .card-body {
 
       border-bottom: 2px solid;
 
@@ -37,4 +37,9 @@
 
   }
 
+}
+
+.statistics .statistic {
+  margin-top:0 !important;
+  margin-bottom: 2rem;
 }

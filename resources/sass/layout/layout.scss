@@ -1,31 +1,20 @@
 /*
 |--------------------------------------------------------------------------
-| SP - Backend - Layout - Design
+| Layout
 |--------------------------------------------------------------------------
+|
+| This is the design for the layout.
+|
 */
 
-@import 'main';
-@import 'mainbar';
-@import 'sidebar';
-@import 'breadcrumb';
-
-.btn-gray {
-    color: $btn-default-color !important;
+html, body {
+    height: 100%;
 }
 
-button:disabled {
-  cursor: default;
-}
-
-p:last-child {
-    margin-bottom: 0;
-}
-
-.modal .modal-header {
-  align-items: center;
-}
-
-.td-fit {
-  white-space: nowrap;
-  width: 1%;
-}
+@import "./app";
+@import "./sidebar";
+@import "./mainbar";
+@import "./breadcrumb";
+@import "./form";
+@import "./table";
+@import "./main";

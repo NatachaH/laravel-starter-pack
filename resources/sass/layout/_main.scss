@@ -1,110 +1,35 @@
 /*
 |--------------------------------------------------------------------------
-| SP - Backend - Layout - Main - Design
+| Main
 |--------------------------------------------------------------------------
 */
 
-html, body {
-    height: 100%;
-}
+main {
 
-#backend {
+  padding: 1rem;
 
-  main {
-      padding: 0 !important;
-      margin-left: auto;
-      @include make-col(12);
-
-
-
-      > .main-body {
-          padding: $main-spacer-y $main-spacer-x;
-
-          @include media-breakpoint-down(md) {
-            padding: $main-spacer-y $main-spacer-x/2;
-          }
-
-          > .page-header {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              border-bottom: 1px solid $border-color;
-              padding-bottom: $main-spacer-y;
-              > h2 {
-                margin:0;
-              }
-          }
-
-          .card {
-              margin-top: $main-spacer-y;
-          }
-
-      }
-
-  }
-
-
-
-  // Change when sidebar is only on/open
-  &.sidebar-on:not(.sidebar-close),
-  &.sidebar-open {
-
-      // Change toggle icon in mainbar
-      #mainbar .toggle-sidebar:before {
-          content: $icon-cross;
-      }
-
-      // Sidebar is visible
-      #sidebar {
-          transform: translateX(0);
-      }
-
-  }
-
-  // Change when sidebar is on/open
-  &.sidebar-on,
-  &.sidebar-open {
-      #sidebar {
-        visibility: visible;
-      }
-  }
-
-  // Change when sidebar is open/close
-  &.sidebar-open,
-  &.sidebar-close {
-
-      main {
-        @include transition(all 1s ease-in-out);
-      }
-
-      #sidebar {
-        @include transition(transform 1s ease-in-out);
-      }
-  }
-
-
-  // Responsive view for Tablette
-  @include media-breakpoint-up(md) {
-      &.sidebar-on:not(.sidebar-close) main,
-      &.sidebar-open main {
-        @include make-col(8);
-      }
-  }
-
-  // Responsive view for Laptop
   @include media-breakpoint-up(lg) {
-      &.sidebar-on:not(.sidebar-close) main,
-      &.sidebar-open main {
-        @include make-col(9);
+      padding: 2rem;
+  }
+
+  .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 2rem;
+      > h2 {
+        margin:0;
       }
   }
 
-  // Responsive view for Screen
-  @include media-breakpoint-up(xl) {
-      &.sidebar-on:not(.sidebar-close) main,
-      &.sidebar-open main {
-        @include make-col(10);
-      }
+  .card {
+      margin-top: 2rem;
   }
+
+  .btn-gray {
+      color: $body-color !important;
+  }
+
 
 }

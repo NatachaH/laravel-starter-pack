@@ -1,12 +1,12 @@
 /*
 |--------------------------------------------------------------------------
-| Components
+| Colors theme for Bootstrap
 |--------------------------------------------------------------------------
 */
 
-@import "./search";
-@import "./listing";
-@import "./pagination";
-@import "./statistic";
-@import "./dynamic";
-@import "./toast";
+$custom-theme-colors: (
+  "gray":  $gray,
+);
+
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);

@@ -1,13 +1,13 @@
 /*
 |--------------------------------------------------------------------------
-| SP - Backend - Layout - Mainbar - Design
+| Mainbar
 |--------------------------------------------------------------------------
 */
 
 #mainbar {
-    background: $mainbar-bg;
-    color: $mainbar-color;
-    height: $mainbar-height * .75;
+    background: $primary;
+    color: $white;
+    height: 3rem;
     display: flex;
     align-items: center;
 
@@ -26,7 +26,7 @@
     // Title of the page
     > h1 {
         margin: 0 auto 0 0;
-        padding: 0 $main-spacer-x * 0.5;
+        padding: 0 1rem;
         white-space: nowrap;
         color: $white;
     }
@@ -39,8 +39,8 @@
         height: 100%;
         border: none;
         background: none;
-        color: $mainbar-color;
-        padding: 0 $btn-spacer-x * .5;
+        color: $white;
+        padding: 0 1rem;
         @include border-radius(0);
         > i {
             margin: 0;
@@ -51,6 +51,10 @@
         }
         &:hover {
           background: rgba(0,0,0,0.3);
+        }
+        &:focus {
+          outline: 0 !important;
+          box-shadow: none !important;
         }
     }
 
@@ -66,27 +70,29 @@
             &:after {
                 display: inline-block;
                 border: none;
-                font-family: 'sp-icon';
+                font-family: 'icomoon';
                 content: $icon-chevron-down;
                 line-height: 1;
                 font-size: $font-size-sm;
                 vertical-align: baseline;
-                margin-left: $icon-spacer-x;
+                margin-left: 0.25rem;
+            }
+
+            // When dropdown is open change the carret
+            &.show:after {
+                content:  $icon-chevron-up;
             }
 
         }
 
-        // When dropdown is open change the carret
-        &.show > .dropdown-toggle:after {
-            content: $icon-chevron-up;
-        }
+
 
         // Dropdown menu is under the mainbar and is the min length of the button
         > .dropdown-menu {
 
             min-width: 100%;
             transform: none !important;
-            top: $mainbar-height * .75 !important;
+            top: 3rem !important;
             right: 0!important;
             left:auto!important;
             margin: 0;
@@ -96,8 +102,11 @@
                 font-size: $h6-font-size !important;
             }
 
-          }
+            .dropdown-divider {
+                opacity: inherit;
+            }
 
+        }
     }
 
     // Account button & toggle button
@@ -106,30 +115,34 @@
         background: rgba(0,0,0,0.2);
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | RESPONSIVE
+    |--------------------------------------------------------------------------
+    */
 
-    // Responsive view for Phone
-    @include media-breakpoint-up(lg) {
+    // For Phone
+     @include media-breakpoint-up(lg) {
 
-        height: $mainbar-height;
+         height: 4rem;
 
-        > h1 {
-            padding: 0 $main-spacer-x;
-        }
+         > h1 {
+             padding: 0 2rem;
+         }
 
-        .btn {
-          padding: 0 $btn-spacer-x;
-          > i {
-              margin-right: $icon-spacer-x * 2;
-          }
-          > span, &:after {
-              display: block !important;
-          }
-        }
+         .btn {
+           padding: 0 2rem;
+           > i {
+               margin-right: .5rem;
+           }
+           > span, &:after {
+               display: block !important;
+           }
+         }
 
-        > .dropdown > .dropdown-menu {
-            top: $mainbar-height !important;
-        }
+         > .dropdown > .dropdown-menu {
+             top: 4rem !important;
+         }
 
-    }
-
+     }
 }

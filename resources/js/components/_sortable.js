@@ -14,12 +14,14 @@ sortable.forEach((el, i) => {
       successCallback: function(response){
           var toastSuccess = document.querySelector('.toast-custom.toast-success');
           toastSuccess.querySelector('.toast-body span').innerHTML = response.data.message;
-          $(toastSuccess).toast('show');
+          var toast = Bootstrap.Toast(toastSuccess);
+          toast.show();
       },
       errorCallback: function(response){
           var toastError = document.querySelector('.toast-custom.toast-danger');
           toastError.querySelector('.toast-body span').innerHTML = response.data.message;
-          $(toastError).toast('show');
+          var toast = Bootstrap.Toast(toastError);
+          toast.show();
       }
     });
 });

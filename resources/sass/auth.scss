@@ -7,18 +7,15 @@
 |
 */
 
-// Variables
-@import 'variables/bootstrap';
+// VARIABLES
+@import "variables/icons";
+@import "variables/bootstrap";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// LIBRARIES
+@import "libraries/libraries";
 
-// Packages
-@import '../../vendor/nh/bs-component/resources/sass/form';
-
-// Components
+// COMPONENTS
 @import 'components/form';
-@import 'components/icon-font';
 
 // Design
 html, body {

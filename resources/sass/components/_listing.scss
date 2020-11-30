@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| SP - Backend - Components - Listing - Design
+| Listing component
 |--------------------------------------------------------------------------
 */
 
@@ -33,16 +33,8 @@
 
         .table {
 
-            margin: 0;
-
-            th {
-                border-top: none;
-                text-transform: uppercase;
-                color: $secondary;
-            }
-
-            td {
-                vertical-align: middle;
+            tbody > tr:not([data-lvl="0"]) {
+              background: $light
             }
 
         }

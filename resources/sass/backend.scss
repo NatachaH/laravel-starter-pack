@@ -7,22 +7,22 @@
 |
 */
 
-// Fonts
+// FONTS
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,600|Open+Sans:300,400,700&display=swap');
 
-// Variables
+// VARIABLES
 @import "variables/icons";
-@import 'variables/bootstrap';
-@import 'variables/backend';
+@import "variables/bootstrap";
+@import "variables/backend";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// LIBRARIES
+@import "libraries/libraries";
 
-// Packages
+// PACKAGES
 @import '../../vendor/nh/bs-component/resources/sass/bs-component';
 
-// Layout
+// LAYOUT
 @import 'layout/layout';
 
-// Components
+// COMPONENTS
 @import 'components/components';

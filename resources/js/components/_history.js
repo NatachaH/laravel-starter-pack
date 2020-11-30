@@ -4,5 +4,8 @@
 |--------------------------------------------------------------------------
 */
 
+var historyTooltips = document.querySelectorAll('.history-tooltip')
 
-$('.history-tooltip').tooltip();
+Array.prototype.forEach.call(historyTooltips, function(el, i) {
+    var tooltip = new Bootstrap.Tooltip(el)
+});

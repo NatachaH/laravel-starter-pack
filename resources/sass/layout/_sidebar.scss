@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| SP - Backend - Layout - Sidebar - Design
+| Sidebar
 |--------------------------------------------------------------------------
 */
 
@@ -18,16 +18,15 @@
     z-index: 1040;
     display: flex;
     flex-direction: column;
-    background-color: $sidebar-bg;
+    background-color: $white;
     border-right: 1px solid $border-color;
     outline: 0;
     transform: translateX(-100%);
 
-
-    // Header of the sidebar
+    // Header
     > .sidebar-header {
 
-        height: $sidebar-header-height * .75;
+        height: 3rem;
         border-bottom: 1px solid $border-color;
         display: flex;
         align-items: center;
@@ -35,7 +34,7 @@
 
         // Backend title
         > h1 {
-            margin: 0 $main-spacer-x * 0.75;
+            margin: 0 1.5rem;
             text-align: left;
         }
 
@@ -43,47 +42,48 @@
         .toggle-sidebar {
             font-size: 1.75rem;
             height: 100%;
-            padding: 0 $btn-spacer-x * 0.5;
+            padding: 0 1rem;
             &:before {
               display: inline-block;
               border: none;
-              font-family: 'sp-icon';
-              content: $icon-cross;
+              font-family: 'icomoon';
+              content:  $icon-cross;
               line-height: 1;
             }
         }
 
     }
 
-    // Body of the sidebar
+    // Body
     > .sidebar-body {
 
-        overflow-y: scroll;
-        overflow-x: hidden;
-        padding: $sidebar-body-padding;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding: 2rem 1.5rem;
 
       // Block of links
       > nav {
 
-          margin-bottom: $sidebar-nav-spacer-y;
+          margin-bottom: 2rem;
 
           // Header/Title of the block
           > .nav-header {
 
-              color: $sidebar-nav-header-color;
+              color: $primary;
               font-size: 1rem;
               font-weight: 600;
 
               > i, > .nav-header-link > i{
-                  margin-right: $icon-spacer-x;
+                  margin-right: 0.25rem;
               }
 
               > .nav-header-link {
+                  text-decoration: none;
                   &:hover {
-                      color: $sidebar-nav-header-hover-color;
+                      color: darken($primary, 15%);
                   }
                   &.active {
-                      color: $sidebar-nav-header-active-color;
+                      color: darken($primary, 15%);
                   }
               }
 
@@ -91,13 +91,13 @@
 
           // Links
           > .nav-link {
-              color: $sidebar-nav-link-color;
-              padding: $sidebar-nav-link-padding;
+              color: $secondary;
+              padding: 0.25rem 0 0 1.5rem;
               &:hover {
-                  color: $sidebar-nav-link-hover-color;
+                  color: darken($secondary, 15%);
               }
               &.active {
-                  color: $sidebar-nav-link-active-color;
+                  color: $primary;
               }
           }
 
@@ -105,49 +105,47 @@
 
     }
 
-    // Footer of the sidebar
+    // Footer
     > .sidebar-footer {
-
         font-size: $font-size-sm;
         font-style: italic;
         text-align: center;
         color: $secondary;
-        padding: $sidebar-footer-padding;
+        padding: 0.5rem 0;
         border-top: 1px solid $border-color;
-
     }
 
-    // Responsive view for Tablette
+    /*
+    |--------------------------------------------------------------------------
+    | RESPONSIVE
+    |--------------------------------------------------------------------------
+    */
+
+    // For Tablette
     @include media-breakpoint-up(md) {
-
         @include make-col(4);
-
         > .sidebar-header {
             > h1 {
-                margin: 0 $main-spacer-x;
+                margin: 0 2rem;
                 text-align: center;
             }
             .toggle-sidebar {
                 display:none;
             }
         }
-
     }
 
-    // Responsive view for Laptop
+    // For Laptop
     @include media-breakpoint-up(lg) {
-
         > .sidebar-header {
-          height: $sidebar-header-height;
+          height: 4rem;
         }
-
         @include make-col(3);
     }
 
-    // Responsive view for Screen
+    // For Big Screen
     @include media-breakpoint-up(xl) {
         @include make-col(2);
     }
-
 
 }

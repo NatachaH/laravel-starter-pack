@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| SP - Backend - Components - Search - Design
+| Search component
 |--------------------------------------------------------------------------
 */
 
@@ -17,6 +17,13 @@
         > input, > .btn {
             @include border-radius(0);
             border-color: transparent;
+        }
+
+        > .btn[data-toggle="collapse"] {
+          &:not(.collapsed) {
+            background: $primary;
+            color: $white;
+          }
         }
 
         > .btn > i {

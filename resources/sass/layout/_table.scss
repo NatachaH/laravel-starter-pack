@@ -1,0 +1,34 @@
+/*
+|--------------------------------------------------------------------------
+| Form
+|--------------------------------------------------------------------------
+*/
+
+table.table {
+
+    margin: 0;
+
+    th {
+        border-top: none;
+        text-transform: uppercase;
+        color: $secondary;
+    }
+
+    .td-fit {
+      white-space: nowrap;
+      width: 1%;
+    }
+
+    tfoot {
+      tr:first-child {
+        td {
+          border-top-width: 2px;
+          border-top-color: $primary;
+        }
+      }
+      td {
+        background: lighten($secondary,28%);
+      }
+    }
+
+}

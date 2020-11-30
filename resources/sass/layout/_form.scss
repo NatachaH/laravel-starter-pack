@@ -1,6 +1,6 @@
 /*
 |--------------------------------------------------------------------------
-| SP - Backend - Components - Form - Design
+| Form
 |--------------------------------------------------------------------------
 */
 
@@ -24,10 +24,33 @@ form {
           margin-bottom: 1rem;
       }
 
-      &.dynamic-fieldset > .dynamic-list > .dynamic-item-delete {
-          > .dynamic-item-btn .icon-trash:before{
-            content: "\e035" // Change the icon for a plus
-          }
+      &.dynamic-fieldset > .dynamic-list {
+
+        > .dynamic-item > div {
+
+            margin:0 0.25rem;
+
+            &:first-child,
+            &:last-child {
+              margin:0;
+            }
+
+        }
+
+        > .dynamic-item-delete {
+            > .dynamic-item-btn .icon-trash:before{
+              content: "\e035" // Change the icon for a plus
+            }
+        }
+
+      }
+
+      .form-check-inline:not(.form-check) > label {
+        display: block;
+      }
+
+      .invalid-feedback {
+        display: block;
       }
 
   }
