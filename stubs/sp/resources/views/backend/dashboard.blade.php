@@ -6,7 +6,7 @@
 
   <div class="row">
     <div class="col-lg-8">
-      <div class="jumbotron text-center mb-0">
+      <x-bs-card class="text-center">
         <h2>{!! __('sp::dashboard.welcome', ['name' => Auth::user()->name]) !!}</h2>
         <p class="lead">
           @lang('sp::dashboard.lead')
@@ -14,7 +14,7 @@
         <p>
           {!! __('sp::dashboard.description') !!}
         </p>
-      </div>
+      </x-bs-card>
 
       <div class="row">
         <div class="col-md-4">
