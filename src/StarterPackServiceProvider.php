@@ -60,7 +60,7 @@ class StarterPackServiceProvider extends ServiceProvider
 
       // VIEWS COMPOSERS
       View::composer(
-          'sp::partials.breadcrumb', 'Nh\StarterPack\View\Composers\BreadcrumbComposer'
+        'sp::layouts.partials.breadcrumb', 'Nh\StarterPack\View\Composers\BreadcrumbComposer'
       );
 
       // TRANSLATIONS

@@ -17,27 +17,30 @@
 </head>
 <body>
 
-  <div class="container-fluid" id="backend">
+
+  <div class="container-fluid sidebar-on" id="app">
 
       <div class="row">
 
-          @include('sp::partials.sidebar')
+          @include('sp::layouts.partials.sidebar')
 
-          <main>
+          <div id="content">
 
-              @include('sp::partials.mainbar')
+            <header>
+              @include('sp::layouts.partials.mainbar')
+              @include('sp::layouts.partials.breadcrumb')
+            </header>
 
-              @include('sp::partials.breadcrumb')
+            <main>
+              @yield('content')
+            </main>
 
-              <div class="main-body">
-                @yield('content')
-              </div>
-
-          </main>
+          </div>
 
       </div>
 
   </div>
+
 
   <div id="toastNotification">
     @if($toasts = session('toast'))
@@ -48,10 +51,6 @@
     <x-sp-toast class="toast-custom hide" message="" color="success" />
     <x-sp-toast class="toast-custom hide" message="" color="danger" />
   </div>
-
-  <form id="logoutForm" class="d-none" action="{{ route('logout') }}" method="POST">
-      @csrf
-  </form>
 
   <x-bs-modal-confirm id="deleteConfirm" color="danger" icon="icon-trash" :title="__('sp::modal.delete.title')" method="DELETE" centered is-static>
     <p>@lang('sp::modal.delete.message')</p>

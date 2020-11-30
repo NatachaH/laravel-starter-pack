@@ -31,14 +31,6 @@
         background: $card-bg;
         margin: 1rem 0;
 
-        .table {
-
-            tbody > tr:not([data-lvl="0"]) {
-              background: $light
-            }
-
-        }
-
     }
 
     .listing-footer {

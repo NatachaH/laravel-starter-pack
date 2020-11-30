@@ -28,6 +28,9 @@
         <a class="dropdown-item" href="{{ route('logout')}}" onclick="event.preventDefault();document.getElementById('logoutForm').submit();">
           @lang('Logout')
         </a>
+        <form id="logoutForm" class="d-none" action="{{ route('logout') }}" method="POST">
+            @csrf
+        </form>
       </li>
     </ul>
   </div>

@@ -38,7 +38,7 @@ class StarterPackPreset extends Preset
         ]);
 
         $preset = [
-          "bootstrap" : "^5.0.0-alpha3",
+          "bootstrap" => "^5.0.0-alpha3",
           "popper.js" => "^1.12",
           "quill" => "^1.3.6",
           "sortablejs" => "^1.10.2",

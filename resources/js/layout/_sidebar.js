@@ -4,7 +4,7 @@
 |--------------------------------------------------------------------------
 */
 
-var backend = document.getElementById('backend');
+var backend = document.getElementById('app');
 var toggles = document.querySelectorAll('.toggle-sidebar');
 
 toggles.forEach((el, i) => {

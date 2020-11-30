@@ -2,14 +2,7 @@
 |--------------------------------------------------------------------------
 | SP - Backend - Media - Script
 |--------------------------------------------------------------------------
-|
-| Require: require('vendor/nh/bs-component/resources/js/dynamic');
-| Require: require('vendor/nh/sortable/resources/js/sortable');
-|
 */
-
-// Init the Bootstrap File Input
-bsCustomFileInput.init();
 
 // Init the Dynamic to each .dynamic-media
 var dynamicMedia = document.querySelectorAll('.dynamic-media');
@@ -17,9 +10,7 @@ dynamicMedia.forEach((el, i) => {
 
     // Init the dynamic
     new Dynamic(el, {
-      addCallback: function(){
-        bsCustomFileInput.init();
-      }
+      addCallback: function(){}
     });
 
     // Init the sortable on multiple list
