@@ -30,7 +30,7 @@ class {{ UCNAME }}Controller extends Controller
      */
     public function index()
     {
-        ${{ PNAME }} = {{ UCNAME }}::paginate();
+        ${{ PNAME }} = {{ UCNAME }}::sortable()->paginate();
         return view('backend.{{ PNAME }}.index', compact('{{ PNAME }}'));
     }
 
@@ -45,8 +45,10 @@ class {{ UCNAME }}Controller extends Controller
         $search = new Search('{{ PNAME }}', $request->input('search'));
 
         // Get an attribute in Search Class
-        $keywords = $search->attribute('text');
-        $published = $search->attribute('published');
+        $keywords     = $search->attribute('text');
+        $published    = $search->attribute('published');
+        $sortF        = $search->attribute('sort')['field'] ?? null;
+        $sortD        = $search->attribute('sort')['direction'] ?? null;
 
         // Make the search query
         // The search can be 'contains', 'start' or 'end'
@@ -60,7 +62,7 @@ class {{ UCNAME }}Controller extends Controller
         }
 
         // Return the paginate result
-        ${{ PNAME }} = ${{ PNAME }}->paginate();
+        ${{ PNAME }} = ${{ PNAME }}->sortable($sortF,$sortD)->paginate();
 
         // Display the result
         return view('backend.{{ PNAME }}.index', compact('{{ PNAME }}'));

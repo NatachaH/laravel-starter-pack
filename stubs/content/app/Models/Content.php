@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 use Nh\Mediable\Traits\Mediable;
+use Nh\Searchable\Traits\Sortable;
 use Nh\Searchable\Traits\Searchable;
 use Nh\Trackable\Traits\Trackable;
 
 class {{ UCNAME }} extends Model
 {
 
-    use Mediable;
-    use Searchable;
-    use Trackable;
+    use Mediable,
+        Sortable,
+        Searchable,
+        Trackable;
 
     /**
      * The attributes that are mass assignable.
@@ -38,6 +40,14 @@ class {{ UCNAME }} extends Model
      * @var int
      */
     protected $perPage = 10;
+
+    /**
+     * Default sortable field and direction.
+     * @var array
+     */
+    protected $sortable = [
+        'field' => 'title'
+    ];
 
     /**
      * The searchable columns.
