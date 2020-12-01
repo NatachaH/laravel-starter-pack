@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 use Nh\Mediable\Traits\Mediable;
-use Nh\Searchable\Traits\Sortable;
+use Nh\Sortable\Traits\Sortable;
 use Nh\Searchable\Traits\Searchable;
 use Nh\Trackable\Traits\Trackable;
 
