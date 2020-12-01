@@ -13,7 +13,7 @@
 
         <legend>@lang('sp::field.information')</legend>
 
-        <x-bs-check class="custom-switch" type="checkbox" :label="__('sp::field.published')" name="published" value="1" checked boolean/>
+        <x-bs-check class="form-switch" type="checkbox" :label="__('sp::field.published')" name="published" value="1" checked boolean/>
 
         <x-bs-input :label="__('sp::field.title')" type="text" name="title" required/>
 
