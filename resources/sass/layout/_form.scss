@@ -20,8 +20,16 @@ form {
       }
 
       > .row > div,
-      > div:not(.row) {
+      > div:not(.row),
+      &.row > div {
           margin-bottom: 1rem;
+      }
+
+      &.row > div > div {
+          margin-bottom: 1rem;
+          &:last-child {
+              margin-bottom: 0;
+          }
       }
 
       &.dynamic-fieldset > .dynamic-list {
