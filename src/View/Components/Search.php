@@ -18,6 +18,13 @@ class Search extends Component
     public $key;
 
     /**
+     * The model class.
+     *
+     * @var string
+     */
+    public $model;
+
+    /**
      * Base route for action and views.
      *
      * @var string
