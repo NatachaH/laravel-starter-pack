@@ -33,6 +33,9 @@ return [
     'confirm'       => 'Confirmer',
     'choose-file'   => 'Choisir un fichier',
     'browse'        => 'Parcourir',
-    'send'          => 'Envoyer'
+    'send'          => 'Envoyer',
+    'collapse'      => 'Ouvrir/Fermer',
+    'filter'        => 'Filtrer',
+    'sort'          => 'Trier'
 
 ];

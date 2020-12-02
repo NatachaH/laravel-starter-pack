@@ -33,6 +33,9 @@ return [
     'confirm'       => 'Confirm',
     'choose-file'   => 'Choose a file',
     'browse'        => 'Browse',
-    'send'          => 'Send'
+    'send'          => 'Send',
+    'collapse'      => 'Collapse',
+    'filter'        => 'Filter',
+    'sort'          => 'Sort'
 
 ];

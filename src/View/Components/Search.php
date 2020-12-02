@@ -5,6 +5,8 @@ namespace Nh\StarterPack\View\Components;
 use Illuminate\View\Component;
 use Illuminate\Support\Arr;
 
+use Auth;
+
 class Search extends Component
 {
 
@@ -37,12 +39,42 @@ class Search extends Component
     public $isAdvanced;
 
     /**
+     * Is the form have a sortable search option.
+     *
+     * @var boolean
+     */
+    public $isSortable;
+
+    /**
+     * Sortable fields options.
+     *
+     * @var array
+     */
+    public $sortableFields;
+
+    /**
      * The id of the collapse bloc.
      * By default: collapseSearch.
      *
      * @var string
      */
     public $collapseId;
+
+    /**
+     * The id of the collapse bloc.
+     * By default: collapseSearchFilter.
+     *
+     * @var string
+     */
+    public $collapseFilterId;
+
+    /**
+     * The id of the collapse bloc.
+     * By default: collapseSearchSort.
+     *
+     * @var string
+     */
+    public $collapseSortId;
 
     /**
      * The session Search.
@@ -59,7 +91,7 @@ class Search extends Component
     {
         if(!is_null($this->search))
         {
-            $attributes = Arr::except($this->search->attributes, ['text']);
+            $attributes = Arr::except($this->search->attributes, ['text','sort']);
             return count($attributes) > 0 ? true : false;
         } else {
             return false;
@@ -67,18 +99,67 @@ class Search extends Component
     }
 
     /**
+     * Check if the sortable search bloc is open.
+     * @return boolean
+     */
+    public function isSortableOpen()
+    {
+        if(!is_null($this->search))
+        {
+            $attributes = Arr::only($this->search->attributes, ['sort']);
+            return count($attributes) > 0 && ($attributes['sort']['field'] != array_key_first($this->sortableFields) || $attributes['sort']['direction'] != 'asc') ? true : false;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Define the array of options for the sortable select.
+     * @return array
+     */
+    private function defineSortableFields($values)
+    {
+        $fields = [];
+
+        if(!empty($values))
+        {
+          $array = explode('|', $values);
+
+          foreach ($array as $value) {
+            $fields[$value] = (\Lang::has('sp::field.'.$value) ? __('sp::field.'.$value) : (\Lang::has('backend.field.'.$value) ? __('backend.field.'.$value) : $value));
+          }
+        }
+
+        return $fields;
+    }
+
+    /**
+     * Check if the model has Soft Deleting method and that the Auth user can see the trashed items.
+     * @return boolean
+     */
+    public function hasSoftDelete()
+    {
+        return in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($this->model)) && Auth::user()->can('viewTrashed', $this->model);
+    }
+
+    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($key, $route, $folder = null, $isAdvanced = false, $collapseId = 'collapseSearch')
+    public function __construct($key, $model, $route, $folder = null, $isAdvanced = false, $isSortable = false, $sortableFields = [], $collapseId = 'collapseSearch')
     {
-        $this->key            = $key;
-        $this->route          = $route;
-        $this->folder         = empty($folder) ? $route : $folder;
-        $this->isAdvanced     = $isAdvanced;
-        $this->collapseId     = $collapseId;
-        $this->search         = session()->exists('search.'.$this->key) ? session('search.'.$this->key) : null;
+        $this->key              = $key;
+        $this->model            = $model;
+        $this->route            = $route;
+        $this->folder           = empty($folder) ? $route : $folder;
+        $this->isAdvanced       = $isAdvanced;
+        $this->sortableFields   = $this->defineSortableFields($sortableFields);
+        $this->isSortable       = $isSortable && !empty($this->sortableFields);
+        $this->collapseId       = $collapseId;
+        $this->collapseFilterId = $collapseId.'Filter';
+        $this->collapseSortId   = $collapseId.'Sort';
+        $this->search           = session()->exists('search.'.$this->key) ? session('search.'.$this->key) : null;
     }
 
     /**
