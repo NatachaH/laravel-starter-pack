@@ -4,7 +4,6 @@
     "license": "MIT",
     "type": "library",
     "require": {
-      "laravel/ui": "^2.0",
       "nh/bs-component": "dev-master",
       "nh/access-control": "dev-master",
       "nh/mediable": "dev-master",

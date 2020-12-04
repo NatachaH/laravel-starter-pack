@@ -6,10 +6,10 @@ Install the package via composer:
 composer require nh/starter-pack
 ```
 
-Install the ui:
+Install the preset:
 
 ```
-php artisan ui sp
+php artisan preset:sp
 ```
 
 Dumb the composer autoload:
@@ -23,6 +23,16 @@ Migrate the basic databases and seed the default roles/permissions:
 ```
 php artisan migrate
 php artisan db:seed
+```
+
+Add the NPM packages in your package.json:
+
+```
+"bootstrap": "^5.0.0-alpha3",
+"popper.js": "^1.12",
+"quill": "^1.3.6",
+"sortablejs": "^1.10.2",
+"flatpickr": "^4.6.3"
 ```
 
 Install the NPM packages and run the default js/scss:

@@ -2,14 +2,10 @@
 namespace Nh\StarterPack;
 
 use Illuminate\Support\ServiceProvider;
-use Laravel\Ui\UiCommand;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
 use View;
 
-use Artisan;
-
-use Nh\StarterPack\StarterPackPreset;
 
 class StarterPackServiceProvider extends ServiceProvider
 {
@@ -32,28 +28,14 @@ class StarterPackServiceProvider extends ServiceProvider
     public function boot()
     {
 
-      UiCommand::macro('sp', function(UiCommand $command) {
-
-          // Install the Presets
-          StarterPackPreset::install();
-
-          // Artisan commandes for Bootstrap Component Package
-          Artisan::call('vendor:publish --tag=bs-component');
-
-          // Artisan commandes for Access Control Package
-          Artisan::call('vendor:publish --tag=access-control');
-          Artisan::call('role:new user');
-
-          // Artisan commandes for Mediable Package
-          Artisan::call('vendor:publish --tag=mediable');
-
-          // Artisan commandes for Trackable Package
-          Artisan::call('vendor:publish --tag=trackable');
-
-          // Return success
-          $command->info('The Starter Pack Preset is installed !');
-
-      });
+      // COMMANDES
+      if ($this->app->runningInConsole()) {
+          $this->commands([
+              \Nh\StarterPack\Console\Commands\NewContentCommand::class,
+              \Nh\StarterPack\Console\Commands\NewUserCommand::class,
+              \Nh\StarterPack\Console\Commands\PresetCommand::class,
+          ]);
+      }
 
       // VIEWS
       $this->loadViewsFrom(__DIR__.'/../resources/views', 'sp');
@@ -74,15 +56,6 @@ class StarterPackServiceProvider extends ServiceProvider
       Blade::component('sp-media-dynamic', \Nh\StarterPack\View\Components\Form\MediaDynamic::class);
       Blade::component('sp-media-listing', \Nh\StarterPack\View\Components\MediaListing::class);
       Blade::component('sp-history', \Nh\StarterPack\View\Components\History::class);
-
-
-      // COMMANDES
-      if ($this->app->runningInConsole()) {
-          $this->commands([
-              \Nh\StarterPack\Console\Commands\NewContentCommand::class,
-              \Nh\StarterPack\Console\Commands\NewUserCommand::class,
-          ]);
-      }
 
       // POLICIES
       Gate::policy('App\Models\User', \Nh\StarterPack\Policies\UserPolicy::class);
