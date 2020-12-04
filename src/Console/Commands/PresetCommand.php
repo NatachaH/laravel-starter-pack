@@ -45,6 +45,9 @@ class PresetCommand extends Command
     public function handle()
     {
 
+        // Artisan commandes for Fortify
+        Artisan::call('vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"');
+
         $this->updateApp();
         $this->updateConfig();
         $this->updateDatabase();
@@ -65,6 +68,8 @@ class PresetCommand extends Command
         // Artisan commandes for Trackable Package
         Artisan::call('vendor:publish --tag=trackable');
 
+
+        // Confirm every thing ok
         $this->line('The preset Srater Pack has been installed !');
 
     }
