@@ -7,7 +7,7 @@
   <form method="POST" action="{{ route('password.update') }}" class="needs-validation" novalidate>
       @csrf
 
-      <input type="hidden" name="token" value="{{ $token }}">
+      <input type="hidden" name="token" value="{{ request()->route('token') }}">
 
       @if (session('status'))
 
@@ -19,7 +19,7 @@
 
           <div class="input-group mb-3">
               <span class="input-group-text" id="email"><i class="icon icon-mail"></i></span>
-              <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" placeholder="{{ __('E-Mail Address') }}" aria-label="{{ __('E-Mail Address') }}" aria-describedby="email" required>
+              <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ request()->email ?? old('email') }}" placeholder="{{ __('E-Mail Address') }}" aria-label="{{ __('E-Mail Address') }}" aria-describedby="email" required>
               @error('email')
                   <span class="invalid-feedback" role="alert">
                       {{ $message }}
