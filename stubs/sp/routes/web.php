@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Auth
-Auth::routes(['register' => false]);
-
 // Home page
 Route::get('/', function () {
     return view('home');

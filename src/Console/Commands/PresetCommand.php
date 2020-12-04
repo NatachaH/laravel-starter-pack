@@ -25,6 +25,8 @@ class PresetCommand extends Command
      */
     protected $description = 'Init the starter-pack preset.';
 
+    protected $stub = __DIR__.'/../../../stubs/sp/';
+
     /**
      * Create a new command instance.
      *
@@ -43,12 +45,12 @@ class PresetCommand extends Command
     public function handle()
     {
 
-        static::updateApp();
-        static::updateConfig();
-        static::updateDatabase();
-        static::updateResources();
-        static::updateRoutes();
-        static::updateWebpack();
+        $this->updateApp();
+        $this->updateConfig();
+        $this->updateDatabase();
+        $this->updateResources();
+        $this->updateRoutes();
+        $this->updateWebpack();
 
         // Artisan commandes for Bootstrap Component Package
         Artisan::call('vendor:publish --tag=bs-component');
@@ -71,9 +73,9 @@ class PresetCommand extends Command
      * Updates the providers files
      * @return void
      */
-    private static function updateApp()
+    private function updateApp()
     {
-        $stub = __DIR__.'/../stubs/sp/app';
+        $stub = $this->stub.'/app';
         $path = app_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -82,9 +84,9 @@ class PresetCommand extends Command
      * Updates the config files
      * @return void
      */
-    private static function updateConfig()
+    private function updateConfig()
     {
-        $stub = __DIR__.'/../stubs/sp/config';
+        $stub = $this->stub.'/config';
         $path = config_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -93,9 +95,9 @@ class PresetCommand extends Command
      * Updates the database files
      * @return void
      */
-    private static function updateDatabase()
+    private function updateDatabase()
     {
-        $stub = __DIR__.'/../stubs/sp/database';
+        $stub = $this->stub.'/database';
         $path = database_path();
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -104,13 +106,13 @@ class PresetCommand extends Command
      * Update the resources folders
      * @return void
      */
-    private static function updateResources()
+    private function updateResources()
     {
         (new Filesystem)->cleanDirectory(resource_path('js'));
         (new Filesystem)->cleanDirectory(resource_path('sass'));
         (new Filesystem)->cleanDirectory(resource_path('views'));
 
-        $stub = __DIR__.'/../stubs/sp/resources/';
+        $stub = $this->stub.'/resources/';
 
         (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
         (new Filesystem)->copyDirectory($stub.'lang', resource_path('lang'));
@@ -122,9 +124,9 @@ class PresetCommand extends Command
      * Updates the routes files
      * @return void
      */
-    private static function updateRoutes()
+    private function updateRoutes()
     {
-        $stub = __DIR__.'/../stubs/sp/routes';
+        $stub = $this->stub.'/routes';
         $path = base_path('routes');
         (new Filesystem)->copyDirectory($stub, $path);
     }
@@ -133,9 +135,9 @@ class PresetCommand extends Command
      * Updates the webpack file
      * @return void
      */
-    private static function updateWebpack()
+    private function updateWebpack()
     {
-        copy(__DIR__.'/../stubs/sp/webpack.mix.js', base_path('webpack.mix.js'));
+        copy($this->stub.'/webpack.mix.js', base_path('webpack.mix.js'));
     }
 
 }
