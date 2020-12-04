@@ -4,7 +4,7 @@
     "license": "MIT",
     "type": "library",
     "require": {
-      "laravel/fortify": "^1.7",
+      "laravel/fortify": "^1.7", 
       "nh/bs-component": "dev-master",
       "nh/access-control": "dev-master",
       "nh/mediable": "dev-master",
