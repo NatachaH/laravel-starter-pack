@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <x-sp-search key="{{ PNAME }}" model="App\Models\{{ UCNAME }}"  route="backend.{{ PNAME }}" is-advanced />
+  <x-sp-search key="{{ PNAME }}" model="App\Models\{{ UCNAME }}" route="backend.{{ PNAME }}" is-advanced />
 
   <x-sp-listing :items="${{ PNAME }}" header="title|published" model="App\Models\{{ UCNAME }}" route="backend.{{ PNAME }}" show-id />
 
