@@ -238,3 +238,39 @@ Display a toast notification.
 ```
 <x-sp-toast message="Hey i am a toast !" color="success" />
 ```
+
+# Helpers
+
+The package come with some helpers.
+
+## Nofification
+
+Return a translated sentence for notification:
+*Exemple: Page has been added with success !*
+
+```
+notification('added','page')
+```
+
+## RequestClean
+
+Return a clean request value.
+*Exemple:  [0 => 'foo',1 => false,2 => -1,3 => null,4 => '',5 => '0', 6 => 0] will return [0 => 'foo',2 => -1]*
+
+```
+requestClean('test')
+```
+
+## Sync
+
+Check if a sync is clean or dirty, and get the event.
+
+```
+$sync = $model->items()->sync($array);
+
+syncIsClean(sync); // Check if the sync is clean
+
+syncIsDirty(sync); // Check if the sync is dirty
+
+getSyncEvent(sync); // Return the event as updated/created/deleted
+```
