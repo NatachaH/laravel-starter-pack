@@ -6,6 +6,8 @@ Install the package via composer:
 composer require nh/starter-pack
 ```
 
+## Preset
+
 Install the preset:
 
 ```
@@ -18,6 +20,44 @@ Dumb the composer autoload:
 composer dump-autoload
 ```
 
+## Laravel/Fortify
+
+Install fortify via composer:
+
+```
+composer require laravel/fortify
+```
+
+Publish the vendor:
+
+```
+php artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
+```
+
+Add the provider in your config/app.php
+
+```
+App\Providers\FortifyServiceProvider::class
+```
+
+Add in boot() of app/Providers/FortifyServiceProvider.php:
+
+```
+Fortify::loginView(function () {
+    return view('auth.login');
+});
+
+Fortify::requestPasswordResetLinkView(function () {
+    return view('auth.forgot');
+});
+
+Fortify::resetPasswordView(function () {
+    return view('auth.reset');
+});
+```
+
+## Database
+
 Migrate the basic databases and seed the default roles/permissions:
 
 ```
@@ -25,10 +65,12 @@ php artisan migrate
 php artisan db:seed
 ```
 
+## Design
+
 Add the NPM packages in your package.json:
 
 ```
-"bootstrap": "^5.0.0-alpha3",
+"bootstrap": "^5.0.0-beta1",
 "popper.js": "^1.12",
 "quill": "^1.3.6",
 "sortablejs": "^1.10.2",

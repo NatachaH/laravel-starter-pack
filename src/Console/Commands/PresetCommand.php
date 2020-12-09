@@ -52,14 +52,13 @@ class PresetCommand extends Command
         $this->updateRoutes();
         $this->updateWebpack();
 
-        // Artisan commandes for Fortify
-        Artisan::call('vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"');
-
         // Artisan commandes for Bootstrap Component Package
         Artisan::call('vendor:publish --tag=bs-component');
 
         // Artisan commandes for Access Control Package
         Artisan::call('vendor:publish --tag=access-control');
+
+        // Make User roleable
         Artisan::call('role:new user');
 
         // Artisan commandes for Mediable Package
@@ -68,9 +67,8 @@ class PresetCommand extends Command
         // Artisan commandes for Trackable Package
         Artisan::call('vendor:publish --tag=trackable');
 
-
         // Confirm every thing ok
-        $this->line('The preset Srater Pack has been installed !');
+        $this->info('The preset Srater Pack has been installed !');
 
     }
 
