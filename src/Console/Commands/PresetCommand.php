@@ -45,15 +45,15 @@ class PresetCommand extends Command
     public function handle()
     {
 
-        // Artisan commandes for Fortify
-        Artisan::call('vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"');
-
         $this->updateApp();
         $this->updateConfig();
         $this->updateDatabase();
         $this->updateResources();
         $this->updateRoutes();
         $this->updateWebpack();
+
+        // Artisan commandes for Fortify
+        Artisan::call('vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"');
 
         // Artisan commandes for Bootstrap Component Package
         Artisan::call('vendor:publish --tag=bs-component');
