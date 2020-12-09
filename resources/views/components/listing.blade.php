@@ -127,7 +127,7 @@
     @if($hasPagination())
         <div class="listing-footer d-flex align-items-center">
             {{ $items->links('sp::includes.pagination') }}
-            <span class="listing-total ml-auto">@lang('sp::listing.total') {{$items->count().'/'.$items->total()}}</span>
+            <span class="listing-total ms-auto">@lang('sp::listing.total') {{$items->count().'/'.$items->total()}}</span>
         </div>
     @endif
 

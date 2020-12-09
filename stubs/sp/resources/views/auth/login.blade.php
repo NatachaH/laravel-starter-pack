@@ -39,10 +39,10 @@
           @enderror
       </div>
 
-      <button type="submit" class="btn btn-block btn-primary">{{ __('Login') }}</button>
+      <button type="submit" class="btn w-100 btn-primary">{{ __('Login') }}</button>
 
       @if (Route::has('password.request'))
-          <a class="btn btn-sm btn-block btn-link" href="{{ route('password.request') }}">
+          <a class="btn btn-sm w-100 btn-link" href="{{ route('password.request') }}">
               {{ __('Forgot Your Password?') }}
           </a>
       @endif

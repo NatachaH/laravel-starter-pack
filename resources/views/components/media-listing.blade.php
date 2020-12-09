@@ -10,17 +10,17 @@
             </button>
           @endif
 
-          <span class="mr-auto {{ $sortable ? 'border-left pl-3' : '' }}">
-            <i class="icon-file-{{ $item->format }} mr-1"></i>
+          <span class="me-auto {{ $sortable ? 'border-left pl-3' : '' }}">
+            <i class="icon-file-{{ $item->format }} me-1"></i>
             {{ $item->name ?? $item->filename }} @isset($item->name) <small class="text-muted font-italic">{{ $item->filename }}</small> @endisset
           </span>
 
           @if($showDates)
-            <small class="text-muted font-italic mr-4">{{ $item->created_at }}</small>
+            <small class="text-muted font-italic me-4">{{ $item->created_at }}</small>
           @endif
 
           @if($hasPreview && $item->thumbnail)
-            <button type="button" class="btn btn-gray rounded-circle mr-1 popover-media" data-container="body" data-bs-toggle="popover" data-content="<img src='{{ $item->thumbnail }}' />" aria-label="@lang('sp::action.preview')">
+            <button type="button" class="btn btn-gray rounded-circle me-1 popover-media" data-container="body" data-bs-toggle="popover" data-content="<img src='{{ $item->thumbnail }}' />" aria-label="@lang('sp::action.preview')">
               <i class="icon-preview"></i>
             </button>
           @endif
