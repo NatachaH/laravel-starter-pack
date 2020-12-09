@@ -1,7 +1,7 @@
 <div id="sidebar">
 
     <div class="sidebar-header">
-      <h1>My App</h1>
+      <h1><span class="text-primary font-weight-normal">BACK</span><span class="text-secondary font-weight-light">END</span></h1>
       <button class="btn toggle-sidebar" type="button" aria-label="Menu"></button>
     </div>
 
