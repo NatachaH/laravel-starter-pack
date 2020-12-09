@@ -5,12 +5,12 @@
       <li class="list-group-item d-flex align-items-center" data-id="{{ $item->id }}">
 
           @if($sortable)
-            <button class="btn drag pl-0" aria-label="@lang('sp::action.move')">
+            <button class="btn drag ps-0" aria-label="@lang('sp::action.move')">
               <i class="icon-move"></i>
             </button>
           @endif
 
-          <span class="me-auto {{ $sortable ? 'border-left pl-3' : '' }}">
+          <span class="me-auto {{ $sortable ? 'border-left ps-3' : '' }}">
             <i class="icon-file-{{ $item->format }} me-1"></i>
             {{ $item->name ?? $item->filename }} @isset($item->name) <small class="text-muted font-italic">{{ $item->filename }}</small> @endisset
           </span>

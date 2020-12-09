@@ -28,7 +28,7 @@ return [
           'value' => '<i class="icon-trash"></i>'
         ],
         'sortable' => [
-          'class' => 'pl-0',
+          'class' => 'ps-0',
           'label' => 'sp::action.move',
           'value' => '<i class="icon-move"></i>'
         ]
