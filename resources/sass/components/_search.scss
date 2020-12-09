@@ -19,7 +19,7 @@
             border-color: transparent;
         }
 
-        > .btn[data-toggle="collapse"] {
+        > .btn[data-bs-toggle="collapse"] {
           &:not(.collapsed) {
             background: $primary;
             color: $white;

@@ -97,15 +97,15 @@
                                 @endif
 
                                 @if(Route::has($route.'.destroy') && Auth::user()->can('delete', $item))
-                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.destroy', $item->id) }}" data-target="#{{ Route::has($route.'.forceDelete') ? 'softDeleteConfirm' : 'deleteConfirm' }}" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.delete')"><i class="icon icon-trash"></i></button>
+                                    <button type="button" data-bs-toggle="modal" data-action="{{ route($route.'.destroy', $item->id) }}" data-bs-target="#{{ Route::has($route.'.forceDelete') ? 'softDeleteConfirm' : 'deleteConfirm' }}" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.delete')"><i class="icon icon-trash"></i></button>
                                 @endif
 
                                 @if(Route::has($route.'.restore') && Auth::user()->can('restore', $item))
-                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.restore', $item->id) }}" data-target="#restoreConfirm" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.restore')"><i class="icon icon-time-reverse"></i></button>
+                                    <button type="button" data-bs-toggle="modal" data-action="{{ route($route.'.restore', $item->id) }}" data-bs-target="#restoreConfirm" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.restore')"><i class="icon icon-time-reverse"></i></button>
                                 @endif
 
                                 @if(Route::has($route.'.forceDelete') && Auth::user()->can('forceDelete', $item))
-                                    <button type="button" data-toggle="modal" data-action="{{ route($route.'.forceDelete', $item->id) }}" data-target="#deleteConfirm" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.force-delete')"><i class="icon icon-trash"></i></button>
+                                    <button type="button" data-bs-toggle="modal" data-action="{{ route($route.'.forceDelete', $item->id) }}" data-bs-target="#deleteConfirm" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.force-delete')"><i class="icon icon-trash"></i></button>
                                 @endif
 
                             </td>

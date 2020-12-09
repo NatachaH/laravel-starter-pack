@@ -11,7 +11,7 @@
   </a>
 
   <div class="dropdown" id="accountDropdown">
-    <button class="btn dropdown-toggle" type="button" id="accountDropdownBtn" data-toggle="dropdown" aria-expanded="false">
+    <button class="btn dropdown-toggle" type="button" id="accountDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
        <i class="icon-user"></i> <span>{{ Auth::user() ? Auth::user()->name : 'Username' }}</span>
     </button>
     <ul class="dropdown-menu " aria-labelledby="accountDropdown">

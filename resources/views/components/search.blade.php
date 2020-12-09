@@ -7,11 +7,11 @@
       <input type="text" name="search[text]" class="form-control" placeholder="@lang('sp::action.search')" aria-label="@lang('sp::action.search')" value="{{ $search ? $search->attribute('text') : '' }}">
 
       @if($isAdvanced)
-        <button class="btn btn-outline-secondary {{ !$isAdvancedOpen() ? 'collapsed' : '' }}" type="button" data-toggle="collapse" data-target="#{{ $collapseFilterId }}" aria-expanded="false"  aria-label="@lang('sp::action.collapse')" aria-controls="{{ $collapseFilterId }}" title="@lang('sp::action.filter')"><i class="icon-filter"></i></button>
+        <button class="btn btn-outline-secondary {{ !$isAdvancedOpen() ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseFilterId }}" aria-expanded="false"  aria-label="@lang('sp::action.collapse')" aria-controls="{{ $collapseFilterId }}" title="@lang('sp::action.filter')"><i class="icon-filter"></i></button>
       @endif
 
       @if($isSortable)
-        <button class="btn btn-outline-secondary {{ !$isSortableOpen() ? 'collapsed' : '' }}" type="button" data-toggle="collapse" data-target="#{{ $collapseSortId }}" aria-expanded="false"  aria-label="@lang('sp::action.collapse')" aria-controls="{{ $collapseSortId }}" title="@lang('sp::action.sort')"><i class="icon-list"></i></button>
+        <button class="btn btn-outline-secondary {{ !$isSortableOpen() ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseSortId }}" aria-expanded="false"  aria-label="@lang('sp::action.collapse')" aria-controls="{{ $collapseSortId }}" title="@lang('sp::action.sort')"><i class="icon-list"></i></button>
       @endif
 
       <button class="btn btn-outline-primary" type="submit" title="@lang('sp::action.search')"><i class="icon-search"></i> @lang('sp::action.search')</button>

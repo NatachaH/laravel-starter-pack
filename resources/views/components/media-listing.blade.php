@@ -20,7 +20,7 @@
           @endif
 
           @if($hasPreview && $item->thumbnail)
-            <button type="button" class="btn btn-gray rounded-circle mr-1 popover-media" data-container="body" data-toggle="popover" data-content="<img src='{{ $item->thumbnail }}' />" aria-label="@lang('sp::action.preview')">
+            <button type="button" class="btn btn-gray rounded-circle mr-1 popover-media" data-container="body" data-bs-toggle="popover" data-content="<img src='{{ $item->thumbnail }}' />" aria-label="@lang('sp::action.preview')">
               <i class="icon-preview"></i>
             </button>
           @endif
