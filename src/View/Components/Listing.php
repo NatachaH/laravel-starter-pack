@@ -69,6 +69,13 @@ class Listing extends Component
     public $total;
 
     /**
+     * Enable the sortable.
+     *
+     * @var boolean
+     */
+    public $sortable;
+
+    /**
      * The sortable order
      *
      * @var string
@@ -99,7 +106,7 @@ class Listing extends Component
      */
     public function isSortable()
     {
-        return in_array('Nh\Sortable\Traits\Sortable', class_uses($this->model));
+        return $this->sortable && in_array('Nh\Sortable\Traits\Sortable', class_uses($this->model));
     }
 
     /**
@@ -143,7 +150,7 @@ class Listing extends Component
      *
      * @return void
      */
-    public function __construct($model, $route, $header, $items, $showId = false, $showDates = false, $folder = null, $sortableOrder = 'asc')
+    public function __construct($model, $route, $header, $items, $showId = false, $showDates = false, $folder = null, $sortable = false, $sortableOrder = 'asc')
     {
         $this->model      = $model;
         $this->route      = $route;
@@ -153,6 +160,7 @@ class Listing extends Component
         $this->showDates  = $showDates;
         $this->folder     = empty($folder) ? $route : $folder;
         $this->total      = $this->defineTotal();
+        $this->sortable   = $sortable;
         $this->sortableOrder  = $sortableOrder;
     }
 
