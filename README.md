@@ -37,7 +37,7 @@ php artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
 Add the provider in your config/app.php
 
 ```
-App\Providers\FortifyServiceProvider::class
+App\Providers\FortifyServiceProvider::class,
 ```
 
 Add in boot() of app/Providers/FortifyServiceProvider.php:
@@ -71,7 +71,7 @@ Add the NPM packages in your package.json:
 
 ```
 "bootstrap": "^5.0.0-beta1",
-"popper.js": "^1.12",
+"@popperjs/core": "^2.6.0",
 "quill": "^1.3.6",
 "sortablejs": "^1.10.2",
 "flatpickr": "^4.6.3"
