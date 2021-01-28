@@ -115,6 +115,68 @@ Don't forget to add the name of your model in:
 
 And enjoy !
 
+# Rules
+
+## Lowercase
+
+Check that the field is lowercase.
+
+```
+use Nh\StarterPack\Rules\Lowercase;
+
+public function rules()
+{
+    return [
+      'my_field'  => [new Lowercase]
+    ];
+}
+```
+
+## WithoutSpace
+
+Check that the field is without space.
+
+```
+use Nh\StarterPack\Rules\WithoutSpace;
+
+public function rules()
+{
+    return [
+      'my_field'  => [new WithoutSpace]
+    ];
+}
+```
+
+## Phone
+
+Check that the field is a valid phone number (can start with +, can contain numbers dash and white space and must have a length of 9 minimum ).
+
+```
+use Nh\StarterPack\Rules\Phone;
+
+public function rules()
+{
+    return [
+      'my_field'  => [new Phone]
+    ];
+}
+```
+
+## Slug
+
+Check that the field is lowercase, without space and without accent.
+
+```
+use Nh\StarterPack\Rules\Slug;
+
+public function rules()
+{
+    return [
+      'my_field'  => [new Slug]
+    ];
+}
+```
+
 # Components
 
 ## History

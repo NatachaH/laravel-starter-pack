@@ -13,5 +13,7 @@ return [
 
     'lowercase'     => 'The :attribute must be lowercase.',
     'without-space' => 'The :attribute must be without space.',
+    'slug'          => 'The :attribute must be lowercase and without space or accent.',
+    'phone'         => 'The :attribute must be la valide phone number.'
 
 ];
