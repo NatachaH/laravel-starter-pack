@@ -58,6 +58,17 @@ Fortify::resetPasswordView(function () {
 
 ## Database
 
+[If Mysql is lower than v5.7.7](https://laravel-news.com/laravel-5-4-key-too-long-error) add in the file **app/Providers/AppServiceProvider.php**
+
+```
+use Illuminate\Support\Facades\Schema;
+
+public function boot()
+{
+    Schema::defaultStringLength(191);
+}
+```
+
 Migrate the basic databases and seed the default roles/permissions:
 
 ```
