@@ -5,7 +5,6 @@
  */
 
 try {
-    window.Popper = require('popper.js').default;
     window.Bootstrap = require('bootstrap');
 } catch (e) {}
 
