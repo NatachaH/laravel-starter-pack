@@ -96,13 +96,19 @@ class Search extends Component
      */
     public function isAdvancedOpen()
     {
-        if(!is_null($this->search))
-        {
-            $attributes = Arr::except($this->search->attributes, ['text','sort']);
-            return count($attributes) > 0 ? true : false;
-        } else {
-            return false;
-        }
+      if(!is_null($this->search))
+      {
+          $attributes = Arr::except($this->search->attributes, ['text','sort']);
+          foreach ($attributes as $key => $value) {
+              if(is_array($value) && empty(array_filter($value,'is_numeric')))
+              {
+                  $attributes = Arr::except($attributes,$key);
+              }
+          }
+          return count($attributes) > 0 ? true : false;
+      } else {
+          return false;
+      }
     }
 
     /**

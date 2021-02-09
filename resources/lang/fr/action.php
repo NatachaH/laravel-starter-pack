@@ -36,6 +36,7 @@ return [
     'send'          => 'Envoyer',
     'collapse'      => 'Ouvrir/Fermer',
     'filter'        => 'Filtrer',
-    'sort'          => 'Trier'
+    'sort'          => 'Trier',
+    'sort-by'       => 'Trier par',
 
 ];

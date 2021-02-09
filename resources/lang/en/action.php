@@ -36,6 +36,8 @@ return [
     'send'          => 'Send',
     'collapse'      => 'Collapse',
     'filter'        => 'Filter',
-    'sort'          => 'Sort'
+    'sort'          => 'Sort',
+    'sort-y'        => 'Sort by'
+
 
 ];

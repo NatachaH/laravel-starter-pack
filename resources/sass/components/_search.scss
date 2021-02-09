@@ -32,9 +32,34 @@
 
     }
 
-    > .collapse-search > .collapse-search-body {
-        border: 1px solid $border-color;
-        padding: 1rem;
+    > .collapse-search {
+
+      h1 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: $secondary;
+        margin-bottom: .5rem;
+      }
+
+      > .collapse-search-body,
+      > .collapse-search-footer  {
+          border: 1px solid $border-color;
+      }
+
+      > .collapse-search-body  {
+          padding: 2rem 2rem 1rem 2rem;
+
+          .col {
+            margin: .5rem 0;
+          }
+
+      }
+
+      > .collapse-search-footer  {
+          padding: 1rem 2rem;
+          display: flex;
+          align-items: center;
+      }
     }
 
 }

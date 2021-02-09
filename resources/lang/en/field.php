@@ -61,4 +61,7 @@ return [
 
     'history' => 'History',
 
+    'advanced-search' => 'Advanced search',
+    'with-trashed'  => 'With trashed'
+
 ];

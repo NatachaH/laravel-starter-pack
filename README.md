@@ -268,12 +268,17 @@ Display a search bar using the package nh/searchable.
 | Attribute | Type | Default |
 | --------- | ---- | ------- |
 | key       | string |       |         
+| model     | string |       |         
 | route     | string |       |   
 | folder    | string | null  |   
 | is-advanced | boolean | false |   
+| is-sortable | boolean | false |   
+| sortable-fields | string | null |   
 | collapse-id | string | collapseSearch |   
 
 *If there is no folder it will take the route attribute.*
+*You can separate the sortable fields with pipes.*
+
 
 ```
 <x-sp-search key="posts" route="backend.posts" is-advanced />

@@ -61,4 +61,7 @@ return [
 
     'history'       => 'Historique',
 
+    'advanced-search' => 'Recherche avancée',
+    'with-trashed'  => 'Avec des objets mis à la poubelle'
+
 ];
