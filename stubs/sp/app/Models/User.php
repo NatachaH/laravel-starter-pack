@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 
 use Nh\AccessControl\Traits\HasAccess;
 use Nh\Searchable\Traits\Searchable;
+use Nh\Sortable\Traits\Sortable;
 use Nh\Trackable\Traits\Trackable;
 
 class User extends Authenticatable
@@ -18,6 +19,7 @@ class User extends Authenticatable
     use SoftDeletes;
     use HasAccess;
     use Searchable;
+    use Sortable;
     use Trackable;
 
     /**
@@ -61,6 +63,14 @@ class User extends Authenticatable
      * @var int
      */
     protected $perPage = 10;
+
+    /**
+     * Default sortable field and direction.
+     * @var array
+     */
+    protected $sortable = [
+        'field' => 'id'
+    ];
 
     /**
      * Encrypt the password when is set.
