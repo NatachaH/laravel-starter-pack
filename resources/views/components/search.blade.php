@@ -10,10 +10,10 @@
         <a href="{{ route('searchable.reset', ['key' => $key]) }}" class="btn btn-outline-secondary" aria-label="@lang('sp::action.reset')" title="@lang('sp::action.reset')"><i class="icon-cross"></i></a>
       @endif
 
-      <button class="btn btn-outline-primary" type="submit" title="@lang('sp::action.search')"><i class="icon-search"></i> @lang('sp::action.search')</button>
+      <button class="btn btn-outline-primary" type="submit" title="@lang('sp::action.search')"><i class="icon-search"></i></button>
 
       @if($isAdvanced)
-        <button class="btn btn-outline-secondary {{ !$isAdvancedOpen() ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseFilterId }}" aria-expanded="false"  aria-label="@lang('sp::action.collapse')" aria-controls="{{ $collapseFilterId }}" title="@lang('sp::action.filter')"><i class="icon-filter"></i></button>
+        <button class="btn btn-outline-secondary {{ !$isAdvancedOpen() ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseFilterId }}" aria-expanded="false"  aria-label="@lang('sp::action.collapse')" aria-controls="{{ $collapseFilterId }}" title="@lang('sp::action.filter')"><i class="icon-gear"></i></button>
       @endif
 
     </div>
