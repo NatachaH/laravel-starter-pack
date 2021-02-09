@@ -51,10 +51,24 @@ class UserController extends Controller
 
         // Get an attribute in Search Class
         $keywords = $search->attribute('text');
+        $withTrashed  = $search->attribute('withTrashed');
+        $sortF    = $search->attribute('sort')['field'] ?? null;
+        $sortD    = $search->attribute('sort')['direction'] ?? null;
 
         // Make the search query
-        $users = User::search($keywords,'contains',false)->withTrashed()->paginate();
+        // The search can be 'contains', 'start' or 'end'
+        // And you can decide if all columns match
+        $users = User::search($keywords,'contains',false);
 
+        // With trashed
+        if($withTrashed)
+        {
+            $users = $users->withTrashed();
+        }
+
+        // Make the search query
+        $users = $users->sortable($sortF,$sortD)->paginate();
+        
         // Display the result
         return view('sp::backend.users.index', compact('users'));
     }
