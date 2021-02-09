@@ -80,6 +80,6 @@ class User extends Authenticatable
      */
     public function activityTracks()
     {
-        return $this->hasMany('\Nh\Trackable\Models\Track');
+        return $this->hasMany('\App\Models\Track');
     }
 }
