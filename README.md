@@ -272,8 +272,8 @@ Display a search bar using the package nh/searchable.
 | route     | string |       |   
 | folder    | string | null  |   
 | is-advanced | boolean | false |   
-| is-sortable | boolean | false |   
-| sortable-fields | string | null |   
+| sortable | string | null |   
+| sortable-order | string | asc |   
 | collapse-id | string | collapseSearch |   
 
 *If there is no folder it will take the route attribute.*

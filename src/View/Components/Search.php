@@ -60,28 +60,19 @@ class Search extends Component
     public $sortableFields;
 
     /**
+     * Sortable direction options.
+     *
+     * @var string
+     */
+    public $sortableOrder;
+
+    /**
      * The id of the collapse bloc.
      * By default: collapseSearch.
      *
      * @var string
      */
     public $collapseId;
-
-    /**
-     * The id of the collapse bloc.
-     * By default: collapseSearchFilter.
-     *
-     * @var string
-     */
-    public $collapseFilterId;
-
-    /**
-     * The id of the collapse bloc.
-     * By default: collapseSearchSort.
-     *
-     * @var string
-     */
-    public $collapseSortId;
 
     /**
      * The session Search.
@@ -98,9 +89,17 @@ class Search extends Component
     {
       if(!is_null($this->search))
       {
-          $attributes = Arr::except($this->search->attributes, ['text','sort']);
+
+          $attributes = Arr::except($this->search->attributes, ['text']);
           foreach ($attributes as $key => $value) {
-              if(is_array($value) && empty(array_filter($value,'is_numeric')))
+
+              if($key == 'sort')
+              {
+                if($value['field'] == array_key_first($this->sortableFields) && $value['direction'] == $this->sortableOrder) {
+                  $attributes = Arr::except($attributes,$key);
+                }
+              }
+              else if(is_array($value) && empty(array_filter($value,'is_numeric')))
               {
                   $attributes = Arr::except($attributes,$key);
               }
@@ -109,21 +108,6 @@ class Search extends Component
       } else {
           return false;
       }
-    }
-
-    /**
-     * Check if the sortable search bloc is open.
-     * @return boolean
-     */
-    public function isSortableOpen()
-    {
-        if(!is_null($this->search))
-        {
-            $attributes = Arr::only($this->search->attributes, ['sort']);
-            return count($attributes) > 0 && ($attributes['sort']['field'] != array_key_first($this->sortableFields) || $attributes['sort']['direction'] != 'asc') ? true : false;
-        } else {
-            return false;
-        }
     }
 
     /**
@@ -160,18 +144,17 @@ class Search extends Component
      *
      * @return void
      */
-    public function __construct($key, $model, $route, $folder = null, $isAdvanced = false, $isSortable = false, $sortableFields = [], $collapseId = 'collapseSearch')
+    public function __construct($key, $model, $route, $folder = null, $isAdvanced = false, $sortable = null, $sortableOrder = 'asc', $collapseId = 'collapseSearch')
     {
         $this->key              = $key;
         $this->model            = $model;
         $this->route            = $route;
         $this->folder           = empty($folder) ? $route : $folder;
         $this->isAdvanced       = $isAdvanced;
-        $this->sortableFields   = $this->defineSortableFields($sortableFields);
-        $this->isSortable       = $isSortable && !empty($this->sortableFields);
+        $this->isSortable       = !empty($sortable);
+        $this->sortableFields   = $this->defineSortableFields($sortable);
+        $this->sortableOrder    = $sortableOrder;
         $this->collapseId       = $collapseId;
-        $this->collapseFilterId = $collapseId.'Filter';
-        $this->collapseSortId   = $collapseId.'Sort';
         $this->search           = session()->exists('search.'.$this->key) ? session('search.'.$this->key) : null;
     }
 
