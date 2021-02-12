@@ -8,8 +8,8 @@
             <i class="icon-{{ $icon($item->event) }}" aria-label="@lang('trackable.event.'.$item->event)"></i>
           </span>
           @if($item->relation)
-            <span class="history-tooltip p-2 me-2 badge bg-secondary" data-bs-toggle="tooltip" data-placement="top" title="@choice('model.'.$item->relation,1) {{ $item->comment ? ': '.$item->comment :'' }}" >
-              <i class="icon-{{ $relationIcon($item->relation) }}" aria-label="@choice('model.'.$item->relation,1)"></i>
+            <span class="history-tooltip p-2 me-2 badge bg-secondary" data-bs-toggle="tooltip" data-placement="top" title="{{ $relationDescription($item->relation,$item->comment) }}" >
+              <i class="icon-{{ $relationIcon($item->relation) }}" aria-label="{{ $relationDescription($item->relation) }}"></i>
             </span>
           @endif
           <span>{!! $description($item) !!}</span>

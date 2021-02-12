@@ -154,6 +154,19 @@ class History extends Component
         return Str::ucfirst($description);
     }
 
+    /**
+     * Define the description by relation.
+     *
+     * @var string
+     */
+    public function relationDescription($relation,$comment = null)
+    {
+        $model = \Lang::has('backend.model.'.$relation) ? trans_choice('backend.model.'.$relation,1) : Str::ucfirst($relation);
+        $comment = !empty($comment) ? ' : '.$comment : '';
+
+        return $model.' '.$comment;
+    }
+
 
     /**
      * Create a new component instance.
