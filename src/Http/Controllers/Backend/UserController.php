@@ -68,7 +68,7 @@ class UserController extends Controller
 
         // Make the search query
         $users = $users->sortable($sortF,$sortD)->paginate();
-        
+
         // Display the result
         return view('sp::backend.users.index', compact('users'));
     }
@@ -120,7 +120,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         $user = $user->load(['activityTracks' => function($q){
-          return $q->latest()->take(10);
+          return $q->take(10);
         }]);
         return view('sp::backend.users.show', compact('user'));
     }

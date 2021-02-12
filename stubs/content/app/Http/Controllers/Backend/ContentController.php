@@ -100,7 +100,7 @@ class {{ UCNAME }}Controller extends Controller
     public function show({{ UCNAME }} ${{ NAME }})
     {
         ${{ NAME }} = ${{ NAME }}->load(['tracks' => function($q){
-          return $q->latest()->take(10);
+          return $q->take(10);
         }]);
         return view('backend.{{ PNAME }}.show', compact('{{ NAME }}'));
     }
