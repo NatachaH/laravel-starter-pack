@@ -21,7 +21,7 @@ class EventServiceProvider extends ServiceProvider
         \Nh\Mediable\Events\MediaEvent::class => [
             \Nh\Trackable\Listeners\AddTrack::class
         ],
-        \Nh\AccessControl\Events\AccessEvent::class => [
+        \Nh\AccessControl\Events\RoleEvent::class => [
             \Nh\Trackable\Listeners\AddTrack::class
         ]
     ];

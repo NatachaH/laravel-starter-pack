@@ -43,7 +43,7 @@ return [
     'deleted-at'    => 'Deleted at',
     'start-at'      => 'Start at',
     'end-at'        => 'End at',
-    'published-at'  => 'Published at'
+    'published-at'  => 'Published at',
     'day'           => 'Day',
     'week'          => 'Week',
     'month'         => 'Month',
