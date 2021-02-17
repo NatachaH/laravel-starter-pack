@@ -115,6 +115,9 @@ class History extends Component
           case 'media':
             $icon = 'image';
             break;
+          case 'access':
+            $icon = 'key';
+            break;
           default:
             $icon = 'rocket';
             break;
