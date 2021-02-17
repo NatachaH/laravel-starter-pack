@@ -11,23 +11,31 @@ return [
     |
     */
 
+    // GLOBAL
     'name'          => 'Name',
+    'yes'           => 'Yes',
+    'no'            => 'No',
+    'ascending'     => 'Ascending',
+    'descending'    => 'Descending',
+    'public'        => 'Public',
+    'private'       => 'Private',
+
+    // PERSON
+    'author'        => 'Author',
+    'firstname'     => 'Firstname',
+    'lastname'      => 'Lastname',
+    'birthday'      => 'Birthday date',
+
+    // CONTACT
     'email'         => 'Email',
-    'title'         => 'Title',
-    'subtitle'      => 'Subtitle',
-    'description'   => 'Description',
-    'link'          => 'Link',
-    'type'          => 'Type',
-    'filename'      => 'Filename',
-    'file'          => 'File',
-    'icon'          => 'Icon',
-    'price'         => 'Price',
     'phone'         => 'Phone',
+    'mobile'        => 'Cellphone',
     'address'       => 'Address',
     'zip'           => 'ZIP code',
     'city'          => 'City',
     'country'       => 'Country',
 
+    // DATES
     'dates'         => 'Dates',
     'date'          => 'Date',
     'created-at'    => 'Created at',
@@ -35,6 +43,7 @@ return [
     'deleted-at'    => 'Deleted at',
     'start-at'      => 'Start at',
     'end-at'        => 'End at',
+    'published-at'  => 'Published at'
     'day'           => 'Day',
     'week'          => 'Week',
     'month'         => 'Month',
@@ -43,25 +52,33 @@ return [
     'minute'        => 'Minute',
     'second'        => 'Second',
 
-    'actions'       => 'Actions',
-    'information'   => 'Information',
-    'role'          => 'Role',
-    'media'         => 'Media',
-    'pictures'      => 'Pictures',
-    'documents'     => 'Documents',
+    // FILES/MEDIAS
+    'filename'      => 'Filename',
+    'file'          => 'File',
+    'icon'          => 'Icon',
+    'link'          => 'Link',
+    'url'           => 'URL',
 
+    // CONTENT
+    'slug'          => 'Slug',
+    'title'         => 'Title',
+    'subtitle'      => 'Subtitle',
+    'description'   => 'Description',
+    'type'          => 'Type',
+    'price'         => 'Price',
     'published'     => 'Published',
     'not-published' => 'Not published',
 
-    'yes'           => 'Yes',
-    'no'            => 'No',
-
-    'ascending'     => 'Ascending',
-    'descending'    => 'Descending',
-
-    'history' => 'History',
-
+    // MODELS / TITLE
+    'actions'         => 'Actions',
+    'information'     => 'Information',
+    'role'            => 'Role',
+    'media'           => 'Media',
+    'pictures'        => 'Pictures',
+    'documents'       => 'Documents',
+    'history'         => 'History',
     'advanced-search' => 'Advanced search',
-    'with-trashed'  => 'With trashed'
+    'with-trashed'    => 'With trashed'
+
 
 ];

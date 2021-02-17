@@ -16,6 +16,9 @@ return [
 
     'min'       => 'Min: :min',
     'max'       => 'Max: :max',
-    'formats'   => 'Format(s) disponible(s): :formats'
+    'formats'   => 'Format(s) disponible(s): :formats',
+
+    'slug'      => 'Le slug est utilisé pour créer le lien URL: www.monsite.ch/<b>slug</b>',
+
 
 ];

@@ -16,6 +16,9 @@ return [
 
     'min'       => 'Min: :min',
     'max'       => 'Max: :max',
-    'formats'   => 'Available format(s): :formats'
+    'formats'   => 'Available format(s): :formats',
+
+    'slug'      => 'The slug is used for the URL creation: www.mysite.ch/<b>slug</b>',
+
 
 ];

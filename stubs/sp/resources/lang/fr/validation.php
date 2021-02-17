@@ -151,6 +151,8 @@ return [
         'email'                 => 'adresse email',
         'first_name'            => 'prénom',
         'last_name'             => 'nom',
+        'firstname'             => 'prénom',
+        'lastname'              => 'nom',
         'password'              => 'mot de passe',
         'password_confirmation' => 'confirmation du mot de passe',
         'city'                  => 'ville',
@@ -175,5 +177,10 @@ return [
         'time'                  => 'heure',
         'available'             => 'disponible',
         'size'                  => 'taille',
+        'start_at'              => 'début',
+        'end_at'                => 'fin',
+        'slug'                  => 'slug',
+        'media_to_add.*'        => 'media',
+        'media_to_edit.*'       => 'media'
     ],
 ];

@@ -11,23 +11,31 @@ return [
     |
     */
 
+    // GLOBAL
     'name'          => 'Nom',
+    'yes'           => 'Oui',
+    'no'            => 'Non',
+    'ascending'     => 'Ascendant',
+    'descending'    => 'Descendant',
+    'public'        => 'Public',
+    'private'       => 'Privé',
+
+    // PERSON
+    'author'        => 'Auteur',
+    'firstname'     => 'Prénom',
+    'lastname'      => 'Nom',
+    'birthday'      => 'Date d\'anniversaire',
+
+    // CONTACT
     'email'         => 'Email',
-    'title'         => 'Titre',
-    'subtitle'      => 'Sous-titre',
-    'description'   => 'Description',
-    'link'          => 'Lien',
-    'type'          => 'Type',
-    'filename'      => 'Nom du fichier',
-    'file'          => 'Fichier',
-    'icon'          => 'Icône',
-    'price'         => 'Prix',
     'phone'         => 'Téléphone',
+    'mobile'        => 'Téléphone portable',
     'address'       => 'Adresse',
-    'zip'           => 'NPA',
+    'zip'           => 'Code postal',
     'city'          => 'Ville',
     'country'       => 'Pays',
 
+    // DATES
     'dates'         => 'Dates',
     'date'          => 'Date',
     'created-at'    => 'Créé le',
@@ -35,6 +43,7 @@ return [
     'deleted-at'    => 'Supprimé le',
     'start-at'      => 'Début',
     'end-at'        => 'Fin',
+    'published-at'  => 'Publié at'
     'day'           => 'Jour',
     'week'          => 'Semaine',
     'month'         => 'Mois',
@@ -43,25 +52,34 @@ return [
     'minute'        => 'Minute',
     'second'        => 'Seconde',
 
-    'actions'       => 'Actions',
-    'information'   => 'Informations',
-    'role'          => 'Rôle',
-    'media'         => 'Médias',
-    'pictures'      => 'Photos',
-    'documents'     => 'Documents',
+    // FILES/MEDIAS
+    'filename'      => 'Nom du fichier',
+    'file'          => 'Fichier',
+    'icon'          => 'Icône',
+    'link'          => 'Lien',
+    'url'           => 'URL',
 
+    // CONTENT
+    'slug'          => 'Slug',
+    'title'         => 'Titre',
+    'subtitle'      => 'Sous-titre',
+    'description'   => 'Description',
+    'type'          => 'Type',
+    'price'         => 'Prix',
     'published'     => 'Publié',
     'not-published' => 'Non publié',
 
-    'yes'           => 'Oui',
-    'no'            => 'Non',
-
-    'ascending'     => 'Ascendant',
-    'descending'    => 'Descendant',
-
-    'history'       => 'Historique',
-
+    // MODELS / TITLE
+    'actions'         => 'Actions',
+    'information'     => 'Informations',
+    'role'            => 'Rôle',
+    'media'           => 'Médias',
+    'pictures'        => 'Photos',
+    'documents'       => 'Documents',
+    'history'         => 'Historique',
     'advanced-search' => 'Recherche avancée',
     'with-trashed'  => 'Avec des objets mis à la poubelle'
+
+
 
 ];

@@ -15,6 +15,7 @@ class Create{{ UCPNAME }}Table extends Migration
     {
         Schema::create('{{ PNAME }}', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->unique();
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->text('description')->nullable();
