@@ -123,7 +123,8 @@ class Search extends Component
           $array = explode('|', $values);
 
           foreach ($array as $value) {
-            $fields[$value] = (\Lang::has('sp::field.'.$value) ? __('sp::field.'.$value) : (\Lang::has('backend.field.'.$value) ? __('backend.field.'.$value) : $value));
+            $cleanValue = str_replace('_','-',$value);
+            $fields[$value] = (\Lang::has('sp::field.'.$cleanValue) ? __('sp::field.'.$cleanValue) : (\Lang::has('backend.field.'.$cleanValue) ? __('backend.field.'.$cleanValue) : $cleanValue));
           }
         }
 
