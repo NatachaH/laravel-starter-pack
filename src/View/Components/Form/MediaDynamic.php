@@ -177,6 +177,16 @@ class MediaDynamic extends Component
   }
 
   /**
+   * Check if an item is deleted
+   * @param  string  $item
+   * @return boolean
+   */
+  public function isItemDeleted($item)
+  {
+      return in_array($item, old('media_to_delete',[]));
+  }
+
+  /**
    * Define the defaults.
    *
    * @var array
