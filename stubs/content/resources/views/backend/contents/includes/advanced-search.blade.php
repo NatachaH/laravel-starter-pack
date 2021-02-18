@@ -1,1 +1,1 @@
-<x-bs-check :label="__('sp::field.published')" name="search[published]" :checked="$search ? $search->attribute('published') : false"/>
+<x-bs-select class="col" :before="__('sp::field.published')" name="search[published]" :options="[null => '--', 'true' => __('sp::field.yes'),'false' => __('sp::field.no') ]" :selected="$search ? $search->attribute('published') : null" />

@@ -65,7 +65,8 @@ class {{ UCNAME }}Controller extends Controller
         // Advanced search query
         if($published)
         {
-            ${{ PNAME }} = ${{ PNAME }}->where('published',1);
+            $value = $published == 'true' ? 1 : 0;
+            ${{ PNAME }} = ${{ PNAME }}->where('published',$value);
         }
 
         // Return the paginate result
