@@ -80,6 +80,12 @@ class MediaDynamic extends Component
   public $help;
 
   /**
+   * Config file for buttons custimization
+   * @var string
+   */
+  public $btnConfig;
+
+  /**
    * Information for the add button
    * Class, label and value
    * @var array
@@ -114,30 +120,6 @@ class MediaDynamic extends Component
   public $formats;
 
   /**
-   * Media min size.
-   * @var string
-   */
-  public $size;
-
-  /**
-   * Media min width.
-   * @var string
-   */
-  public $width;
-
-  /**
-   * Media min height.
-   * @var string
-   */
-  public $height;
-
-  /**
-   * Media max weight.
-   * @var string
-   */
-  public $weight;
-
-  /**
    * Are the Media have name.
    * @var boolean
    */
@@ -165,37 +147,17 @@ class MediaDynamic extends Component
 
       if(!empty($this->min))
       {
-        $help .= __('sp::help.media.min',['min' => $this->min]).' | ';
+        $help .= __('sp::help.min',['min' => $this->min]).' | ';
       }
 
       if(!empty($this->max))
       {
-        $help .= __('sp::help.media.max',['max' => $this->max]).' | ';
+        $help .= __('sp::help.max',['max' => $this->max]).' | ';
       }
 
       if(!empty($this->formats))
       {
-        $help .= __('sp::help.media.formats',['formats' => $this->formats]).' | ';
-      }
-
-      if(!empty($this->size))
-      {
-        $help .= __('sp::help.media.size',['size' => $this->size]).' | ';
-      }
-
-      if(!empty($this->width))
-      {
-        $help .= __('sp::help.media.width',['width' => $this->width]).' | ';
-      }
-
-      if(!empty($this->height))
-      {
-        $help .= __('sp::help.media.height',['height' => $this->height]).' | ';
-      }
-
-      if(!empty($this->weight))
-      {
-        $help .= __('sp::help.media.weight',['weight' => $this->weight]).' | ';
+        $help .= __('sp::help.formats',['formats' => $this->formats]).' | ';
       }
 
       return substr($help, 0, -3);
@@ -231,6 +193,22 @@ class MediaDynamic extends Component
   }
 
   /**
+   * Define the buttons.
+   *
+   * @var array
+   */
+  protected function defineButton($name)
+  {
+      $config = config($this->btnConfig.'.'.$name);
+
+      return [
+        'class' => $config['class'],
+        'label' => \Lang::has($config['label']) ? trans_choice($config['label'],1) : $config['label'],
+        'value' => \Lang::has($config['value']) ? trans_choice($config['value'],1) : $config['value'],
+      ];
+  }
+
+  /**
    * Define the defaults.
    *
    * @var array
@@ -263,7 +241,7 @@ class MediaDynamic extends Component
    *
    * @return void
    */
-  public function __construct($legend, $template = null, $min = null, $max = null, $name = 'media', $type = 'media', $sortable = false, $items = [], $defaults = [], $itemsDisabled = [], $help = '', $btnAdd = [], $btnRemove = [], $btnDelete = [], $btnMove = [], $formats = null, $size = null, $width = null, $height = null, $weight = null, $hasName = false, $hasPreview = false, $hasDownload = false)
+  public function __construct($legend, $template = null, $min = null, $max = null, $name = 'media', $type = 'media', $sortable = false, $items = [], $defaults = [], $itemsDisabled = [], $help = '', $btnConfig = 'backend.buttons', $formats = null, $hasName = false, $hasPreview = false, $hasDownload = false)
   {
       $this->legend           = $legend;
       $this->min              = $min;
@@ -275,15 +253,12 @@ class MediaDynamic extends Component
       $this->items            = $items;
       $this->defaults         = $this->defineDefaults($defaults);
       $this->itemsDisabled    = is_array($itemsDisabled) ? $itemsDisabled : [$itemsDisabled];
-      $this->btnAdd           = empty($btnAdd) ? config('dynamic.buttons.add') : $btnAdd;
-      $this->btnRemove        = empty($btnRemove) ? config('dynamic.buttons.remove') : $btnRemove;
-      $this->btnDelete        = empty($btnDelete) ? config('dynamic.buttons.delete') : $btnDelete;
-      $this->btnMove          = empty($btnMove) ? config('dynamic.buttons.sortable') : $btnMove;
+      $this->btnConfig        = $btnConfig;
+      $this->btnAdd           = $this->defineButton('add');
+      $this->btnRemove        = $this->defineButton('remove');
+      $this->btnDelete        = $this->defineButton('delete');
+      $this->btnMove          = $this->defineButton('move');
       $this->formats          = $formats;
-      $this->size             = $size;
-      $this->width            = $width;
-      $this->height           = $height;
-      $this->weight           = $weight;
       $this->hasName          = $hasName;
       $this->hasPreview       = $hasPreview;
       $this->hasDownload      = $hasDownload;
