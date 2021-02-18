@@ -235,7 +235,11 @@ More settings on package nh/bs-component !
 
 | Attribute | Type | Default |
 | --------- | ---- | ------- |
-| formats   | string | null |      
+| formats   | string | null |   
+| size      | string | null |   
+| width      | string | null |      
+| height      | string | null |      
+| weight      | string | null |      
 | has-name  | boolean | false |   
 | has-preview | boolean | false |   
 | has-download | boolean | false |
