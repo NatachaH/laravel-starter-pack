@@ -10,7 +10,7 @@
         <a href="{{ route('searchable.reset', ['key' => $key]) }}" class="btn btn-outline-secondary" aria-label="@lang('sp::action.reset')" title="@lang('sp::action.reset')"><i class="icon-cross"></i></a>
       @endif
 
-      <button class="btn btn-outline-primary" type="submit" title="@lang('sp::action.search')"><i class="icon-search"></i> @lang('sp::action.search')</button>
+      <button class="btn btn-outline-primary" type="submit" aria-label="@lang('sp::action.search')" title="@lang('sp::action.search')"><i class="icon-search"></i></button>
 
       @if($isAdvanced)
         <button class="btn btn-outline-secondary {{ !$isAdvancedOpen() ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $collapseId }}" aria-expanded="false"  aria-label="@lang('sp::action.collapse')" aria-controls="{{ $collapseId }}" title="@lang('sp::action.filter')"><i class="icon-filter"></i></button>
@@ -24,7 +24,7 @@
 
           <h1>@lang('sp::field.advanced-search')</h1>
 
-          <div class="row row-cols-3">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
 
             {!! $slot !!}
 
