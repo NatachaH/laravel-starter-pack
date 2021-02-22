@@ -52,7 +52,7 @@
         <div class="collapse-search-footer">
 
             @if($hasSoftDelete())
-              <x-bs-check class="form-switch me-auto" :label="__('sp::field.with-trashed')" type="checkbox" name="search[withTrashed]" boolean :checked="$search ? $search->attribute('withTrashed') : false" />
+              <x-bs-check class="form-switch" :label="__('sp::field.with-trashed')" type="checkbox" name="search[withTrashed]" boolean :checked="$search ? $search->attribute('withTrashed') : false" />
             @endif
 
             @if(!is_null($search))
