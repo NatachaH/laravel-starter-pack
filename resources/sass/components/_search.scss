@@ -59,21 +59,24 @@
             margin: 0 0 1rem 0;
           }
       }
+
+      // Responsive view for Tablette
+      @include media-breakpoint-up(md) {
+        > .collapse-search-body  {
+            padding: 2rem 2rem 1.5rem 2rem;
+        }
+        > .collapse-search-footer  {
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            .form-check {
+              margin: 0 auto 0 0;
+            }
+        }
+      }
+
     }
 
-    // Responsive view for Tablette
-    @include media-breakpoint-up(md) {
-      > .collapse-search-body  {
-          padding: 2rem 2rem 1.5rem 2rem;
-      }
-      > .collapse-search-footer  {
-          padding: 1rem 2rem;
-          display: flex;
-          align-items: center;
-          .form-check {
-            margin: 0 auto 0 0;
-          }
-      }
-    }
+
 
 }
