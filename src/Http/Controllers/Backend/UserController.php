@@ -105,7 +105,7 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        Gate::authorize('set-user-role', $request->role);
+        Gate::authorize('set-roles', $request->role ?? $request->roles);
         User::create($request->only(['name','email','password']));
         session()->flash('toast', ['success' => notification('added','user')]);
         return redirect()->route('backend.users.index');
@@ -147,7 +147,7 @@ class UserController extends Controller
      */
     public function update(StoreUserRequest $request, User $user)
     {
-        Gate::authorize('set-user-role', $request->role);
+        Gate::authorize('set-roles', $request->role ?? $request->roles);
         $user->update($request->only(['name','email','password']));
         session()->flash('toast', ['success' => notification('updated','user')]);
         return redirect()->route('backend.users.index');

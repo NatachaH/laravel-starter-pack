@@ -79,7 +79,7 @@ class RoleController extends Controller
         $role = Role::create($request->only(['guard','name']));
         if($request->has('permissions'))
         {
-            Gate::authorize('set-role-permissions', [$request->permissions]);
+            Gate::authorize('set-permissions', [$request->permissions]);
             $role->permissions()->attach($request->permissions);
         }
         session()->flash('toast', ['success' => notification('added','role')]);
@@ -126,10 +126,10 @@ class RoleController extends Controller
         $permissionsRequested = empty($request->permissions) ? [] : $request->permissions;
 
         // Check if all permissions input are available for this user
-        Gate::authorize('set-role-permissions', [$permissionsRequested]);
+        Gate::authorize('set-permissions', [$permissionsRequested]);
 
         // Get the permissions ids that are disabled (That the user can't change!)
-        $restrictions = Auth::user()->role->restrictions()->modelKeys();
+        $restrictions = Auth::user()->permission_restrictions;
         $permissionsDisabled = $role->permissions->whereIn('id',$restrictions)->modelKeys();
 
         // Merge the $request with the $permissionsDisabled
