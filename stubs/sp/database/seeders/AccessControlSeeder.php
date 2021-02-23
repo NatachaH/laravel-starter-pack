@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use App\Models\Permission;
+use Nh\AccessControl\Models\Permission;
 use App\Models\Role;
 
 class AccessControlSeeder extends Seeder
@@ -17,8 +17,8 @@ class AccessControlSeeder extends Seeder
     public function run()
     {
         //****** Add Roles ******//
-        $superadmin = Role::create(['name' => 'superadmin']);
-        $admin = Role::create(['name' => 'admin']);
+        $superadmin = Role::create(['guard' => 'superadmin', 'name' => 'Superadmin']);
+        $admin = Role::create(['guard' => 'admin', 'name' => 'Admin']);
 
         //****** Add Permissions ******//
         $ids_permission_superadmin = [];

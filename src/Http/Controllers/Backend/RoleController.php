@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 use Nh\Searchable\Search;
 use App\Models\Role;
-use App\Models\Permission;
+use Nh\AccessControl\Models\Permission;
 
 class RoleController extends Controller
 {
@@ -76,7 +76,7 @@ class RoleController extends Controller
      */
     public function store(StoreRoleRequest $request)
     {
-        $role = Role::create($request->only(['name']));
+        $role = Role::create($request->only(['guard','name']));
         if($request->has('permissions'))
         {
             Gate::authorize('set-role-permissions', [$request->permissions]);
@@ -120,7 +120,7 @@ class RoleController extends Controller
     public function update(StoreRoleRequest $request, Role $role)
     {
         // Update the role
-        $role->update($request->only(['name']));
+        $role->update($request->only(['guard','name']));
 
         // Check if permissions requested is empty
         $permissionsRequested = empty($request->permissions) ? [] : $request->permissions;

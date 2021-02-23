@@ -64,7 +64,7 @@ class StarterPackServiceProvider extends ServiceProvider
       // Only a superadmin can set the role superadmin !
       Gate::define('set-user-role', function ($user, $roleId) {
           $role = \App\Models\Role::findOrFail($roleId);
-          return $user->hasRoles('superadmin') || $role->name != 'superadmin';
+          return $user->hasRoles('superadmin') || $role->guard != 'superadmin';
       });
 
       // Only set the permission that the user have access

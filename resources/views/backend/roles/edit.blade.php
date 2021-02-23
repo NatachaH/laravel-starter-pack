@@ -13,6 +13,8 @@
 
         <legend>@lang('sp::field.information')</legend>
 
+        <x-bs-input :label="__('sp::field.guard')" type="text" name="guard" :value="$role->guard" required/>
+
         <x-bs-input :label="__('sp::field.name')" type="text" name="name" :value="$role->name" required/>
 
       </fieldset>
