@@ -28,7 +28,7 @@ class StoreRoleRequest extends FormRequest
     {
         $isNew = $this->getMethod() == 'POST';
         return [
-            'guard' => ['required', Rule::unique('roles', 'guard')->ignore($this->role), new slug]
+            'guard' => ['required', Rule::unique('roles', 'guard')->ignore($this->role), new slug],
             'name' => ['required']
         ];
     }
