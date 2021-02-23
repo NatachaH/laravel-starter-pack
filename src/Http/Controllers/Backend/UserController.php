@@ -93,7 +93,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::orderBy('name')->get()->pluck('name','id');
-        $rolesDisabled = Auth::user()->hasRoles('superadmin') ? false : Role::select('id')->firstWhere('name', 'superadmin')->toArray();
+        $rolesDisabled = Auth::user()->has_superpowers ? false : Role::select('id')->firstWhere('guard', 'superadmin')->toArray();
         return view('sp::backend.users.create', compact('roles','rolesDisabled'));
     }
 
@@ -134,7 +134,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $roles = Role::orderBy('name')->get()->pluck('name','id');
-        $rolesDisabled = Auth::user()->hasRoles('superadmin') ? false : Role::select('id')->firstWhere('name', 'superadmin')->toArray();
+        $rolesDisabled = Auth::user()->has_superpowers ? false : Role::select('id')->firstWhere('guard', 'superadmin')->toArray();
         return view('sp::backend.users.edit', compact('user','roles','rolesDisabled'));
     }
 

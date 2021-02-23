@@ -66,7 +66,7 @@ class RolePolicy
      */
     public function update(User $user, Role $role)
     {
-        return $user->hasAccess('role','update') && (!in_array($role->name, config('access-control.protected')) || $user->hasRoles('superadmin'));
+        return $user->hasAccess('role','update') && (!$role->is_protected || $user->has_superpowers);
     }
 
     /**
@@ -78,7 +78,7 @@ class RolePolicy
      */
     public function delete(User $user, Role $role)
     {
-        return $user->hasAccess('role','delete') && !in_array($role->name, config('access-control.protected'));
+        return $user->hasAccess('role','delete') && !$role->is_protected;
     }
 
 }

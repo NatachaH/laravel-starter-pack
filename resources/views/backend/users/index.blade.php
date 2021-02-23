@@ -6,6 +6,6 @@
 
   <x-sp-search key="users" model="App\Models\User" route="backend.users"/>
 
-  <x-sp-listing :items="$users" header="name|email|role" model="App\Models\User" route="backend.users" folder="sp::backend.users" show-id :show-dates="Auth::user()->hasRoles('superadmin')" />
+  <x-sp-listing :items="$users" header="name|email|role" model="App\Models\User" route="backend.users" folder="sp::backend.users" show-id :show-dates="Auth::user()->has_superpowers" />
 
 @endsection

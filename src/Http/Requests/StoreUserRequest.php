@@ -30,7 +30,8 @@ class StoreUserRequest extends FormRequest
             'email' => ['required','email', Rule::unique('users', 'email')->ignore($this->user)],
             'password' => [($isNew ? 'required' : 'nullable'),'min:6','confirmed'],
             'password_confirmation' => [($isNew ? 'required' : 'nullable')],
-            'role' => ['required']
+            'role' => ['sometimes','required'],
+            'roles' => ['sometimes','required','array','min:1']
         ];
     }
 }
