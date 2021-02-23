@@ -13,6 +13,7 @@ return [
 
     // GLOBAL
     'name'          => 'Nom',
+    'guard'         => 'Nom protégé',
     'yes'           => 'Oui',
     'no'            => 'Non',
     'ascending'     => 'Ascendant',

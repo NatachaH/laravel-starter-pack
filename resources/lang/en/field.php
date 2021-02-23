@@ -13,6 +13,7 @@ return [
 
     // GLOBAL
     'name'          => 'Name',
+    'guard'         => 'Guard name',
     'yes'           => 'Yes',
     'no'            => 'No',
     'ascending'     => 'Ascending',
