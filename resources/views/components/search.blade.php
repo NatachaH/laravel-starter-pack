@@ -55,11 +55,13 @@
               <x-bs-check class="form-switch" :label="__('sp::field.with-trashed')" type="checkbox" name="search[withTrashed]" boolean :checked="$search ? $search->attribute('withTrashed') : false" />
             @endif
 
-            @if(!is_null($search))
-              <a href="{{ route('searchable.reset', ['key' => $key]) }}" class="btn btn-outline-secondary me-3" aria-label="@lang('sp::action.reset')" title="@lang('sp::action.reset')"><i class="icon-cross"></i> @lang('sp::action.reset')</a>
-            @endif
+            <div class="ms-auto">
+              @if(!is_null($search))
+                <a href="{{ route('searchable.reset', ['key' => $key]) }}" class="btn btn-outline-secondary me-3" aria-label="@lang('sp::action.reset')" title="@lang('sp::action.reset')"><i class="icon-cross"></i> @lang('sp::action.reset')</a>
+              @endif
 
-            <button class="btn btn-primary" type="submit" aria-label="@lang('sp::action.search')" title="@lang('sp::action.search')"><i class="icon-search"></i> @lang('sp::action.search')</button>
+              <button class="btn btn-primary" type="submit" aria-label="@lang('sp::action.search')" title="@lang('sp::action.search')"><i class="icon-search"></i> @lang('sp::action.search')</button>
+            </div>
 
         </div>
 
