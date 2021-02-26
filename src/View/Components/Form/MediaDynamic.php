@@ -3,115 +3,13 @@
 namespace Nh\StarterPack\View\Components\Form;
 
 use Illuminate\View\Component;
+use Nh\BsComponent\View\Components\Form\DynamicTemplate;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
-class MediaDynamic extends Component
+class MediaDynamic extends DynamicTemplate
 {
-
-  /**
-   * The legend of the fieldset
-   * @var string
-   */
-  public $legend;
-
-  /**
-   * Minimum nbr of inputs
-   * @var int
-   */
-  public $min;
-
-  /**
-   * Maximum nbr of inputs
-   * @var int
-   */
-  public $max;
-
-  /**
-   * Name for the inputs
-   * By default it's name + '_to_update', '_to_delete' and '_to_add'
-   * @var string
-   */
-  public $name;
-
-  /**
-   * Default KEY to replace for the template
-   * @var string
-   */
-  public $key;
-
-  /**
-   * Type of the dynamic
-   * @var string
-   */
-  public $type;
-
-  /**
-   * Is the list sortable ?
-   * If true display a button to drag&drop + an input with the position.
-   * @var boolean
-   */
-  public $sortable;
-
-  /**
-   * The current items
-   * @var array
-   */
-  public $items;
-
-  /**
-   * The default items
-   * @var array
-   */
-  public $defaults;
-
-  /**
-   * The disabled items
-   * @var array
-   */
-  public $itemsDisabled;
-
-  /**
-   * The help message of the fieldset.
-   *
-   * @var string
-   */
-  public $help;
-
-  /**
-   * Config file for buttons custimization
-   * @var string
-   */
-  public $btnConfig;
-
-  /**
-   * Information for the add button
-   * Class, label and value
-   * @var array
-   */
-  public $btnAdd;
-
-  /**
-   * Information for the remove buttons
-   * Class, label and value
-   * @var array
-   */
-  public $btnRemove;
-
-  /**
-   * Information for the delete buttons
-   * Class, label and value
-   * @var array
-   */
-  public $btnDelete;
-
-  /**
-   * Information for the sortable buttons
-   * Class, label and value
-   * @var array
-   */
-  public $btnMove;
 
   /**
    * Media available formats.
@@ -162,13 +60,17 @@ class MediaDynamic extends Component
   public $hasDownload;
 
   /**
+   * Make the file required.
+   * @var boolean
+   */
+  public $isRequired;
+
+  /**
    * Define the help string
    * @var string
    */
-  private function defineHelp()
+  private function defineHelp($help = '')
   {
-      $help = '';
-
       if(!empty($this->min))
       {
         $help .= __('sp::help.media.min',['min' => $this->min]).' | ';
@@ -207,101 +109,61 @@ class MediaDynamic extends Component
       return substr($help, 0, -3);
   }
 
-  /**
-   * Check if is Dynamic and display the add/remove button
-   * @return boolean
-   */
-  public function isDynamic()
-  {
-      return is_null($this->max) || $this->max != 1;
-  }
-
-  /**
-   * Check if an item is disabled
-   * @param  string  $item
-   * @return boolean
-   */
-  public function isItemDisabled($item)
-  {
-      return in_array($item, $this->itemsDisabled);
-  }
-
-  /**
-   * Check if an item is deleted
-   * @param  string  $item
-   * @return boolean
-   */
-  public function isItemDeleted($item)
-  {
-      return in_array($item, old('media_to_delete',[]));
-  }
-
-  /**
-   * Define the buttons.
-   *
-   * @var array
-   */
-  protected function defineButton($name)
-  {
-      $config = config($this->btnConfig.'.'.$name);
-
-      return [
-        'class' => $config['class'],
-        'label' => \Lang::has($config['label']) ? trans_choice($config['label'],1) : $config['label'],
-        'value' => \Lang::has($config['value']) ? trans_choice($config['value'],1) : $config['value'],
-      ];
-  }
-
-  /**
-   * Define the defaults.
-   *
-   * @var array
-   */
-  private function defineDefaults($defaults)
-  {
-      $old = old($this->name.'_to_add');
-      $defaultsItems = [];
-
-      if(!empty($old))
-      {
-
-          $defaultsItems = Arr::where($old, function ($value, $key) {
-              return Str::endsWith($key, '_'.$this->type);
-          });
-
-      } else if(!empty($defaults)) {
-
-          foreach ($defaults as $key => $value) {
-            $defaultsItems[$key.'_'.$this->type] = $value;
-          }
-
-      }
-
-      return $defaultsItems;
-  }
 
   /**
    * Create a new component instance.
    *
    * @return void
    */
-  public function __construct($legend, $template = null, $min = null, $max = null, $name = 'media', $type = 'media', $sortable = false, $items = [], $defaults = [], $itemsDisabled = [], $help = '', $btnConfig = 'backend.buttons', $formats = null, $size = null, $width = null, $height = null, $weight = null, $hasName = false, $hasPreview = false, $hasDownload = false)
+  public function __construct(
+      $legend   = null,
+      $listing  = null,
+      $template = null,
+      $min      = null,
+      $max      = null,
+      $name     = 'media',
+      $type     = 'media',
+      $sortable = false,
+      $items    = [],
+      $defaults = [],
+      $itemsDisabled = [],
+      $help     = null,
+      $btnConfig = 'backend.buttons',
+      $before   = null,
+      $after    = null
+
+      $formats = null,
+      $size = null,
+      $width = null,
+      $height = null,
+      $weight = null,
+      $hasName = false,
+      $hasPreview = false,
+      $hasDownload = false,
+      $required = false
+  )
   {
       $this->legend           = $legend;
+      $this->listing          = $listing;
+      $this->template         = $template;
       $this->min              = $min;
       $this->max              = $max;
       $this->name             = $name;
       $this->type             = $type;
-      $this->key              = 'KEY_'.$type;
       $this->sortable         = $sortable;
       $this->items            = $items;
       $this->defaults         = $this->defineDefaults($defaults);
       $this->itemsDisabled    = is_array($itemsDisabled) ? $itemsDisabled : [$itemsDisabled];
       $this->btnConfig        = $btnConfig;
+      $this->before           = $before;
+      $this->after            = $after;
+
+      $this->key              = 'KEY_'.$type;
       $this->btnAdd           = $this->defineButton('add');
       $this->btnRemove        = $this->defineButton('remove');
       $this->btnDelete        = $this->defineButton('delete');
       $this->btnMove          = $this->defineButton('move');
+
       $this->formats          = $formats;
       $this->size             = $size;
       $this->width            = $width;
@@ -310,7 +172,8 @@ class MediaDynamic extends Component
       $this->hasName          = $hasName;
       $this->hasPreview       = $hasPreview;
       $this->hasDownload      = $hasDownload;
-      $this->help             = $this->defineHelp();
+      $this->isRequired       = $required;
+      $this->help             = $this->defineHelp($help);
   }
 
   /**
