@@ -183,7 +183,7 @@ class MediaDynamic extends DynamicTemplate
    */
   public function render()
   {
-      return view('bs-component::form.dynamic-template']);
+      return view('bs-component::form.dynamic-template');
   }
 
 
