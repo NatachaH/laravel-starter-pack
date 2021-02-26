@@ -117,8 +117,8 @@ class MediaDynamic extends DynamicTemplate
    */
   public function __construct(
       $legend   = null,
-      $listing  = null,
-      $template = null,
+      $listing  = 'sp::includes.form.media-dynamic-listing',
+      $template = 'sp::includes.form.media-dynamic-template',
       $min      = null,
       $max      = null,
       $name     = 'media',
@@ -130,7 +130,7 @@ class MediaDynamic extends DynamicTemplate
       $help     = null,
       $btnConfig = 'backend.buttons',
       $before   = null,
-      $after    = null
+      $after    = null,
 
       $formats = null,
       $size = null,
@@ -183,7 +183,7 @@ class MediaDynamic extends DynamicTemplate
    */
   public function render()
   {
-      return view('bs-component::form.dynamic-template', ['listing' => 'sp::includes.form.media-dynamic-listing', 'template' => 'sp::includes.form.media-dynamic-template']);
+      return view('bs-component::form.dynamic-template']);
   }
 
 
