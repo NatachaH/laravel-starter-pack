@@ -2,7 +2,7 @@
   <x-bs-input class="w-50 me-2" :label="__('sp::field.filename')" :name="'media_to_update['.$item->id.'][name]'" :value="$item->name" />
 @endif
 
-<x-bs-input :class="$hasName ? 'w-50 me-2' : 'w-100 me-2'" :label="__('sp::field.file')" :name="'media_to_update['.$item->id.'][file]'" :value="$item->filename" readonly :input-group="$hasDownload">
+<x-bs-input :class="$hasName ? 'w-50' : 'w-100'" :label="__('sp::field.file')" :name="'media_to_update['.$item->id.'][file]'" :value="$item->filename" readonly :input-group="$hasDownload">
   @if($hasPreview || $hasDownload)
     <x-slot name="after">
         @if($hasPreview && $item->thumbnail)
