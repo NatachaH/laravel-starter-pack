@@ -1,5 +1,7 @@
 <div {{ $attributes->merge(['class' => 'listing']) }}>
 
+    {!! $slot !!}
+
     <div class="listing-header d-sm-flex justify-content-between">
 
         <div class="listing-filter">
@@ -15,7 +17,15 @@
 
         <div class="listing-action mt-3 mt-sm-0">
 
-            @if(Route::has($route.'.export') && Auth::user()->can('export', $model))
+            @isset($buttons)
+              {!! $buttons !!}
+            @endisset
+
+            @if(!$isSearch() && Route::has($route.'.import') && Auth::user()->can('import', $model))
+                <a href="{{ route($route.'.import') }}" class="btn btn-outline-secondary rounded-pill"><i class="icon icon-upload"></i> @lang('sp::action.import')</a>
+            @endif
+
+            @if(!$isSearch() && Route::has($route.'.export') && Auth::user()->can('export', $model))
                 <a href="{{ route($route.'.export') }}" class="btn btn-outline-secondary rounded-pill"><i class="icon icon-download"></i> @lang('sp::action.export')</a>
             @endif
 

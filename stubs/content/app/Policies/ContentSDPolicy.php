@@ -114,4 +114,26 @@ class {{ UCNAME }}Policy
     {
         return $user->hasAccess('{{ NAME }}','force-delete') && ${{ NAME }}->trashed();
     }
+
+    /**
+     * Determine whether the user can import the model.
+     *
+     * @param  \App\Models\User  $user
+     * @return mixed
+     */
+    public function import(User $user)
+    {
+        return $user->hasAccess('{{ NAME }}','import');
+    }
+
+    /**
+     * Determine whether the user can export the model.
+     *
+     * @param  \App\Models\User  $user
+     * @return mixed
+     */
+    public function export(User $user)
+    {
+        return $user->hasAccess('{{ NAME }}','export');
+    }
 }

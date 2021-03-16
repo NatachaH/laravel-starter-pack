@@ -3,12 +3,14 @@
 
       <thead>
           <th class="td-fit"></th>
-          <th class="text-center">@lang('sp::action.view')</th>
-          <th class="text-center">@lang('sp::action.create')</th>
-          <th class="text-center">@lang('sp::action.update')</th>
-          <th class="text-center">@lang('sp::action.delete')</th>
-          <th class="text-center">@lang('sp::action.restore')</th>
+          <th class="td-fit text-center">@lang('sp::action.view')</th>
+          <th class="td-fit text-center">@lang('sp::action.create')</th>
+          <th class="td-fit text-center">@lang('sp::action.update')</th>
+          <th class="td-fit text-center">@lang('sp::action.delete')</th>
+          <th class="td-fit text-center">@lang('sp::action.restore')</th>
           <th class="td-fit text-center">@lang('sp::action.force-delete')</th>
+          <th class="td-fit text-center">@lang('sp::action.import')</th>
+          <th class="td-fit text-center">@lang('sp::action.export')</th>
       </thead>
 
       <tbody>
@@ -20,7 +22,9 @@
             <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','update')])</td>
             <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','delete')])</td>
             <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','restore')])</td>
-            <td class="td-fit text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','force-delete')])</td>
+            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','force-delete')])</td>
+            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','import')])</td>
+            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','export')])</td>
           </tr>
         @endforeach
       </tbody>

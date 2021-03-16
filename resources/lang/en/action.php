@@ -15,6 +15,7 @@ return [
     'search'        => 'Search',
     'reset'         => 'Reset',
     'export'        => 'Export',
+    'import'        => 'Import',
     'download'      => 'Download',
     'move'          => 'Drag & drop',
     'index'         => 'Listing',

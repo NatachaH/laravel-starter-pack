@@ -6,12 +6,14 @@
 
           <thead>
               <th class="td-fit"></th>
-              <th><x-bs-check class="checkbox-all" :label="__('sp::action.view')" name="permissionCheckboxAll[]" value="view"/></th>
-              <th><x-bs-check class="checkbox-all" :label="__('sp::action.create')" name="permissionCheckboxAll[]" value="create"/></th>
-              <th><x-bs-check class="checkbox-all" :label="__('sp::action.update')" name="permissionCheckboxAll[]" value="update"/></th>
-              <th><x-bs-check class="checkbox-all" :label="__('sp::action.delete')" name="permissionCheckboxAll[]" value="delete"/></th>
-              <th><x-bs-check class="checkbox-all" :label="__('sp::action.restore')" name="permissionCheckboxAll[]" value="restore"/></th>
+              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.view')" name="permissionCheckboxAll[]" value="view"/></th>
+              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.create')" name="permissionCheckboxAll[]" value="create"/></th>
+              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.update')" name="permissionCheckboxAll[]" value="update"/></th>
+              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.delete')" name="permissionCheckboxAll[]" value="delete"/></th>
+              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.restore')" name="permissionCheckboxAll[]" value="restore"/></th>
               <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.force-delete')" name="permissionCheckboxAll[]" value="force-delete"/></th>
+              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.import')" name="permissionCheckboxAll[]" value="import"/></th>
+              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.export')" name="permissionCheckboxAll[]" value="export"/></th>
           </thead>
 
           <tbody>
@@ -23,7 +25,9 @@
                 <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','update')])</td>
                 <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','delete')])</td>
                 <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','restore')])</td>
-                <td class="td-fit">@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','force-delete')])</td>
+                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','force-delete')])</td>
+                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','import')])</td>
+                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','export')])</td>
               </tr>
             @endforeach
           </tbody>
