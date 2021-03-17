@@ -28,7 +28,7 @@ class Store{{ UCNAME }}Request extends FormRequest
     {
         $isNew = $this->getMethod() == 'POST';
         return [
-          'slug'  => ['required', new Slug, Rule::unique('pages', 'slug')->ignore($this->{{ NAME }})],
+          'slug'  => ['required', new Slug, Rule::unique('{{ PNAME }}', 'slug')->ignore($this->{{ NAME }})],
           'title' => ['required'],
           'media_to_add.*.file' => ['file','mimes:jpeg,png']
         ];
