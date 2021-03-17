@@ -81,7 +81,7 @@ php artisan db:seed
 Add the NPM packages in your package.json:
 
 ```
-"bootstrap": "^5.0.0-beta1",
+"bootstrap": "^5.0.0-beta2",
 "@popperjs/core": "^2.6.0",
 "quill": "^1.3.6",
 "sortablejs": "^1.10.2",
