@@ -7,6 +7,9 @@
 // Variables
 @import 'variables/brand';
 
+// Customize the colors for the backend
+$custom-theme-colors: ();
+
 // Backend design
 @import '../../vendor/nh/starter-pack/resources/sass/backend';
 

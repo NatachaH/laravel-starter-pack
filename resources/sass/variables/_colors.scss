@@ -4,19 +4,13 @@
 |--------------------------------------------------------------------------
 */
 
-$custom-theme-colors: (
+$sp-theme-colors: (
   "gray":  $gray,
-  "border": $border-color,
-  "blue":   $blue-500,
-  "indigo": $indigo-500,
-  "purple": $purple-400,
-  "pink":   $pink-500,
-  "red":    $red-500,
-  "orange": $orange-500,
-  "yellow": $yellow-500,
-  "green":  $green-500,
-  "teal":   $teal-500
+  "border": $border-color
 );
 
+@if variable-exists(custom-theme-colors) {
+  $sp-theme-colors: map-merge($sp-theme-colors,$custom-theme-colors);
+}
 
-$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+$theme-colors: map-merge($theme-colors,$sp-theme-colors);
