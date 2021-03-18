@@ -98,7 +98,7 @@
 
                             <td class="td-fit">
 
-                                @includeIf([$folder.'.includes.listing-button'])
+                                @includeIf($folder.'.includes.listing-button')
 
                                 @if(Route::has($route.'.show') && Auth::user()->can('view', $item))
                                     <a href="{{ route($route.'.show', $item->id) }}" class="btn btn-gray rounded-circle" aria-label="@lang('sp::action.preview')"><i class="icon icon-preview"></i></a>
