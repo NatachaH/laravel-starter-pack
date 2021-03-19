@@ -1,33 +1,37 @@
 <div class="table-responsive">
-  <table class="table mb-0">
-
+  <table class="table mb-5">
       <thead>
           <th class="td-fit"></th>
-          <th class="td-fit text-center">@lang('sp::action.view')</th>
-          <th class="td-fit text-center">@lang('sp::action.create')</th>
-          <th class="td-fit text-center">@lang('sp::action.update')</th>
-          <th class="td-fit text-center">@lang('sp::action.delete')</th>
-          <th class="td-fit text-center">@lang('sp::action.restore')</th>
-          <th class="td-fit text-center">@lang('sp::action.force-delete')</th>
-          <th class="td-fit text-center">@lang('sp::action.import')</th>
-          <th class="td-fit text-center">@lang('sp::action.export')</th>
+          @foreach (config('access-control.permissions.actions') as $action)
+            <th class="td-fit text-center">{{ \Lang::has('sp::action.'.$action) ? __('sp::action.'.$action) : __('permission.action.'.$action) }}</th>
+          @endforeach
       </thead>
-
       <tbody>
-        @foreach ($permissions as $key => $permission)
+        @foreach ($permissionsWithModel as $model => $permission)
           <tr>
-            <td class="td-fit"><b>{{ \Lang::has('permission.'.$key) ? __('permission.'.$key) : trans_choice('backend.model.'.$key,1) }}</b></td>
-            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','view')])</td>
-            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','create')])</td>
-            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','update')])</td>
-            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','delete')])</td>
-            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','restore')])</td>
-            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','force-delete')])</td>
-            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','import')])</td>
-            <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action','export')])</td>
+            <td class="td-fit"><b>{{ \Lang::has('permission.'.$model) ? __('permission.'.$model) : trans_choice('backend.model.'.$model,1) }}</b></td>
+            @foreach (config('access-control.permissions.actions') as $action)
+              <td class="text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission->firstWhere('action',$action)])</td>
+            @endforeach
           </tr>
         @endforeach
       </tbody>
+  </table>
+</div>
 
+<div class="table-responsive">
+  <table class="table">
+      <thead>
+          <th></th>
+          <th class="td-fit text-center">@lang('sp::action.access')</th>
+      </thead>
+      <tbody>
+        @foreach ($permissionsWithoutModel as $permission)
+          <tr>
+            <td><b>{{ \Lang::has('permission.'.$permission->name) ? __('permission.'.$permission->name) : $permission->name }}</b></td>
+            <td class="td-fit text-center">@include('sp::backend.permissions.includes.icon', ['permission' => $permission])</td>
+          </tr>
+        @endforeach
+      </tbody>
   </table>
 </div>

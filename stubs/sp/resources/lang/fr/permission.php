@@ -13,4 +13,10 @@ return [
 
     //'mypermission'  => 'My custom permission',
 
+    /*
+    'action' => [
+      'myaction' => 'My custom action'
+    ]
+    */
+
 ];

@@ -45,6 +45,11 @@ class StarterPackServiceProvider extends ServiceProvider
         'sp::layouts.partials.breadcrumb', 'Nh\StarterPack\View\Composers\BreadcrumbComposer'
       );
 
+      View::composer([
+          'sp::backend.permissions.fieldset',
+          'sp::backend.permissions.table'
+      ],'Nh\StarterPack\View\Composers\PermissionsComposer');
+
       // TRANSLATIONS
       $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'sp');
 

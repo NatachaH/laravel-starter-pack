@@ -64,8 +64,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $permissions = Permission::getByModel();
-        return view('sp::backend.roles.create',compact('permissions'));
+        return view('sp::backend.roles.create');
     }
 
     /**
@@ -94,8 +93,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        $permissions = Permission::getByModel();
-        return view('sp::backend.roles.show', compact('role','permissions'));
+        return view('sp::backend.roles.show', compact('role'));
     }
 
     /**
@@ -106,8 +104,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        $permissions = Permission::getByModel();
-        return view('sp::backend.roles.edit', compact('role','permissions'));
+        return view('sp::backend.roles.edit', compact('role'));
     }
 
     /**

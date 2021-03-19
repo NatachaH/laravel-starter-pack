@@ -1,37 +1,53 @@
 <fieldset>
-
   <legend>@choice('backend.model.permission',2)</legend>
-    <div class="table-responsive">
-      <table class="table bg-white mb-0">
+  <div class="bg-white">
 
+    <div class="table-responsive mb-5">
+      <table class="table">
           <thead>
               <th class="td-fit"></th>
-              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.view')" name="permissionCheckboxAll[]" value="view"/></th>
-              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.create')" name="permissionCheckboxAll[]" value="create"/></th>
-              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.update')" name="permissionCheckboxAll[]" value="update"/></th>
-              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.delete')" name="permissionCheckboxAll[]" value="delete"/></th>
-              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.restore')" name="permissionCheckboxAll[]" value="restore"/></th>
-              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.force-delete')" name="permissionCheckboxAll[]" value="force-delete"/></th>
-              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.import')" name="permissionCheckboxAll[]" value="import"/></th>
-              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.export')" name="permissionCheckboxAll[]" value="export"/></th>
+              @foreach (config('access-control.permissions.actions') as $action)
+                <th class="td-fit"><x-bs-check class="checkbox-all" :label="\Lang::has('sp::action.'.$action) ? __('sp::action.'.$action) : __('permission.action.'.$action)" name="permissionCheckboxAll[]" :value="$action"/></th>
+              @endforeach
           </thead>
-
           <tbody>
-            @foreach ($permissions as $key => $permission)
+            @foreach ($permissionsWithModel as $model => $permission)
               <tr>
-                <td class="td-fit"><b>{{ \Lang::has('permission.'.$key) ? __('permission.'.$key) : trans_choice('backend.model.'.$key,1) }}</b></td>
-                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','view')])</td>
-                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','create')])</td>
-                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','update')])</td>
-                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','delete')])</td>
-                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','restore')])</td>
-                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','force-delete')])</td>
-                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','import')])</td>
-                <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action','export')])</td>
+                <td class="td-fit"><b>{{ \Lang::has('permission.'.$model) ? __('permission.'.$model) : trans_choice('backend.model.'.$model,1) }}</b></td>
+                @foreach (config('access-control.permissions.actions') as $action)
+                  <td>@include('sp::backend.permissions.includes.checkbox', ['permission' => $permission->firstWhere('action',$action)])</td>
+                @endforeach
               </tr>
             @endforeach
           </tbody>
-
       </table>
     </div>
+
+    <div class="table-responsive bg-white mb-3">
+      <table class="table">
+          <thead>
+              <th></th>
+              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.access')" name="permissionCheckboxAll[]" value="access"/></th>
+          </thead>
+          <tbody>
+            @foreach ($permissionsWithoutModel as $permission)
+              <tr>
+                <td><b>{{ \Lang::has('permission.'.$permission->name) ? __('permission.'.$permission->name) : $permission->name }}</b></td>
+                <td class="td-fit">
+                  <x-bs-check
+                    class="checkbox-access"
+                    :label="__('sp::action.access')"
+                    name="permissions[]"
+                    :value="$permission->id"
+                    :checked="in_array($permission->id, old('permissions',$checked))"
+                    :disabled="in_array($permission->id, $disabled)"
+                  />
+                </td>
+              </tr>
+            @endforeach
+          </tbody>
+      </table>
+    </div>
+    
+  </div>
 </fieldset>

@@ -38,7 +38,8 @@ return [
     'collapse'      => 'Collapse',
     'filter'        => 'Filter',
     'sort'          => 'Sort',
-    'sort-y'        => 'Sort by'
+    'sort-y'        => 'Sort by',
+    'authorize'     => 'Authorize'
 
 
 ];

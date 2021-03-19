@@ -39,5 +39,6 @@ return [
     'filter'        => 'Filtrer',
     'sort'          => 'Trier',
     'sort-by'       => 'Trier par',
+    'authorize'     => 'Autoriser'
 
 ];

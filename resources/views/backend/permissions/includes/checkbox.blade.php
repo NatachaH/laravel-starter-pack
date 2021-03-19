@@ -1,7 +1,7 @@
 @if(!is_null($permission))
   <x-bs-check
     :class="'checkbox-'.$permission->action"
-    :label="__('sp::action.'.$permission->action)"
+    :label="\Lang::has('sp::action.'.$permission->action) ? __('sp::action.'.$permission->action) : __('permission.action.'.$permission->action)" 
     name="permissions[]"
     :value="$permission->id"
     :checked="in_array($permission->id, old('permissions',$checked))"
