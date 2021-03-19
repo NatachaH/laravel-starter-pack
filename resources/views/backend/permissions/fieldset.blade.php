@@ -27,7 +27,7 @@
       <table class="table">
           <thead>
               <th></th>
-              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.access')" name="permissionCheckboxAll[]" value="access"/></th>
+              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.authorize')" name="permissionCheckboxAll[]" value="access"/></th>
           </thead>
           <tbody>
             @foreach ($permissionsWithoutModel as $permission)
@@ -36,7 +36,7 @@
                 <td class="td-fit">
                   <x-bs-check
                     class="checkbox-access"
-                    :label="__('sp::action.access')"
+                    :label="__('sp::action.authorize')"
                     name="permissions[]"
                     :value="$permission->id"
                     :checked="in_array($permission->id, old('permissions',$checked))"
@@ -48,6 +48,6 @@
           </tbody>
       </table>
     </div>
-    
+
   </div>
 </fieldset>
