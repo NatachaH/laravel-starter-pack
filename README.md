@@ -81,11 +81,11 @@ php artisan db:seed
 Add the NPM packages in your package.json:
 
 ```
-"bootstrap": "^5.0.0-beta2",
+"bootstrap": "^5.0.0-beta3",
 "@popperjs/core": "^2.6.0",
 "quill": "^1.3.6",
 "sortablejs": "^1.10.2",
-"flatpickr": "^4.6.3"
+"flatpickr": "^4.6.7"
 ```
 
 Install the NPM packages and run the default js/scss:
