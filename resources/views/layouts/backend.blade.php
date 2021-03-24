@@ -11,9 +11,11 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/backend.js') }}" defer></script>
+    @stack('scripts')
 
     <!-- Styles -->
     <link href="{{ mix('css/backend.css') }}" rel="stylesheet">
+    @stack('styles')
 </head>
 <body>
 
