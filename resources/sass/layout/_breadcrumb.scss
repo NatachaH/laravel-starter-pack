@@ -6,23 +6,32 @@
 
 #breadcrumb {
 
-  .breadcrumb {
-    padding: $breadcrumb-padding-y $breadcrumb-padding-x;
+  background: $border-color;
+  padding: $breadcrumb-padding-y $breadcrumb-padding-x;
+  color: $secondary;
+  font-size: $breadcrumb-font-size;
 
-    @include media-breakpoint-up(lg) {
-        padding: $breadcrumb-padding-y $breadcrumb-padding-x * 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: $secondary;
+    &:hover {
+      color:$breadcrumb-active-color;
     }
+  }
 
+  @include media-breakpoint-up(lg) {
+      padding: $breadcrumb-padding-y $breadcrumb-padding-x * 2;
+  }
+
+  .breadcrumb {
+    padding: 0;
   }
 
   .breadcrumb-item:not(.active) {
     color: $secondary;
-    > a {
-      color: $secondary;
-      &:hover {
-        color:$breadcrumb-active-color;
-      }
-    }
   }
 
 
