@@ -59,7 +59,7 @@ class PresetCommand extends Command
         Artisan::call('vendor:publish --tag=access-control');
 
         // Make User roleable
-        Artisan::call('role:new user');
+        Artisan::call('role:new --model=user');
 
         // Artisan commandes for Mediable Package
         Artisan::call('vendor:publish --tag=mediable');
