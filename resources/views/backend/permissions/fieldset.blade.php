@@ -23,31 +23,33 @@
       </table>
     </div>
 
-    <div class="table-responsive bg-white mb-3">
-      <table class="table">
-          <thead>
-              <th></th>
-              <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.authorize')" name="permissionCheckboxAll[]" value="access"/></th>
-          </thead>
-          <tbody>
-            @foreach ($permissionsWithoutModel as $permission)
-              <tr>
-                <td><b>{{ \Lang::has('permission.'.$permission->name) ? __('permission.'.$permission->name) : $permission->name }}</b></td>
-                <td class="td-fit">
-                  <x-bs-check
-                    class="checkbox-access"
-                    :label="__('sp::action.authorize')"
-                    name="permissions[]"
-                    :value="$permission->id"
-                    :checked="in_array($permission->id, old('permissions',$checked))"
-                    :disabled="in_array($permission->id, $disabled)"
-                  />
-                </td>
-              </tr>
-            @endforeach
-          </tbody>
-      </table>
-    </div>
+    @if($permissionsWithoutModel->count())
+      <div class="table-responsive bg-white mb-3">
+        <table class="table">
+            <thead>
+                <th></th>
+                <th class="td-fit"><x-bs-check class="checkbox-all" :label="__('sp::action.authorize')" name="permissionCheckboxAll[]" value="access"/></th>
+            </thead>
+            <tbody>
+              @foreach ($permissionsWithoutModel as $permission)
+                <tr>
+                  <td><b>{{ \Lang::has('permission.'.$permission->name) ? __('permission.'.$permission->name) : $permission->name }}</b></td>
+                  <td class="td-fit">
+                    <x-bs-check
+                      class="checkbox-access"
+                      :label="__('sp::action.authorize')"
+                      name="permissions[]"
+                      :value="$permission->id"
+                      :checked="in_array($permission->id, old('permissions',$checked))"
+                      :disabled="in_array($permission->id, $disabled)"
+                    />
+                  </td>
+                </tr>
+              @endforeach
+            </tbody>
+        </table>
+      </div>
+    @endif
 
   </div>
 </fieldset>

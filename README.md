@@ -85,7 +85,7 @@ Add the NPM packages in your package.json:
 "@popperjs/core": "^2.6.0",
 "quill": "^1.3.6",
 "sortablejs": "^1.10.2",
-"flatpickr": "^4.6.7"
+"flatpickr": "4.6.7"
 ```
 
 Install the NPM packages and run the default js/scss:

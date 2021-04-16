@@ -20,12 +20,15 @@ return [
     'descending'    => 'Descendant',
     'public'        => 'Public',
     'private'       => 'Privé',
+    'color'         => 'Couleur',
 
     // PERSON
     'author'        => 'Auteur',
     'firstname'     => 'Prénom',
     'lastname'      => 'Nom',
     'birthday'      => 'Date d\'anniversaire',
+    'age'           => 'Âge',
+    'username'      => 'Identifiant',
 
     // CONTACT
     'email'         => 'Email',
@@ -69,6 +72,7 @@ return [
     'price'         => 'Prix',
     'published'     => 'Publié',
     'not-published' => 'Non publié',
+    'comment'       => 'Commentaire',
 
     // MODELS / TITLE
     'actions'         => 'Actions',
@@ -79,8 +83,9 @@ return [
     'documents'       => 'Documents',
     'history'         => 'Historique',
     'advanced-search' => 'Recherche avancée',
-    'with-trashed'  => 'Avec des objets mis à la poubelle'
-
+    'with-trashed'    => 'Avec des objets mis à la poubelle',
+    'status'          => 'Statut',
+    'parent'        => 'Parent',
 
 
 ];

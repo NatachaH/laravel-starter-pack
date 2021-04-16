@@ -7,12 +7,20 @@
 |
 */
 
+// Fonts
+
 // Variables
 @import 'variables/brand';
 @import 'variables/bootstrap';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Libraries
+@import 'libraries/libraries';
+
+// Mixins
+@import 'mixins/mixins';
 
 // Layout
 @import 'layout/layout';
+
+// Components
+@import 'components/components';

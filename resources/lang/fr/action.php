@@ -29,9 +29,11 @@ return [
     'update'        => 'Mettre à jour',
     'delete'        => 'Supprimer',
     'restore'       => 'Restaurer',
+    'soft-delete'   => 'Mettre à la poubelle',
     'force-delete'  => 'Supprimer définitivement',
     'cancel'        => 'Annuler',
     'confirm'       => 'Confirmer',
+    'refuse'        => 'Refuser',
     'choose-file'   => 'Choisir un fichier',
     'browse'        => 'Parcourir',
     'send'          => 'Envoyer',
@@ -39,6 +41,13 @@ return [
     'filter'        => 'Filtrer',
     'sort'          => 'Trier',
     'sort-by'       => 'Trier par',
-    'authorize'     => 'Autoriser'
+    'authorize'     => 'Autoriser',
+    'unauthorize'   => 'Ne pas autoriser',
+    'activate'      => 'Activer',
+    'desactivate'   => 'Désactiver',
+    'open'          => 'Ouvrir',
+    'close'         => 'Fermer',
+    'validate'      => 'Valider',
+    'unvalidate'    => 'Refuser',
 
 ];

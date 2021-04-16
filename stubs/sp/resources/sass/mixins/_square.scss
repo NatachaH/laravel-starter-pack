@@ -1,0 +1,23 @@
+/*
+|--------------------------------------------------------------------------
+| Square
+|--------------------------------------------------------------------------
+*/
+
+// Square by viewport with
+@mixin square($column) {
+  width:100%;
+  padding-bottom: calc( 100vw / #{$column} );
+  height:0;
+  overflow: hidden;
+  position: relative;
+}
+
+// Square by column with
+@mixin square-by-col() {
+  width:100%;
+  padding-bottom: 100%;
+  height:0;
+  overflow: hidden;
+  position: relative;
+}

@@ -57,7 +57,13 @@
 
                         @foreach ($header as $value)
                             <th>
-                              {{ \Lang::has('sp::field.'.$value) ? __('sp::field.'.$value) : __('backend.field.'.$value) }}
+                              @if(\Lang::has('sp::field.'.$value))
+                                @lang('sp::field.'.$value)
+                              @elseif(\Lang::has('backend.model.'.$value))
+                                @choice('backend.model.'.$value,1)
+                              @else
+                                @lang('backend.field.'.$value)
+                              @endif
                             </th>
                         @endforeach
 

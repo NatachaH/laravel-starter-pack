@@ -29,9 +29,11 @@ return [
     'update'        => 'Update',
     'delete'        => 'Delete',
     'restore'       => 'Restore',
+    'soft-delete'   => 'Put in trash',
     'force-delete'  => 'Force delete',
     'cancel'        => 'Cancel',
     'confirm'       => 'Confirm',
+    'refuse'        => 'Refuse',
     'choose-file'   => 'Choose a file',
     'browse'        => 'Browse',
     'send'          => 'Send',
@@ -39,7 +41,13 @@ return [
     'filter'        => 'Filter',
     'sort'          => 'Sort',
     'sort-y'        => 'Sort by',
-    'authorize'     => 'Authorize'
-
+    'authorize'     => 'Authorize',
+    'unauthorize'   => 'Unauthorize',
+    'activate'      => 'Activate',
+    'desactivate'   => 'Desactivate',
+    'open'          => 'Open',
+    'close'         => 'Close',
+    'validate'      => 'Validate',
+    'unvalidate'    => 'Unvalidate',
 
 ];

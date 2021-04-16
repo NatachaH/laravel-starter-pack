@@ -20,12 +20,15 @@ return [
     'descending'    => 'Descending',
     'public'        => 'Public',
     'private'       => 'Private',
+    'color'         => 'Color',
 
     // PERSON
     'author'        => 'Author',
     'firstname'     => 'Firstname',
     'lastname'      => 'Lastname',
     'birthday'      => 'Birthday date',
+    'age'           => 'Age',
+    'username'      => 'Username',
 
     // CONTACT
     'email'         => 'Email',
@@ -69,6 +72,7 @@ return [
     'price'         => 'Price',
     'published'     => 'Published',
     'not-published' => 'Not published',
+    'comment'       => 'Comment',
 
     // MODELS / TITLE
     'actions'         => 'Actions',
@@ -79,7 +83,9 @@ return [
     'documents'       => 'Documents',
     'history'         => 'History',
     'advanced-search' => 'Advanced search',
-    'with-trashed'    => 'With trashed'
+    'with-trashed'    => 'With trashed',
+    'status'          => 'Status',
+    'parent'        => 'Parent',
 
 
 ];
