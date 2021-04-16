@@ -4,12 +4,12 @@
     <ul {{ $attributes->merge(['class' => 'list-group list-group-flush history']) }} >
       @foreach ($items as $key => $item)
         <li class="list-group-item d-flex">
-          <span class="history-tooltip p-2 me-2 badge bg-{{ $color($item->event) }}" data-bs-toggle="tooltip" data-placement="top" title="@lang('trackable.event.'.$item->event)">
-            <i class="icon-{{ $icon($item->event) }}" aria-label="@lang('trackable.event.'.$item->event)"></i>
+          <span class="history-tooltip p-2 me-2 badge bg-{{ $color($item->event) }}" data-bs-toggle="tooltip" data-placement="top" title="{{ $tooltip($item) }}">
+            <i class="icon-{{ $icon($item->event) }}" aria-label="{{ $tooltip($item) }}"></i>
           </span>
           @if($item->relation)
-            <span class="history-tooltip p-2 me-2 badge bg-secondary" data-bs-toggle="tooltip" data-placement="top" title="{{ $relationDescription($item->relation,$item->comment) }}" >
-              <i class="icon-{{ $relationIcon($item->relation) }}" aria-label="{{ $relationDescription($item->relation) }}"></i>
+            <span class="history-tooltip p-2 me-2 badge bg-secondary" data-bs-toggle="tooltip" data-placement="top" title="{{ $relationTooltip($item) }}" >
+              <i class="icon-{{ $relationIcon($item->relation) }}" aria-label="{{ $relationTooltip($item) }}"></i>
             </span>
           @endif
           <span>{!! $description($item) !!}</span>

@@ -40,29 +40,7 @@ class History extends Component
      */
     public function color($event)
     {
-        switch ($event) {
-          case 'created':
-            $color = 'success';
-            break;
-          case 'updated':
-          case 'saved':
-            $color = 'info';
-            break;
-          case 'deleted':
-          case 'force-deleted':
-            $color = 'danger';
-            break;
-          case 'soft-deleted':
-            $color = 'warning';
-            break;
-          case 'restored':
-            $color = 'primary';
-            break;
-          default:
-            $color = 'gray';
-            break;
-        }
-        return $color;
+        return config('history.events.'.$event.'.color') ?? 'gray';
     }
 
     /**
@@ -72,27 +50,7 @@ class History extends Component
      */
     public function icon($event)
     {
-        switch ($event){
-          case 'created':
-            $icon = 'plus';
-            break;
-          case 'updated':
-          case 'saved':
-            $icon = 'pencil';
-            break;
-          case 'deleted':
-          case 'force-deleted':
-          case 'soft-deleted':
-            $icon = 'trash';
-            break;
-          case 'restored':
-            $icon = 'time-reverse';
-            break;
-          default:
-            $icon = 'rocket';
-            break;
-        }
-        return $icon;
+        return config('history.events.'.$event.'.icon') ?? 'rocket';
     }
 
     /**
@@ -102,27 +60,7 @@ class History extends Component
      */
     public function relationIcon($relation)
     {
-        switch ($relation){
-          case 'category':
-            $icon = 'tag';
-            break;
-          case 'address':
-            $icon = 'location';
-            break;
-          case 'status':
-            $icon = 'flag';
-            break;
-          case 'media':
-            $icon = 'image';
-            break;
-          case 'role':
-            $icon = 'key';
-            break;
-          default:
-            $icon = 'rocket';
-            break;
-        }
-        return $icon;
+        return config('history.relations.'.$relation.'.icon') ?? 'rocket';
     }
 
     /**
@@ -158,16 +96,39 @@ class History extends Component
     }
 
     /**
+     * Define the tooltip of event.
+     *
+     * @var string
+     */
+    public function tooltip($item)
+    {
+        // Define variables
+        $event = $item->event ?? null;
+        $relation = $item->relation ?? null;
+        $comment = $item->comment ?? null;
+
+        // Define the tooltip
+        $name = \Lang::has('trackable.event.'.$event) ? __('trackable.event.'.$event) : Str::ucfirst($event);
+        $comment = empty($relation) && !empty($comment) ? ' : '.$comment : '';
+        return $name.$comment;
+    }
+
+    /**
      * Define the description by relation.
      *
      * @var string
      */
-    public function relationDescription($relation,$comment = null)
+    public function relationTooltip($item)
     {
+        // Define variables
+        $event = $item->event ?? null;
+        $relation = $item->relation ?? null;
+        $comment = $item->comment ?? null;
+
         $model = \Lang::has('backend.model.'.$relation) ? trans_choice('backend.model.'.$relation,1) : Str::ucfirst($relation);
         $comment = !empty($comment) ? ' : '.$comment : '';
 
-        return $model.' '.$comment;
+        return $model.$comment;
     }
 
 
