@@ -6,7 +6,7 @@
 
   <div class="col-sm-6 order-sm-1">
     <button type="submit" class="btn btn-primary rounded-pill">@lang('sp::action.save')</button>
-    <a href="{{ route($cancel) }}" class="btn btn-outline-secondary rounded-pill">@lang('sp::action.cancel')</a>
+    <a href="{{ route($cancel,$cancelOption ?? null) }}" class="btn btn-outline-secondary rounded-pill">@lang('sp::action.cancel')</a>
   </div>
 
 </div>
