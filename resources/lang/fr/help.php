@@ -21,7 +21,7 @@ return [
       'size'      => 'Taille recommandée (HD): :size px',
       'width'     => 'Largeur min: :width px',
       'height'    => 'Hauteur min: :height px',
-      'weigth'    => 'Poid max: :weigth MB',
+      'weight'    => 'Poid max: :weight MB',
     ],
 
     'slug'      => 'Le slug est utilisé pour créer le lien URL: www.monsite.ch/<b>slug</b>',
