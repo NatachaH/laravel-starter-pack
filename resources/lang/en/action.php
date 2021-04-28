@@ -49,5 +49,6 @@ return [
     'close'         => 'Close',
     'validate'      => 'Validate',
     'unvalidate'    => 'Unvalidate',
+    'preview'       => 'Preview'
 
 ];

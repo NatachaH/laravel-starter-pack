@@ -6,12 +6,12 @@
   @if($hasPreview || $hasDownload)
     <x-slot name="after">
         @if($hasPreview && $item->thumbnail)
-            <button type="button" class="btn btn-gray popover-media" data-bs-toggle="popover" data-bs-content="<img src='{{ $item->thumbnail }}' />" aria-label="@lang('sp::action.preview')">
+            <button type="button" class="btn btn-gray popover-media" data-bs-toggle="popover" data-bs-content="<img src='{{ $item->thumbnail }}' />" title="@lang('sp::action.preview')" aria-label="@lang('sp::action.preview')">
               <i class="icon-preview"></i>
             </button>
         @endif
         @if($hasDownload)
-            <a href="{{ $item->url }}" class="btn btn-gray" download target="_blank" aria-label="@lang('sp::action.download')">
+            <a href="{{ $item->url }}" class="btn btn-gray" download target="_blank" title="@lang('sp::action.download')" aria-label="@lang('sp::action.download')">
               <i class="icon-download"></i>
             </a>
         @endif

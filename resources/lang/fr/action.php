@@ -49,5 +49,6 @@ return [
     'close'         => 'Fermer',
     'validate'      => 'Valider',
     'unvalidate'    => 'Refuser',
+    'preview'       => 'Aperçu'
 
 ];
