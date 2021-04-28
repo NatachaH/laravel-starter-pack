@@ -18,6 +18,8 @@ return [
     'no'            => 'No',
     'ascending'     => 'Ascending',
     'descending'    => 'Descending',
+    'visibility'    => 'Visibility',
+    'access'        => 'Access',
     'public'        => 'Public',
     'private'       => 'Private',
     'color'         => 'Color',
