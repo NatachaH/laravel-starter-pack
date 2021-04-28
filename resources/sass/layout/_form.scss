@@ -77,4 +77,10 @@ form {
     }
   }
 
+  .form-legend {
+    color:$text-muted;
+    font-size: $font-size-sm;
+    font-style: italic;
+  }
+
 }
