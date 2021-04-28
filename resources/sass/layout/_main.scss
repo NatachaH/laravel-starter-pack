@@ -31,5 +31,8 @@ main {
       color: $body-color !important;
   }
 
+  li > p:last-child {
+    margin: 0;
+  }
 
 }

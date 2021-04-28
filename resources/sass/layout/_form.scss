@@ -67,4 +67,14 @@ form {
     color: $body-color !important;
   }
 
+
+  .required-if label {
+    &:after {
+      content: '(*)';
+      display: inline-block;
+      color:$text-muted;
+      font-style: italic;
+    }
+  }
+
 }

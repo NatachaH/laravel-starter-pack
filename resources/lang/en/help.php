@@ -12,6 +12,8 @@ return [
     */
 
     'required' => '* Required fields',
+    'required-if' => '(*) Possibly required fields',
+
     'leave-empty' => 'Leave empty if you don\'t want to edit it.',
 
     'media' => [
