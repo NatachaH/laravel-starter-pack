@@ -108,7 +108,8 @@ class BreadcrumbComposer
 
         if(!empty($this->model))
         {
-            $model = (\Lang::has('backend.model.'.$this->model) ? trans_choice('backend.model.'.$this->model,2) : $this->model);
+            $modelClean = str_replace('_','-',$this->model);
+            $model = (\Lang::has('backend.model.'.$modelClean) ? trans_choice('backend.model.'.$modelClean,2) : str_replace('_',' ',$this->model));
             $modelRoute = Str::beforeLast($this->route, '.').'.index';
             $this->crumbs[$model] = Route::has($modelRoute) ? $modelRoute : null;
         }
