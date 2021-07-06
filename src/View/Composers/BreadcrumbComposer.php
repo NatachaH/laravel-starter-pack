@@ -74,7 +74,7 @@ class BreadcrumbComposer
               $this->item = Route::current()->parameters[$this->model] ?? null;
 
               // Define the action
-              $this->action = $explode[2] ?? null;
+              $this->action = $explode[2] ? Str::kebab($explode[2]) : null;
 
               // Define the section
               $config = config('backend.sidebar');
@@ -108,8 +108,7 @@ class BreadcrumbComposer
 
         if(!empty($this->model))
         {
-            $modelClean = str_replace('_','-',$this->model);
-            $model = (\Lang::has('backend.model.'.$modelClean) ? trans_choice('backend.model.'.$modelClean,2) : str_replace('_',' ',$this->model));
+            $model = (\Lang::has('backend.model.'.$this->model) ? trans_choice('backend.model.'.$this->model,2) : $this->model);
             $modelRoute = Str::beforeLast($this->route, '.').'.index';
             $this->crumbs[$model] = Route::has($modelRoute) ? $modelRoute : null;
         }
@@ -123,7 +122,7 @@ class BreadcrumbComposer
 
         if(!empty($this->action))
         {
-            $action = (\Lang::has('sp::action.'.$this->action) ? __('sp::action.'.$this->action) : $this->action);
+            $action = (\Lang::has('sp::action.'.$this->action) ? __('sp::action.'.$this->action) : (\Lang::has('action.'.$this->action) ? __('action.'.$this->action) : $this->action));
             $this->crumbs[$action] = $this->route;
         }
     }
