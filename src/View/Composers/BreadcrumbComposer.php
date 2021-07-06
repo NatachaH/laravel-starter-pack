@@ -74,7 +74,7 @@ class BreadcrumbComposer
               $this->item = Route::current()->parameters[$this->model] ?? null;
 
               // Define the action
-              $this->action = $explode[2] ? Str::kebab($explode[2]) : null;
+              $this->action = isset($explode[2]) ? Str::kebab($explode[2]) : null;
 
               // Define the section
               $config = config('backend.sidebar');
