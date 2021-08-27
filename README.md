@@ -81,12 +81,24 @@ php artisan db:seed
 Add the NPM packages in your package.json:
 
 ```
-"bootstrap": "^5.0.0-beta3",
 "@popperjs/core": "^2.6.0",
-"quill": "^1.3.6",
+"bootstrap" : "^5.1.0",
+"flatpickr" : "^4.6.7",
+"@tiptap/core": "*",
+"@tiptap/starter-kit": "*",
+"@tiptap/extension-text-style": "*",
+"@tiptap/extension-underline": "*",
+"@tiptap/extension-link": "*",
+"@tiptap/extension-table": "*",
+"@tiptap/extension-table-cell": "*",
+"@tiptap/extension-table-header": "*",
+"@tiptap/extension-table-row": "*",
 "sortablejs": "^1.10.2",
-"flatpickr": "4.6.7"
+"resolve-url-loader": "^4.0.0",
+"sass": "^1.38.1",
+"sass-loader": "^12.1.0",
 ```
+
 
 Install the NPM packages and run the default js/scss:
 
