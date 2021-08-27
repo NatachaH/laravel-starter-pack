@@ -4,12 +4,12 @@
     "license": "MIT",
     "type": "library",
     "require": {
-      "nh/bs-component": "^3.1.0",
-      "nh/access-control": "^1.4.0",
-      "nh/mediable": "^1.5.1",
-      "nh/sortable": "^1.1.1",
-      "nh/searchable": "^1.1.2",
-      "nh/trackable": "^1.5.2"
+      "nh/bs-component": "^3.7.0",
+      "nh/access-control": "dev-master",
+      "nh/mediable": "dev-master",
+      "nh/sortable": "dev-master",
+      "nh/searchable": "dev-master",
+      "nh/trackable": "dev-master"
     },
     "author": {
         "name": "Natacha Herth",
