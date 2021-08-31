@@ -1,0 +1,54 @@
+/*
+|--------------------------------------------------------------------------
+| Error - Design
+|--------------------------------------------------------------------------
+*/
+
+// Variables
+@import 'variables/brand';
+@import "variables/bootstrap";
+
+// Libraries
+@import "libraries/libraries";
+
+// Here Customize the auth design
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+}
+
+#error {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  &:after {
+    content:"";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: $primary;
+    margin: 0 auto;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  #error {
+    text-align: left;
+  }
+
+  h1 {
+    &:after {
+      margin: 0;
+    }
+  }
+}
