@@ -67,12 +67,16 @@
                             </th>
                         @endforeach
 
-                        @if($showDates)
+                        @if($showDates('created'))
                           <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.created-at')</th>
+                        @endif
+
+                        @if($showDates('updated'))
                           <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.updated-at')</th>
-                          @if($showDeletedDates())
-                            <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.deleted-at')</th>
-                          @endif
+                        @endif
+
+                        @if($showDates('deleted') && $hasSoftDelete())
+                          <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.deleted-at')</th>
                         @endif
 
                         <th class="td-fit">@lang('sp::field.actions')</th>
@@ -94,12 +98,16 @@
 
                             @includeFirst([$folder.'.includes.listing-detail', 'sp::includes.listing-detail'])
 
-                            @if($showDates)
-                                <td class="td-fit d-none d-lg-table-cell">{{ $item->created_at->format('d.m.Y H:i') }}</td>
-                                <td class="td-fit d-none d-lg-table-cell">{{ $item->updated_at->format('d.m.Y H:i') }}</td>
-                                @if($showDeletedDates())
-                                  <td class="td-fit d-none d-lg-table-cell">{{ empty($item->deleted_at) ? '-' : $item->deleted_at->format('d.m.Y H:i') }}</td>
-                                @endif
+                            @if($showDates('created'))
+                              <td class="td-fit d-none d-lg-table-cell">{{ $item->created_at->format('d.m.Y H:i') }}</td>
+                            @endif
+
+                            @if($showDates('updated'))
+                              <td class="td-fit d-none d-lg-table-cell">{{ $item->updated_at->format('d.m.Y H:i') }}</td>
+                            @endif
+
+                            @if($showDates('deleted') && $hasSoftDelete())
+                              <td class="td-fit d-none d-lg-table-cell">{{ empty($item->deleted_at) ? '-' : $item->deleted_at->format('d.m.Y H:i') }}</td>
                             @endif
 
                             <td class="td-fit">

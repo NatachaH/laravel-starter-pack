@@ -6,6 +6,6 @@
 
   <x-sp-search key="{{ PNAME }}" model="App\Models\{{ UCNAME }}" route="backend.{{ PNAME }}"/>
 
-  <x-sp-listing :items="${{ PNAME }}" header="title|published"  model="App\Models\{{ UCNAME }}" route="backend.{{ PNAME }}" show-id show-dates />
+  <x-sp-listing :items="${{ PNAME }}" header="title|published"  model="App\Models\{{ UCNAME }}" route="backend.{{ PNAME }}" show-dates="deleted" />
 
 @endsection

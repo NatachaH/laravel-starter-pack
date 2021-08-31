@@ -123,9 +123,9 @@ class Listing extends Component
      *
      * @var boolean
      */
-    public function showDeletedDates()
+    public function showDates($type)
     {
-        return $this->hasSoftDelete() && Route::is([$this->route.'.trashed',$this->route.'.search']);
+        return in_array($type,$this->showDates);
     }
 
     /**
@@ -150,14 +150,14 @@ class Listing extends Component
      *
      * @return void
      */
-    public function __construct($model, $route, $header, $items, $showId = false, $showDates = false, $folder = null, $sortable = false, $sortableOrder = 'asc')
+    public function __construct($model, $route, $header, $items, $showId = false, $showDates = null, $folder = null, $sortable = false, $sortableOrder = 'asc')
     {
         $this->model      = $model;
         $this->route      = $route;
         $this->header     = explode('|', $header);
         $this->items      = $items;
         $this->showId     = $showId;
-        $this->showDates  = $showDates;
+        $this->showDates  = is_null($showDates) ? [] : (is_bool($showDates) ? ['created','updated','deleted'] : explode('|', $showDates));
         $this->folder     = empty($folder) ? $route : $folder;
         $this->total      = $this->defineTotal();
         $this->sortable   = $sortable;

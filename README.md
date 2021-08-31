@@ -231,11 +231,12 @@ Get a listing of collection with pagination and default layout.
 | header    | string |       |   
 | items     | array |        |         
 | show-id    | boolean | false |    
-| show-dates | boolean | false |   
+| show-dates | string | null |   
 | folder    | string | null  |            
 
 
 *If there is no folder it will take the route attribute.*
+*In show-dates you can pass the dates to display: created|updated|deleted.*
 
 ```
 <x-sp-listing model="App\Post" route="backend.posts" header="title|published" :items="$posts" show-id />
