@@ -42,6 +42,10 @@ class StarterPackServiceProvider extends ServiceProvider
 
       // VIEWS COMPOSERS
       View::composer(
+        'sp::layouts.partials.navigation', 'Nh\StarterPack\View\Composers\NavigationComposer'
+      );
+
+      View::composer(
         'sp::layouts.partials.breadcrumb', 'Nh\StarterPack\View\Composers\BreadcrumbComposer'
       );
 
