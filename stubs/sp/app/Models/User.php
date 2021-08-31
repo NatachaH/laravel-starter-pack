@@ -90,6 +90,6 @@ class User extends Authenticatable
      */
     public function activityTracks()
     {
-        return $this->hasMany('\App\Models\Track');
+        return $this->hasMany('\App\Models\Track')->latest()->orderBy('id','desc');
     }
 }
