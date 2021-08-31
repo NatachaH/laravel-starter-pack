@@ -64,6 +64,28 @@ class History extends Component
     }
 
     /**
+     * Define the author and the time.
+     *
+     * @var string
+     */
+    public function authorAndTime($item)
+    {
+        $user =  __('sp::listing.by', ['name' => !is_null($item->user) ? $item->username : config('app.name')]);
+        $time = $item->time;
+
+        switch ($this->type) {
+          case 'user':
+            $description = $time;
+            break;
+          default:
+            $description = $user.' '.$time;
+            break;
+        }
+
+        return Str::ucfirst($description);
+    }
+
+    /**
      * Define the description by item and by type.
      *
      * @var string
@@ -71,24 +93,23 @@ class History extends Component
     public function description($item)
     {
         $model = \Lang::has('backend.model.'.$item->model) ? trans_choice('backend.model.'.$item->model,1) : Str::ucfirst($item->model);
-        $user =  __('sp::listing.by', ['name' => !is_null($item->user) ? $item->username : config('app.name')]);
-        $route = Str::plural($item->model).'.show';
+        $route = 'backend.'.Str::plural($item->model).'.show';
+        $name = $item->trackable->title ?? $item->trackable->name ?? $item->trackable_id;
+        $link = '';
 
         // Define if model exist to display a link
         if($this->type !== 'model' && Route::has($route) && Auth::user()->can('view', $item->trackable))
         {
-            $model = '<a href="'.route($route, $item->trackable_id).'">'.$model.'</a>';
+            $model = $model.':';
+            $link = '<a href="'.route($route, $item->trackable_id).'">'.$name.'</a>';
         }
 
         switch ($this->type) {
-          case 'user':
-            $description = $model.' #'.$item->trackable_id;
-            break;
           case 'model':
-            $description = $user;
+            $description = '<b>'.(\Lang::has('trackable.event.'.$item->event) ? __('trackable.event.'.$item->event) : Str::ucfirst($item->event)).'</b>';
             break;
           default:
-            $description = '<b>'.$model.' #'.$item->trackable_id.'</b> '.$user;
+            $description = '<b>'.$model.'</b> '.$link;
             break;
         }
 
