@@ -53,17 +53,17 @@ class History extends Component
         $hasLink  = Route::has($route) && Auth::user()->can('view', $item->trackable);
 
         // Define how to display the item
-        $item     = $hasLink ? '<a href="'.route($route, $item->trackable_id).'">'.$title.'</a>' : $title;
+        $title    = $hasLink ? '<a href="'.route($route, $item->trackable_id).'">'.$title.'</a>' : $title;
 
         switch ($this->type) {
           case 'model':
             $description = '<b>'.$item->event_name.'</b>';
             break;
           case 'user':
-            $description = '<b>'.$model.':</b>'.$item;
+            $description = '<b>'.$model.':</b> '.$title;
             break;
           default:
-            $description = '<b>'.$model.':</b>'.$item;
+            $description = '<b>'.$model.':</b> '.$title;
             break;
         }
 

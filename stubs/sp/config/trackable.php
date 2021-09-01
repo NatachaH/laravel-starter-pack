@@ -14,7 +14,7 @@ return [
     'events'    => 'trackable.event',
     'models'    => 'backend.model',
     'relations' => 'backend.model'
-  ]
+  ],
 
   /*
   |--------------------------------------------------------------------------

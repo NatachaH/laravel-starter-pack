@@ -9,13 +9,19 @@
             <i class="icon-{{ $item->event_icon }}" aria-label="{{ $item->event_name }}"></i>
           </span>
 
-          <span class="history-tooltip p-2 me-2 badge bg-secondary" data-bs-toggle="tooltip" data-placement="top" title="{{ $item->relation_name.' ('.$item->number.')' }}" >
-            <i class="icon-{{ $item->relation_icon }}" aria-label="{{ $item->relation_name }}"></i>
-          </span>
+          @if($item->relation_model)
+            <span class="history-tooltip p-2 me-2 badge bg-secondary" data-bs-toggle="tooltip" data-placement="top" title="{{ $item->relation_name ? $item->relation_name.' ('.$item->relation_nbr.')' : null }}" >
+              <i class="icon-{{ $item->relation_icon }}" aria-label="{{ $item->relation_name }}"></i>
+            </span>
+          @else
+            <span class="p-2 me-2 badge bg-secondary" >
+              <i class="icon-{{ config('trackable.relations.default.icon') }}"></i>
+            </span>
+          @endif
 
           <span class="history-content">
 
-            {{ $description($item) }}
+            {!! $description($item) !!}
 
             @if($item->comment)
               <small class="history-tooltip icon-message" data-bs-toggle="tooltip" data-placement="top" title="{{ $item->comment }}"></small>
@@ -30,7 +36,7 @@
                 {{ ucfirst(__('sp::listing.by', ['name' => $item->username]).' '.$item->time) }}
               @endif
             </small>
-            
+
           </span>
 
         </li>
