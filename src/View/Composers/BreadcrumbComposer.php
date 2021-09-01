@@ -115,7 +115,7 @@ class BreadcrumbComposer
 
         if(!empty($this->item))
         {
-            $item = $this->item->title ?? $this->item->name;
+            $item = $this->item->title ?? $this->item->name ?? $this->item->id;
             $itemRoute = Str::beforeLast($this->route, '.').'.show';
             $this->crumbs[Str::limit($item, 15)] = Route::has($itemRoute) ? route($itemRoute,$this->item->id) : null;
         }
