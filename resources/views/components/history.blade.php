@@ -4,24 +4,35 @@
     <ul {{ $attributes->merge(['class' => 'list-group list-group-flush history']) }} >
       @foreach ($items as $key => $item)
         <li class="list-group-item d-flex">
-          <span class="history-tooltip p-2 me-2 badge bg-{{ $color($item->event) }}" data-bs-toggle="tooltip" data-placement="top" title="{{ $tooltip($item) }}">
-            <i class="icon-{{ $icon($item->event) }}" aria-label="{{ $tooltip($item) }}"></i>
+
+          <span class="history-tooltip p-2 me-2 badge bg-{{ $item->event_color }}" data-bs-toggle="tooltip" data-placement="top" title="{{ $item->event_name }}">
+            <i class="icon-{{ $item->event_icon }}" aria-label="{{ $item->event_name }}"></i>
           </span>
-          @if($item->relation)
-            <span class="history-tooltip p-2 me-2 badge bg-secondary" data-bs-toggle="tooltip" data-placement="top" title="{{ $relationTooltip($item) }}" >
-              <i class="icon-{{ $relationIcon($item->relation) }}" aria-label="{{ $relationTooltip($item) }}"></i>
-            </span>
-          @else
-            <span class="history-tooltip p-2 me-2 badge bg-secondary"  >
-              <i class="icon-information"></i>
-            </span>
-          @endif
+
+          <span class="history-tooltip p-2 me-2 badge bg-secondary" data-bs-toggle="tooltip" data-placement="top" title="{{ $item->relation_name.' ('.$item->number.')' }}" >
+            <i class="icon-{{ $item->relation_icon }}" aria-label="{{ $item->relation_name }}"></i>
+          </span>
+
           <span class="history-content">
-            {!! $description($item) !!}<br/>
+
+            {{ $description($item) }}
+
+            @if($item->comment)
+              <small class="history-tooltip icon-message" data-bs-toggle="tooltip" data-placement="top" title="{{ $item->comment }}"></small>
+            @endif
+
+            <br/>
+
             <small class="text-muted fst-italic">
-                {{ $authorAndTime($item) }}
+              @if($type == 'user')
+                {{ ucfirst($item->time) }}
+              @else
+                {{ ucfirst(__('sp::listing.by', ['name' => $item->username]).' '.$item->time) }}
+              @endif
             </small>
+            
           </span>
+
         </li>
       @endforeach
     </ul>

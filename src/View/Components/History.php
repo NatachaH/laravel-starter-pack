@@ -34,122 +34,40 @@ class History extends Component
     public $items;
 
     /**
-     * Define the badge color by event name.
-     *
-     * @var string
-     */
-    public function color($event)
-    {
-        return config('history.events.'.$event.'.color') ?? 'gray';
-    }
-
-    /**
-     * Define the icon by event name.
-     *
-     * @var string
-     */
-    public function icon($event)
-    {
-        return config('history.events.'.$event.'.icon') ?? 'rocket';
-    }
-
-    /**
-     * Define the icon by event name.
-     *
-     * @var string
-     */
-    public function relationIcon($relation)
-    {
-        return config('history.relations.'.$relation.'.icon') ?? 'rocket';
-    }
-
-    /**
-     * Define the author and the time.
-     *
-     * @var string
-     */
-    public function authorAndTime($item)
-    {
-        $user =  __('sp::listing.by', ['name' => !is_null($item->user) ? $item->username : config('app.name')]);
-        $time = $item->time;
-
-        switch ($this->type) {
-          case 'user':
-            $description = $time;
-            break;
-          default:
-            $description = $user.' '.$time;
-            break;
-        }
-
-        return Str::ucfirst($description);
-    }
-
-    /**
      * Define the description by item and by type.
      *
      * @var string
      */
     public function description($item)
     {
-        $model = \Lang::has('backend.model.'.$item->model) ? trans_choice('backend.model.'.$item->model,1) : Str::ucfirst($item->model);
-        $route = 'backend.'.Str::plural($item->model).'.show';
-        $name = $item->trackable->title ?? $item->trackable->name ?? $item->trackable_id;
-        $link = '';
+        // Define the translated model name
+        $model    = $item->model_name;
 
-        // Define if model exist to display a link
-        if($this->type !== 'model' && Route::has($route) && Auth::user()->can('view', $item->trackable))
-        {
-            $model = $model.':';
-            $link = '<a href="'.route($route, $item->trackable_id).'">'.$name.'</a>';
-        }
+        // Define the route for display the model
+        $route    = 'backend.'.Str::plural($item->model).'.show';
+
+        // Get the title of the model
+        $title    = $item->trackable->title ?? $item->trackable->name ?? $item->trackable_id;
+
+        // Check if there is a link to the model
+        $hasLink  = Route::has($route) && Auth::user()->can('view', $item->trackable);
+
+        // Define how to display the item
+        $item     = $hasLink ? '<a href="'.route($route, $item->trackable_id).'">'.$title.'</a>' : $title;
 
         switch ($this->type) {
           case 'model':
-            $description = '<b>'.(\Lang::has('trackable.event.'.$item->event) ? __('trackable.event.'.$item->event) : Str::ucfirst($item->event)).'</b>';
+            $description = '<b>'.$item->event_name.'</b>';
+            break;
+          case 'user':
+            $description = '<b>'.$model.':</b>'.$item;
             break;
           default:
-            $description = '<b>'.$model.'</b> '.$link;
+            $description = '<b>'.$model.':</b>'.$item;
             break;
         }
 
         return Str::ucfirst($description);
-    }
-
-    /**
-     * Define the tooltip of event.
-     *
-     * @var string
-     */
-    public function tooltip($item)
-    {
-        // Define variables
-        $event = $item->event ?? null;
-        $relation = $item->relation ?? null;
-        $comment = $item->comment ?? null;
-
-        // Define the tooltip
-        $name = \Lang::has('trackable.event.'.$event) ? __('trackable.event.'.$event) : Str::ucfirst($event);
-        $comment = empty($relation) && !empty($comment) ? ' : '.$comment : '';
-        return $name.$comment;
-    }
-
-    /**
-     * Define the description by relation.
-     *
-     * @var string
-     */
-    public function relationTooltip($item)
-    {
-        // Define variables
-        $event = $item->event ?? null;
-        $relation = $item->relation ?? null;
-        $comment = $item->comment ?? null;
-
-        $model = \Lang::has('backend.model.'.$relation) ? trans_choice('backend.model.'.$relation,1) : Str::ucfirst($relation);
-        $comment = !empty($comment) ? ' : '.$comment : '';
-
-        return $model.$comment;
     }
 
 

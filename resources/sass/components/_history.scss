@@ -6,6 +6,11 @@
 
 .history {
     .list-group-item {
+      .history-tooltip {
+        &:hover {
+          cursor: pointer;
+        }
+      }
       .history-content {
         line-height: 1.2;
         a {
