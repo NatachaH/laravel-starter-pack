@@ -8,6 +8,8 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Role;
 
+use Nh\AccessControl\Events\RoleEvent;
+
 class NewUserCommand extends Command
 {
     /**
@@ -57,7 +59,8 @@ class NewUserCommand extends Command
         $roles = Role::select('name')->get()->pluck('name')->toArray();
         $role_name = $this->choice('What is the name of the role ?',$roles);
         $role = Role::firstWhere('name',$role_name);
-        $user->role()->associate($role)->save();
+        $user->role()->associate($role)->saveQuietly();
+        RoleEvent::dispatch('updated', $user, $role, 1);
 
         // End
         $this->line('The user '.$name.' has been created !');
