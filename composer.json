@@ -9,7 +9,7 @@
       "nh/mediable": "^1.6.0",
       "nh/sortable": "^1.1.1",
       "nh/searchable": "^1.1.6",
-      "nh/trackable": "^1.6.2"
+      "nh/trackable": "^1.6.3"
     },
     "author": {
         "name": "Natacha Herth",
