@@ -20,6 +20,15 @@ Dumb the composer autoload:
 composer dump-autoload
 ```
 
+## Config
+
+Don't forget to change in the config/app.php the locale and the timezone to be on french and have the correct times.
+
+```
+'timezone' => 'Europe/Zurich',
+'locale' => 'fr',
+```
+
 ## Laravel/Fortify
 
 Install fortify via composer:
