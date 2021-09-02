@@ -25,9 +25,17 @@ class NavigationComposer
           {
 
             // If it is a single link
-            if(isset($value['link']) &&  is_null($value['items']))
+            if(isset($value['link']) && is_null($value['items']))
             {
-                $this->links[$key] = $value;
+                if(isset($value['action']) || isset($value['model']))
+                {
+                  if(Auth::user()->can($value['action'] ?? 'viewAny', $value['model']))
+                  {
+                    $this->links[$key] = $value;
+                  }
+                } else {
+                  $this->links[$key] = $value;
+                }
             }
 
             // If there are sublinks, check all permission

@@ -44,7 +44,8 @@ return [
         'activity-log' => [
             'icon'  => 'icon-rocket',
             'link'  => 'backend.activity-log.index',
-            'items' => null
+            'items' => null,
+            'model' => 'App\Models\Track'
         ],
 
         // Settings
