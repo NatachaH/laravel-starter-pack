@@ -13,4 +13,7 @@ $sp-theme-colors: (
   $sp-theme-colors: map-merge($sp-theme-colors,$custom-theme-colors);
 }
 
-$theme-colors: map-merge($theme-colors,$sp-theme-colors);
+$theme-colors: map-merge($theme-colors, $sp-theme-colors);
+$utilities-bg-colors: map-merge($utilities-bg-colors, $sp-theme-colors);
+$utilities-text-colors: map-merge($utilities-text-colors, $sp-theme-colors);
+$table-variants: map-merge($table-variants, $sp-theme-colors);

@@ -1,15 +1,15 @@
-/*
-|--------------------------------------------------------------------------
-| Bootstrap v5
-|--------------------------------------------------------------------------
-*/
+/*!
+ * Bootstrap v5.1.0 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 
+// scss-docs-start import-stack
 // Configuration
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
-
-@import "../variables/colors";
-
+@import '../variables/colors';
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 
@@ -34,7 +34,7 @@
 @import "~bootstrap/scss/pagination";
 @import "~bootstrap/scss/badge";
 @import "~bootstrap/scss/alert";
-@import "~bootstrap/scss/progress";
+@import "progress";
 @import "~bootstrap/scss/list-group";
 @import "~bootstrap/scss/close";
 @import "~bootstrap/scss/toasts";
@@ -43,9 +43,12 @@
 @import "~bootstrap/scss/popover";
 @import "~bootstrap/scss/carousel";
 @import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/offcanvas";
+@import "~bootstrap/scss/placeholders";
 
 // Helpers
 @import "~bootstrap/scss/helpers";
 
 // Utilities
 @import "~bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
