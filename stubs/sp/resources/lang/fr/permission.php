@@ -11,7 +11,7 @@ return [
     |
     */
 
-    //'mypermission'  => 'My custom permission',
+    'activity-log'  => 'Journal d\'activité',
 
     /*
     'action' => [

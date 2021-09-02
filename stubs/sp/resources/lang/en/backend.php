@@ -13,9 +13,10 @@ return [
 
     // Sidebar sections
     'sidebar' => [
-      'dashboard'   => 'Dashboard',
-      'settings'    => 'Settings',
-      'contents'    => 'Contents',
+      'dashboard'    => 'Dashboard',
+      'activity-log' => 'Activity log',
+      'settings'     => 'Settings',
+      'contents'     => 'Contents',
     ],
 
     // Models

@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 // Dashboard
 Route::get('/', 'DashboardController')->name('dashboard');
 
+// Activity Log
+Route::any('/activity-log/search', 'ActivityLogController@search')->name('activity-log.search');
+Route::resource('activity-log','ActivityLogController');
+
 // Account
 Route::get('/account/edit', '\Nh\StarterPack\Http\Controllers\Backend\UserController@editAccount')->name('account.edit');
 Route::patch('/account/edit', '\Nh\StarterPack\Http\Controllers\Backend\UserController@updateAccount')->name('account.update');

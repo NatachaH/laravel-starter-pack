@@ -13,9 +13,10 @@ return [
 
     // Sidebar sections
     'sidebar' => [
-      'dashboard'   => 'Tableau de bord',
-      'settings'    => 'Paramètres',
-      'contents'    => 'Contenus',
+      'dashboard'    => 'Tableau de bord',
+      'activity-log' => 'Journal d\'activité',
+      'settings'     => 'Paramètres',
+      'contents'     => 'Contenus',
     ],
 
     // Models

@@ -40,6 +40,13 @@ return [
             'items' => null
         ],
 
+        // Activity Log
+        'activity-log' => [
+            'icon'  => 'icon-rocket',
+            'link'  => 'backend.activity-log.index',
+            'items' => null
+        ],
+
         // Settings
         'settings' =>  [
             'icon'  => 'icon-gear',

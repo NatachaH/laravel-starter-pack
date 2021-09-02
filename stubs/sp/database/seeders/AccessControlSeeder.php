@@ -52,6 +52,15 @@ class AccessControlSeeder extends Seeder
             $ids_permission_admin[] = $permission->id;
         }
 
+        // Activity Log
+        $activityLog = Permission::create([
+          'name' => 'activity-log',
+          'model' => null,
+          'action' => null
+        ]);
+        $ids_permission_superadmin[] = $activityLog->id;
+        //$ids_permission_admin[] = $activityLog->id;
+
         //****** Set Permissions to Roles ******//
         $superadmin->permissions()->attach($ids_permission_superadmin);
         $admin->permissions()->attach($ids_permission_admin);
