@@ -10,9 +10,6 @@
 
   @if($item->relation_model)
     >
-    @if($item->relation)
-      <small class="text-muted">{{ '#'.$item->relation_id }}</small>
-    @endif
     {{ $item->relation_name }}
     @if($item->relation_nbr > 1)
       ({{ $item->relation_nbr }})
