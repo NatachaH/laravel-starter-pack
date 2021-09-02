@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'activity-log'  => 'Journal d\'activité',
+    'activity-log'  => 'Journal des activités',
 
     /*
     'action' => [

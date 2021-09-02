@@ -14,7 +14,7 @@ return [
     // Sidebar sections
     'sidebar' => [
       'dashboard'    => 'Tableau de bord',
-      'activity-log' => 'Journal d\'activité',
+      'activity-log' => 'Journal des activités',
       'settings'     => 'Paramètres',
       'contents'     => 'Contenus',
     ],
