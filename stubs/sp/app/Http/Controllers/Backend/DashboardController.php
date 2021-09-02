@@ -17,7 +17,7 @@ class DashboardController extends Controller
     public function __invoke()
     {
         $statistics['users'] = User::get()->count();
-        $tracks = Track::with(['user','trackable'])->latest('id')->take(4)->get();
+        $tracks = Track::with(['user','trackable'])->latest('id')->take(10)->get();
         return view('backend.dashboard', compact('statistics','tracks'));
     }
 }

@@ -22,12 +22,6 @@
             <x-sp-statistic :title="trans_choice('backend.model.user',2)" :value="$statistics['users']" icon="icon-users"/>
           </div>
         @endif
-        <div class="col">
-          <x-sp-statistic title="Exemple" value="3" icon="icon-content"/>
-        </div>
-        <div class="col">
-          <x-sp-statistic title="Exemple" value="300" icon="icon-rocket"/>
-        </div>
       </div>
 
     </div>
