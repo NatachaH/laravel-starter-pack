@@ -5,7 +5,7 @@
     "type": "library",
     "require": {
       "nh/bs-component": "^3.7.0",
-      "nh/access-control": "^1.5.0",
+      "nh/access-control": "^1.5.1",
       "nh/mediable": "^1.6.0",
       "nh/sortable": "^1.1.1",
       "nh/searchable": "^1.1.6",
