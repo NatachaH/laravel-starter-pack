@@ -24,7 +24,7 @@
                 </li>
 
                 <li class="list-group-item">
-                  <i class="icon-inbox text-muted me-2"></i>
+                  <i class="icon-content text-muted me-2"></i>
                   <b>{{ $track->model_name }}</b>
                   @can('view',$track->trackable)
                     <a href="{{ route('backend.'.Str::plural($track->model).'.show',$track->trackable_id) }}">

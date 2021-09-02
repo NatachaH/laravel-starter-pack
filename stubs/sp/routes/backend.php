@@ -17,8 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'DashboardController')->name('dashboard');
 
 // Activity Log
-Route::any('/activity-log/search', 'ActivityLogController@search')->name('activity-log.search');
-Route::resource('activity-log','ActivityLogController');
+Route::any('/activity-log/search', '\Nh\StarterPack\Http\Controllers\Backend\ActivityLogController@search')->name('activity-log.search');
+Route::get('/activity-log/{track}', '\Nh\StarterPack\Http\Controllers\Backend\ActivityLogController@show')->name('activity-log.show');
+Route::delete('/activity-log/{track}/delete', '\Nh\StarterPack\Http\Controllers\Backend\ActivityLogController@destroy')->name('activity-log.destroy');
+Route::get('/activity-log', '\Nh\StarterPack\Http\Controllers\Backend\ActivityLogController@index')->name('activity-log.index');
 
 // Account
 Route::get('/account/edit', '\Nh\StarterPack\Http\Controllers\Backend\UserController@editAccount')->name('account.edit');

@@ -23,9 +23,5 @@
 <td>{{ $item->comment }}</td>
 
 <td class="td-fit">
-  @can('view',$item->user)
-    <a href="{{ route('backend.users.show',$item->user->id) }}">{{ $item->username }}</a>
-  @else
     {{ $item->username }}
-  @endcan
 </td>

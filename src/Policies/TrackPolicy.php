@@ -30,7 +30,7 @@ class TrackPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->hasAccess('activity-log');
+        return $user->hasPermissions('activity-log');
     }
 
     /**
@@ -42,7 +42,7 @@ class TrackPolicy
      */
     public function view(User $user, Track $track)
     {
-        return $user->hasAccess('activity-log');
+        return $user->hasPermissions('activity-log');
     }
 
     /**

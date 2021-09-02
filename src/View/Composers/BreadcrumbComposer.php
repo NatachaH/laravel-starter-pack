@@ -68,7 +68,16 @@ class BreadcrumbComposer
         if(count($explode) > 1)
         {
               // Define the model
-              $this->model = Str::singular($explode[1]);
+              $model = Str::singular($explode[1]);
+
+              switch ($model) {
+                case 'activity-log':
+                  $this->model = 'track';
+                  break;
+                default:
+                  $this->model = $model;
+                  break;
+              }
 
               // Define the name
               $this->item = Route::current()->parameters[$this->model] ?? null;
@@ -83,7 +92,6 @@ class BreadcrumbComposer
               });
               $section = key($hasSection) ?? null;
               $this->section = !empty($section) && $section != $this->model ? $section : null;
-
         }
 
         // Define all the breadcrumbs

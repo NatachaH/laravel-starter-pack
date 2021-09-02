@@ -19,7 +19,7 @@ class ActivityLogController extends Controller
     */
     public function __construct()
     {
-        $this->authorizeResource(Track::class, 'track');
+        $a = $this->authorizeResource(Track::class, 'track');
         $this->middleware('search:tracks')->only('index');
     }
 
@@ -31,7 +31,7 @@ class ActivityLogController extends Controller
     public function index()
     {
         $tracks = Track::sortable()->paginate();
-        return view('backend.activity-log.index', compact('tracks'));
+        return view('sp::backend.activity-log.index', compact('tracks'));
     }
 
     /**
@@ -77,7 +77,7 @@ class ActivityLogController extends Controller
         $tracks = $tracks->sortable()->paginate();
 
         // Display the result
-        return view('backend.activity-log.index', compact('tracks'));
+        return view('sp::backend.activity-log.index', compact('tracks'));
     }
 
     /**
@@ -88,7 +88,7 @@ class ActivityLogController extends Controller
      */
     public function show(Track $track)
     {
-        return view('backend.activity-log.show', compact('track'));
+        return view('sp::backend.activity-log.show', compact('track'));
     }
 
     /**
