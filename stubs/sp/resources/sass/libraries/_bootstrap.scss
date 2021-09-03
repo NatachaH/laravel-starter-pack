@@ -10,11 +10,10 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 
-@import '../variables/colors';
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);
-$utilities-bg-colors: map-merge($utilities-bg-colors, $custom-theme-colors);
-$utilities-text-colors: map-merge($utilities-text-colors, $custom-theme-colors);
-$table-variants: map-merge($table-variants, $custom-table-variants);
+$utilities-text-colors: map-merge($utilities-text-colors, $custom-utilities-colors );
+$utilities-bg-colors: map-merge($utilities-bg-colors, $custom-utilities-colors);
+$table-variants: map-merge($table-variants, $custom-table-colors);
 
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
