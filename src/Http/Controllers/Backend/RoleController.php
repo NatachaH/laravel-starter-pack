@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Nh\Searchable\Search;
 use App\Models\Role;
 use Nh\AccessControl\Models\Permission;
+use Nh\AccessControl\Events\PermissionEvent;
 
 class RoleController extends Controller
 {
@@ -80,6 +81,7 @@ class RoleController extends Controller
         {
             Gate::authorize('set-permissions', [$request->permissions]);
             $role->permissions()->attach($request->permissions);
+            PermissionEvent::dispatch('created',$role, null, count($request->permissions));
         }
         session()->flash('toast', ['success' => notification('added','role')]);
         return redirect()->route('backend.roles.index');
@@ -133,7 +135,12 @@ class RoleController extends Controller
         $permissions = array_merge($permissionsRequested, $permissionsDisabled);
 
         // Sync the permissions
-        $role->permissions()->sync($permissions);
+        $sync = $role->permissions()->sync($permissions);
+        if($sync)
+        {
+            $nbr = count($sync['attached'])+count($sync['detached'])+count($sync['updated']);
+            PermissionEvent::dispatch('updated',$role, null, $nbr);
+        }
 
         // Success
         session()->flash('toast', ['success' => notification('updated','role')]);
