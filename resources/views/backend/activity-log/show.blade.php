@@ -51,10 +51,10 @@
                   </li>
                 @endif
 
-                @if($item->number > 1)
+                @if($track->number > 1)
                   <li class="list-group-item">
                     <i class="icon-pin text-muted me-2"></i>
-                    {{ $item->number }}
+                    {{ $track->number }}
                 @endif
 
                 <li class="list-group-item">
