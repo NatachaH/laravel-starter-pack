@@ -30,7 +30,9 @@ class Media extends Model
      */
      protected $sortable = [
        'field' => 'position',
-       'direction' => 'asc'
+       'direction' => 'asc',
+       'event-on-parent' => true,
+       'parent' => 'mediable'
      ];
 
 }
