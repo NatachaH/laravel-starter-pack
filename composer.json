@@ -6,10 +6,10 @@
     "require": {
       "nh/bs-component": "^3.7.0",
       "nh/access-control": "^1.5.1",
-      "nh/mediable": "dev.master",
-      "nh/sortable": "dev.master",
+      "nh/mediable": "dev-master",
+      "nh/sortable": "dev-master",
       "nh/searchable": "^1.1.6",
-      "nh/trackable": "dev.master"
+      "nh/trackable": "dev-master"
     },
     "author": {
         "name": "Natacha Herth",
