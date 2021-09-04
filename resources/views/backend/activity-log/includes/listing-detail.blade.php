@@ -11,9 +11,10 @@
   @if($item->relation_model)
     >
     {{ $item->relation_name }}
-    @if($item->relation_nbr > 1)
-      ({{ $item->relation_nbr }})
-    @endif
+  @endif
+
+  @if($item->number > 1)
+    ({{ $item->number }})
   @endif
 </td>
 

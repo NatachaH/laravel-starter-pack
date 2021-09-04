@@ -47,10 +47,14 @@
                       @else
                           {{ '#'.$track->relation_id.' '.($track->relation->title ?? $track->relation->name ?? null) }}
                       @endcan
-                    @else
-                      ({{ $track->relation_nbr }})
                     @endif
                   </li>
+                @endif
+
+                @if($item->number > 1)
+                  <li class="list-group-item">
+                    <i class="icon-pin text-muted me-2"></i>
+                    {{ $item->number }}
                 @endif
 
                 <li class="list-group-item">

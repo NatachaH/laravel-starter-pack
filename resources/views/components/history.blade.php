@@ -10,7 +10,7 @@
           </span>
 
           @if($item->relation_model)
-            <span class="history-tooltip p-2 me-2 badge bg-secondary" data-bs-toggle="tooltip" data-placement="top" title="{{ $item->relation_name ? $item->relation_name.' ('.$item->relation_nbr.')' : null }}" >
+            <span class="history-tooltip p-2 me-2 badge bg-secondary" data-bs-toggle="tooltip" data-placement="top" title="{{ $item->relation_name ? $item->relation_name : null }}" >
               <i class="icon-{{ $item->relation_icon }}" aria-label="{{ $item->relation_name }}"></i>
             </span>
           @else
