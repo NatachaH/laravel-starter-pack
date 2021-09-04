@@ -1,4 +1,4 @@
-<ul {{ $attributes->merge(['class' => 'list-group list-group-flush '.($sortable ? 'media-sortable' : '')]) }} @if($sortable) data-sortable-model="Nh\Mediable\Models\Media" @endif>
+<ul {{ $attributes->merge(['class' => 'list-group list-group-flush '.($sortable ? 'media-sortable' : '')]) }} @if($sortable) data-sortable-model="App\Models\Media" @endif>
 
   @foreach ($items as $item)
 
