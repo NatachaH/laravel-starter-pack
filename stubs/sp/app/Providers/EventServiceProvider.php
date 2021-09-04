@@ -26,6 +26,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         \Nh\AccessControl\Events\PermissionEvent::class => [
             \Nh\Trackable\Listeners\AddTrack::class
+        ],
+        \Nh\Sortable\Events\SortableEvent::class => [
+            \Nh\Trackable\Listeners\AddTrack::class
         ]
     ];
 
