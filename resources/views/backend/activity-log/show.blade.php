@@ -54,7 +54,7 @@
                 @if($track->number > 1)
                   <li class="list-group-item">
                     <i class="icon-pin text-muted me-2"></i>
-                    {{ $track->number }}
+                    @lang('trackable.affected', ['number' => $track->number])
                 @endif
 
                 <li class="list-group-item">
