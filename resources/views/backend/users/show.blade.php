@@ -20,9 +20,11 @@
 
               </dl>
 
-              <p class="font-italic text-muted mt-3">
-                {!! $user->latestTrack->formated !!}
-              </p>
+              @if($user->latestTrack)
+                <p class="font-italic text-muted mt-3">
+                  {!! $user->latestTrack->formated !!}
+                </p>
+              @endif
 
             </x-bs-card>
 
