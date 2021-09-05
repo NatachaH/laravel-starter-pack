@@ -77,6 +77,9 @@
 
     }
 
-
+    .btn-outline-gray {
+      color: $body-color !important;
+      border-color: $border-color !important;
+    }
 
 }

@@ -36,9 +36,9 @@
                 <x-bs-select  name="search[sort][field]" :options="$sortableFields" :selected="$search ? $search->attribute('sort')['field'] ?? [] : []" :before="__('sp::action.sort-by')" >
                   <x-slot name="after">
                     <input type="radio" class="btn-check" name="search[sort][direction]" id="sortAsc" value="asc" {{ ($search && $search->attribute('sort') && $search->attribute('sort')['direction'] == 'asc') || (!$search && $sortableOrder == 'asc') ? 'checked' : '' }} autocomplete="off">
-                    <label class="btn btn-outline-border" for="sortAsc" aria-label="@lang('sp::field.ascending')" title="@lang('sp::field.ascending')"><i class="icon-sort-alpha-asc"></i></label>
+                    <label class="btn btn-outline-gray" for="sortAsc" aria-label="@lang('sp::field.ascending')" title="@lang('sp::field.ascending')"><i class="icon-sort-alpha-asc"></i></label>
                     <input type="radio" class="btn-check" name="search[sort][direction]" id="sortDesc" value="desc" {{ ($search && $search->attribute('sort') && $search->attribute('sort')['direction'] == 'desc') || (!$search && $sortableOrder == 'desc') ? 'checked' : '' }}  autocomplete="off">
-                    <label class="btn btn-outline-border" for="sortDesc" aria-label="@lang('sp::field.descending')" title="@lang('sp::field.descending')"><i class="icon-sort-alpha-desc"></i></label>
+                    <label class="btn btn-outline-gray" for="sortDesc" aria-label="@lang('sp::field.descending')" title="@lang('sp::field.descending')"><i class="icon-sort-alpha-desc"></i></label>
                   </x-slot>
                 </x-bs-select>
               </div>

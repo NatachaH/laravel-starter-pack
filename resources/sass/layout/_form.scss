@@ -63,11 +63,6 @@ form {
 
   }
 
-  .btn-outline-border {
-    color: $body-color !important;
-  }
-
-
   .required-if label {
     &:after {
       content: '(*)';
