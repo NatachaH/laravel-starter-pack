@@ -47,7 +47,7 @@ class History extends Component
         $route    = 'backend.'.Str::plural($item->model).'.show';
 
         // Get the title of the model
-        $title    = $item->trackable->title ?? $item->trackable->name ?? $item->trackable_id;
+        $title    = $item->trackable->title ?? $item->trackable->name ?? $item->trackable_id ?? __('trackable.affected', ['number' => $item->number]);
 
         // Check if there is a link to the model
         $hasLink  = Route::has($route) && Auth::user()->can('view', $item->trackable);
