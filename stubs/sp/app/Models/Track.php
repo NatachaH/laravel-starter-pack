@@ -30,7 +30,7 @@ class Track extends Model
      * @var array
      */
     protected $with = [
-      'user','relation'
+      'user','trackable','relation'
     ];
 
     /**
