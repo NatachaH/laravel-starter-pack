@@ -78,8 +78,19 @@ use Illuminate\Support\Facades\Schema;
 
 public function boot()
 {
-    Schema::defaultStringLength(191);
+    Schema::defaultStringLength(255);
 }
+```
+
+And in the config/database.php change to UTF8
+
+```
+'mysql' => [
+  ...
+  'charset' => 'utf8',
+  'collation' => 'utf8_unicode_ci',
+  ...
+]
 ```
 
 Migrate the basic databases and seed the default roles/permissions:
