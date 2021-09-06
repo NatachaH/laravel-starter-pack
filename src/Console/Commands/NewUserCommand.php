@@ -59,8 +59,16 @@ class NewUserCommand extends Command
         $roles = Role::select('name')->get()->pluck('name')->toArray();
         $role_name = $this->choice('What is the name of the role ?',$roles);
         $role = Role::firstWhere('name',$role_name);
-        $user->role()->associate($role)->saveQuietly();
-        RoleEvent::dispatch('updated', $user, $role, 1);
+
+        if(config('access-control.manyRoles'))
+        {
+            $user->roles()->attach($role);
+        } else {
+            $user->role()->associate($role)->saveQuietly();
+        }
+
+        // Fire the event
+        RoleEvent::dispatch('created', $user, $role, 1);
 
         // End
         $this->line('The user '.$name.' has been created !');
