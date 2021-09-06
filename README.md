@@ -133,6 +133,14 @@ npm run dev
 
 # Commandes
 
+## Maintenance
+
+You can put the website in maintenance mode
+
+```
+php artisan down --render="errors.maintenance"
+```
+
 ## Users
 
 You can create a new user:
