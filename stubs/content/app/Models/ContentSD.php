@@ -59,4 +59,25 @@ class {{ UCNAME }} extends Model
       'title', 'subtitle', 'description'
     ];
 
+    /**
+     * Check if the model is available
+     * @return boolean
+     */
+    public function getIsAvailableAttribute()
+    {
+        return $this->published;
+    }
+
+    /**
+     * Scope a query if model is available.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeAvailable(Builder $query)
+    {
+        // Get only published
+        return $query->where('published', 1);
+    }
+
 }
