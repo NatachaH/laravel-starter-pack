@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 use Nh\Mediable\Traits\Mediable;
 use Nh\Sortable\Traits\Sortable;
