@@ -9,6 +9,18 @@ use App\Models\Role;
 
 class AccessControlSeeder extends Seeder
 {
+   /**
+     * Array of permissions ids for admin
+     * @var array
+     */
+    private $ids_permission_admin;
+
+    /**
+     * Array of permissions ids for superadmin
+     * @var array
+     */
+    private $ids_permission_superadmin;
+
     /**
      * Seed the application's database.
      *
@@ -16,41 +28,29 @@ class AccessControlSeeder extends Seeder
      */
     public function run()
     {
-        //****** Add Roles ******//
+        //****** Create the roles ******//
         $superadmin = Role::create(['guard' => 'superadmin', 'name' => 'Superadmin']);
         $admin = Role::create(['guard' => 'admin', 'name' => 'Admin']);
 
-        //****** Add Permissions ******//
-        $ids_permission_superadmin = [];
-        $ids_permission_admin = [];
+        //****** Create the permissions ******//
+
+        $actions = ['view','create','update','delete'];
 
         // Role
-        $actions = ['view','create','update','delete'];
-        foreach ($actions as $action)
-        {
-            $permission = Permission::create([
-                'name' => 'role-'.$action,
-                'model' => 'role',
-                'action' => $action
-            ]);
+        $this->createPermissions($actions,'role');
 
-            $ids_permission_superadmin[] = $permission->id;
-        }
+        // Page
+        $this->createPermissions($actions,'page',true);
 
-        // User
+        //****** Create the permissions with soft/force delete and restore ******//
+
         $actions[] = 'restore';
         $actions[] = 'force-delete';
-        foreach ($actions as $action)
-        {
-            $permission = Permission::create([
-                'name' => 'user-'.$action,
-                'model' => 'user',
-                'action' => $action
-            ]);
 
-            $ids_permission_superadmin[] = $permission->id;
-            $ids_permission_admin[] = $permission->id;
-        }
+        // User
+        $this->createPermissions($actions,'user',true);
+
+        //****** Create simple permissions ******//
 
         // Activity Log
         $activityLog = Permission::create([
@@ -58,12 +58,36 @@ class AccessControlSeeder extends Seeder
           'model' => null,
           'action' => null
         ]);
-        $ids_permission_superadmin[] = $activityLog->id;
-        //$ids_permission_admin[] = $activityLog->id;
+        $this->ids_permission_superadmin[] = $activityLog->id;
 
         //****** Set Permissions to Roles ******//
-        $superadmin->permissions()->attach($ids_permission_superadmin);
-        $admin->permissions()->attach($ids_permission_admin);
+        $superadmin->permissions()->attach($this->ids_permission_superadmin);
+        $admin->permissions()->attach($this->ids_permission_admin);
 
+    }
+
+    /**
+     * Create all permissions for model
+     * @param  array $actions
+     * @param  string $model
+     * @param  boolean $forAdmin
+     * @return void
+     */
+    private function createPermissions($actions, $model, $forAdmin = false)
+    {
+        foreach ($actions as $action) {
+            $permission = Permission::create([
+              'name' => $model.'-'.$action,
+              'model' => $model,
+              'action' => $action
+            ]);
+
+            if($forAdmin)
+            {
+                $this->ids_permission_admin[] = $permission->id;
+            }
+
+            $this->ids_permission_superadmin[] = $permission->id;
+        }
     }
 }
