@@ -168,6 +168,12 @@ Don't forget to add the name of your model in:
 - The translation file : **backend.php**
 - The translation file : **notification.php**
 
+And you can add the permission seeder in database/seeders/AccessControlSeeder.php
+
+```
+$this->createPermissions($actions,'model',true);
+```
+
 And enjoy !
 
 # Rules
