@@ -39,9 +39,6 @@ class AccessControlSeeder extends Seeder
         // Role
         $this->createPermissions($actions,'role');
 
-        // Page
-        $this->createPermissions($actions,'page',true);
-
         //****** Create the permissions with soft/force delete and restore ******//
 
         $actions[] = 'restore';
