@@ -270,7 +270,10 @@ Get a listing of collection with pagination and default layout.
 | items     | array |        |         
 | show-id    | boolean | false |    
 | show-dates | string | null |   
-| folder    | string | null  |            
+| folder    | string | null  |   
+| sortable  | boolean | false  |   
+| sortable-order | string | asc  |            
+| with-children  | boolean | false  |   
 
 
 *If there is no folder it will take the route attribute.*

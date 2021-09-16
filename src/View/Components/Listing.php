@@ -83,6 +83,13 @@ class Listing extends Component
     public $sortableOrder;
 
     /**
+     * Display the tree view.
+     *
+     * @var boolean
+     */
+    public $withChildren;
+
+    /**
      * Check if the items are paginate.
      * @return boolean
      */
@@ -150,7 +157,7 @@ class Listing extends Component
      *
      * @return void
      */
-    public function __construct($model, $route, $header, $items, $showId = false, $showDates = null, $folder = null, $sortable = false, $sortableOrder = 'asc')
+    public function __construct($model, $route, $header, $items, $showId = false, $showDates = null, $folder = null, $sortable = false, $sortableOrder = 'asc', $withChildren = false)
     {
         $this->model      = $model;
         $this->route      = $route;
@@ -162,6 +169,7 @@ class Listing extends Component
         $this->total      = $this->defineTotal();
         $this->sortable   = $sortable;
         $this->sortableOrder  = $sortableOrder;
+        $this->withChildren = $withChildren;
     }
 
     /**
