@@ -19,11 +19,11 @@
     @includeFirst([$folder.'.includes.listing-detail', 'sp::includes.listing.detail'])
 
     @if($showDates('created'))
-      <td class="td-fit d-none d-lg-table-cell">{{ $item->created_at->format('d.m.Y H:i') }}</td>
+      <td class="td-fit d-none d-lg-table-cell">{{ $item->created_at ? $item->created_at->format('d.m.Y H:i') : '-' }}</td>
     @endif
 
     @if($showDates('updated'))
-      <td class="td-fit d-none d-lg-table-cell">{{ $item->updated_at->format('d.m.Y H:i') }}</td>
+      <td class="td-fit d-none d-lg-table-cell">{{ $item->updated_at ? $item->updated_at->format('d.m.Y H:i') : '-' }}</td>
     @endif
 
     @if($showDates('deleted') && $hasSoftDelete())
