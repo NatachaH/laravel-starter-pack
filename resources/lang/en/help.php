@@ -27,6 +27,7 @@ return [
     ],
 
     'slug'      => 'The slug is used for the URL creation: www.mysite.ch/<b>slug</b>',
+    'password-min' => 'The password must have at least :min characters.'
 
 
 ];

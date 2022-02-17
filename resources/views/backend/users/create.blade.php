@@ -19,7 +19,7 @@
 
           <x-bs-input class="col-md-6" :label="__('sp::field.email')" type="email" name="email" required/>
 
-          <x-bs-input class="col-md-6" :label="__('Password')" type="password" name="password" :help="__('validation.min.string', ['attribute' => 'password', 'min' => 6])" required/>
+          <x-bs-input class="col-md-6" :label="__('Password')" type="password" name="password" :help="__('sp::help.password-min', ['min' => 6])" required/>
 
           <x-bs-input class="col-md-6" :label="__('Confirm Password')" type="password" name="password_confirmation" required/>
 
