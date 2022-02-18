@@ -4,9 +4,6 @@ namespace Nh\StarterPack\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Symfony\Component\Finder\SplFileInfo;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
 use Artisan;
 
 class PresetCommand extends Command
@@ -68,7 +65,7 @@ class PresetCommand extends Command
         Artisan::call('vendor:publish --tag=trackable');
 
         // Confirm every thing ok
-        $this->info('The preset Srater Pack has been installed !');
+        $this->info('The preset Starter Pack has been installed !');
 
     }
 
@@ -111,6 +108,7 @@ class PresetCommand extends Command
      */
     private function updateResources()
     {
+        (new Filesystem)->cleanDirectory(resource_path('css'));
         (new Filesystem)->cleanDirectory(resource_path('js'));
         (new Filesystem)->cleanDirectory(resource_path('sass'));
         (new Filesystem)->cleanDirectory(resource_path('views'));
@@ -118,7 +116,7 @@ class PresetCommand extends Command
         $stub = $this->stub.'/resources/';
 
         (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
-        (new Filesystem)->copyDirectory($stub.'lang', resource_path('lang'));
+        (new Filesystem)->copyDirectory($stub.'lang', base_path('lang'));
         (new Filesystem)->copyDirectory($stub.'sass', resource_path('sass'));
         (new Filesystem)->copyDirectory($stub.'views', resource_path('views'));
     }
