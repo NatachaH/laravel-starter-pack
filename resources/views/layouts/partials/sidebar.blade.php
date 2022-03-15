@@ -12,7 +12,7 @@
     </div>
 
     <div class="sidebar-footer">
-        V2.6 © {{ now()->year }} <a href="https://www.natachaherth.ch">Natacha Herth</a>
+        V{{ config('backend.version') }} © {{ now()->year }} <a href="https://www.natachaherth.ch">Natacha Herth</a>
     </div>
 
 </div>
