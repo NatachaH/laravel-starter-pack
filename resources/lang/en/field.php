@@ -23,6 +23,7 @@ return [
     'public'        => 'Public',
     'private'       => 'Private',
     'color'         => 'Color',
+    'number'        => 'Number',
 
     // PERSON
     'author'        => 'Author',
@@ -64,6 +65,11 @@ return [
     'icon'          => 'Icon',
     'link'          => 'Link',
     'url'           => 'URL',
+    'size'          => 'Size',
+    'weight'        => 'Weight',
+    'height'        => 'Height',
+    'length'        => 'Length',
+    'depth'         => 'Depth',
 
     // CONTENT
     'slug'          => 'Slug',
@@ -75,9 +81,11 @@ return [
     'published'     => 'Published',
     'not-published' => 'Not published',
     'comment'       => 'Comment',
+    'message'       => 'Message',
 
     // MODELS / TITLE
     'actions'         => 'Actions',
+    'options'         => 'Options',
     'information'     => 'Information',
     'role'            => 'Role',
     'media'           => 'Media',
@@ -87,7 +95,7 @@ return [
     'advanced-search' => 'Advanced search',
     'with-trashed'    => 'With trashed',
     'status'          => 'Status',
-    'parent'        => 'Parent',
+    'parent'          => 'Parent',
 
 
 ];
