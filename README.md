@@ -52,6 +52,8 @@ App\Providers\FortifyServiceProvider::class,
 Add in boot() of app/Providers/FortifyServiceProvider.php:
 
 ```
+Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+
 Fortify::loginView(function () {
     return view('auth.login');
 });
@@ -68,6 +70,31 @@ RateLimiter::for('login', function (Request $request) {
     return Limit::perMinute(5)->by($request->email.$request->ip());
 });
 ```
+
+Change the Password Rule in Actions/Fortify/PasswordValidationRules.php
+
+```
+return ['required', 'string', 'confirmed','min:6'];
+```
+
+Update the file config/fortify.php
+
+```
+'features' => [
+  //Features::registration(),
+  Features::resetPasswords(),
+  // Features::emailVerification(),
+  //Features::updateProfileInformation(),
+  //Features::updatePasswords(),
+  /*Features::twoFactorAuthentication([
+      'confirm' => true,
+      'confirmPassword' => true,
+  ]),
+  */
+],
+```
+
+
 
 ## Database
 
