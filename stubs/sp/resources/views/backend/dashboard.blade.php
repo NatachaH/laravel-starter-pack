@@ -19,7 +19,7 @@
       <div class="row row-cols-2 row-cols-md-4">
         @if(Auth::user()->hasAccess('user'))
           <div class="col">
-            <x-sp-statistic :title="trans_choice('backend.model.user',2)" :value="$statistics['users']" icon="icon-users"/>
+            <x-sp-statistic :title="trans_choice('backend.model.user',2)" :value="$statistics['users']" icon="icon-users" :url="route('backend.users.index')"/>
           </div>
         @endif
       </div>

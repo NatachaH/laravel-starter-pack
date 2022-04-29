@@ -8,6 +8,9 @@
           <small class="statistic-unit">{{ $unit }}</small>
         @endif
       </p>
+      @if($url)
+        <a href="{{ $url }}" class="stretched-link"></a>
+      @endif
     </div>
     {!! $slot !!}
 </div>

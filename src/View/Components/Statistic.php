@@ -42,17 +42,25 @@ class Statistic extends Component
     public $color;
 
     /**
+     * The url of the statistic.
+     *
+     * @var string
+     */
+    public $url;
+
+    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title, $value = null, $unit = null, $icon = 'icon-rocket', $color = 'primary')
+    public function __construct($title, $value = null, $unit = null, $icon = 'icon-rocket', $color = 'primary', $url = null)
     {
         $this->title  = $title;
         $this->value  = $value;
         $this->unit   = $unit;
         $this->icon   = $icon;
         $this->color  = $color;
+        $this->url    = $url;
     }
 
     /**

@@ -147,7 +147,7 @@ Add the NPM packages in your package.json:
 "sortablejs": "^1.10.2",
 "resolve-url-loader": "^4.0.0",
 "sass": "^1.38.1",
-"sass-loader": "^12.1.0",
+"sass-loader": "^12.1.0"
 ```
 
 
@@ -165,7 +165,7 @@ npm run dev
 You can put the website in maintenance mode
 
 ```
-php artisan down --render="errors.maintenance"
+php artisan down --render="errors.maintenance" --secret="aloha"
 ```
 
 ## Users
@@ -380,9 +380,10 @@ Display a statistic block.
 | unit      | string | null  |   
 | icon      | string | icon-rocket |   
 | color     | string | primary |   
+| url       | string | null |   
 
 ```
-<x-sp-statistic title="Exemple" value="3" unit="hours" icon="icon-clock" color="danger"/>
+<x-sp-statistic title="Exemple" value="3" unit="hours" icon="icon-clock" color="danger" :url="route('backend.dashboard')"/>
 ```
 
 ## Toast
