@@ -6,7 +6,7 @@
     "require": {
       "nh/bs-component": "3.7.10",
       "nh/access-control": "1.5.2",
-      "nh/mediable": "1.6.4",
+      "nh/mediable": "1.6.5",
       "nh/sortable": "1.2.1",
       "nh/searchable": "1.1.6",
       "nh/trackable": "1.7.0"
