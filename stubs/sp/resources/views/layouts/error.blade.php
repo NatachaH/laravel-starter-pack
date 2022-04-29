@@ -21,7 +21,9 @@
         <div class="col-12 col-md-3">
           <h1>@yield('code', __('Oh no'))</h1>
           <p class="lead">@yield('message')</p>
-          <a class="btn btn-primary" href="{{ route('home') }}">@lang('Go Home')</a>
+          @if(isset($exception) && in_array($exception->getStatusCode(),[401,403,404,419,429]))
+            <a class="btn btn-primary" href="{{ route('home') }}">@lang('Go Home')</a>
+          @endif
         </div>
 
       </div>
