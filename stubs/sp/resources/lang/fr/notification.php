@@ -24,7 +24,14 @@ return [
     'attributes' => [
       'user'    => 'l\'utilisateur',
       'account' => 'votre compte',
-      'role'    => 'le rôle'
+      'role'    => 'le rôle',
+      'page'        => 'la page',
+      'news'        => 'l\'actualité',
+      'service'     => 'la prestation',
+      'category'    => 'la catégorie',
+      'partner'     => 'la référence',
+      'reservation' => 'la réservation',
+      'subscription' => 'l\'inscription',
     ],
 
 

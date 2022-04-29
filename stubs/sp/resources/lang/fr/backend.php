@@ -26,7 +26,14 @@ return [
       'role'        => 'Rôle|Rôles',
       'permission'  => 'Permission|Permissions',
       'media'       => 'Média|Médias',
-      'track'       => 'Activité|Activités'
+      'track'       => 'Activité|Activités',
+      'page'        => 'Page|Pages',
+      'news'        => 'Actualité|Actualités',
+      'service'     => 'Prestation|Prestations',
+      'category'    => 'Catégorie|Catégories',
+      'partner'     => 'Référence|Références',
+      'reservation' => 'Réservation|Réservations',
+      'subscription' => 'Inscription|Inscriptions',
     ],
 
     // Mainbar sections
