@@ -9,7 +9,7 @@
       @csrf
       @method('POST')
 
-      <fieldset >
+      <fieldset>
 
         <legend>@lang('sp::field.information')</legend>
 

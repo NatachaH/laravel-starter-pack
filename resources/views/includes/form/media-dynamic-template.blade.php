@@ -1,4 +1,4 @@
-<input type="hidden" name="media_to_add[{{ $key }}][type]" value="{{ $type }}" />
+<input type="hidden" name="media_to_add[{{ $key }}][type]" value="{{ $type }}" >
 
 @if($hasName)
   <x-bs-input class="w-50 me-2" :label="__('sp::field.filename')" :name="'media_to_add['.$key.'][name]'" :placeholder="__('sp::field.filename')" />

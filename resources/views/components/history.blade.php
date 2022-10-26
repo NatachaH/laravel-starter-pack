@@ -27,7 +27,7 @@
               <small class="history-tooltip icon-message" data-bs-toggle="tooltip" data-placement="top" title="{{ $item->comment }}"></small>
             @endif
 
-            <br/>
+            <br>
 
             <small class="text-muted fst-italic">
               @if($type == 'user')

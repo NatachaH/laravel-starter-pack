@@ -5,8 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- SEO -->
-      <meta name="description" content=""/>
-      <meta name="keywords" content=""/>
+      <meta name="description" content="">
+      <meta name="keywords" content="">
 
       <!-- CSRF Token -->
       <meta name="csrf-token" content="{{ csrf_token() }}">

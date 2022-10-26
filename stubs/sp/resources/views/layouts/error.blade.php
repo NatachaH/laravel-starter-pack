@@ -15,7 +15,7 @@
       <div id="error" class="row align-items-center justify-content-center">
 
         <div class="col-12 col-md-3">
-          <img id="logo" class="img-fluid" src="/svg/logo.svg" alt="Logo {{ config('app.name') }}" />
+          <img id="logo" class="img-fluid" src="/svg/logo.svg" alt="Logo {{ config('app.name') }}" >
         </div>
 
         <div class="col-12 col-md-3">

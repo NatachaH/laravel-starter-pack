@@ -9,7 +9,7 @@
       @csrf
       @method('PATCH')
 
-      <fieldset >
+      <fieldset>
 
         <legend>@lang('sp::field.information')</legend>
 

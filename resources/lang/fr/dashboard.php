@@ -13,6 +13,6 @@ return [
 
     'welcome'     => 'Bienvenue <b>:name</b>',
     'lead'        => 'Voici l\'administration de ton site internet !',
-    'description' => 'Ici tu pourras modifier tous les contenus via le menu de gauche.<br/>Amuse-toi bien !',
+    'description' => 'Ici tu pourras modifier tous les contenus via le menu de gauche.<br>Amuse-toi bien !',
 
 ];
