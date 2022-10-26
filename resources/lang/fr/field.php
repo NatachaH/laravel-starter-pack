@@ -24,6 +24,7 @@ return [
     'private'       => 'Privé',
     'color'         => 'Couleur',
     'number'        => 'Numéro',
+    'reference'     => 'Référence',
 
     // PERSON
     'author'        => 'Auteur',
@@ -51,6 +52,8 @@ return [
     'start-at'      => 'Début',
     'end-at'        => 'Fin',
     'published-at'  => 'Publié le',
+    'purchased-at'  => 'Acheté le',
+    'released-at'   => 'Sortie le',
     'day'           => 'Jour',
     'week'          => 'Semaine',
     'month'         => 'Mois',
@@ -95,7 +98,11 @@ return [
     'advanced-search' => 'Recherche avancée',
     'with-trashed'    => 'Avec des objets mis à la poubelle',
     'status'          => 'Statut',
-    'parent'        => 'Parent',
+    'parent'          => 'Parent',
+
+    // OBJECT
+    'location'        => 'Emplacement',
+    'place'           => 'Lieu'
 
 
 ];

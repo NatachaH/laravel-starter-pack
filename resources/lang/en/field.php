@@ -24,6 +24,7 @@ return [
     'private'       => 'Private',
     'color'         => 'Color',
     'number'        => 'Number',
+    'reference'     => 'Reference',
 
     // PERSON
     'author'        => 'Author',
@@ -51,6 +52,8 @@ return [
     'start-at'      => 'Start at',
     'end-at'        => 'End at',
     'published-at'  => 'Published at',
+    'purchased-at'  => 'Purchased at',
+    'released-at'   => 'Released at',
     'day'           => 'Day',
     'week'          => 'Week',
     'month'         => 'Month',
@@ -96,6 +99,10 @@ return [
     'with-trashed'    => 'With trashed',
     'status'          => 'Status',
     'parent'          => 'Parent',
+
+    // OBJECT
+    'location'        => 'Location',
+    'place'           => 'Place'
 
 
 ];

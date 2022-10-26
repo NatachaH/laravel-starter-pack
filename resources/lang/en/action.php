@@ -35,6 +35,7 @@ return [
     'confirm'       => 'Confirm',
     'refuse'        => 'Refuse',
     'choose-file'   => 'Choose a file',
+    'choose-an-option' => 'Choose an option',
     'browse'        => 'Browse',
     'send'          => 'Send',
     'collapse'      => 'Collapse',

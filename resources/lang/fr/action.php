@@ -35,6 +35,7 @@ return [
     'confirm'       => 'Confirmer',
     'refuse'        => 'Refuser',
     'choose-file'   => 'Choisir un fichier',
+    'choose-an-option' => 'Choisir une option',
     'browse'        => 'Parcourir',
     'send'          => 'Envoyer',
     'collapse'      => 'Ouvrir/Fermer',
