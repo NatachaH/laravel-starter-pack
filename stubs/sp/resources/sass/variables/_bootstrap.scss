@@ -5,22 +5,47 @@
 */
 
 // Options
-$enable-caret:                                true !default;
-$enable-rounded:                              false !default;
-$enable-shadows:                              false !default;
-$enable-gradients:                            false !default;
-$enable-transitions:                          true !default;
-$enable-responsive-font-sizes:                true !default;
+$enable-caret:                                true;
+$enable-rounded:                              false;
+$enable-shadows:                              false;
+$enable-gradients:                            false;
+$enable-transitions:                          true;
+$enable-responsive-font-sizes:                true;
 
 // Colors
 $primary:  $brand;
+$body-bg:                   #FFF;
+$body-color:                #212529;
+
+// Font
+$font-family-sans-serif:    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-size-base:            1rem;
+$font-weight-base:          400;
+$line-height-base:          1.5;
+
+$headings-font-family:      $font-family-sans-serif;
+$headings-font-weight:      500;
+$headings-line-height:      1.2;
+$headings-color:            $body-color;
+$headings-margin-bottom:    1rem;
+
+$h1-font-size:              $font-size-base * 1.75;
+$h2-font-size:              $font-size-base * 1.5;
+$h3-font-size:              $font-size-base * 1.25;
+$h4-font-size:              $font-size-base * 1.125;
+
+$lead-font-size:            $font-size-base * 1.125;
+$lead-font-weight:          300;
 
 // Inputs & buttons
 $input-btn-focus-box-shadow: none;
 $btn-focus-box-shadow: none;
 
 // Navbar
-$navbar-light-color:                rgba(0,0,0,.5) !default;
-$navbar-light-hover-color:          rgba(0,0,0,.7) !default;
-$navbar-light-active-color:         $primary !default;
-$navbar-light-disabled-color:       rgba(0,0,0,.3) !default;
+$navbar-light-color:                rgba(0,0,0,.5);
+$navbar-light-hover-color:          rgba(0,0,0,.7);
+$navbar-light-active-color:         $primary;
+$navbar-light-disabled-color:       rgba(0,0,0,.3);
+$navbar-light-toggler-border-color: transparent;
+$navbar-toggler-focus-width:        0;
+$navbar-toggler-transition:         none;
