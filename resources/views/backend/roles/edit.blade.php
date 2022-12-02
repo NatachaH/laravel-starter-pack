@@ -13,7 +13,7 @@
 
         <legend>@lang('sp::field.information')</legend>
 
-        <x-bs-input :label="__('sp::field.guard')" type="text" name="guard" :value="$role->guard" required/>
+        <x-bs-input :label="__('sp::field.guard')" type="text" name="guard" :value="$role->guard" :readonly="$role->has_name_protected && !Auth::user()->has_superpowers" required/>
 
         <x-bs-input :label="__('sp::field.name')" type="text" name="name" :value="$role->name" required/>
 
