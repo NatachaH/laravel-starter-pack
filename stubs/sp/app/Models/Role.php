@@ -32,12 +32,12 @@ class Role extends Model
     }
 
     /**
-     * Check if the role name is protected (in case of hasRoles() use in code)
+     * Check if the role guard is protected (in case of hasRoles() use in code)
      * @return boolean
      */
-    public function getHasNameProtectedAttribute()
+    public function getHasGuardProtectedAttribute()
     {
-       return in_array($this->guard, config('access-control.name-protected'));
+       return in_array($this->guard, config('access-control.guard-protected'));
     }
 
 }
