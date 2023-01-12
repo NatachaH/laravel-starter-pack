@@ -25,10 +25,11 @@ class WithoutUrl implements Rule
      */
     public function passes($attribute, $value)
     {
-        // Get url
-        $url_pattern = "(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
-        
-        return !preg_match($url_pattern, $value);
+        // Get url    
+        $protocol_pattern = "/[a-z]+:\/\/\S+/";
+        $url_pattern = "/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@%_\+.~#?&\/\/=]*)/";
+
+        return !preg_match($protocol_pattern, $value) && !preg_match($url_pattern, $value);
 
     }
 
