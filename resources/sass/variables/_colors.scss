@@ -9,9 +9,6 @@ $sp-theme-colors: (
   "gray":  $gray
 );
 
-// Custom the bootstrap utilities color (ex: text-mycustom or bg-mycustom)
-$sp-utilities-colors: $sp-theme-colors;
-
 // Custom the bootstrap table color (ex: table-mycustom)
 $sp-table-colors: $sp-theme-colors;
 
@@ -20,15 +17,9 @@ $sp-table-colors: $sp-theme-colors;
   $sp-theme-colors: map-merge($sp-theme-colors,$custom-theme-colors);
 }
 
-@if variable-exists(custom-utilities-colors) {
-  $sp-utilities-colors: map-merge($sp-theme-colors,$custom-utilities-colors);
-}
-
 @if variable-exists(custom-table-colors) {
   $sp-table-colors: map-merge($sp-theme-colors,$custom-table-colors);
 }
 
 $theme-colors: map-merge($theme-colors, $sp-theme-colors);
-$utilities-text-colors: map-merge($utilities-text-colors, $sp-utilities-colors );
-$utilities-bg-colors: map-merge($utilities-bg-colors, $sp-utilities-colors);
 $table-variants: map-merge($table-variants, $sp-table-colors);

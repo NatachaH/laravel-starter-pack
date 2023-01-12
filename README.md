@@ -133,7 +133,7 @@ Add the NPM packages in your package.json:
 
 ```
 "@popperjs/core": "^2.6.0",
-"bootstrap" : "^5.1.0",
+"bootstrap" : "^5.2.0",
 "flatpickr" : "^4.6.7",
 "@tiptap/core": "*",
 "@tiptap/starter-kit": "*",
