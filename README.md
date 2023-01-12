@@ -265,6 +265,36 @@ public function rules()
 }
 ```
 
+## Without HTML Tag
+
+Check that the field as no HTML tags
+
+```
+use Nh\StarterPack\Rules\WithoutHtmlTag;
+
+public function rules()
+{
+    return [
+      'my_field'  => [new WithoutHtmlTag]
+    ];
+}
+```
+
+## Without Url
+
+Check that the field as no url in it
+
+```
+use Nh\StarterPack\Rules\WithoutUrl;
+
+public function rules()
+{
+    return [
+      'my_field'  => [new WithoutUrl]
+    ];
+}
+```
+
 # Components
 
 ## History
