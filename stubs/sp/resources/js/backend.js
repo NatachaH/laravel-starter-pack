@@ -6,9 +6,11 @@
 
 
 // Bootstrap
-require('./bootstrap');
+import * as Bootstrap from 'bootstrap'
+
+import axios from 'axios';
 
 // Backend scripts
-require('../../vendor/nh/starter-pack/resources/js/backend');
+import '../../vendor/nh/starter-pack/resources/js/backend';
 
 // Here Customize the backend scripts

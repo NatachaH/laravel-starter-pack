@@ -3,9 +3,11 @@
 | Frontend - Script
 |--------------------------------------------------------------------------
 |
-| Copyright © 2020 Natacha Herth, design & web development | https://www.natachaherth.ch/
+| Copyright © 2023 Natacha Herth, design & web development | https://www.natachaherth.ch/
 |
 */
 
 // Bootstrap
-require('./bootstrap');
+import * as Bootstrap from 'bootstrap'
+
+import axios from 'axios';

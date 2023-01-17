@@ -10,8 +10,8 @@
 */
 
 // Packages
-require('../../../bs-component/resources/js/bs-component');
-require('../../../sortable/resources/js/sortable');
+import '../../../bs-component/resources/js/bs-component';
+import '../../../sortable/resources/js/sortable';
 
 // Load Toast Notification
 var toastNotifications = document.querySelectorAll('#toastNotification .toast:not(.toast-custom)');
@@ -21,7 +21,7 @@ Array.prototype.forEach.call(toastNotifications, function(el, i) {
 });
 
 // Layout
-require('./layout/layout');
+import './layout/layout';
 
 // Components
-require('./components/components');
+import './components/components';

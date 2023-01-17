@@ -4,8 +4,8 @@
 |--------------------------------------------------------------------------
 */
 
-require('./_dynamic-media');
-require('./_history');
-require('./_popover-media');
-require('./_sortable');
-require('./_table-tree');
+import './_dynamic-media';
+import './_history';
+import './_popover-media';
+import './_sortable';
+import './_table-tree';
