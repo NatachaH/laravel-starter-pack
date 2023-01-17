@@ -6,11 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 use Nh\AccessControl\Traits\HasPermissions;
 use Nh\Trackable\Traits\Trackable;
+use Nh\Searchable\Traits\Searchable;
+
 
 class Role extends Model
 {
 
-    use HasPermissions,
+    use Searchable,
+        HasPermissions,
         Trackable;
 
     /**
@@ -19,6 +22,15 @@ class Role extends Model
      * @var array
      */
     protected $fillable = [
+        'guard','name'
+    ];
+
+      /**
+     * The searchable columns.
+     *
+     * @var array
+     */
+    protected $searchable = [
         'guard','name'
     ];
 
