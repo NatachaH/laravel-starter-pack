@@ -10,11 +10,11 @@
     <title>{{ config('app.name') }} - Backend - @yield('title')</title>
 
     <!-- Scripts -->
-    <script src="{{ mix('js/backend.js') }}" defer></script>
+    @vite('resources/js/backend.js')
     @stack('scripts')
 
     <!-- Styles -->
-    <link href="{{ mix('css/backend.css') }}" rel="stylesheet">
+    @vite('resources/sass/backend.scss')
     @stack('styles')
 </head>
 <body>

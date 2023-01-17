@@ -18,10 +18,11 @@
       <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
 
       <!-- Scripts -->
-      <script src="{{ mix('js/app.js') }}" defer></script>
+      @vite('resources/js/app.js')
 
       <!-- Styles -->
-      <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+      @vite('resources/sass/app.scss')
+      
   </head>
   <body>
 

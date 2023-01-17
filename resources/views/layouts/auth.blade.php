@@ -10,7 +10,8 @@
     <title>{{ config('app.name') }} - @yield('title')</title>
 
     <!-- Styles -->
-    <link href="{{ mix('css/auth.css') }}" rel="stylesheet">
+    @vite('resources/sass/auth.scss')
+
 </head>
 
 <body class="text-center">

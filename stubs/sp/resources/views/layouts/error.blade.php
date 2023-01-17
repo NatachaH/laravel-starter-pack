@@ -7,7 +7,7 @@
         <title>{{ config('app.name') }} - @yield('title')</title>
 
         <!-- Styles -->
-        <link href="{{ mix('css/error.css') }}" rel="stylesheet">
+        @vite('resources/sass/error.scss')
 
     </head>
     <body>

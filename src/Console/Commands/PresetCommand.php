@@ -47,7 +47,7 @@ class PresetCommand extends Command
         $this->updateDatabase();
         $this->updateResources();
         $this->updateRoutes();
-        $this->updateWebpack();
+        $this->updateViteJS();
 
         // Artisan commandes for Bootstrap Component Package
         Artisan::call('vendor:publish --tag=bs-component');
@@ -133,12 +133,12 @@ class PresetCommand extends Command
     }
 
     /**
-     * Updates the webpack file
+     * Updates the vite JS file
      * @return void
      */
-    private function updateWebpack()
+    private function updateViteJS()
     {
-        copy($this->stub.'/webpack.mix.js', base_path('webpack.mix.js'));
+        copy($this->stub.'/vite.config.js', base_path('vite.config.js'));
     }
 
 }

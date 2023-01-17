@@ -145,11 +145,8 @@ Add the NPM packages in your package.json:
 "@tiptap/extension-table-header": "*",
 "@tiptap/extension-table-row": "*",
 "sortablejs": "^1.10.2",
-"resolve-url-loader": "^4.0.0",
 "sass": "^1.38.1",
-"sass-loader": "^12.1.0"
 ```
-
 
 Install the NPM packages and run the default js/scss:
 
