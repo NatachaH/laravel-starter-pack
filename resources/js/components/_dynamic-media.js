@@ -6,7 +6,9 @@
 
 // Init the Dynamic to each .dynamic-media
 var dynamicMedia = document.querySelectorAll('.dynamic-media');
-dynamicMedia.forEach((el, i) => {
+if(dynamicMedia)
+{
+  dynamicMedia.forEach((el, i) => {
 
     // Init the dynamic
     new Dynamic(el, {
@@ -29,4 +31,5 @@ dynamicMedia.forEach((el, i) => {
       });
     }
 
-});
+  });
+}

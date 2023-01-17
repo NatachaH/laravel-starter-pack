@@ -4,12 +4,17 @@
 |--------------------------------------------------------------------------
 */
 
+import { Popover } from 'bootstrap'
+
 var mediaPopovers = document.querySelectorAll('.popover-media')
 
-Array.prototype.forEach.call(mediaPopovers, function(el, i) {
-    var tooltip = new Bootstrap.Popover(el,{
+if(mediaPopovers)
+{
+  Array.prototype.forEach.call(mediaPopovers, function(el, i) {
+    var tooltip = new Popover(el,{
       trigger: 'click',
       placement: 'left',
       html: true,
     })
-});
+  });
+}

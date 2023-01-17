@@ -7,9 +7,14 @@
 |
 */
 
+import { Toast } from 'bootstrap'
+
 // Init the Sortable to each .sortable
 var sortable = document.querySelectorAll('.sortable, .media-sortable');
-sortable.forEach((el, i) => {
+
+if(sortable)
+{
+  sortable.forEach((el, i) => {
 
     new Sortable(el, {
       successCallback: function(response){
@@ -17,7 +22,7 @@ sortable.forEach((el, i) => {
         {
           var toastSuccess = document.querySelector('.toast-custom.toast-success');
           toastSuccess.querySelector('.toast-body span').innerHTML = response.data.message;
-          var toast = new Bootstrap.Toast(toastSuccess);
+          var toast = new Toast(toastSuccess);
           toast.show();
         }
       },
@@ -26,10 +31,11 @@ sortable.forEach((el, i) => {
           {
             var toastError = document.querySelector('.toast-custom.toast-danger');
             toastError.querySelector('.toast-body span').innerHTML = response.data.message;
-            var toast = new Bootstrap.Toast(toastError);
+            var toast = new Toast(toastError);
             toast.show();
           }
       }
     });
 
-});
+  }); 
+}

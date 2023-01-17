@@ -6,7 +6,7 @@
 
 (function() {
 
-  this.TableTreeView = function(el) {
+  window.TableTreeView = function(el) {
 
     // Variables
     this.table = el;
@@ -106,6 +106,9 @@
 
 // Init the TableTreeView to each .table-tree
 var tree = document.querySelectorAll('.table-tree');
-Array.prototype.forEach.call(tree, function(el, i) {
-    var myTree = new TableTreeView(el);
-});
+if(tree)
+{
+  Array.prototype.forEach.call(tree, function(el, i) {
+      var myTree = new TableTreeView(el);
+  });
+}

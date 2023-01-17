@@ -8,6 +8,7 @@
 */
 
 // Bootstrap
-import * as Bootstrap from 'bootstrap'
+//import * as Bootstrap from 'bootstrap'
 
-import axios from 'axios';
+// Axios
+//import axios from 'axios';
