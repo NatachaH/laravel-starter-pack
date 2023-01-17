@@ -8,7 +8,8 @@
 */
 
 // Bootstrap
-//import * as Bootstrap from 'bootstrap'
+import * as Bootstrap from 'bootstrap'
+window.Bootstrap = Bootstrap;
 
 // Axios
 //import axios from 'axios';
