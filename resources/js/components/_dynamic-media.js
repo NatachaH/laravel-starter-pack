@@ -4,11 +4,14 @@
 |--------------------------------------------------------------------------
 */
 
+import SortableJs from 'sortablejs';
+import Dynamic from  '../../vendor/nh/bs-component/resources/js/_dynamic';
+
 // Init the Dynamic to each .dynamic-media
 var dynamicMedia = document.querySelectorAll('.dynamic-media');
 if(dynamicMedia)
 {
-  dynamicMedia.forEach((el, i) => {
+  dynamicMedia.forEach(el => {
 
     // Init the dynamic
     new Dynamic(el, {
@@ -23,10 +26,10 @@ if(dynamicMedia)
          animation: 150,
          handle: '.drag',
          onEnd: function (evt) {
-           Array.prototype.forEach.call(sortableDynamic.children, function(el, i) {
-             var input = el.querySelector('.dynamic-position');
-             input.value = i+1;
-           });
+          sortableDynamic.children.forEach((el,i) => {
+            var input = el.querySelector('.dynamic-position');
+            input.value = i+1;
+          });
          }
       });
     }

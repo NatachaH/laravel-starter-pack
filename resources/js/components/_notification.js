@@ -10,8 +10,8 @@ import { Toast } from 'bootstrap'
 var toastNotifications = document.querySelectorAll('#toastNotification .toast:not(.toast-custom)');
 if(toastNotifications)
 {
-  Array.prototype.forEach.call(toastNotifications, function(el, i) {
-    var toast = new Toast(el);
+  toastNotifications.forEach(toastNotification => {
+    var toast = new Toast(toastNotification);
     toast.show();
   });
 }

@@ -1,114 +1,121 @@
 /*
 |--------------------------------------------------------------------------
-| Listing
+| Table Tree - Script
 |--------------------------------------------------------------------------
+|
+| Copyright © 2023 Natacha Herth, design & web development | https://www.natachaherth.ch/
+|
 */
 
-(function() {
+export default class TableTree {
 
-  window.TableTreeView = function(el) {
+  /**
+   * Creates an instance
+   *
+   * @author: Natacha Herth
+   * @param {object} el The element
+   * @param {object} options Options that you can overide
+   */
+  constructor(el,options = null){
 
-    // Variables
-    this.table = el;
-    this.rows = this.table.querySelectorAll('tbody tr');
+    // Get the element
+    this.el = el;
 
+    // Get the rows of the table
+    this.rows = el.querySelectorAll('tbody tr');
+
+    // Init the ToggleSwitch
     this.init();
 
-
-  };
-
-  // Init
-  TableTreeView.prototype.init = function()
-  {
-      var treeObject = this;
-
-      Array.prototype.forEach.call(treeObject.rows, function(el, i) {
-
-        // Check if have toggle
-        var toggle = el.querySelector('.toggle-children');
-
-        if(toggle) {
-
-          toggle.addEventListener('click',function(e){
-
-              // Get the row
-              var row = this.closest('tr');
-
-              // Toggle the icon
-              treeObject.toggleIcon(toggle);
-
-              // Open or close children
-              if(row.classList.contains('expand'))
-              {
-                treeObject.contract(row);
-              } else {
-                treeObject.expand(row);
-              }
-
-          },false);
-
-        }
-
-      });
-
-
   }
 
-  // toggle the icon class
-  TableTreeView.prototype.toggleIcon = function(td)
-  {
-      // Get the icon
-      var icon = td.querySelector(' i');
+  /**
+   * Init the Table Tree
+   */
+  init() {
 
-      if(icon !== null)
+    this.rows.forEach(el => {
+      
+      const toggle = el.querySelector('.toggle-children');
+
+      if(toggle)
       {
-          // Toggle the classes
-          icon.classList.toggle('icon-chevron-right');
-          icon.classList.toggle('icon-chevron-down');
+        toggle.addEventListener('click', () => {
+
+          // Get the row
+          const row = e.target.closest('tr');
+
+          // Toggle the icon
+          this.toggleIcon(toggle);
+
+          // Open or close children
+          if(row.classList.contains('expand'))
+          {
+            this.contract(row);
+          } else {
+            this.expand(row);
+          }
+
+        } ,false);
       }
+
+    });
+  
   }
 
-  // expand
-  TableTreeView.prototype.expand = function(row)
-  {
-      // Get the children by parent id
-      var children = this.table.querySelectorAll('tr[data-parent="'+(row.getAttribute('data-id'))+'"]');
+  /**
+   * Toggle the icon
+   * @param {object} td
+   */
+  toggleIcon(td) {
 
-      // Add the class to the row
-      row.classList.add('expand');
+    // Get the icon
+    var icon = td.querySelector(' i');
 
-      // Open each children
-      children.forEach(function(child, index) {
-        child.classList.add('show');
-      });
+    if(icon !== null)
+    {
+        // Toggle the classes
+        icon.classList.toggle('icon-chevron-right');
+        icon.classList.toggle('icon-chevron-down');
+    }
+
   }
 
-  // contract
-  TableTreeView.prototype.contract = function(row)
-  {
-      var treeObject = this;
+  /**
+   * Expand a row
+   * @param {object} row
+   */
+  expand(row) {
 
-      // Get the children by parent id
-      var children = this.table.querySelectorAll('tr[data-parent="'+(row.getAttribute('data-id'))+'"]');
+    // Get the children by parent id
+    var children = this.el.querySelectorAll('tr[data-parent="'+(row.getAttribute('data-id'))+'"]');
 
-      // Remove the class to the row
-      row.classList.remove('expand');
+    // Add the class to the row
+    row.classList.add('expand');
 
-      // Close each children
-      children.forEach(function(child, index) {
-        child.classList.remove('show');
-        treeObject.contract(child);
-      });
+    // Open each children
+    children.forEach(child => child.classList.add('show'));
+
   }
 
-}());
+  /**
+   * Contract a row
+   * @param {object} row
+   */
+  contract(row) {
 
+    // Get the children by parent id
+    var children = this.el.querySelectorAll('tr[data-parent="'+(row.getAttribute('data-id'))+'"]');
 
-// Init the TableTreeView to each .table-tree
-var tree = document.querySelectorAll('.table-tree');
-if(tree)
-{
-  Array.prototype.forEach.call(tree, function(el, i) {
-      var myTree = new TableTreeView(el);
-  });
+    // Remove the class to the row
+    row.classList.remove('expand');
+
+    // Close each children
+    children.forEach(child => {
+      child.classList.remove('show');
+      this.contract(child);
+    });
+
+  }
+
 }

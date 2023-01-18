@@ -7,14 +7,14 @@
 var backend = document.getElementById('app');
 var toggles = document.querySelectorAll('.toggle-sidebar');
 
-toggles.forEach((el, i) => {
+toggles.forEach(el => {
   el.addEventListener('click',function(e){
     var isOpen = backend.classList.contains('sidebar-on');
     var state = isOpen ? 'sidebar-close' : 'sidebar-open';
 
     backend.classList.add(state);
 
-    setTimeout(function() {
+    setTimeout(() => {
         backend.classList.toggle('sidebar-on');
         backend.classList.remove(state);
         sessionStorage.setItem('sidebar', !isOpen);

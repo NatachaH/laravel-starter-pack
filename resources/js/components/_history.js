@@ -10,10 +10,6 @@ var historyTooltips = document.querySelectorAll('.history-tooltip')
 
 if(historyTooltips)
 {
-  Array.prototype.forEach.call(historyTooltips, function(el, i) {
-    var tooltip = new Tooltip(el, {
-      trigger: 'click'
-    })
-});
+  historyTooltips.forEach(history => new Tooltip(history, { trigger: 'click'}));
 }
 

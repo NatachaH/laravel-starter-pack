@@ -8,13 +8,14 @@
 */
 
 import { Toast } from 'bootstrap'
+import Sortable from  '../../vendor/nh/sortable/resources/js/sortable';
 
 // Init the Sortable to each .sortable
-var sortable = document.querySelectorAll('.sortable, .media-sortable');
+var sortables = document.querySelectorAll('.sortable, .media-sortable');
 
-if(sortable)
+if(sortables)
 {
-  sortable.forEach((el, i) => {
+  sortables.forEach((el, i) => {
 
     new Sortable(el, {
       successCallback: function(response){
