@@ -14,7 +14,7 @@
     @stack('scripts')
 
     <!-- Styles -->
-    @vite('resources/sass/backend.scss')
+    @vite('resources/scss/backend.scss')
     @stack('styles')
 </head>
 <body>

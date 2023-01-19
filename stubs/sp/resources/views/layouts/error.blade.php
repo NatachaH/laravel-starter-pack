@@ -7,7 +7,7 @@
         <title>{{ config('app.name') }} - @yield('title')</title>
 
         <!-- Styles -->
-        @vite('resources/sass/error.scss')
+        @vite('resources/scss/error.scss')
 
     </head>
     <body>

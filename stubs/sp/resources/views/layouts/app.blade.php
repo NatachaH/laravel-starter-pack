@@ -21,7 +21,7 @@
       @vite('resources/js/app.js')
 
       <!-- Styles -->
-      @vite('resources/sass/app.scss')
+      @vite('resources/scss/app.scss')
       
   </head>
   <body>

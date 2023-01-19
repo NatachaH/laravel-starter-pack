@@ -5,10 +5,10 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/sass/app.scss',
-                'resources/sass/backend.scss',
-                'resources/sass/auth.scss',
-                'resources/sass/error.scss',
+                'resources/scss/app.scss',
+                'resources/scss/backend.scss',
+                'resources/scss/auth.scss',
+                'resources/scss/error.scss',
                 'resources/js/app.js',
                 'resources/js/backend.js'
             ],

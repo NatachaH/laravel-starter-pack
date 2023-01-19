@@ -10,7 +10,7 @@
     <title>{{ config('app.name') }} - @yield('title')</title>
 
     <!-- Styles -->
-    @vite('resources/sass/auth.scss')
+    @vite('resources/scss/auth.scss')
 
 </head>
 
