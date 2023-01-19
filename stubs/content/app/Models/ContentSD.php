@@ -61,6 +61,7 @@ class {{ UCNAME }} extends Model
 
     /**
      * Check if the model is protected (= you can't change the slug)
+     * 
      * @return boolean
      */
     public function getIsProtectedAttribute()
