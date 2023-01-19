@@ -110,14 +110,14 @@ class PresetCommand extends Command
     {
         (new Filesystem)->cleanDirectory(resource_path('css'));
         (new Filesystem)->cleanDirectory(resource_path('js'));
-        (new Filesystem)->cleanDirectory(resource_path('sass'));
+        (new Filesystem)->cleanDirectory(resource_path('scss'));
         (new Filesystem)->cleanDirectory(resource_path('views'));
 
         $stub = $this->stub.'/resources/';
 
         (new Filesystem)->copyDirectory($stub.'js', resource_path('js'));
         (new Filesystem)->copyDirectory($stub.'lang', base_path('lang'));
-        (new Filesystem)->copyDirectory($stub.'sass', resource_path('sass'));
+        (new Filesystem)->copyDirectory($stub.'scss', resource_path('scss'));
         (new Filesystem)->copyDirectory($stub.'views', resource_path('views'));
     }
 
