@@ -25,14 +25,17 @@ return [
     'color'         => 'Couleur',
     'number'        => 'Numéro',
     'reference'     => 'Référence',
+    'level'         => 'Niveau',
 
     // PERSON
     'author'        => 'Auteur',
     'firstname'     => 'Prénom',
     'lastname'      => 'Nom',
     'birthday'      => 'Date d\'anniversaire',
+    'birthdate'     => 'Date de naissance',
     'age'           => 'Âge',
     'username'      => 'Identifiant',
+    'password'      => 'Mot de passe',
 
     // CONTACT
     'email'         => 'Email',
@@ -44,8 +47,7 @@ return [
     'country'       => 'Pays',
 
     // DATES
-    'dates'         => 'Dates',
-    'date'          => 'Date',
+    'date'          => 'Date|Dates',
     'created-at'    => 'Créé le',
     'updated-at'    => 'Modifié le',
     'deleted-at'    => 'Supprimé le',
@@ -87,19 +89,18 @@ return [
     'message'       => 'Message',
 
     // MODELS / TITLE
-    'actions'         => 'Actions',
-    'options'         => 'Options',
-    'information'     => 'Informations',
-    'role'            => 'Rôle',
-    'media'           => 'Médias',
-    'pictures'        => 'Photos',
-    'documents'       => 'Documents',
+    'action'          => 'Action|Actions',
+    'option'          => 'Option|Options',
+    'information'     => 'Information|Informations',
+    'picture'         => 'Photo|Photos',
+    'document'        => 'Document|Documents',
+    'status'          => 'Statut|Statuts',
+    'parent'          => 'Parent|Parents',
+    'child'           => 'Enfant|Enfants',
     'history'         => 'Historique',
     'advanced-search' => 'Recherche avancée',
     'with-trashed'    => 'Avec des objets mis à la poubelle',
-    'status'          => 'Statut',
-    'parent'          => 'Parent',
-
+    
     // OBJECT
     'location'        => 'Emplacement',
     'place'           => 'Lieu'

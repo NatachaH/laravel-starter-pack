@@ -11,7 +11,7 @@
 
       <fieldset>
 
-        <legend>@lang('sp::field.information')</legend>
+        <legend>@choice('sp::field.information',2)</legend>
 
         <x-bs-input :label="__('sp::field.guard')" type="text" name="guard" :value="$role->guard" :readonly="$role->has_guard_protected && !Auth::user()->has_superpowers" required/>
 

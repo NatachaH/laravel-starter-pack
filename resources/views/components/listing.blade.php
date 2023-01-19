@@ -83,7 +83,7 @@
                           <th class="td-fit d-none d-lg-table-cell">@lang('sp::field.deleted-at')</th>
                         @endif
 
-                        <th class="td-fit">@lang('sp::field.actions')</th>
+                        <th class="td-fit">@choice('sp::field.action',2)</th>
 
                     </tr>
                 </thead>

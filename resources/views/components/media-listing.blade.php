@@ -16,7 +16,7 @@
           </span>
 
           @if($showDates)
-            <small class="text-muted font-italic me-4">{{ $item->created_at }}</small>
+            <small class="text-muted font-italic me-4">{{ $item->created_at->format('d.m.Y H:i:s') }}</small>
           @endif
 
           @if($hasPreview && $item->thumbnail)

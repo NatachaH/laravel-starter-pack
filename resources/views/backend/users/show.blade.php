@@ -10,12 +10,12 @@
 
         <div class="col-xl-8">
 
-            <x-bs-card :title="__('sp::field.information')">
+            <x-bs-card :title="trans_choice('sp::field.information',2)">
               <dl class="row mb-0">
                 <dt class="col-sm-2">@lang('sp::field.email')</dt>
                 <dd class="col-sm-10"><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></dd>
 
-                <dt class="col-sm-2">@lang('sp::field.role')</dt>
+                <dt class="col-sm-2">@choice('backend::model.role',1)</dt>
                 <dd class="col-sm-10 mb-0">{{ $user->role->name }}</dd>
 
               </dl>

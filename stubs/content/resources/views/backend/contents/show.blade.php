@@ -10,13 +10,13 @@
 
         <div class="col-lg-8">
 
-            <x-bs-card :title="__('sp::field.information')">
+            <x-bs-card :title="trans_choice('sp::field.information',2)">
               <p class="lead">{{ ${{ NAME }}->subtitle }}</p>
               {!!${{ NAME }}->description!!}
             </x-bs-card>
 
             @if(${{ NAME }}->hasMedia())
-              <x-bs-card :title="__('sp::field.media')">
+              <x-bs-card :title="trans_choice('backend::model.media',2)">
                 <x-slot name="before">
                     <x-sp-media-listing :items="${{ NAME }}->media" show-dates has-preview has-download sortable/>
                 </x-slot>

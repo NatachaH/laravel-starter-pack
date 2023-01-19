@@ -11,7 +11,7 @@
 
       <fieldset>
 
-        <legend>@lang('sp::field.information')</legend>
+        <legend>@choice('sp::field.information',2)</legend>
 
         <x-bs-check class="form-switch" type="checkbox" :label="__('sp::field.published')" name="published" value="1" :checked="${{ NAME }}->published" boolean/>
 
@@ -25,7 +25,7 @@
 
       </fieldset>
 
-      <x-sp-media-dynamic class="dynamic-media" :legend="__('sp::field.pictures')" :items="${{ NAME }}->mediaByType('picture')" type="picture" formats="jpg,png" has-name has-preview has-download sortable  />
+      <x-sp-media-dynamic class="dynamic-media" :legend="trans_choice('sp::field.picture',2)" :items="${{ NAME }}->mediaByType('picture')" type="picture" formats="jpg,png" has-name has-preview has-download sortable  />
 
       @include('sp::includes.form.footer', ['cancel' => 'backend.{{ PNAME }}.index'])
 

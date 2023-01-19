@@ -25,14 +25,17 @@ return [
     'color'         => 'Color',
     'number'        => 'Number',
     'reference'     => 'Reference',
+    'level'         => 'Level',
 
     // PERSON
     'author'        => 'Author',
     'firstname'     => 'Firstname',
     'lastname'      => 'Lastname',
-    'birthday'      => 'Birthday date',
+    'birthday'      => 'Birthday ',
+    'birthdate'     => 'Birthdate',
     'age'           => 'Age',
     'username'      => 'Username',
+    'password'      => 'Password',
 
     // CONTACT
     'email'         => 'Email',
@@ -44,8 +47,7 @@ return [
     'country'       => 'Country',
 
     // DATES
-    'dates'         => 'Dates',
-    'date'          => 'Date',
+    'dates'         => 'Date|Dates',
     'created-at'    => 'Created at',
     'updated-at'    => 'Updated at',
     'deleted-at'    => 'Deleted at',
@@ -87,18 +89,17 @@ return [
     'message'       => 'Message',
 
     // MODELS / TITLE
-    'actions'         => 'Actions',
-    'options'         => 'Options',
-    'information'     => 'Information',
-    'role'            => 'Role',
-    'media'           => 'Media',
-    'pictures'        => 'Pictures',
-    'documents'       => 'Documents',
+    'action'          => 'Action|Actions',
+    'option'          => 'Option|Options',
+    'information'     => 'Information|Informations',
+    'picture'         => 'Picture|Pictures',
+    'document'        => 'Document|Documents',
+    'status'          => 'Status|Statuses',
+    'parent'          => 'Parent|Parents',
+    'child'           => 'Child|Children',
     'history'         => 'History',
     'advanced-search' => 'Advanced search',
-    'with-trashed'    => 'With trashed',
-    'status'          => 'Status',
-    'parent'          => 'Parent',
+    'with-trashed'    => 'With trashed items',
 
     // OBJECT
     'location'        => 'Location',
