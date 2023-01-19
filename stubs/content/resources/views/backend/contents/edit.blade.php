@@ -25,7 +25,7 @@
 
       </fieldset>
 
-      <x-sp-media-dynamic class="dynamic-media" :legend="trans_choice('sp::field.picture',2)" :items="${{ NAME }}->mediaByType('picture')" type="picture" formats="jpg,png" has-name has-preview has-download sortable  />
+      <x-sp-media-dynamic class="dynamic-media" :legend="trans_choice('sp::field.picture',2)" :items="${{ NAME }}->mediaByType('picture')" type="picture" formats="jpg,png" weight="16" has-name has-preview has-download sortable  />
 
       @include('sp::includes.form.footer', ['cancel' => 'backend.{{ PNAME }}.index'])
 
