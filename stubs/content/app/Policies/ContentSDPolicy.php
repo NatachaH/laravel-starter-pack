@@ -2,10 +2,9 @@
 
 namespace App\Policies;
 
-use Illuminate\Auth\Access\HandlesAuthorization;
-
-use App\Models\User;
 use App\Models\{{ UCNAME }};
+use App\Models\User;
+use Illuminate\Auth\Access\HandlesAuthorization;
 
 class {{ UCNAME }}Policy
 {
@@ -30,7 +29,7 @@ class {{ UCNAME }}Policy
      */
     public function viewAny(User $user)
     {
-        return $user->hasAccess('{{ NAME }}','view');
+        return $user->hasAccess('{{ NAME }}', 'view');
     }
 
     /**
@@ -42,7 +41,7 @@ class {{ UCNAME }}Policy
      */
     public function view(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return $user->hasAccess('{{ NAME }}','view') && !${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}', 'view') && !${{ NAME }}->trashed();
     }
 
     /**
@@ -53,7 +52,7 @@ class {{ UCNAME }}Policy
      */
     public function create(User $user)
     {
-        return $user->hasAccess('{{ NAME }}','create');
+        return $user->hasAccess('{{ NAME }}', 'create');
     }
 
     /**
@@ -65,7 +64,7 @@ class {{ UCNAME }}Policy
      */
     public function update(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return $user->hasAccess('{{ NAME }}','update') && !${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}', 'update') && !${{ NAME }}->trashed();
     }
 
     /**
@@ -77,7 +76,7 @@ class {{ UCNAME }}Policy
      */
     public function delete(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return $user->hasAccess('{{ NAME }}','delete') && !${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}', 'delete') && !${{ NAME }}->trashed();
     }
 
     /**
@@ -88,7 +87,7 @@ class {{ UCNAME }}Policy
      */
     public function viewTrashed(User $user)
     {
-        return $user->hasAccess('{{ NAME }}', ['restore','force-delete']);
+        return $user->hasAccess('{{ NAME }}', ['restore', 'force-delete']);
     }
 
     /**
@@ -100,7 +99,7 @@ class {{ UCNAME }}Policy
      */
     public function restore(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return $user->hasAccess('{{ NAME }}','restore') && ${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}', 'restore') && ${{ NAME }}->trashed();
     }
 
     /**
@@ -112,7 +111,7 @@ class {{ UCNAME }}Policy
      */
     public function forceDelete(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return $user->hasAccess('{{ NAME }}','force-delete') && ${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}', 'force-delete') && ${{ NAME }}->trashed();
     }
 
     /**
@@ -123,7 +122,7 @@ class {{ UCNAME }}Policy
      */
     public function import(User $user)
     {
-        return $user->hasAccess('{{ NAME }}','import');
+        return $user->hasAccess('{{ NAME }}', 'import');
     }
 
     /**
@@ -134,6 +133,6 @@ class {{ UCNAME }}Policy
      */
     public function export(User $user)
     {
-        return $user->hasAccess('{{ NAME }}','export');
+        return $user->hasAccess('{{ NAME }}', 'export');
     }
 }

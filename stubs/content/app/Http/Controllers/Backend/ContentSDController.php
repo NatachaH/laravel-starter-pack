@@ -5,18 +5,18 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Store{{ UCNAME }}Request;
 use Illuminate\Http\Request;
-
 use Nh\Searchable\Search;
+
 use App\Models\{{ UCNAME }};
 
 class {{ UCNAME }}Controller extends Controller
 {
 
     /**
-    * Instantiate a new controller instance.
-    *
-    * @return void
-    */
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->authorizeResource({{ UCNAME }}::class, '{{ NAME }}');
@@ -36,6 +36,7 @@ class {{ UCNAME }}Controller extends Controller
 
     /**
      * Display a listing of the searched resource.
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -54,7 +55,7 @@ class {{ UCNAME }}Controller extends Controller
         // Make the search query
         // The search can be 'contains', 'start' or 'end'
         // And you can decide if all columns match
-        ${{ PNAME }} = {{ UCNAME }}::search($keywords,'contains',false);
+        ${{ PNAME }} = {{ UCNAME }}::search($keywords, 'contains', false);
 
         // With trashed
         if($withTrashed)
@@ -66,11 +67,11 @@ class {{ UCNAME }}Controller extends Controller
         if($published)
         {
             $value = $published == 'true' ? 1 : 0;
-            ${{ PNAME }} = ${{ PNAME }}->where('published',$value);
+            ${{ PNAME }} = ${{ PNAME }}->where('published', $value);
         }
 
         // Return the paginate result
-        ${{ PNAME }} = ${{ PNAME }}->sortable($sortF,$sortD)->paginate();
+        ${{ PNAME }} = ${{ PNAME }}->sortable($sortF, $sortD)->paginate();
 
         // Display the result
         return view('backend.{{ PNAME }}.index', compact('{{ PNAME }}'));
@@ -106,8 +107,8 @@ class {{ UCNAME }}Controller extends Controller
      */
     public function store(Store{{ UCNAME }}Request $request)
     {
-        {{ UCNAME }}::create($request->only(['slug','title','subtitle','description','published']));
-        session()->flash('toast', ['success' => notification('added','{{ NAME }}')]);
+        {{ UCNAME }}::create($request->only(['slug', 'title', 'subtitle', 'description', 'published']));
+        session()->flash('toast', ['success' => notification('added', '{{ NAME }}')]);
         return redirect()->route('backend.{{ PNAME }}.index');
     }
 
@@ -145,8 +146,8 @@ class {{ UCNAME }}Controller extends Controller
      */
     public function update(Store{{ UCNAME }}Request $request, {{ UCNAME }} ${{ NAME }})
     {
-        ${{ NAME }}->update($request->only(['slug','title','subtitle','description','published']));
-        session()->flash('toast', ['success' => notification('updated','{{ NAME }}')]);
+        ${{ NAME }}->update($request->only(['slug', 'title', 'subtitle', 'description', 'published']));
+        session()->flash('toast', ['success' => notification('updated', '{{ NAME }}')]);
         return redirect()->route('backend.{{ PNAME }}.index');
     }
 
@@ -159,7 +160,7 @@ class {{ UCNAME }}Controller extends Controller
     public function destroy({{ UCNAME }} ${{ NAME }})
     {
         ${{ NAME }}->delete();
-        session()->flash('toast', ['success' => notification('deleted','{{ NAME }}')]);
+        session()->flash('toast', ['success' => notification('deleted', '{{ NAME }}')]);
         return back();
     }
 
@@ -173,7 +174,7 @@ class {{ UCNAME }}Controller extends Controller
     {
         $this->authorize('restore', ${{ NAME }});
         ${{ NAME }}->restore();
-        session()->flash('toast', ['success' => notification('restored','{{ NAME }}')]);
+        session()->flash('toast', ['success' => notification('restored', '{{ NAME }}')]);
         return back();
     }
 
@@ -187,7 +188,7 @@ class {{ UCNAME }}Controller extends Controller
     {
         $this->authorize('forceDelete', ${{ NAME }});
         ${{ NAME }}->forceDelete();
-        session()->flash('toast', ['success' => notification('force-deleted','{{ NAME }}')]);
+        session()->flash('toast', ['success' => notification('force-deleted', '{{ NAME }}')]);
         return back();
     }
 

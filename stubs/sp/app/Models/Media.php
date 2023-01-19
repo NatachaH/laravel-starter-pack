@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
-use Nh\Mediable\Traits\AsMedia;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Nh\Mediable\Traits\AsMedia;
 use Nh\Sortable\Traits\Sortable;
 
 class Media extends Model
 {
-
     use AsMedia,
         SoftDeletes,
         Sortable;
@@ -21,18 +19,18 @@ class Media extends Model
      * @var array
      */
     protected $fillable = [
-        'position', 'name', 'mime', 'extension', 'type'
+        'position', 'name', 'mime', 'extension', 'type',
     ];
 
     /**
      * Default sortable field and direction.
+     *
      * @var array
      */
-     protected $sortable = [
-       'field' => 'position',
-       'direction' => 'asc',
-       'event-on-parent' => true,
-       'parent' => 'mediable'
-     ];
-
+    protected $sortable = [
+        'field' => 'position',
+        'direction' => 'asc',
+        'event-on-parent' => true,
+        'parent' => 'mediable',
+    ];
 }

@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'activity-log'  => 'Activity log',
+    'activity-log' => 'Activity log',
 
     /*
     'action' => [

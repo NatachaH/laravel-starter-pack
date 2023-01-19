@@ -2,12 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
-
 use Nh\AccessControl\Traits\HasAccess;
 use Nh\Searchable\Traits\Searchable;
 use Nh\Sortable\Traits\Sortable;
@@ -55,37 +53,40 @@ class User extends Authenticatable
      * @var array
      */
     protected $searchable = [
-      'name', 'email'
+        'name', 'email',
     ];
 
     /**
      * Default number of items per page.
+     *
      * @var int
      */
     protected $perPage = 10;
 
     /**
      * Default sortable field and direction.
+     *
      * @var array
      */
     protected $sortable = [
-        'field' => 'id'
+        'field' => 'id',
     ];
 
     /**
      * Encrypt the password when is set.
-     * @param string $password
+     *
+     * @param  string  $password
      */
-     public function setPasswordAttribute($password)
-     {
-       if ($password !== null & $password !== "")
-       {
-           $this->attributes['password'] = Str::startsWith($password, '$2y$') ? $password : bcrypt($password);
-       }
-     }
+    public function setPasswordAttribute($password)
+    {
+        if ($password !== null & $password !== '') {
+            $this->attributes['password'] = Str::startsWith($password, '$2y$') ? $password : bcrypt($password);
+        }
+    }
 
     /**
      * Get the tracks record associated with the user.
+     *
      * @return Illuminate\Database\Eloquent\Collection
      */
     public function activityTracks()

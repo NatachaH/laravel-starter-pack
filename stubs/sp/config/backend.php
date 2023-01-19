@@ -10,7 +10,6 @@ return [
 
     'version' => '2.8.1',
 
-
     /*
     |--------------------------------------------------------------------------
     | Contact of the webmaster
@@ -18,8 +17,8 @@ return [
     */
 
     'webmaster' => [
-      'name' => 'Natacha Herth',
-      'email' => 'info@natachaherth.ch'
+        'name' => 'Natacha Herth',
+        'email' => 'info@natachaherth.ch',
     ],
 
     /*
@@ -44,45 +43,45 @@ return [
 
         // Dashboard
         'dashboard' => [
-            'icon'  => 'icon-dashboard',
-            'link'  => 'backend.dashboard',
-            'items' => null
+            'icon' => 'icon-dashboard',
+            'link' => 'backend.dashboard',
+            'items' => null,
         ],
 
         // Activity Log
         'activity-log' => [
-            'icon'  => 'icon-rocket',
-            'link'  => 'backend.activity-log.index',
+            'icon' => 'icon-rocket',
+            'link' => 'backend.activity-log.index',
             'items' => null,
-            'model' => 'App\Models\Track'
+            'model' => 'App\Models\Track',
         ],
 
         // Settings
-        'settings' =>  [
-            'icon'  => 'icon-gear',
+        'settings' => [
+            'icon' => 'icon-gear',
             'items' => [
                 'user' => [
-                  'model' => 'App\Models\User',
-                  'route' => 'backend.users'
+                    'model' => 'App\Models\User',
+                    'route' => 'backend.users',
                 ],
                 'role' => [
-                  'model' => 'App\Models\Role',
-                  'route' => 'backend.roles'
-                ]
-            ]
+                    'model' => 'App\Models\Role',
+                    'route' => 'backend.roles',
+                ],
+            ],
         ],
 
         // Contents
-        'contents' =>  [
-            'icon'  => 'icon-content',
+        'contents' => [
+            'icon' => 'icon-content',
             'items' => [
-              //{{ COPY CONFIG }}
-            ]
-        ]
+                //{{ COPY CONFIG }}
+            ],
+        ],
 
-      ],
+    ],
 
-      /*
+    /*
       |--------------------------------------------------------------------------
       | Customize the mainbar
       |--------------------------------------------------------------------------
@@ -91,17 +90,16 @@ return [
       |
       */
 
-      'mainbar' => [
+    'mainbar' => [
 
-          // Account
-          'account' => [
-              'edit' => 'backend.account.edit'
-          ],
+        // Account
+        'account' => [
+            'edit' => 'backend.account.edit',
+        ],
 
-      ],
+    ],
 
-
-      /*
+    /*
       |--------------------------------------------------------------------------
       | Customize the dynamic buttons
       |--------------------------------------------------------------------------
@@ -110,29 +108,27 @@ return [
       |
       */
 
-      'buttons' => [
-          'add' => [
+    'buttons' => [
+        'add' => [
             'class' => 'btn-gray rounded-circle',
             'label' => 'sp::action.add',
-            'value' => '<i class="icon-plus"></i>'
-          ],
-          'remove' => [
+            'value' => '<i class="icon-plus"></i>',
+        ],
+        'remove' => [
             'class' => 'btn-gray rounded-circle',
             'label' => 'sp::action.remove',
-            'value' => '<i class="icon-minus"></i>'
-          ],
-          'delete' => [
+            'value' => '<i class="icon-minus"></i>',
+        ],
+        'delete' => [
             'class' => 'btn-gray rounded-circle',
             'label' => 'sp::action.delete',
-            'value' => '<i class="icon-trash"></i>'
-          ],
-          'move' => [
+            'value' => '<i class="icon-trash"></i>',
+        ],
+        'move' => [
             'class' => 'ps-0',
             'label' => 'sp::action.move',
-            'value' => '<i class="icon-move"></i>'
-          ]
-      ]
-
-
+            'value' => '<i class="icon-move"></i>',
+        ],
+    ],
 
 ];

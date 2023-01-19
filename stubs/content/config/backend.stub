@@ -1,5 +1,5 @@
 '{{ NAME }}' => [
-                  'model' => 'App\Models\{{ UCNAME }}',
-                  'route' => 'backend.{{ PNAME }}'
-                ],
-                //{{ COPY CONFIG }}
+  'model' => 'App\Models\{{ UCNAME }}',
+  'route' => 'backend.{{ PNAME }}'.
+],
+//{{ COPY CONFIG }}

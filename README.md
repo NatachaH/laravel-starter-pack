@@ -74,7 +74,7 @@ RateLimiter::for('login', function (Request $request) {
 Change the Password Rule in Actions/Fortify/PasswordValidationRules.php
 
 ```
-return ['required', 'string', 'confirmed','min:6'];
+return ['required', 'string', 'confirmed', 'min:6'];
 ```
 
 Update the file config/fortify.php

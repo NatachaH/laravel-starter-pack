@@ -19,17 +19,17 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         \Nh\Mediable\Events\MediaEvent::class => [
-            \Nh\Trackable\Listeners\AddTrack::class
+            \Nh\Trackable\Listeners\AddTrack::class,
         ],
         \Nh\AccessControl\Events\RoleEvent::class => [
-            \Nh\Trackable\Listeners\AddTrack::class
+            \Nh\Trackable\Listeners\AddTrack::class,
         ],
         \Nh\AccessControl\Events\PermissionEvent::class => [
-            \Nh\Trackable\Listeners\AddTrack::class
+            \Nh\Trackable\Listeners\AddTrack::class,
         ],
         \Nh\Sortable\Events\SortableEvent::class => [
-            \Nh\Trackable\Listeners\AddTrack::class
-        ]
+            \Nh\Trackable\Listeners\AddTrack::class,
+        ],
     ];
 
     /**

@@ -31,8 +31,8 @@ Route::any('/users/search', '\Nh\StarterPack\Http\Controllers\Backend\UserContro
 Route::any('/users/trashed', '\Nh\StarterPack\Http\Controllers\Backend\UserController@trashed')->name('users.trashed');
 Route::patch('/users/{user}/restore', '\Nh\StarterPack\Http\Controllers\Backend\UserController@restore')->name('users.restore');
 Route::delete('/users/{user}/forceDelete', '\Nh\StarterPack\Http\Controllers\Backend\UserController@forceDelete')->name('users.forceDelete');
-Route::resource('users','\Nh\StarterPack\Http\Controllers\Backend\UserController');
+Route::resource('users', '\Nh\StarterPack\Http\Controllers\Backend\UserController');
 
 // Roles
 Route::any('/roles/search', '\Nh\StarterPack\Http\Controllers\Backend\RoleController@search')->name('roles.search');
-Route::resource('roles','\Nh\StarterPack\Http\Controllers\Backend\RoleController');
+Route::resource('roles', '\Nh\StarterPack\Http\Controllers\Backend\RoleController');

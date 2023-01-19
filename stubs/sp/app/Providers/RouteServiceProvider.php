@@ -2,10 +2,9 @@
 
 namespace App\Providers;
 
+use Auth;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
-
-use Auth;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -37,6 +36,7 @@ class RouteServiceProvider extends ServiceProvider
         // Bind User with trashed
         Route::bind('user', function ($value) {
             $user = Auth::user()->can('viewTrashed', \App\Models\User::class) ? \App\Models\User::withTrashed() : new \App\Models\User;
+
             return $user->where('id', $value)->firstOrFail();
         });
 
@@ -51,7 +51,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         //$this->mapApiRoutes();
-        
+
         $this->mapBackendRoutes();
 
         $this->mapWebRoutes();
@@ -80,7 +80,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapBackendRoutes()
     {
-        Route::middleware(['web','auth'])
+        Route::middleware(['web', 'auth'])
             ->namespace($this->namespace.'\Backend')
             ->prefix('backend')
             ->name('backend.')

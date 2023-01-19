@@ -18,6 +18,6 @@ return [
     'throttled' => 'Please wait before retrying.',
     'token' => 'This password reset token is invalid.',
     'user' => "We can't find a user with that email address.",
-    'no-reset' => 'Oups ! You can\'t reset the password yourself.</br>Please contact the webmaster: <a href="mailto::email">:name</a>'
+    'no-reset' => 'Oups ! You can\'t reset the password yourself.</br>Please contact the webmaster: <a href="mailto::email">:name</a>',
 
 ];

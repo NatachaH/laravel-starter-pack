@@ -4,4 +4,4 @@ Route::any('/{{ PNAME }}/search', '{{ UCNAME }}Controller@search')->name('{{ PNA
 Route::any('/{{ PNAME }}/trashed', '{{ UCNAME }}Controller@trashed')->name('{{ PNAME }}.trashed');
 Route::patch('/{{ PNAME }}/{{{ NAME }}}/restore', '{{ UCNAME }}Controller@restore')->name('{{ PNAME }}.restore');
 Route::delete('/{{ PNAME }}/{{{ NAME }}}/forceDelete', '{{ UCNAME }}Controller@forceDelete')->name('{{ PNAME }}.forceDelete');
-Route::resource('{{ PNAME }}','{{ UCNAME }}Controller');
+Route::resource('{{ PNAME }}', '{{ UCNAME }}Controller');

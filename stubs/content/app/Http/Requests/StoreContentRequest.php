@@ -3,8 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Nh\StarterPack\Rules\Slug;
 
 class Store{{ UCNAME }}Request extends FormRequest
@@ -26,11 +26,12 @@ class Store{{ UCNAME }}Request extends FormRequest
      */
     public function rules()
     {
-        $isNew = $this->getMethod() == 'POST';
+        //$isNew = $this->getMethod() == 'POST';
+
         return [
           'slug'  => ['required', new Slug, Rule::unique('{{ PNAME }}', 'slug')->ignore($this->{{ NAME }})],
           'title' => ['required'],
-          'media_to_add.*.file' => ['file','mimes:jpeg,png']
+          'media_to_add.*.file' => ['file', 'mimes:jpeg,png'],
         ];
     }
 
@@ -42,7 +43,7 @@ class Store{{ UCNAME }}Request extends FormRequest
     public function attributes()
     {
         return [
-          'media_to_add.*.file' => Str::lower(__('sp::field.file'))
+          'media_to_add.*.file' => Str::lower(__('sp::field.file')),
         ];
     }
 }
