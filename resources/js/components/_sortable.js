@@ -8,7 +8,7 @@
 */
 
 import { Toast } from 'bootstrap'
-import Sortable from  '../../vendor/nh/sortable/resources/js/sortable';
+import Sortable from  './vendor/nh/sortable/resources/js/sortable';
 
 // Init the Sortable to each .sortable
 var sortables = document.querySelectorAll('.sortable, .media-sortable');
