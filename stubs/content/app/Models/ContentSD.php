@@ -48,7 +48,7 @@ class {{ UCNAME }} extends Model
      * @var array
      */
     protected $sortable = [
-        'field' => 'title'
+        'field' => 'position'
     ];
 
     /**
