@@ -5,7 +5,7 @@
 */
 
 import SortableJs from 'sortablejs';
-import Dynamic from  './vendor/nh/bs-component/resources/js/_dynamic';
+import Dynamic from  '/vendor/nh/bs-component/resources/js/_dynamic';
 
 // Init the Dynamic to each .dynamic-media
 var dynamicMedia = document.querySelectorAll('.dynamic-media');
