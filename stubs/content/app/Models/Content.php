@@ -23,7 +23,7 @@ class {{ UCNAME }} extends Model
      * @var array
      */
     protected $fillable = [
-        'slug', 'title', 'subtitle', 'description', 'published',
+        'position', 'slug', 'title', 'subtitle', 'description', 'published',
     ];
 
     /**
