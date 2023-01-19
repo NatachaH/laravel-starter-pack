@@ -26,7 +26,7 @@ if(dynamicMedia)
          animation: 150,
          handle: '.drag',
          onEnd: function (evt) {
-          sortableDynamic.children.forEach((el,i) => {
+          Array.from(sortableDynamic.children).forEach((el,i) => {
             var input = el.querySelector('.dynamic-position');
             input.value = i+1;
           });
