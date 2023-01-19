@@ -24,7 +24,7 @@ class {{ UCNAME }} extends Model
      * @var array
      */
     protected $fillable = [
-        'position', 'slug', 'title', 'subtitle', 'description', 'published'
+        'position', 'slug', 'title', 'subtitle', 'description', 'published',
     ];
 
     /**
@@ -33,21 +33,23 @@ class {{ UCNAME }} extends Model
      * @var array
      */
     protected $casts = [
-        'published' => 'boolean'
+        'published' => 'boolean',
     ];
 
     /**
      * Default number of items per page.
+     *
      * @var int
      */
     protected $perPage = 10;
 
     /**
      * Default sortable field and direction.
+     *
      * @var array
      */
     protected $sortable = [
-        'field' => 'position'
+        'field' => 'position',
     ];
 
     /**
@@ -56,13 +58,13 @@ class {{ UCNAME }} extends Model
      * @var array
      */
     protected $searchable = [
-      'title', 'subtitle', 'description'
+      'title', 'subtitle', 'description',
     ];
 
     /**
      * Check if the model is protected (= you can't change the slug)
-     * 
-     * @return boolean
+     *
+     * @return bool
      */
     public function getIsProtectedAttribute()
     {
@@ -71,8 +73,8 @@ class {{ UCNAME }} extends Model
 
     /**
      * Check if the model is available
-     * 
-     * @return boolean
+     *
+     * @return bool
      */
     public function getIsAvailableAttribute()
     {
@@ -90,5 +92,4 @@ class {{ UCNAME }} extends Model
         // Get only published
         return $query->where('published', 1);
     }
-
 }
