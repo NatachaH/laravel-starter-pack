@@ -76,7 +76,7 @@ class {{ UCNAME }}Policy
      */
     public function delete(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return $user->hasAccess('{{ NAME }}', 'delete') && !${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}', 'delete') && !${{ NAME }}->trashed() && (!${{ NAME }}->is_protected || $user->has_superpowers);
     }
 
     /**
@@ -111,7 +111,7 @@ class {{ UCNAME }}Policy
      */
     public function forceDelete(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return $user->hasAccess('{{ NAME }}', 'force-delete') && ${{ NAME }}->trashed();
+        return $user->hasAccess('{{ NAME }}', 'force-delete') && ${{ NAME }}->trashed() && (!${{ NAME }}->is_protected || $user->has_superpowers);
     }
 
     /**

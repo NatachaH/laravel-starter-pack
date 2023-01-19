@@ -76,7 +76,7 @@ class {{ UCNAME }}Policy
      */
     public function delete(User $user, {{ UCNAME }} ${{ NAME }})
     {
-        return $user->hasAccess('{{ NAME }}', 'delete');
+        return $user->hasAccess('{{ NAME }}', 'delete') && (!${{ NAME }}->is_protected || $user->has_superpowers);
     }
 
     /**

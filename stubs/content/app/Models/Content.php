@@ -59,6 +59,15 @@ class {{ UCNAME }} extends Model
     ];
 
     /**
+     * Check if the model is protected (= you can't change the slug)
+     * @return boolean
+     */
+    public function getIsProtectedAttribute()
+    {
+        return in_array($this->slug, []);
+    }
+
+    /**
      * Check if the model is available
      * 
      * @return boolean
