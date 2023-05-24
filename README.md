@@ -367,6 +367,7 @@ Get a listing of the media from the package nh/mediable.
 | has-preview | boolean | false |   
 | has-download | boolean | false |   
 | sortable  | boolean | false |   
+| listing  | string | sp::components.media-listing |   
 
 
 ```

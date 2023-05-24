@@ -43,17 +43,24 @@ class MediaListing extends Component
     public $sortable;
 
     /**
+     * The listing view path.
+     * @var string
+     */
+    public $listing;
+
+    /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($items, $showDates = false, $hasPreview = false, $hasDownload = false, $sortable = false)
+    public function __construct($items, $showDates = false, $hasPreview = false, $hasDownload = false, $sortable = false, $listing = 'sp::components.media-listing')
     {
         $this->items        = $items;
         $this->showDates    = $showDates;
         $this->hasPreview   = $hasPreview;
         $this->hasDownload  = $hasDownload;
         $this->sortable     = $sortable;
+        $this->listing      = $listing;
     }
 
     /**
@@ -63,6 +70,6 @@ class MediaListing extends Component
      */
     public function render()
     {
-        return view('sp::components.media-listing');
+        return view($this->listing);
     }
 }
